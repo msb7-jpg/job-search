@@ -70,23 +70,23 @@ SKILLS_FULLSTACK = {
 def calcular_nivel_match(score: int) -> str:
     if score >= 80:
         return "Excelente"
-    elif score >= 60:
+    if score >= 60:
         return "Alto"
-    elif score >= 40:
+    if score >= 40:
         return "Médio"
     return "Baixo"
 
 def calcular_match(vaga: dict, skills_dict: dict, foco: str) -> dict:
     texto = f"{vaga.get('titulo', '')} {vaga.get('descricao_completa', '')}".lower()
-    
+
     habilidades_encontradas = set()
     for kw, skill_name in skills_dict.items():
         pattern = r'\b' + re.escape(kw) + r'\b'
         if re.search(pattern, texto):
             habilidades_encontradas.add(skill_name)
-    
+
     habilidades_lista = sorted(habilidades_encontradas)
-    
+
     pontos = 0
     if "Python" in habilidades_encontradas:
         pontos += 25
@@ -98,23 +98,23 @@ def calcular_match(vaga: dict, skills_dict: dict, foco: str) -> dict:
         pontos += 15
     if "REST APIs" in habilidades_encontradas or "Pytest" in habilidades_encontradas or "Git" in habilidades_encontradas:
         pontos += 10
-        
+
     if (foco == "fullstack" and (
-        "Vue.js" in habilidades_encontradas or 
-        "React.js" in habilidades_encontradas or 
-        "TypeScript" in habilidades_encontradas or 
+        "Vue.js" in habilidades_encontradas or
+        "React.js" in habilidades_encontradas or
+        "TypeScript" in habilidades_encontradas or
         "JavaScript" in habilidades_encontradas)
         ) or (
         foco == "backend" and (
-            "Redis" in habilidades_encontradas or 
-            "RabbitMQ" in habilidades_encontradas or 
-            "Celery" in habilidades_encontradas or 
+            "Redis" in habilidades_encontradas or
+            "RabbitMQ" in habilidades_encontradas or
+            "Celery" in habilidades_encontradas or
             "Microservices" in habilidades_encontradas
         )):
         pontos += 15
-            
+
     score_final = min(100, max(15, pontos)) if "Python" in habilidades_encontradas else min(50, pontos)
-    
+
     return {
         "score_porcentagem": score_final,
         "nivel": calcular_nivel_match(score_final),
@@ -122,38 +122,52 @@ def calcular_match(vaga: dict, skills_dict: dict, foco: str) -> dict:
         "total_habilidades_encontradas": len(habilidades_lista)
     }
 
-def gerar_relatorio_markdown(vagas: list, caminho_relatorio: str = "relatorio_matches.md"):
+def gerar_relatorio_markdown(dados: dict, caminho_relatorio: str = "relatorio_matches.md"):
     """
-    Gera um relatório formatado em Markdown com as vagas ordenadas por compatibilidade.
+    Gera um relatório formatado em Markdown categorizado por Escopo (Nacional/Internacional)
+    e Tipo (Jobs/Posts), aplicando o threshold de 60% de match.
     """
-    vagas_be = sorted(vagas, key=lambda x: x["match_curriculo"]["backend"]["score_porcentagem"], reverse=True)
-    vagas_fs = sorted(vagas, key=lambda x: x["match_curriculo"]["fullstack"]["score_porcentagem"], reverse=True)
-
     lines = [
-        "# 📊 Relatório de Match de Vagas com Currículos\n",
-        f"**Total de vagas analisadas**: {len(vagas)}\n",
-        "---\n",
-        "## 🐍 Top Vagas - Perfil Backend Python (`Miguel's Resume - Backend.md`)\n"
+        "# 📊 Relatório de Match de Vagas e Posts (Threshold >= 60%)\n",
+        "Este relatório apresenta as melhores oportunidades agrupadas por escopo e tipo, avaliadas contra os currículos **Backend** e **Full-Stack**.\n",
+        "---\n"
     ]
 
-    for i, v in enumerate(vagas_be[:15], 1):
-        m = v["match_curriculo"]["backend"]
-        skills = ", ".join(m["habilidades_compativeis"]) if m["habilidades_compativeis"] else "Conhecimentos gerais em Python"
-        lines.append(f"### {i}. {v['titulo']} - **{m['score_porcentagem']}% ({m['nivel']})**")
-        lines.append(f"- **Empresa**: {v['empresa']} | **Local**: {v['localizacao']} | **Postagem**: {v['data_postagem']}")
-        lines.append(f"- **Tecnologias Compatíveis**: `{skills}`")
-        lines.append(f"- 🔗 [Ver Vaga no LinkedIn]({v['link']})\n")
+    for escopo, nome_escopo in [("nacional", "🇧🇷 Oportunidades Nacionais (Brasil)"), ("internacional", "🌐 Oportunidades Internacionais (Gringa)")]:
+        lines.append(f"# {nome_escopo}\n")
+        escopo_data = dados.get(escopo, {})
 
-    lines.append("---\n")
-    lines.append("## ⚡ Top Vagas - Perfil Full-Stack (`Miguel's Resume - Full-stack.md`)\n")
+        for tipo, nome_tipo in [("jobs", "📌 Vagas Formais (Jobs)"), ("posts", "💬 Posts do LinkedIn")]:
+            lista = escopo_data.get(tipo, [])
+            lines.append(f"## {nome_tipo} (Total com Match ≥ 60%: {len(lista)})\n")
 
-    for i, v in enumerate(vagas_fs[:15], 1):
-        m = v["match_curriculo"]["fullstack"]
-        skills = ", ".join(m["habilidades_compativeis"]) if m["habilidades_compativeis"] else "Conhecimentos gerais em Python"
-        lines.append(f"### {i}. {v['titulo']} - **{m['score_porcentagem']}% ({m['nivel']})**")
-        lines.append(f"- **Empresa**: {v['empresa']} | **Local**: {v['localizacao']} | **Postagem**: {v['data_postagem']}")
-        lines.append(f"- **Tecnologias Compatíveis**: `{skills}`")
-        lines.append(f"- 🔗 [Ver Vaga no LinkedIn]({v['link']})\n")
+            if not lista:
+                lines.append("_Nenhuma oportunidade encontrada nesta categoria com match mínimo de 60%._\n")
+                continue
+
+            for i, v in enumerate(lista, 1):
+                m_be = v["match_curriculo"]["backend"]
+                m_fs = v["match_curriculo"]["fullstack"]
+                best_score = max(m_be["score_porcentagem"], m_fs["score_porcentagem"])
+
+                perfis_comp = []
+                if m_be["score_porcentagem"] >= 60:
+                    perfis_comp.append(f"Backend: {m_be['score_porcentagem']}% ({m_be['nivel']})")
+                if m_fs["score_porcentagem"] >= 60:
+                    perfis_comp.append(f"Full-Stack: {m_fs['score_porcentagem']}% ({m_fs['nivel']})")
+
+                comp_str = " | ".join(perfis_comp)
+                skills_be = ", ".join(m_be["habilidades_compativeis"]) if m_be["habilidades_compativeis"] else "Python"
+                skills_fs = ", ".join(m_fs["habilidades_compativeis"]) if m_fs["habilidades_compativeis"] else "Python"
+
+                lines.append(f"### {i}. {v['titulo']} - **Match Máximo: {best_score}%**")
+                lines.append(f"- **Compatibilidade**: {comp_str}")
+                lines.append(f"- **Empresa/Autor**: {v['empresa']} | **Local**: {v['localizacao']} | **Postagem**: {v['data_postagem']}")
+                lines.append(f"- **Skills Backend**: `{skills_be}`")
+                lines.append(f"- **Skills Full-Stack**: `{skills_fs}`")
+                lines.append(f"- 🔗 [Ver no LinkedIn]({v['link']})\n")
+
+        lines.append("---\n")
 
     with open(caminho_relatorio, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
@@ -162,39 +176,72 @@ def gerar_relatorio_markdown(vagas: list, caminho_relatorio: str = "relatorio_ma
 
 def processar_vagas_com_curriculo(caminho_json: str = "vagas_linkedin.json"):
     """
-    Realiza o pós-processamento das vagas calculando o match e salvando tanto o JSON quanto o relatório Markdown.
+    Realiza o pós-processamento calculando o match e filtrando por threshold (60%),
+    organizando no formato de categorias nacional/internacional e jobs/posts.
     """
     try:
-        with open(caminho_json, "r", encoding="utf-8") as f:
+        with open(caminho_json, encoding="utf-8") as f:
             data = json.load(f)
     except FileNotFoundError:
         print(f"Arquivo '{caminho_json}' não encontrado.")
         return
 
-    vagas = data.get("vagas", [])
-    print(f"\nIniciando Pós-Processamento: Calculando Match para {len(vagas)} vagas com os Currículos Backend & Full-stack...")
+    # Tratar caso o JSON ainda esteja na estrutura antiga (lista simples em "vagas") ou na nova
+    vagas_brutas = []
+    if "vagas" in data:
+        vagas_brutas = data["vagas"]
+    else:
+        for esc in ["nacional", "internacional"]:
+            for tp in ["jobs", "posts"]:
+                vagas_brutas.extend(data.get(esc, {}).get(tp, []))
 
-    vagas_processadas = []
-    for vaga in vagas:
-        match_be = calcular_match(vaga, SKILLS_BACKEND, foco="backend")
-        match_fs = calcular_match(vaga, SKILLS_FULLSTACK, foco="fullstack")
-        
-        vaga["match_curriculo"] = {
+    print(f"\nIniciando Pós-Processamento: Calculando Match para {len(vagas_brutas)} itens...")
+
+    resultado_estruturado = {
+        "nacional": {"jobs": [], "posts": []},
+        "internacional": {"jobs": [], "posts": []}
+    }
+
+    total_aprovados = 0
+
+    for item in vagas_brutas:
+        match_be = calcular_match(item, SKILLS_BACKEND, foco="backend")
+        match_fs = calcular_match(item, SKILLS_FULLSTACK, foco="fullstack")
+
+        item["match_curriculo"] = {
             "backend": match_be,
             "fullstack": match_fs
         }
-        vagas_processadas.append(vaga)
 
-    data["vagas"] = vagas_processadas
-    
+        # Aplicar Threshold de 60% (em pelo menos um dos perfis de currículo)
+        if match_be["score_porcentagem"] >= 60 or match_fs["score_porcentagem"] >= 60:
+            escopo = item.get("escopo", "nacional")
+            tipo = item.get("tipo", "jobs")
+
+            if escopo not in resultado_estruturado:
+                escopo = "nacional"
+            if tipo not in ["jobs", "posts"]:
+                tipo = "jobs"
+
+            resultado_estruturado[escopo][tipo].append(item)
+            total_aprovados += 1
+
+    dados_finais = {
+        "filtro_threshold_minimo": 60,
+        "total_aprovados": total_aprovados,
+        "nacional": resultado_estruturado["nacional"],
+        "internacional": resultado_estruturado["internacional"]
+    }
+
     # 1. Salva no JSON principal
     with open(caminho_json, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        json.dump(dados_finais, f, ensure_ascii=False, indent=4)
 
-    print(f"💾 JSON atualizado com 'match_curriculo' em '{caminho_json}'.")
+    print(f"💾 JSON atualizado com threshold ≥ 60% ({total_aprovados} aprovados) em '{caminho_json}'.")
 
     # 2. Salva o Relatório Markdown dedicado
-    gerar_relatorio_markdown(vagas_processadas, "relatorio_matches.md")
+    gerar_relatorio_markdown(dados_finais, "relatorio_matches.md")
 
 if __name__ == "__main__":
     processar_vagas_com_curriculo()
+

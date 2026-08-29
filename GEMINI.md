@@ -15,10 +15,11 @@ This repository contains a Python automation tool designed to search, filter, ex
 
 - **Language**: Python (>= 3.14)
 - **Package & Environment Manager**: `uv`
-- **Key Dependencies**:
+- **Key Dependencies & Tooling**:
   - `requests`: Direct HTTP execution for LinkedIn Guest API endpoints.
   - `beautifulsoup4` (`bs4`): HTML parsing for card elements and full job descriptions.
   - `concurrent.futures.ThreadPoolExecutor`: Multi-threaded parallel fetching ("Aggressive Fetch").
+  - `ruff`: Code quality & linting configured in `pyproject.toml` (`E`, `W`, `F`, `I`, `B`, `S`, `UP`, `SIM`, `PERF`, `RUF`, `N`, `A`, `C4`, `RET`, `ERA`, `PL`, `TRY`, `FURB`).
 
 ---
 

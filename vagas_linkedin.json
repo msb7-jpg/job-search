@@ -1,2990 +1,363 @@
 {
-    "termo_pesquisado": "LinkedIn Search (Python / Django / FastAPI / Vue / React) [Recência: r604800, Remoto Estrito: True, Senioridade: JUNIOR]",
-    "filtro_tempo": "r604800",
-    "apenas_remoto": true,
-    "senioridade_filtrada": "JUNIOR",
-    "total_extraido": 104,
-    "vagas": [
-        {
-            "job_id": "4457495374",
-            "titulo": "Desenvolvedor Python / Pesquisa + Desenvolvimento - Trabalho Remoto",
-            "empresa": "BairesDev",
-            "localizacao": "Salvador e Região",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-python-pesquisa-%2B-desenvolvimento-trabalho-remoto-at-bairesdev-4457495374",
-            "descricao_resumida": "BairesDev - Salvador e Região",
-            "descricao_completa": "Há mais de 15 anos, a BairesDev® é líder em projetos tecnológicos. Entregamos soluções inovadoras para gigantes como Google e Rolls-Royce e as startups mais inovadoras do Vale do Silício.\nTemos uma equipe diversa de mais de 4.000 profissionais formada pelo Top 1% dos talentos de tecnologia do mundo, trabalhando remotamente em cargos de impacto global.\nAo se candidatar para este cargo, você está dando o primeiro passo em um processo que vai além do comum. Nosso objetivo é alinhar suas paixões, habilidades, e expectativas às nossas vagas, colocando você no caminho para desenvolver uma carreira de sucesso excepcional.\nDesenvolvedor Python / Pesquisa + Desenvolvimento na BairesDev\nEstamos à procura de excelentes desenvolvedores Python para se juntarem à equipe de pesquisa e desenvolvimento (P&D) da BairesDev.\nNossa equipe de P&D é uma parte essencial de nossas soluções de tecnologia que geram milhões em receita todos os anos, por isso contratamos apenas os melhores dos melhores.\nDentro da equipe, você encontrará muitos desafios diferentes: análise de dados, aprendizado de máquina, desktop e desenvolvimentos web são alguns dos mais relevantes no momento, mas para impulsionar a inovação, você notará que novidades estão surgindo todos os dias!\nA área de P&D é sem dúvida a área mais interessante e desafiante de toda a empresa, e embora a BairesDev seja formada por pessoas realmente talentosas em geral, aqui você encontrará profissionais com larga experiência e também com níveis intelectuais e criativos muito acima da média.\nQueremos que as pessoas aproveitem a viagem. Você está pronto?\nO que você vai fazer:\n- Criar sistemas e ferramentas de automação para configurar, monitorar e orquestrar a infraestrutura de dados e pipelines.\n- Criar serviços de integração de dados para ajudar a integrar novos clientes o mais rápido possível.\n- Manter a confiabilidade, o desempenho e o suporte contínuos da infraestrutura de dados, fornecendo soluções baseadas nas necessidades dos aplicativos e no crescimento previsto.\nEsperamos que você tenha:\n- 4+ anos de experiência prática em desenvolvimento Python e Django.\n- Desejável experiência em desenvolvimento com programação orientada a objetos.\n- 3 anos de desenvolvimento utilizando outras linguagens de programação.\n- Bons conhecimentos com XML e bases de dados relacionais (Oracle/MS SQL/MySQL).\n- Forte experiência profissional trabalhando com grandes estruturas de dados (incluindo XML) e algoritmos.\n- Nível avançado de inglês.\nComo tornamos seu trabalho (e sua vida) mais fácil:\n- Modalidade 100% remota - trabalhe de qualquer lugar.\n- Excelente remuneração em USD ou na sua moeda local, como preferir.\n- Hardware para você trabalhar de casa.\n- Horários flexíveis - faça seu próprio horário.\n- Licença parental remunerada, férias, e feriados nacionais.\n- Ambiente de trabalho inovador e multicultural.\n- Colabore e aprenda com o Top 1% global dos talentos de cada área.\n- Ambiente de apoio com mentoria, promoções, desenvolvimento de habilidades, e diversas oportunidades de crescimento.\nJunte-se a uma equipe global onde seus talentos excepcionais podem se destacar!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 60,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                },
-                "fullstack": {
-                    "score_porcentagem": 60,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                }
-            }
-        },
-        {
-            "job_id": "4456895730",
-            "titulo": "Desenvolvedor de Software Python - Trabalho Remoto",
-            "empresa": "BairesDev",
-            "localizacao": "Salvador e Região",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-de-software-python-trabalho-remoto-at-bairesdev-4456895730",
-            "descricao_resumida": "BairesDev - Salvador e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4459444933",
-            "titulo": "Desenvolvedor(a) Python",
-            "empresa": "IPM Sistemas",
-            "localizacao": "Rio do Sul, SC",
-            "data_postagem": "Há 2 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-python-at-ipm-sistemas-4459444933",
-            "descricao_resumida": "IPM Sistemas - Rio do Sul, SC",
-            "descricao_completa": "E se o seu trabalho ajudasse cidades inteiras a tomar as melhores decisões?\nNa IPM, acreditamos que a tecnologia só faz sentido quando melhora a vida das pessoas. Por isso, desenvolvemos o Atende.Net, o ecossistema 100% em nuvem e com a 1ª Inteligência Artificial do mundo criada para apoiar decisões na gestão pública. Nosso foco é transformar dados em ações mais inteligentes em áreas como saúde, educação, contabilidade e planejamento.\nHoje, milhões de usuários acessam serviços digitais por meio das soluções da IPM. Geramos impacto em escala, com tecnologia aplicada a problemas reais do dia a dia dos brasileiros.\nTrabalhar aqui é fazer parte de um time que entrega junto: do produto à engenharia, dos dados à implantação e atendimento. Cada área é parte de uma equipe de especialistas que transforma a administração pública todos os dias.\nSe você busca uma carreira com propósito, desafios técnicos e resultados reais, o seu lugar é aqui!\nVenha construir o futuro da gestão pública na IPM! ❤️\n💡 Nessa Vaga, Seus Principais Desafios Serão\nAtuar diretamente no processo de desenvolvimento de ferramentas internas de migração de dados;\nDesenvolver e executar a manutenção dos processos de migração do software e origens SQL;\nPromover ajustes das inconformidades detectadas no software de migração;\nCodificar e realizar testes de qualidade no software de migração;\nDesenvolver e otimizar consultas SQL para conversão de dados, assegurando a precisão e integridade das informações durante o processo de migração;\nRealizar a manutenção e correção de erros nas etapas de migração para a transferência satisfatória dos dados migrados das entidades contratantes do sistema Atende.Net.\nRequisitos\n🙌 Para essa posição, você vai precisar de:\nEnsino superior completo ou em andamento nas áreas de Tecnologia (Sistemas de Informação, Engenharia de Software, Análise e Desenvolvimento de Sistemas, dentre outras), Engenharias ou Cursos Técnicos;\nConhecimento na linguagem de programação Python, Java, JavaScript, Delphi ou demais linguagens;\nConhecimento em bancos de dados relacionais;\nProatividade, boa comunicação e habilidade de trabalho em equipe;\nBom raciocínio lógico e atenção a detalhes: lidamos com dados! \nBenefícios\n🤩 Benefícios Que Nosso Time Mais Gosta\n💳 Vale Refeição e/ou Alimentação (R$ 35,00 por dia trabalhado, em torno de R$ 735,00 ao mês) no cartão de benefícios flexível Ifood;\n🚌 Vale Transporte;\n💪Wellhub (antigo Gympass) - acesso livre a mais de 50 mil academias pelo Brasil, e a possibilidade de incluir dependentes;\n🩺 AVUS - plataforma completa de telemedicina, com uma consulta de pronto atendimento gratuita;\n🧠 Starbem - plataforma de saúde mental com foco em cuidado acessível e qualidade de vida;\n💙 DASA - Pronto atendimento sem custo e ilimitado;\n🐾Guapeco - Plano de Saúde para o seu Pet!\n🎁 IPM Birthday - R$ 150,00 no Caju com saldo livre, para tornar o dia do seu aniversário ainda mais especial;\n👥 IPM Indica - indicou um profissional, ele(a) passou no processo seletivo e ficou, pelo menos, 45 dias na empresa, você recebe o valor de R$ 500,00 de bonificação pela indicação;\n🏥 Desconto em plano de saúde da Unimed e odontológico da Uniodonto;\n🏆 Reconhece IPM - nosso reconhecimento financeiro por tempo de casa, investindo e buscando a construção de uma carreira duradoura conosco;\n🤝 Rede de convênios para descontos, incluindo farmácias e restaurantes;\n🎊 Comemoração de datas festivas a cada mês - Carnaval, Festa Junina, Halloween, etc;\n👚 Dress code flexível - na nossa Sede e Centro de Tecnologia, você pode vir trabalhar de bermuda e camiseta.\nImportante:\n Todas as nossas posições são abertas a pessoas com deficiência (PCD). Se os seus conhecimentos forem adequados à vaga, é tudo o que importa. Na IPM, nós abraçamos a diversidade e contratamos pessoas com capacidade e vontade de transformar, de construir um futuro melhor para a sociedade, independente de qual seja a sua idade, raça, cor, religião, identidade de gênero, orientação sexual ou formação. Seu perfil e valores casam com os nossos? Então venha fazer parte!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 55,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4458637954",
-            "titulo": "Typesense & Python Developer (m/f/x)",
-            "empresa": "DataSquads UG",
-            "localizacao": "Brasília, DF",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/typesense-python-developer-m-f-x-at-datasquads-ug-4458637954",
-            "descricao_resumida": "DataSquads UG - Brasília, DF",
-            "descricao_completa": "About us\n \nAbout DataSquads UG\nDataSquads UG is a remote-first software development and consulting company with teams in Germany and Brazil. We specialize in building Proof of Concepts (POCs) and Minimum Viable Products (MVPs) for startups, helping them turn bold ideas into scalable products. Our hands-on approach combines agile project and product management with deep technical expertise across UX/UI, frontend and backend development, and DevOps.\nWhether you're validating a new idea or scaling your early-stage product, we act as an extension of your team to deliver fast, reliable results that move your business forward.\nTypesense & Python Developer (m/f/x)\n \nJoin an international team that drives innovation from Germany to Brazil and turns digital visions into reality. At DataSquads, you'll work remote at the forefront of startup development.\nOur Mission:\n We empower startups through world-class MVPs and agile processes to bring their ideas to market quickly and scalably.\nYour Responsibilities\n \nYou develop high-performance search solutions with Typesense for our international customer projects.\nYou design and implement scalable backend systems based on Python.\nYou work closely with our teams in Germany and Brazil in a remote-first environment.\nYou support DevOps processes to ensure smooth application deployment.\nYou optimize existing database queries and ensure excellent data quality.\nYou accompany the entire software lifecycle from the initial idea to the finished MVP.\nYou actively contribute your expertise to the technical consulting of our startup partners.\nYour Profile\n \nYou have at least five to seven years of solid professional experience in software development.\nYou possess expert knowledge in Python and have successfully implemented complex projects.\nYou are a pro in handling Typesense and optimizing search algorithms.\nYou have very good knowledge in backend development and fundamental knowledge in DevOps.\nYour Portuguese skills are at C2 level and you communicate confidently in English (C1).\nYou work independently, in a structured manner, and value the dynamics of agile startup environments.\nApply Now\n \nWe look forward to your quick online application for a start on July 2nd, 2026. Become part of our squad!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4457492996",
-            "titulo": "Desenvolvedor Python / Pesquisa + Desenvolvimento - Trabalho Remoto",
-            "empresa": "BairesDev",
-            "localizacao": "Brasília, DF",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-python-pesquisa-%2B-desenvolvimento-trabalho-remoto-at-bairesdev-4457492996",
-            "descricao_resumida": "BairesDev - Brasília, DF",
-            "descricao_completa": "Há mais de 15 anos, a BairesDev® é líder em projetos tecnológicos. Entregamos soluções inovadoras para gigantes como Google e Rolls-Royce e as startups mais inovadoras do Vale do Silício.\nTemos uma equipe diversa de mais de 4.000 profissionais formada pelo Top 1% dos talentos de tecnologia do mundo, trabalhando remotamente em cargos de impacto global.\nAo se candidatar para este cargo, você está dando o primeiro passo em um processo que vai além do comum. Nosso objetivo é alinhar suas paixões, habilidades, e expectativas às nossas vagas, colocando você no caminho para desenvolver uma carreira de sucesso excepcional.\nDesenvolvedor Python / Pesquisa + Desenvolvimento na BairesDev\nEstamos à procura de excelentes desenvolvedores Python para se juntarem à equipe de pesquisa e desenvolvimento (P&D) da BairesDev.\nNossa equipe de P&D é uma parte essencial de nossas soluções de tecnologia que geram milhões em receita todos os anos, por isso contratamos apenas os melhores dos melhores.\nDentro da equipe, você encontrará muitos desafios diferentes: análise de dados, aprendizado de máquina, desktop e desenvolvimentos web são alguns dos mais relevantes no momento, mas para impulsionar a inovação, você notará que novidades estão surgindo todos os dias!\nA área de P&D é sem dúvida a área mais interessante e desafiante de toda a empresa, e embora a BairesDev seja formada por pessoas realmente talentosas em geral, aqui você encontrará profissionais com larga experiência e também com níveis intelectuais e criativos muito acima da média.\nQueremos que as pessoas aproveitem a viagem. Você está pronto?\nO que você vai fazer:\n- Criar sistemas e ferramentas de automação para configurar, monitorar e orquestrar a infraestrutura de dados e pipelines.\n- Criar serviços de integração de dados para ajudar a integrar novos clientes o mais rápido possível.\n- Manter a confiabilidade, o desempenho e o suporte contínuos da infraestrutura de dados, fornecendo soluções baseadas nas necessidades dos aplicativos e no crescimento previsto.\nEsperamos que você tenha:\n- 4+ anos de experiência prática em desenvolvimento Python e Django.\n- Desejável experiência em desenvolvimento com programação orientada a objetos.\n- 3 anos de desenvolvimento utilizando outras linguagens de programação.\n- Bons conhecimentos com XML e bases de dados relacionais (Oracle/MS SQL/MySQL).\n- Forte experiência profissional trabalhando com grandes estruturas de dados (incluindo XML) e algoritmos.\n- Nível avançado de inglês.\nComo tornamos seu trabalho (e sua vida) mais fácil:\n- Modalidade 100% remota - trabalhe de qualquer lugar.\n- Excelente remuneração em USD ou na sua moeda local, como preferir.\n- Hardware para você trabalhar de casa.\n- Horários flexíveis - faça seu próprio horário.\n- Licença parental remunerada, férias, e feriados nacionais.\n- Ambiente de trabalho inovador e multicultural.\n- Colabore e aprenda com o Top 1% global dos talentos de cada área.\n- Ambiente de apoio com mentoria, promoções, desenvolvimento de habilidades, e diversas oportunidades de crescimento.\nJunte-se a uma equipe global onde seus talentos excepcionais podem se destacar!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 60,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                },
-                "fullstack": {
-                    "score_porcentagem": 60,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                }
-            }
-        },
-        {
-            "job_id": "4192502474",
-            "titulo": "Python Junior Developer - Remote Work | REF#283517",
-            "empresa": "BairesDev",
-            "localizacao": "Joinville, SC",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-junior-developer-remote-work-ref%23283517-at-bairesdev-4192502474",
-            "descricao_resumida": "BairesDev - Joinville, SC",
-            "descricao_completa": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley.\nOur diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide.\nWhen you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success.\nPython Junior Developer at BairesDev\nStep into the role of a Python Junior Developer within our esteemed development team. Here, you'll have the opportunity to excel in Python and key frameworks. Your contributions will directly impact the development of cutting-edge applications, all while collaborating closely with a supportive and experienced team.\nWhat You Will Do\n Develop and maintain Python applications, focusing on writing clean, efficient, and well-documented code.\n Collaborate with development teams on various projects, contributing to different stages of the software development lifecycle.\n Identify and troubleshoot software bugs and participate in implementing solutions and optimizations.\n Engage in code reviews, both reviewing others' code and having yours reviewed, to maintain high software quality and learn best practices.\n Stay updated with new Python frameworks and libraries. Apply these technologies effectively in both new and existing projects.\n Participate actively in team meetings and discussions, contributing ideas and feedback to enhance project development and team dynamics.\nHere's What We're Looking For\n 1 year of experience with Python.\n Good understanding of basic algorithms and data structures.\n Basic knowledge of version control systems, preferably Git.\n Ability to solve problems effectively and learn new technologies quickly.\n Advanced level of English is a plus.\nHow we do make your work (and your life) easier:\n 100% remote work (from anywhere).\n Excellent compensation in USD or your local currency if preferred\n Hardware and software setup for you to work from home.\n Flexible hours: create your own schedule.\n Paid parental leaves, vacations, and national holidays.\n Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent.\n Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities.\nJoin a global team where your unique talents can truly thrive!\n#BD-PRIO-2026",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 35,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Git",
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4456895688",
-            "titulo": "Desenvolvedor Python Junior - Trabalho Remoto",
-            "empresa": "BairesDev",
-            "localizacao": "Porto Alegre, RS",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-python-junior-trabalho-remoto-at-bairesdev-4456895688",
-            "descricao_resumida": "BairesDev - Porto Alegre, RS",
-            "descricao_completa": "Há mais de 15 anos, a BairesDev® é líder em projetos tecnológicos. Entregamos soluções inovadoras para gigantes como Google e Rolls-Royce e as startups mais inovadoras do Vale do Silício.\nTemos uma equipe diversa de mais de 4.000 profissionais formada pelo Top 1% dos talentos de tecnologia do mundo, trabalhando remotamente em cargos de impacto global.\nAo se candidatar para este cargo, você está dando o primeiro passo em um processo que vai além do comum. Nosso objetivo é alinhar suas paixões, habilidades, e expectativas às nossas vagas, colocando você no caminho para desenvolver uma carreira de sucesso excepcional.\nDesenvolvedor Python Junior na BairesDev\nJunte-se à nossa equipe, seja nosso novo Desenvolvedor Python Junior. Aqui você vai ter a oportunidade de se destacar em Python e frameworks principais. Suas contribuições vão impactar diretamente o desenvolvimento de aplicativos de ponta, tudo isso enquanto colabora estreitamente com uma equipe experiente e colaborativa.\nSuas atribuições:\n- Desenvolver e manter aplicativos Python, com foco na escrita de código limpo, eficiente e bem documentado.\n- Colaborar com equipes de desenvolvimento em diversos projetos, contribuindo para diferentes etapas do ciclo de vida do software.\n- Identificar e solucionar bugs, participando da implementação de soluções e otimizações.\n- Participar de revisões de código, tanto revisando o de outros quanto tendo o seu revisado, para manter uma alta qualidade de software e as aprender melhores práticas.\n- Manter-se atualizado sobre novos frameworks e bibliotecas Python. Aplicar essas tecnologias com eficácia em projetos novos e existentes.\n- Participar ativamente de reuniões e discussões de equipe, contribuindo com ideias e feedback para melhorar o desenvolvimento do projeto.\nEsperamos que você tenha:\n- 1 ano de experiência com Python.\n- Bom entendimento sobre algoritmos básicos e estruturas de dados.\n- Conhecimento básico sobre sistemas de controle de versão, preferencialmente Git.\n- Capacidade de resolver problemas de forma eficaz e aprender novas tecnologias rapidamente.\n- Bom nível de inglês\nComo tornamos seu trabalho (e sua vida) mais fácil:\n- Modalidade 100% remota - trabalhe de qualquer lugar.\n- Excelente remuneração em USD ou na sua moeda local, como preferir.\n- Hardware para você trabalhar de casa.\n- Horários flexíveis - faça seu próprio horário.\n- Licença parental remunerada, férias, e feriados nacionais.\n- Ambiente de trabalho inovador e multicultural.\n- Colabore e aprenda com o Top 1% global dos talentos de cada área.\n- Ambiente de apoio com mentoria, promoções, desenvolvimento de habilidades, e diversas oportunidades de crescimento.\nJunte-se a uma equipe global onde seus talentos excepcionais podem se destacar!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 35,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Git",
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4459199694",
-            "titulo": "Junior Python Developer - Remote Work",
-            "empresa": "INDI Staffing Services",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/junior-python-developer-remote-work-at-indi-staffing-services-4459199694",
-            "descricao_resumida": "INDI Staffing Services - Brasil",
-            "descricao_completa": "At INDI, we're passionate about empowering individuals and businesses worldwide. Our cutting-edge recruiters connect leading companies with top talent, fostering a dynamic environment where innovation thrives. Join us in shaping the future of work.\nOverview of the role:\nWe are looking for Junior Python Developers to join our Development team and participate in different projects made up of multicultural teams distributed throughout the world. We are looking for proactive people, team players passionate about programming in this language and oriented to provide the best experience to the end user. This is an excellent opportunity for those professionals looking to develop in one of the fastest-growing companies in the industry!\nThese developers will face numerous technical challenges, so they must use current technologies, and get involved in the mobile world, web applications, devices, etc.\nKey responsibilities:\n- Create automation systems and tools to configure, monitor, and orchestrate data infrastructure and pipelines.\n- Create data integration services to help onboard new customers as quickly as possible.\n- Maintain ongoing reliability, performance, and support of the data infrastructure, providing solutions based on application needs and anticipated growth.\nRequirements:\n- 1+ years of practical experience in Python and Django development.\n- Experience in development with object-oriented programming is desirable.\n- 1 year of development using other programming languages.\n- Good skills with XML and relational databases (Oracle / MS SQL / MySQL).\n- Strong professional experience working with large data structures (including XML) and algorithms.\n- Advanced English level.\nBenefits:\n- Flexibility: Choose where and how you work for enhanced creativity and innovation.\n- Tailored Compensation: Personalize your earnings to suit your financial goals.\n- Tech-Driven Tools: Access cutting-edge resources for seamless collaboration and productivity.\n- Autonomous Workflow: Take control of your schedule to achieve work-life balance.\n- Well-being: Enjoy generous leave policies for rest and rejuvenation.\n- Diversity & Inclusion: Thrive in a diverse and inclusive environment.\n- Collaboration: Engage with industry leaders for collective growth.\n- Development: Access mentorship and growth opportunities for continuous advancement.\nIf you are interested in being part of a team composed of the best professionals and working 100% goal-oriented in an innovative environment, but with the structure and resources of a multinational market leader, do not hesitate to apply!",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 70,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 5
-                },
-                "fullstack": {
-                    "score_porcentagem": 70,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "MySQL",
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 5
-                }
-            }
-        },
-        {
-            "job_id": "4400653241",
-            "titulo": "Junior Software Engineer - QuantumBlack Studio",
-            "empresa": "QuantumBlack, AI by McKinsey",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/junior-software-engineer-quantumblack-studio-at-quantumblack-ai-by-mckinsey-4400653241",
-            "descricao_resumida": "QuantumBlack, AI by McKinsey - São Paulo, SP",
-            "descricao_completa": "Who You'll Work With\nDriving lasting impact and building long-term capabilities with our clients is not easy work. You are the kind of person who thrives in a high performance/high reward culture - doing hard things, picking yourself up when you stumble, and having the resilience to try another way forward.\nIn return for your drive, determination, and curiosity, we'll provide the resources, mentorship, and opportunities you need to become a stronger leader faster than you ever thought possible. Your colleagues—at all levels—will invest deeply in your development, just as much as they invest in delivering exceptional results for clients. Every day, you'll receive apprenticeship, coaching, and exposure that will accelerate your growth in ways you won’t find anywhere else.\nWhen you join us, you will have:\nContinuous learning: Our learning and apprenticeship culture, backed by structured programs, is all about helping you grow while creating an environment where feedback is clear, actionable, and focused on your development. The real magic happens when you take the input from others to heart and embrace the fast-paced learning experience, owning your journey.\nA voice that matters: From day one, we value your ideas and contributions. You’ll make a tangible impact by offering innovative ideas and practical solutions, all while upholding our unwavering commitment to ethics and integrity. We not only encourage diverse perspectives, but they are critical in driving us toward the best possible outcomes.\nGlobal community: With colleagues across 65+ countries and over 100 different nationalities, our firm’s diversity fuels creativity and helps us come up with the best solutions for our clients. Plus, you’ll have the opportunity to learn from exceptional colleagues with diverse backgrounds and experiences.\nWorld-class benefits: On top of a competitive salary (based on your location, experience, and skills), we provide a comprehensive benefits package to enable holistic well-being for you and your family.\nYour Impact\nYou will collaborate with a global network of technologists, designers, and strategists to help clients transform their businesses through innovative digital solutions.\nYou will work hands-on with clients across industries to bring their digital ambitions to life. You will develop software products and services from the ground up while coaching and mentoring client teams on engineering best practices, user-centric design, and Agile values. By co-creating with clients and their leadership, you’ll help build not only cutting-edge products but also the technical capabilities and cultures needed to sustain them.\nYour work will drive meaningful change for clients and their industries. You will participate in cross-functional problem-solving sessions with client leaders, shaping their digital strategies and delivering solutions that go beyond the product itself. Your efforts will help clients build scalable teams and engineering cultures that enable long-term success.\nYou will collaborate with clients across industries to turn their digital ambitions into reality through hands-on technical expertise. Based in one of our global locations, you will be part of QuantumBlack Studio, a multidisciplinary group of software engineers, AI engineers, data scientists, and technology consultants passionate about creating industry-shaping products and tools.\nYou’ll grow as a technologist and leader. You’ll work across diverse industries and technologies, learning something new with every project. With opportunities to contribute to digital strategies, build impactful products, and mentor others, you’ll have the freedom to chart your own path and grow in the areas that excite you most.\nYour Qualifications and Skills\nBachelor’s degree in Computer Science, Software Engineering, Computer Engineering, or related fields (graduation between December 2024 and December 2026)\nFoundational experience developing software applications and writing clean, maintainable code\nExperience with at least one programming language such as Python, JavaScript/TypeScript, Java, or C#\nFamiliarity with modern development tools and frameworks (e.g., APIs, frontend frameworks, databases, or cloud platforms) through academic, internship, or personal projects\nStrong problem-solving skills and ability to learn quickly in a fast-paced environment\nAbility to collaborate effectively in a team and communicate clearly with technical and non-technical stakeholders\nEffective communication skills — both verbally and in writing — in English and Portuguese\nPlease submit your CV in English",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "TypeScript"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4456860204",
-            "titulo": "Programador Junior",
-            "empresa": "Jobgether",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 5 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/programador-junior-at-jobgether-4456860204",
-            "descricao_resumida": "Jobgether - Brasil",
-            "descricao_completa": "This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Programador Junior based in Brazil.\nThis is an opportunity for a junior developer to build hands-on experience at the intersection of software development, RPA, APIs, and artificial intelligence.\nYou’ll support the automation of operational and administrative processes within a technology-driven legal BPO environment.\nThe role offers exposure to real-world process mapping, robotic automation, system integration, and intelligent document processing.\nYou’ll work with Python and RPA platforms while learning from an experienced technical team.\nYour contributions will help eliminate repetitive work, improve productivity, and create more efficient operational workflows.\nThe position is designed for someone who is curious, analytical, organized, and eager to develop their technical skills.\nIt’s a strong opportunity to learn, grow, and build a career in automation within a collaborative technology environment.\nAccountabilities\nSupport the development and maintenance of RPA robots designed to automate operational and administrative processes.\nAssist in mapping workflows and identifying opportunities for automation in collaboration with business teams.\nDevelop and refine Python scripts for automation, integrations, and process improvements under the guidance of the technical team.\nWork with RPA platforms such as UiPath, Automation Anywhere, Power Automate, or similar technologies.\nSupport the implementation of API-based integrations between internal and external systems.\nContribute to initiatives using artificial intelligence for automation, including automated document reading, classification, and data extraction.\nMonitor robot execution, identify failures, and assist with troubleshooting and incident resolution.\nCreate and maintain technical documentation for automated processes.\nParticipate in continuous improvement initiatives, process standardization, and automation governance practices.\nRequirements\nKnowledge of Python, preferably applied to automation, scripting, or system integrations through academic work, internships, or personal projects.\nPractical or academic exposure to at least one RPA platform, such as UiPath, Automation Anywhere, IBM Robotic Process Automation, Power Automate, or similar.\nBasic knowledge of relational databases and SQL.\nStrong logical reasoning and an analytical approach to identifying and solving technical problems.\nGenuine interest in process automation, technology, artificial intelligence, and continuous improvement.\nOrganization, attention to detail, and willingness to learn and develop technically.\nAbility to follow technical standards, best practices, processes, and guidance from the development team.\nCollaborative mindset and openness to feedback and knowledge sharing.\nBenefits\nMeal or food allowance.\nHealth insurance.\nDental insurance.\nBirthday day off.\nTransportation allowance.\nAccess to a corporate university and learning resources.\nCertification incentive, with additional compensation for certifications according to company policy after 3 months.\nEducation assistance with reimbursement of up to 50% of postgraduate or MBA tuition after 3 months.\nMarriage allowance after 1 year.\nTotalPass membership.\nRemote work model.\nOpportunities for continuous technical and professional development.\nHow Jobgether Works\nWe use an \nAI-powered matching process\n to ensure your application is reviewed quickly, objectively, and fairly against the role's core requirements. Our system identifies the top-fitting candidates, and this shortlist is then shared directly with the hiring company. The final decision and next steps (interviews, assessments) are managed by their internal team.\nWe appreciate your interest and wish you the best!\n Why Apply Through Jobgether?\nData Privacy Notice:\n By submitting your application, you acknowledge that Jobgether will process your personal data to evaluate your candidacy and share relevant information with the hiring employer. This processing is based on legitimate interest and pre-contractual measures under applicable data protection laws (including GDPR). You may exercise your rights (access, rectification, erasure, objection) at any time.\nWe may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 50,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 3
-                },
-                "fullstack": {
-                    "score_porcentagem": 50,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4458907265",
-            "titulo": "Machine Learning Engineer Jr",
-            "empresa": "Cora",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/machine-learning-engineer-jr-at-cora-4458907265",
-            "descricao_resumida": "Cora - Brasil",
-            "descricao_completa": "Sua carreira com liberdade e propósito.\nVocê sabia que 93% das 21 milhões de empresas do Brasil são pequenos e médios negócios? Apesar de serem responsáveis por ⅓ do PIB do país e gerar 60% dos empregos, as PMEs não são o foco da maioria das instituições financeiras.\nIsso muda com a Cora, um banco digital dedicado exclusivamente a pequenas e médias empresas brasileiras. Buscamos apoiar e simplificar a rotina de pequenas e médias empresas, libertando pessoas empreendedoras das papeladas e taxas abusivas dos bancos tradicionais. Com 5 anos de existência, já somamos mais de\n 300 pessoas trabalhando de forma remota em vários lugares do Brasil \npara simplificar a rotina de mais de 1 milhão clientes em todo o país.\nBuscamos por pessoas dispostas a construir a Cora que queremos. Vem trabalhar com a gente?\nQual vai ser seu dia a dia como Machine Learning Engineer Jr por aqui?\nPython & APIs — desenvolver bibliotecas reutilizáveis de ML e APIs em FastAPI para servir modelos, com código limpo e performático;\nSQL / Athena — escrever e otimizar queries no Data Lake e automatizar pipelines de dados;\nInfra de ML na AWS — construir e manter infraestrutura (EC2, S3, Lambda), pipelines de treino/validação/deploy e versionamento de modelos e dados;\nOrquestração (Airflow) — criar e manter DAGs para extração de features, treinamento, deploy e monitoramento, garantindo confiabilidade e rastreabilidade;\nFeature Store (Feast) — apoiar a implementação e manter features (definição, materialização, serving), com reuso entre treino e produção;\nDeploy de modelos — empacotar modelos (Docker), aplicar estratégias de deploy e integrar com APIs e serviços existentes, seguindo práticas de segurança;\nMonitoramento — acompanhar acurácia, latência e erros em produção, configurar alertas e investigar incidentes;\nOtimização e escala — identificar gargalos, reduzir custos e escalar a infra conforme cresce o volume de dados e requisições;\nColaboração com Data Science — entender os modelos (features, algoritmos, métricas), discutir requisitos de deploy e validar modelos em staging;\nDocumentação e boas práticas — documentar código, pipelines e processos, participar de code reviews, sprints, e contribuir com ideias para a arquitetura de ML.\nO que você precisa saber para se juntar ao nosso time?\n1+ ano de experiência prática em Python (estágio, projetos pessoais/acadêmicos ou primeira experiência profissional), com noção de funções e módulos reutilizáveis; \nSQL em nível intermediário e noções de otimização de queries (Athena é diferencial); \nConhecimento básico de AWS (S3, EC2, Lambda, Athena) ou forte interesse em aprender;\nFamiliaridade com o conceito de orquestração de pipelines (Airflow desejável, não obrigatório);\nFamiliaridade com Docker e conceitos de deploy (não precisa ter levado modelos a produção);\nBoas práticas de engenharia de software: testes, Git e documentação;\nFamiliaridade com conceitos e algoritmos fundamentais de machine learning;\nUso diário de assistentes de código com IA (Claude Code, Codex etc.);\nCuriosidade e autonomia para analisar e resolver problemas, pedindo apoio quando necessário;\nBoa colaboração e comunicação verbal e escrita, especialmente com cientistas de dados.\nO que oferecemos:\nBenefícios flexíveis no cartão Flash; \nTrabalho 100% Remoto \nPlano de Saúde 100% custeado pela Cora (com inclusão de dependentes) \nPlano Odontológico (Desconto de pequeno valor em folha) \nAuxílio Aprendizagem de R$ 3.000 por ano para cursos, livros, pós graduação, etc (para profissionais em início de carreira, o benefício é de R$ 4.000) \nLicença parental estendida para gestantes e não gestantes \nParceria com Gympass e Zenklub \nDay Off de aniversário \nEstrutura para home office: fornecimento de equipamento completo (notebook com suporte, monitor extra, teclado e mouse), possibilidade de compra de cadeira, escrivaninha e apoio para pé; \nAuxílio home office mensal; \nConvênio com a plataforma Woba para você poder trabalhar em vários Coworkings em todo o Brasil \nFazemos algumas perguntas já nesse primeiro momento pensando em agilizar o seu processo. Se quiser saber mais sobre como usamos os dados, pode conferir nossa Política de Privacidade aqui.\nPara saber mais sobre a Cora, visite também nosso site e nosso LinkedIn.",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 85,
-                    "nivel": "Excelente",
-                    "habilidades_compativeis": [
-                        "AWS",
-                        "Docker",
-                        "FastAPI",
-                        "Git",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 6
-                },
-                "fullstack": {
-                    "score_porcentagem": 75,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "AWS",
-                        "Docker",
-                        "FastAPI",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 5
-                }
-            }
-        },
-        {
-            "job_id": "4458646789",
-            "titulo": "ANALISTA DE SISTEMAS JÚNIOR",
-            "empresa": "Proativa Capital",
-            "localizacao": "Rio de Janeiro, RJ",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-sistemas-j%C3%BAnior-at-proativa-capital-4458646789",
-            "descricao_resumida": "Proativa Capital - Rio de Janeiro, RJ",
-            "descricao_completa": "Missão do Cargo: \nApoiar a evolução tecnológica da PROATIVA CAPITAL por meio do desenvolvimento e sustentação de automações, integrações, soluções de dados, dashboards e aplicações de Inteligência Artificial, transformando necessidades internas em soluções simples, seguras, documentadas e que gerem eficiência para as áreas de negócio.\nPrincipais atividades:\n Desenvolver e manter automações de processos utilizando Power Automate, scripts, APIs ou outras ferramentas aprovadas pela empresa.\n Apoiar a integração entre sistemas corporativos, validando entradas, saídas, regras de transformação, tratamentos de erro e registros de execução.\n Criar, manter e evoluir relatórios e dashboards no Power BI para acompanhamento de indicadores, projetos e operações das áreas de negócio.\n Elaborar consultas SQL para extração, conferência, tratamento e análise de dados, respeitando os controles de acesso e segurança da informação.\n Apoiar a organização e qualidade dos dados utilizados em relatórios, integrações e automações, identificando inconsistências e documentando correções necessárias.\n Criar protótipos e provas de conceito com Inteligência Artificial e automação, avaliando viabilidade, benefício, riscos e possibilidade de adoção corporativa.\n Levantar necessidades técnicas com usuários e traduzir os problemas apresentados em requisitos objetivos para automações, integrações, dados ou dashboards.\n Realizar testes técnicos e funcionais das soluções desenvolvidas, registrar evidências, corrigir falhas e apoiar a homologação com os usuários responsáveis.\n Documentar fluxos, integrações, consultas, regras, credenciais técnicas controladas, procedimentos de suporte e orientações de uso das soluções.\n Acompanhar fornecedores e parceiros técnicos em demandas de integração, dados, automação e evolução dos sistemas corporativos.\n Monitorar rotinas automatizadas e integrações, identificando falhas, registrando incidentes e atuando na correção ou encaminhamento adequado.\n Apoiar projetos de transformação digital, melhoria contínua e adoção responsável de novas tecnologias na empresa.\nPré-requisitos obrigatórios: \n Ensino Superior completo em Sistemas de Informação, Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação ou áreas correlatas.\n Experiência inicial, acadêmica ou profissional com desenvolvimento de automações, integrações, análise de dados ou Business Intelligence.\n Saber elaborar consultas SQL para extração, conferência e análise de dados.\n Saber criar e manter relatórios e dashboards no Power BI, incluindo tratamento de dados e construção de indicadores.\n Conhecer lógica de programação e possuir experiência com pelo menos uma linguagem, preferencialmente Python ou JavaScript.\n Saber consumir ou testar APIs REST e interpretar estruturas de dados como JSON.\n Saber mapear um fluxo simples, identificar entradas, regras, responsáveis, saídas e possíveis falhas.\n Saber documentar soluções técnicas de forma clara, incluindo objetivo, funcionamento, dependências, forma de uso e procedimento de suporte.\n Conhecer o ecossistema Microsoft 365, especialmente Excel, Teams, SharePoint e Power Platform.\n Ter capacidade de pesquisar, aprender novas ferramentas e pedir apoio quando uma atividade ultrapassar seu nível de conhecimento ou acesso.\nDiferenciais: \n Experiência com Power Automate, Power Apps, SharePoint Lists ou Microsoft Fabric.\n Conhecimento em Python para automação, integração, tratamento de dados ou consumo de APIs.\n Experiência com ferramentas de integração ou orquestração, como n8n, Make ou similares.\n Conhecimento em modelagem de dados, Power Query, DAX, ETL ou bancos de dados relacionais.\n Experiência com Git, controle de versão, documentação técnica e ambientes de desenvolvimento.",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 50,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Git",
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                },
-                "fullstack": {
-                    "score_porcentagem": 65,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                }
-            }
-        },
-        {
-            "job_id": "4448398836",
-            "titulo": "Jr Data Engineer",
-            "empresa": "Whirlpool Corporation",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/jr-data-engineer-at-whirlpool-corporation-4448398836",
-            "descricao_resumida": "Whirlpool Corporation - São Paulo, SP",
-            "descricao_completa": "Requisition ID:\n 72549\nAbout Whirlpool Corporation\nWhirlpool Corporation (NYSE: WHR) is a leading home appliance company, in constant pursuit of improving life at home. As the only major U.S.-based manufacturer of kitchen and laundry appliances, the company is driving meaningful innovation to meet the evolving needs of consumers through its iconic brand portfolio, including Whirlpool, KitchenAid, JennAir, Maytag, Amana, Brastemp, Consul, and InSinkErator. In 2025, the company reported approximately $16 billion in annual net sales - close to 90% of which were in the Americas -41,000 employees, and 35 manufacturing and technology research centers. Additional information about the company can be found at WhirlpoolCorp.com.\nThe team you will be a part of\nA equipe de Sistemas da Informação é responsável pela implementação da arquitetura empresarial e pelo desenvolvimento e manutenção do ambiente de computação/TI da organização. Ela determina e desenvolve abordagens e soluções arquitetônicas, conduz análises de negócios, documenta sistemas atuais e desenvolve recomendações de como proceder com os aplicativos.\nThis Role In Summary\nBuscamos um Engenheiro de Dados Júnior para atuar na construção, manutenção e monitoramento de pipelines de dados escaláveis. Esta função é ideal para profissionais em início de carreira que desejam aprender e se desenvolver na área de dados. Você atuará lado a lado com engenheiros seniores e arquitetos, apoiando a integração de diversas fontes de dados, realizando transformações (ETL/ELT) e assegurando que as entregas seguem rigorosos padrões de qualidade, auditoria e governança estabelecidos pela companhia.\nYour Responsibilities Will Include\nApoiar na construção, manutenção e monitoramento de pipelines de processamento de dados em lote (Batch).\nDesenvolver e executar rotinas de extração, transformação e carga de dados (ETL/ELT) utilizando SQL e Python.\nAuxiliar no desenvolvimento e acompanhamento de fluxos de orquestração de dados.\nAplicar regras de qualidade de dados (Data Quality), anonimização de dados sensíveis (DLP) e auditoria.\nRealizar o versionamento de código e apoiar na execução de rotinas de deploy contínuo (CI/CD).\nColaborar na estruturação e organização de dados em diferentes camadas (ex: Raw, Trusted, Refined).\nTrabalhar de forma colaborativa com as áreas de negócio e times de TI para entender requisitos e solucionar incidentes básicos de integração de dados.\nGarantir as políticas de Governança de Dados, apoiando na criação de dicionários de dados, catalogação e mapeamento da linhagem da informação (Data Lineage).\nMinimum Requirements\nGraduação em tecnologia, engenharia ou faculdade relacionada.\nConhecimento sólido em bancos de dados relacionais e linguagem SQL.\nLógica de programação e conhecimento em Python voltado para manipulação e estruturação de dados.\nConhecimento teórico ou prático sobre modelagem de dados, Data Lakes e Data Warehouses.\nFamiliaridade com ferramentas de versionamento de código (como Git/Bitbucket).\nPerfil analítico, com proatividade, vontade de aprender e foco na resolução de problemas.\nInglês intermediário.\nPreferred Skills And Experiences\nConhecimento ou experiência básica em plataformas de dados em nuvem (GCP, AWS ou Azure) –familiaridade com o ecossistema GCP será considerado um diferencial.\nFamiliaridade com arquiteturas de referência e design de produtos de dados (Data Products).\nConhecimento ou vivência prévia com SAP e integrações com sistemas de dados corporativos.\nFamiliaridade com frameworks de segurança da informação, compliance e governança de dados.\nExcelentes habilidades de comunicação para interagir de forma clara tanto com stakeholders técnicos quanto não-técnicos (áreas de negócio).\nPerfil colaborativo, com facilidade para compartilhar conhecimento, documentar processos técnicos e apoiar na integração de novos membros (onboarding).\nConhecimento básico em orquestradores de dados (ex: Apache Airflow).\nConhecimento de conceitos de Governança de Dados (catálogos de dados, rastreabilidade/linhagem de dados e regulamentações como LGPD/GDPR).\nWhat We Offer\n\"No dresscode\".\nGympass;\nVale-Transporte, Fretados ou Estacionamento na empresa;\nVale Alimentação;\nRefeição no local;\nBenefícios como empréstimo consignado ou social, plano de saúde, odontológico, seguro de vida e previdência privada compatíveis com o mercado;\nPrograma de Apoio ao Empregado, contando com atendimento 24hrs com profissionais jurídicos, sociais, financeiros, assistentes sociais e Psicólogos;\nAuxílio Creche ou Berçário na empresa;\nServiços disponíveis na unidade: salão de beleza e estética, agência bancária interna, lavanderia, lanchonete, restaurante e sala de lactação;\nDuas semanas de trabalho remoto em qualquer lugar;\nApós 5 anos de empresa, colaboradores elegíveis podem tirar quatro semanas de licença remunerada;\nDesconto em produtos pelo Compra Certa.\nDesconto em seguros (pet, auto, residencial, bike, viagem e mais)\nLicença maternidade/paternidade estendida\nConnect with us and learn more about Whirlpool Corporation\nSee what it's like to work at Whirlpool by visiting Whirlpool Careers. Additional information about the company can be found on Facebook, Twitter, LinkedIn, Instagram and YouTube.\nWhirlpool Corporation is committed to equal employment opportunity and prohibits any discrimination on the basis of race or ethnicity, religion, sex, pregnancy, gender expression or identity, sexual orientation, age, physical or mental disability, veteran status, or any other category protected by applicable law.",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 65,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "AWS",
-                        "Azure",
-                        "GCP",
-                        "Git",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 6
-                },
-                "fullstack": {
-                    "score_porcentagem": 55,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "AWS",
-                        "GCP",
-                        "Python",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                }
-            }
-        },
-        {
-            "job_id": "4459621858",
-            "titulo": "DESENVOLVEDOR DE T.I",
-            "empresa": "Sicoob Credimogiana",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-de-t-i-at-sicoob-credimogiana-4459621858",
-            "descricao_resumida": "Sicoob Credimogiana - Brasil",
-            "descricao_completa": "Quem somos:\nSicoob Credimogiana\n é uma Cooperativa de Crédito com o propósito de oferecer aos seus cooperados benefícios reais, por meio de um atendimento ágil e de qualidade, além de inovações constantes que atendem suas necessidades e superam suas expectativas. Nosso sucesso é reflexo do comprometimento e talento de nossos colaboradores, que tornam isso possível todos os dias.\nSe você está em busca de uma oportunidade de fazer parte de um time de excelência, você chegou ao lugar certo!\nFazemos parte do maior sistema de cooperativas de crédito do Brasil e estamos presentes em todos os estados, oferecendo soluções financeiras que impactam positivamente a vida de nossos cooperados.\nVenha agregar seu talento ao nosso time e fazer parte da nossa jornada de sucesso!\nResponsabilidades do Desenvolvedor de T.I\nExperiência no desenvolvimento, manutenção e evolução de soluções de automação de processos (RPA), utilizando UiPath e Python, com foco na otimização de atividades operacionais, redução de tarefas manuais e repetitivas, integração entre sistemas e aumento da eficiência dos processos. Conhecimento em análise de processos, desenvolvimento de robôs, automações e implementação de melhorias contínuas, contribuindo para maior produtividade e qualidade das operações.\nQualificações:\nEnsino superior completo em Sistemas de Informação, Ciência da Computação, Análise e Desenvolvimento de Sistemas (ADS) ou Engenharia de Software;\nExperiência no desenvolvimento e manutenção de sistemas e aplicações corporativas: Atuação com automação de processos e integração entre sistemas;\nCriação e manutenção de robôs para automatização de tarefas repetitivas;\nAutomação de rotinas envolvendo arquivos, planilhas, sistemas e aplicações web;\nConhecimento em integração entre sistemas e automação de fluxos;\nConhecimento em desenvolvimento com C# / .NET, Python e Node.js;\nExperiência na construção e consumo de APIs REST;\nVivência com ferramentas de automação em UiPath.\nDIFERENCIAIS:\nVivência em instituições financeiras ou cooperativas de crédito;\nConhecimento em ferramentas de Business Intelligence (BI) e visualização de dados;",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 35,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "REST APIs"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 50,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "REST APIs"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4458977346",
-            "titulo": "Desenvolvedor Fullstack Jr/Pl",
-            "empresa": "Gaio DataOS",
-            "localizacao": "Uberlândia, MG",
-            "data_postagem": "Há 12 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-fullstack-jr-pl-at-gaio-dataos-4458977346",
-            "descricao_resumida": "Gaio DataOS - Uberlândia, MG",
-            "descricao_completa": "Sobre a oportunidade\nGaio DataOS cria Empresas Cognitivas. Procuramos um(a) desenvolvedor(a) para construir a camada tecnológica que transforma empresas tradicionais em organizações cognitivas, conectando dados, conhecimento, fluxos de trabalho e agentes inteligentes para que impacto e aprendizagem avancem juntos.\nNão é sobre adicionar IA a processos antigos. É sobre repensar como uma organização percebe, aprende e age.\nO que vamos construir\nPerceber\n — fazer a organização enxergar o que acontece em seus dados, processos e relações.\nAprender\n — transformar experiências dispersas em memória acessível, contexto e conhecimento vivo.\nAgir\n — criar agentes e automações capazes de apoiar decisões e executar trabalho com segurança.\nTerritórios técnicos: APIs · LLMs · RAG · Agentes · Dados · Automação · UX · Observabilidade\nO que esperamos tecnicamente\nNão buscamos alguém que apenas conecte ferramentas. Buscamos um(a) desenvolvedor(a) de software capaz de compreender o problema, escrever código e assumir o resultado de ponta a ponta.\nDesenvolvimento de software:\n domínio prático de TypeScript ou JavaScript e experiência com Python ou outra linguagem de backend; capacidade de transformar requisitos abertos em software claro, testável e sustentável.\nBackend, APIs e integrações:\n serviços, APIs REST, integrações entre sistemas, autenticação e fluxos assíncronos; boa leitura de arquitetura, contratos e falhas distribuídas.\nDados, IA e agentes:\n SQL, modelagem e pipelines de dados; familiaridade prática com APIs de LLMs, RAG, busca vetorial, ferramentas para agentes e avaliação de respostas.\nProdução e qualidade:\n Git, testes automatizados, CI/CD, containers, observabilidade, segurança e diagnóstico de incidentes. Entregar inclui operar, medir e evoluir.\nQuem buscamos: mais que um stack, uma forma de pensar\nEngenharia com propósito: você se importa tanto com a arquitetura quanto com a razão pela qual ela existe.\nConforto com o desconhecido: não precisa de um caminho pronto para fazer as perguntas certas.\nIA com discernimento: usa IA para ampliar sua capacidade, sem terceirizar julgamento ou qualidade.\nPensamento sistêmico: enxerga integrações, incentivos e efeitos de segunda ordem — não apenas tickets.\nAgilidade com responsabilidade: reduz o tempo entre perceber e agir, sem usar perfeccionismo como desculpa.\nPercepção aguçada e proatividade radical: investiga, propõe, constrói e assume o resultado.\nNão procuramos alguém que saiba tudo. Procuramos alguém capaz de aprender o que o problema exigir — e de construir com profundidade.\nPor que importa\nO objetivo não é produzir uma demonstração bonita. É colocar inteligência em produção onde ela pode multiplicar impacto social. Você terá problemas reais, espaço para autoria e a chance de transformar tecnologia de ponta em capacidade institucional duradoura.\nSobre a Gaio\nA Gaio DataOS integra dados, analytics, inteligência artificial, agentes e automação em um ambiente único, tornando capacidades sofisticadas acessíveis sem abrir mão de segurança, governança e robustez técnica.\nComo se candidatar\nCandidaturas pela página oficial da vaga: \nhttps://jobs.gaio.io/dev Você responderá três perguntas curtas sobre como pensa, constrói e aprende. Apenas a expectativa salarial é obrigatória.",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 50,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Git",
-                        "Python",
-                        "REST APIs",
-                        "SQL"
-                    ],
-                    "total_habilidades_encontradas": 4
-                },
-                "fullstack": {
-                    "score_porcentagem": 65,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "REST APIs",
-                        "SQL",
-                        "TypeScript"
-                    ],
-                    "total_habilidades_encontradas": 5
-                }
-            }
-        },
-        {
-            "job_id": "4459056777",
-            "titulo": "Analista - Informática",
-            "empresa": "AGV",
-            "localizacao": "Vinhedo, SP",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-inform%C3%A1tica-at-agv-4459056777",
-            "descricao_resumida": "AGV - Vinhedo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4456905536",
-            "titulo": "Analista de IA & Automação - Fortaleza (CE)",
-            "empresa": "Mobit Tecnologia",
-            "localizacao": "Fortaleza, CE",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-ia-automa%C3%A7%C3%A3o-fortaleza-ce-at-mobit-tecnologia-4456905536",
-            "descricao_resumida": "Mobit Tecnologia - Fortaleza, CE",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4198276844",
-            "titulo": "QuantDev Analyst",
-            "empresa": "XP Inc.",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/quantdev-analyst-at-xp-inc-4198276844",
-            "descricao_resumida": "XP Inc. - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459053858",
-            "titulo": "Engineer – Collection",
-            "empresa": "CloudWalk, Inc.",
-            "localizacao": "São Paulo, Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/engineer-%E2%80%93-collection-at-cloudwalk-inc-4459053858",
-            "descricao_resumida": "CloudWalk, Inc. - São Paulo, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4460174330",
-            "titulo": "Analista Programador Jr.",
-            "empresa": "Talent Hunter",
-            "localizacao": "Juiz de Fora, MG",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-programador-jr-at-talent-hunter-4460174330",
-            "descricao_resumida": "Talent Hunter - Juiz de Fora, MG",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4448379984",
-            "titulo": "Analista de Projetos de Tenologia Júnior",
-            "empresa": "Itaú Unibanco",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-projetos-de-tenologia-j%C3%BAnior-at-ita%C3%BA-unibanco-4448379984",
-            "descricao_resumida": "Itaú Unibanco - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459692639",
-            "titulo": "Analista de Dados Jr.",
-            "empresa": "OndeTrabalhar",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-dados-jr-at-ondetrabalhar-4459692639",
-            "descricao_resumida": "OndeTrabalhar - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459023547",
-            "titulo": "Analista de Performance Corporativa JR (Automação em JavaScript) | Belo Horizonte",
-            "empresa": "Sicoob Central Crediminas",
-            "localizacao": "Belo Horizonte, MG",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-performance-corporativa-jr-automa%C3%A7%C3%A3o-em-javascript-belo-horizonte-at-sicoob-central-crediminas-4459023547",
-            "descricao_resumida": "Sicoob Central Crediminas - Belo Horizonte, MG",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 15,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "JavaScript"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4455003720",
-            "titulo": "AI Engineer",
-            "empresa": "Infosys",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/ai-engineer-at-infosys-4455003720",
-            "descricao_resumida": "Infosys - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459312296",
-            "titulo": "Desenvolvedor Full-Stack Python / DevOps - Remoto",
-            "empresa": "Getronics",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-python-devops-remoto-at-getronics-4459312296",
-            "descricao_resumida": "Getronics - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4460339897",
-            "titulo": "Analista Desenvolvedor",
-            "empresa": "Capitani Group",
-            "localizacao": "São Paulo, Brasil",
-            "data_postagem": "Há 14 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-desenvolvedor-at-capitani-group-4460339897",
-            "descricao_resumida": "Capitani Group - São Paulo, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458259681",
-            "titulo": "Analista de Desenvolvimento de Sistemas - Toledo/PR",
-            "empresa": "Sicredi",
-            "localizacao": "Toledo, PR",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-desenvolvimento-de-sistemas-toledo-pr-at-sicredi-4458259681",
-            "descricao_resumida": "Sicredi - Toledo, PR",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4453457815",
-            "titulo": "Desenvolvimento Python Junior/Pleno - Remoto - São Paulo - SP - 135458",
-            "empresa": "GFT Technologies",
-            "localizacao": "São Paulo, Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvimento-python-junior-pleno-remoto-s%C3%A3o-paulo-sp-135458-at-gft-technologies-4453457815",
-            "descricao_resumida": "GFT Technologies - São Paulo, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4457998332",
-            "titulo": "Full Stack (Python + Java)",
-            "empresa": "Wipro",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/full-stack-python-%2B-java-at-wipro-4457998332",
-            "descricao_resumida": "Wipro - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458903370",
-            "titulo": "essoa Desenvolvedora (Python + Angular)",
-            "empresa": "MJV Technology & Innovation",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/essoa-desenvolvedora-python-%2B-angular-at-mjv-technology-innovation-4458903370",
-            "descricao_resumida": "MJV Technology & Innovation - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4438231479",
-            "titulo": "Artificial Intelligence Engineer",
-            "empresa": "BIX Tecnologia",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/artificial-intelligence-engineer-at-bix-tecnologia-4438231479",
-            "descricao_resumida": "BIX Tecnologia - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4456539096",
-            "titulo": "Desenvolvedor(a) com foco em Inteligência Artificial",
-            "empresa": "Silveiro Advogados",
-            "localizacao": "Porto Alegre e Região",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-com-foco-em-intelig%C3%AAncia-artificial-at-silveiro-advogados-4456539096",
-            "descricao_resumida": "Silveiro Advogados - Porto Alegre e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458301915",
-            "titulo": "Engenheiro(a) de Software Back-end IA",
-            "empresa": "JOTA",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-back-end-ia-at-jota-4458301915",
-            "descricao_resumida": "JOTA - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4359043873",
-            "titulo": "Engenheiro(a) de Software Backend",
-            "empresa": "Accenture Brasil",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-backend-at-accenture-brasil-4359043873",
-            "descricao_resumida": "Accenture Brasil - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4422180625",
-            "titulo": "Computer Coding Jobs Brazil",
-            "empresa": "Rex.zone",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/computer-coding-jobs-brazil-at-rex-zone-4422180625",
-            "descricao_resumida": "Rex.zone - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459878393",
-            "titulo": "Artificial Intelligence Engineer",
-            "empresa": "Maitha Tech",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/artificial-intelligence-engineer-at-maitha-tech-4459878393",
-            "descricao_resumida": "Maitha Tech - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4460371306",
-            "titulo": "Desenvolvedor full stack",
-            "empresa": "Lyncas",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 13 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-at-lyncas-4460371306",
-            "descricao_resumida": "Lyncas - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4457181508",
-            "titulo": "Python Full Stack Engineer",
-            "empresa": "AllianceIT Inc",
-            "localizacao": "Barueri, SP",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-full-stack-engineer-at-allianceit-inc-4457181508",
-            "descricao_resumida": "AllianceIT Inc - Barueri, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4460589195",
-            "titulo": "Analista de Sistemas Jr",
-            "empresa": "EQS ENGENHARIA",
-            "localizacao": "São José, SC",
-            "data_postagem": "Há 38 minutos",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-sistemas-jr-at-eqs-engenharia-4460589195",
-            "descricao_resumida": "EQS ENGENHARIA - São José, SC",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4457649661",
-            "titulo": "Desenvolvedor Junior - São José do Rio Preto",
-            "empresa": "Grupo Sifra",
-            "localizacao": "São José do Rio Preto, SP",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-junior-s%C3%A3o-jos%C3%A9-do-rio-preto-at-sifra-group-4457649661",
-            "descricao_resumida": "Grupo Sifra - São José do Rio Preto, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458433323",
-            "titulo": "Analista de Engenharia de Software",
-            "empresa": "Casa dos Ventos Energias Renováveis",
-            "localizacao": "Fortaleza, CE",
-            "data_postagem": "Há 5 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-engenharia-de-software-at-casa-dos-ventos-energias-renov%C3%A1veis-4458433323",
-            "descricao_resumida": "Casa dos Ventos Energias Renováveis - Fortaleza, CE",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459129250",
-            "titulo": "Desenvolvedor(a) de Automação",
-            "empresa": "Auth21",
-            "localizacao": "Rio de Janeiro, RJ",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-de-automa%C3%A7%C3%A3o-at-auth21-4459129250",
-            "descricao_resumida": "Auth21 - Rio de Janeiro, RJ",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458564079",
-            "titulo": "Assistente Desenvolvedor FullStack",
-            "empresa": "HT Micron Semicondutores S.A.",
-            "localizacao": "São Leopoldo, RS",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/assistente-desenvolvedor-fullstack-at-ht-micron-semicondutores-s-a-4458564079",
-            "descricao_resumida": "HT Micron Semicondutores S.A. - São Leopoldo, RS",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459362215",
-            "titulo": "Analista de desenvolvimento",
-            "empresa": "The Coffee",
-            "localizacao": "Curitiba, PR",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-desenvolvimento-at-the-coffee-4459362215",
-            "descricao_resumida": "The Coffee - Curitiba, PR",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459437980",
-            "titulo": "Banco de Talentos: Desenvolvedor(a)",
-            "empresa": "IPM Sistemas",
-            "localizacao": "Rio do Sul, SC",
-            "data_postagem": "Há 2 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/banco-de-talentos-desenvolvedor-a-at-ipm-sistemas-4459437980",
-            "descricao_resumida": "IPM Sistemas - Rio do Sul, SC",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458037347",
-            "titulo": "Desenvolvedor Full-Stack Jr (Foco em Automação)",
-            "empresa": "Tely",
-            "localizacao": "João Pessoa, PB",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-jr-foco-em-automa%C3%A7%C3%A3o-at-tely-4458037347",
-            "descricao_resumida": "Tely - João Pessoa, PB",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458668328",
-            "titulo": "Desenvolvedora Backend (Exclusiva para Mulheres)",
-            "empresa": "Educbank",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedora-backend-exclusiva-para-mulheres-at-educbank-4458668328",
-            "descricao_resumida": "Educbank - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458912202",
-            "titulo": "LLM Engineer",
-            "empresa": "BIX Tecnologia",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/llm-engineer-at-bix-tecnologia-4458912202",
-            "descricao_resumida": "BIX Tecnologia - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459070175",
-            "titulo": "Python Backend Developer (FastAPI & MongoDB) - Remote Work | REF#302177",
-            "empresa": "BairesDev",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-backend-developer-fastapi-mongodb-remote-work-ref%23302177-at-bairesdev-4459070175",
-            "descricao_resumida": "BairesDev - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 45,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "FastAPI",
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 45,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "FastAPI",
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4457257252",
-            "titulo": "Python Developer",
-            "empresa": "GeorgiaTEK Systems Inc.",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-developer-at-georgiatek-systems-inc-4457257252",
-            "descricao_resumida": "GeorgiaTEK Systems Inc. - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4407639826",
-            "titulo": "Python Engineer (RAG & Agents)",
-            "empresa": "Avenue Code",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-engineer-rag-agents-at-avenue-code-4407639826",
-            "descricao_resumida": "Avenue Code - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4440046842",
-            "titulo": "Software Engineer Specialist - IA | Full Stack",
-            "empresa": "iFood",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/software-engineer-specialist-ia-full-stack-at-ifood-4440046842",
-            "descricao_resumida": "iFood - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4455896468",
-            "titulo": "Backend Engineer, AI | Growth",
-            "empresa": "Deel",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/backend-engineer-ai-growth-at-deel-4455896468",
-            "descricao_resumida": "Deel - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458272564",
-            "titulo": "Assistente de Desenvolvimento de Sistemas - Pelotas/RS",
-            "empresa": "Sicredi",
-            "localizacao": "Pelotas, RS",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/assistente-de-desenvolvimento-de-sistemas-pelotas-rs-at-sicredi-4458272564",
-            "descricao_resumida": "Sicredi - Pelotas, RS",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4456537402",
-            "titulo": "PROFISSIONAL DE DESENVOLVIMENTO DE SISTEMAS",
-            "empresa": "Tauste Supermercados",
-            "localizacao": "Sorocaba, SP",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/profissional-de-desenvolvimento-de-sistemas-at-tauste-supermercados-4456537402",
-            "descricao_resumida": "Tauste Supermercados - Sorocaba, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4455987216",
-            "titulo": "Backend Engineer (Node) - Remote Work | REF#300879",
-            "empresa": "BairesDev",
-            "localizacao": "Minas Gerais, Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/backend-engineer-node-remote-work-ref%23300879-at-bairesdev-4455987216",
-            "descricao_resumida": "BairesDev - Minas Gerais, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4449422078",
-            "titulo": "Desenvolvedor(a) BackEnd",
-            "empresa": "Avanade",
-            "localizacao": "Recife, PE",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-at-avanade-4449422078",
-            "descricao_resumida": "Avanade - Recife, PE",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459325658",
-            "titulo": "Pessoa Desenvolvedora Back End Node Js",
-            "empresa": "Elumini Outdoing IT",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/pessoa-desenvolvedora-back-end-node-js-at-elumini-outdoing-it-4459325658",
-            "descricao_resumida": "Elumini Outdoing IT - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 15,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "JavaScript"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458764207",
-            "titulo": "DESENVOLVEDOR LOW-CODE",
-            "empresa": "CAST",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-low-code-at-cast-4458764207",
-            "descricao_resumida": "CAST - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459894894",
-            "titulo": "Desenvolvedor Java",
-            "empresa": "Ebix",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-java-at-ebix-4459894894",
-            "descricao_resumida": "Ebix - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4457296096",
-            "titulo": "Desenvolvedor Full Stack",
-            "empresa": "PRIMETOUR Viagens & Experiências",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-at-primetour-viagens-experi%C3%AAncias-4457296096",
-            "descricao_resumida": "PRIMETOUR Viagens & Experiências - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4448242913",
-            "titulo": "Java Developer",
-            "empresa": "Ericsson",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/java-developer-at-ericsson-4448242913",
-            "descricao_resumida": "Ericsson - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458936767",
-            "titulo": "Middle Software Engineer (Java)",
-            "empresa": "Exadel",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 20 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/middle-software-engineer-java-at-exadel-4458936767",
-            "descricao_resumida": "Exadel - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4457656231",
-            "titulo": "Java Developer",
-            "empresa": "Ericsson",
-            "localizacao": "Indaiatuba, SP",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/java-developer-at-ericsson-4457656231",
-            "descricao_resumida": "Ericsson - Indaiatuba, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4448133071",
-            "titulo": "Software Engineer - Tech Foundation",
-            "empresa": "BTG Pactual",
-            "localizacao": "São Paulo, SP",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/software-engineer-tech-foundation-at-btg-pactual-4448133071",
-            "descricao_resumida": "BTG Pactual - São Paulo, SP",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4457163405",
-            "titulo": "Software Engineer Jr",
-            "empresa": "Celcoin",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 5 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/software-engineer-jr-at-celcoin-4457163405",
-            "descricao_resumida": "Celcoin - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4456899233",
-            "titulo": "Fullstack Python + React Engineer - Remote Work",
-            "empresa": "BairesDev",
-            "localizacao": "Rio de Janeiro, Brasil",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4456899233",
-            "descricao_resumida": "BairesDev - Rio de Janeiro, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4457111165",
-            "titulo": "Fullstack Python + React Engineer - Remote Work",
-            "empresa": "BairesDev",
-            "localizacao": "Minas Gerais, Brasil",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4457111165",
-            "descricao_resumida": "BairesDev - Minas Gerais, Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4459174892",
-            "titulo": "AI Full-stack Engineer (Next + Python) - Remote Work",
-            "empresa": "INDI Staffing Services",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/ai-full-stack-engineer-next-%2B-python-remote-work-at-indi-staffing-services-4459174892",
-            "descricao_resumida": "INDI Staffing Services - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458914226",
-            "titulo": "Full Stack Agentic Engineer (AWS + AI Agents)",
-            "empresa": "Jump",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/full-stack-agentic-engineer-aws-%2B-ai-agents-at-jump-4458914226",
-            "descricao_resumida": "Jump - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 15,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "AWS"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 15,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "AWS"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4457491083",
-            "titulo": "IT Developer",
-            "empresa": "Jobgether",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/it-developer-at-jobgether-4457491083",
-            "descricao_resumida": "Jobgether - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4401996133",
-            "titulo": "Full Stack Software Developer – LAC (Brazil) - 12 months contractor",
-            "empresa": "Delivery Associates",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/full-stack-software-developer-%E2%80%93-lac-brazil-12-months-contractor-at-delivery-associates-4401996133",
-            "descricao_resumida": "Delivery Associates - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4455970456",
-            "titulo": "Python FastAPI React Developer - Remote work | REF#301558",
-            "empresa": "BairesDev",
-            "localizacao": "Rio de Janeiro e Região",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/python-fastapi-react-developer-remote-work-ref%23301558-at-bairesdev-4455970456",
-            "descricao_resumida": "BairesDev - Rio de Janeiro e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 45,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "FastAPI",
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 2
-                },
-                "fullstack": {
-                    "score_porcentagem": 60,
-                    "nivel": "Alto",
-                    "habilidades_compativeis": [
-                        "FastAPI",
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4448653008",
-            "titulo": "Junior Software Engineer",
-            "empresa": "SOCOTEC US",
-            "localizacao": "Nova York, Nova York, Estados Unidos",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-socotec-us-4448653008",
-            "descricao_resumida": "SOCOTEC US - Nova York, Nova York, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4448243270",
-            "titulo": "Junior Software Engineer",
-            "empresa": "SOCOTEC",
-            "localizacao": "Nova York, Nova York, Estados Unidos",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/junior-software-engineer-at-socotec-4448243270",
-            "descricao_resumida": "SOCOTEC - Nova York, Nova York, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4460186286",
-            "titulo": "Full Stack Junior React Python Developer Remote",
-            "empresa": "Reclutamiento It",
-            "localizacao": "Zapopan, Jalisco, México",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://mx.linkedin.com/jobs/view/full-stack-junior-react-python-developer-remote-at-reclutamiento-it-4460186286",
-            "descricao_resumida": "Reclutamiento It - Zapopan, Jalisco, México",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4432820924",
-            "titulo": "Associate, Full-Stack Engineer (Python/React) - SMA Solutions",
-            "empresa": "BlackRock",
-            "localizacao": "San Francisco, Califórnia, Estados Unidos",
-            "data_postagem": "Há 13 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/associate-full-stack-engineer-python-react-sma-solutions-at-blackrock-4432820924",
-            "descricao_resumida": "BlackRock - San Francisco, Califórnia, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4448436339",
-            "titulo": "Développeur fullstack sénior (Python/React) - Équipe d'intégration",
-            "empresa": "AlayaCare",
-            "localizacao": "Montreal e Região",
-            "data_postagem": "Há 14 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://ca.linkedin.com/jobs/view/d%C3%A9veloppeur-fullstack-s%C3%A9nior-python-react-%C3%A9quipe-d-int%C3%A9gration-at-alayacare-4448436339",
-            "descricao_resumida": "AlayaCare - Montreal e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4459042320",
-            "titulo": "Analista de Sistema",
-            "empresa": "Captar Agrobusiness",
-            "localizacao": "Luís Eduardo Magalhães, BA",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/analista-de-sistema-at-captar-agrobusiness-4459042320",
-            "descricao_resumida": "Captar Agrobusiness - Luís Eduardo Magalhães, BA",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4460144767",
-            "titulo": "Desenvolvedor(a) Python | IA Generativa, LLMs & Automação",
-            "empresa": "Cedro Technologies",
-            "localizacao": "Brasil",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-python-ia-generativa-llms-automa%C3%A7%C3%A3o-at-cedro-technologies-4460144767",
-            "descricao_resumida": "Cedro Technologies - Brasil",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4459328262",
-            "titulo": "Python Developer",
-            "empresa": "iCapital",
-            "localizacao": "Lisboa, Lisboa, Portugal",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://pt.linkedin.com/jobs/view/python-developer-at-icapital-4459328262",
-            "descricao_resumida": "iCapital - Lisboa, Lisboa, Portugal",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4447564174",
-            "titulo": "Software Developer (Python and GO)",
-            "empresa": "Inetum",
-            "localizacao": "Aveiro, Aveiro, Portugal",
-            "data_postagem": "Há 6 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://pt.linkedin.com/jobs/view/software-developer-python-and-go-at-inetum-4447564174",
-            "descricao_resumida": "Inetum - Aveiro, Aveiro, Portugal",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4456885288",
-            "titulo": "Python Developer",
-            "empresa": "agap2 Netherlands",
-            "localizacao": "Lisboa, Portugal",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://pt.linkedin.com/jobs/view/python-developer-at-agap2-netherlands-4456885288",
-            "descricao_resumida": "agap2 Netherlands - Lisboa, Portugal",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4457174681",
-            "titulo": "DESENVOLVEDOR(A) FULL STACK",
-            "empresa": "RHOPEN Consultoria",
-            "localizacao": "Vitória e Região",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-full-stack-at-rhopen-consultoria-4457174681",
-            "descricao_resumida": "RHOPEN Consultoria - Vitória e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4459435503",
-            "titulo": "Desenvolvedor(a) Full Stack",
-            "empresa": "TM Solutions Tecnologia da Informação Ltda",
-            "localizacao": "Rio de Janeiro e Região",
-            "data_postagem": "Há 4 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://br.linkedin.com/jobs/view/desenvolvedor-a-full-stack-at-tm-solutions-4459435503",
-            "descricao_resumida": "TM Solutions Tecnologia da Informação Ltda - Rio de Janeiro e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458992124",
-            "titulo": "Python Developer",
-            "empresa": "Bee Engineering",
-            "localizacao": "Portugal",
-            "data_postagem": "Há 12 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://pt.linkedin.com/jobs/view/python-developer-at-bee-engineering-ict-4458992124",
-            "descricao_resumida": "Bee Engineering - Portugal",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4457105413",
-            "titulo": "Python developer",
-            "empresa": "KCS iT",
-            "localizacao": "Lisboa, Lisboa, Portugal",
-            "data_postagem": "Há 5 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://pt.linkedin.com/jobs/view/python-developer-at-kcs-it-4457105413",
-            "descricao_resumida": "KCS iT - Lisboa, Lisboa, Portugal",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4419660666",
-            "titulo": "Full Stack Web Developer",
-            "empresa": "DarkVision",
-            "localizacao": "North Vancouver, Colúmbia Britânica, Canadá",
-            "data_postagem": "Há 13 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://ca.linkedin.com/jobs/view/full-stack-web-developer-at-darkvision-4419660666",
-            "descricao_resumida": "DarkVision - North Vancouver, Colúmbia Britânica, Canadá",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4455971480",
-            "titulo": "Full Stack Engineer (Python & Vue.js) - Remote Work | REF#301723",
-            "empresa": "BairesDev",
-            "localizacao": "Região Metropolitana de Santiago, Chile",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://cl.linkedin.com/jobs/view/full-stack-engineer-python-vue-js-remote-work-ref%23301723-at-bairesdev-4455971480",
-            "descricao_resumida": "BairesDev - Região Metropolitana de Santiago, Chile",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "Vue.js"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4455977378",
-            "titulo": "Python Vue.js Developer | REF#301724",
-            "empresa": "BairesDev",
-            "localizacao": "Região de Valparaiso, Chile",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://cl.linkedin.com/jobs/view/python-vue-js-developer-ref%23301724-at-bairesdev-4455977378",
-            "descricao_resumida": "BairesDev - Região de Valparaiso, Chile",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "JavaScript",
-                        "Python",
-                        "Vue.js"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4442669483",
-            "titulo": "Software Engineer",
-            "empresa": "Octus",
-            "localizacao": "Nova York, Nova York, Estados Unidos",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/software-engineer-at-octus-4442669483",
-            "descricao_resumida": "Octus - Nova York, Nova York, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458936876",
-            "titulo": "Python Developer (US)",
-            "empresa": "AVP VIGILANT TECHNOLOGY PVT LTD",
-            "localizacao": "Nova York, Nova York, Estados Unidos",
-            "data_postagem": "Há 19 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/python-developer-us-at-avp-vigilant-technology-pvt-ltd-4458936876",
-            "descricao_resumida": "AVP VIGILANT TECHNOLOGY PVT LTD - Nova York, Nova York, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458935932",
-            "titulo": "Python Developer (US)",
-            "empresa": "AVP VIGILANT TECHNOLOGY PVT LTD",
-            "localizacao": "Nova York, Estados Unidos",
-            "data_postagem": "Há 19 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/python-developer-us-at-avp-vigilant-technology-pvt-ltd-4458935932",
-            "descricao_resumida": "AVP VIGILANT TECHNOLOGY PVT LTD - Nova York, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458405424",
-            "titulo": "Python Developer",
-            "empresa": "Tenth Revolution Group",
-            "localizacao": "Madri, Comunidade de Madrid, Espanha",
-            "data_postagem": "Há 14 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://es.linkedin.com/jobs/view/python-developer-at-tenth-revolution-group-4458405424",
-            "descricao_resumida": "Tenth Revolution Group - Madri, Comunidade de Madrid, Espanha",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458724907",
-            "titulo": "Python Developer",
-            "empresa": "Van Oord",
-            "localizacao": "Roterdã, Holanda do Sul, Países Baixos",
-            "data_postagem": "Há 3 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://nl.linkedin.com/jobs/view/python-developer-at-van-oord-4458724907",
-            "descricao_resumida": "Van Oord - Roterdã, Holanda do Sul, Países Baixos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4448577082",
-            "titulo": "Python Full Stack Developer",
-            "empresa": "Soft Strategy",
-            "localizacao": "Roma, Lácio, Itália",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://it.linkedin.com/jobs/view/python-full-stack-developer-at-soft-strategy-4448577082",
-            "descricao_resumida": "Soft Strategy - Roma, Lácio, Itália",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4447979120",
-            "titulo": "Fullstack Confirmé(e) Django / Vue.js (Lyon)",
-            "empresa": "Urban Linker",
-            "localizacao": "Lyon e Região",
-            "data_postagem": "Há 12 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://fr.linkedin.com/jobs/view/fullstack-confirm%C3%A9-e-django-vue-js-lyon-at-urban-linker-4447979120",
-            "descricao_resumida": "Urban Linker - Lyon e Região",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 20,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Django"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 35,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Django",
-                        "JavaScript",
-                        "Vue.js"
-                    ],
-                    "total_habilidades_encontradas": 3
-                }
-            }
-        },
-        {
-            "job_id": "4458975075",
-            "titulo": "Python Full Stack Developer with React (F2F Interview in Phoenix)",
-            "empresa": "Voto Consulting LLC",
-            "localizacao": "Phoenix, Arizona, Estados Unidos",
-            "data_postagem": "Há 13 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/python-full-stack-developer-with-react-f2f-interview-in-phoenix-at-voto-consulting-llc-4458975075",
-            "descricao_resumida": "Voto Consulting LLC - Phoenix, Arizona, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 40,
-                    "nivel": "Médio",
-                    "habilidades_compativeis": [
-                        "Python",
-                        "React.js"
-                    ],
-                    "total_habilidades_encontradas": 2
-                }
-            }
-        },
-        {
-            "job_id": "4459140201",
-            "titulo": "Full Stack Entwickler (w/m/d)",
-            "empresa": "AgrarCommander GesmbH",
-            "localizacao": "Korneuburg, Baja Austria, Áustria",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://at.linkedin.com/jobs/view/full-stack-entwickler-w-m-d-at-agrarcommander-gesmbh-4459140201",
-            "descricao_resumida": "AgrarCommander GesmbH - Korneuburg, Baja Austria, Áustria",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4449436493",
-            "titulo": "Full Stack Developer",
-            "empresa": "Booz Allen Hamilton",
-            "localizacao": "Fayetteville, Carolina do Norte, Estados Unidos",
-            "data_postagem": "Há 2 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://www.linkedin.com/jobs/view/full-stack-developer-at-booz-allen-hamilton-4449436493",
-            "descricao_resumida": "Booz Allen Hamilton - Fayetteville, Carolina do Norte, Estados Unidos",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4455880952",
-            "titulo": "Full Stack Engineer",
-            "empresa": "Nebuly",
-            "localizacao": "Turim, Piemonte, Itália",
-            "data_postagem": "Há 4 dias",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://it.linkedin.com/jobs/view/full-stack-engineer-at-nebuly-4455880952",
-            "descricao_resumida": "Nebuly - Turim, Piemonte, Itália",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        },
-        {
-            "job_id": "4458094363",
-            "titulo": "SOFTWARE DEVELOPER | PROGRAMMATORE FULL STACK | SVILUPPATORE BACK END PYTHON",
-            "empresa": "Techyon",
-            "localizacao": "Albignasego, Vêneto, Itália",
-            "data_postagem": "Há 15 horas",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://it.linkedin.com/jobs/view/software-developer-programmatore-full-stack-sviluppatore-back-end-python-at-techyon-4458094363",
-            "descricao_resumida": "Techyon - Albignasego, Vêneto, Itália",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4244523998",
-            "titulo": "Python Software Engineer",
-            "empresa": "WorldQuant",
-            "localizacao": "Budapeste, Hungria",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://hu.linkedin.com/jobs/view/python-software-engineer-at-worldquant-4244523998",
-            "descricao_resumida": "WorldQuant - Budapeste, Hungria",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                },
-                "fullstack": {
-                    "score_porcentagem": 25,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [
-                        "Python"
-                    ],
-                    "total_habilidades_encontradas": 1
-                }
-            }
-        },
-        {
-            "job_id": "4458648851",
-            "titulo": "Fullstack Developer (Backend focus)",
-            "empresa": "Backlight",
-            "localizacao": "Estocolmo, Município de Stockholm, Suécia",
-            "data_postagem": "Há 1 dia",
-            "senioridade": "Júnior",
-            "modelo_trabalho": "Remoto",
-            "link": "https://se.linkedin.com/jobs/view/fullstack-developer-backend-focus-at-backlight-4458648851",
-            "descricao_resumida": "Backlight - Estocolmo, Município de Stockholm, Suécia",
-            "descricao_completa": "",
-            "match_curriculo": {
-                "backend": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                },
-                "fullstack": {
-                    "score_porcentagem": 0,
-                    "nivel": "Baixo",
-                    "habilidades_compativeis": [],
-                    "total_habilidades_encontradas": 0
-                }
-            }
-        }
-    ]
+    "filtro_threshold_minimo": 60,
+    "total_aprovados": 9,
+    "nacional": {
+        "jobs": [
+            {
+                "job_id": "4457492996",
+                "titulo": "Desenvolvedor Python / Pesquisa + Desenvolvimento - Trabalho Remoto",
+                "empresa": "BairesDev",
+                "localizacao": "Brasília, DF",
+                "data_postagem": "Há 3 dias",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/desenvolvedor-python-pesquisa-%2B-desenvolvimento-trabalho-remoto-at-bairesdev-4457492996",
+                "descricao_resumida": "BairesDev - Brasília, DF",
+                "descricao_completa": "Há mais de 15 anos, a BairesDev® é líder em projetos tecnológicos. Entregamos soluções inovadoras para gigantes como Google e Rolls-Royce e as startups mais inovadoras do Vale do Silício.\nTemos uma equipe diversa de mais de 4.000 profissionais formada pelo Top 1% dos talentos de tecnologia do mundo, trabalhando remotamente em cargos de impacto global.\nAo se candidatar para este cargo, você está dando o primeiro passo em um processo que vai além do comum. Nosso objetivo é alinhar suas paixões, habilidades, e expectativas às nossas vagas, colocando você no caminho para desenvolver uma carreira de sucesso excepcional.\nDesenvolvedor Python / Pesquisa + Desenvolvimento na BairesDev\nEstamos à procura de excelentes desenvolvedores Python para se juntarem à equipe de pesquisa e desenvolvimento (P&D) da BairesDev.\nNossa equipe de P&D é uma parte essencial de nossas soluções de tecnologia que geram milhões em receita todos os anos, por isso contratamos apenas os melhores dos melhores.\nDentro da equipe, você encontrará muitos desafios diferentes: análise de dados, aprendizado de máquina, desktop e desenvolvimentos web são alguns dos mais relevantes no momento, mas para impulsionar a inovação, você notará que novidades estão surgindo todos os dias!\nA área de P&D é sem dúvida a área mais interessante e desafiante de toda a empresa, e embora a BairesDev seja formada por pessoas realmente talentosas em geral, aqui você encontrará profissionais com larga experiência e também com níveis intelectuais e criativos muito acima da média.\nQueremos que as pessoas aproveitem a viagem. Você está pronto?\nO que você vai fazer:\n- Criar sistemas e ferramentas de automação para configurar, monitorar e orquestrar a infraestrutura de dados e pipelines.\n- Criar serviços de integração de dados para ajudar a integrar novos clientes o mais rápido possível.\n- Manter a confiabilidade, o desempenho e o suporte contínuos da infraestrutura de dados, fornecendo soluções baseadas nas necessidades dos aplicativos e no crescimento previsto.\nEsperamos que você tenha:\n- 4+ anos de experiência prática em desenvolvimento Python e Django.\n- Desejável experiência em desenvolvimento com programação orientada a objetos.\n- 3 anos de desenvolvimento utilizando outras linguagens de programação.\n- Bons conhecimentos com XML e bases de dados relacionais (Oracle/MS SQL/MySQL).\n- Forte experiência profissional trabalhando com grandes estruturas de dados (incluindo XML) e algoritmos.\n- Nível avançado de inglês.\nComo tornamos seu trabalho (e sua vida) mais fácil:\n- Modalidade 100% remota - trabalhe de qualquer lugar.\n- Excelente remuneração em USD ou na sua moeda local, como preferir.\n- Hardware para você trabalhar de casa.\n- Horários flexíveis - faça seu próprio horário.\n- Licença parental remunerada, férias, e feriados nacionais.\n- Ambiente de trabalho inovador e multicultural.\n- Colabore e aprenda com o Top 1% global dos talentos de cada área.\n- Ambiente de apoio com mentoria, promoções, desenvolvimento de habilidades, e diversas oportunidades de crescimento.\nJunte-se a uma equipe global onde seus talentos excepcionais podem se destacar!",
+                "tipo": "job",
+                "escopo": "nacional",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "MySQL",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "MySQL",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    }
+                }
+            },
+            {
+                "job_id": "4458495109",
+                "titulo": "Analista de Sistemas (Foco em IA e Automação)",
+                "empresa": "Captar Agrobusiness",
+                "localizacao": "Luís Eduardo Magalhães, BA",
+                "data_postagem": "Há 1 hora",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/analista-de-sistemas-foco-em-ia-e-automa%C3%A7%C3%A3o-at-captar-agrobusiness-4458495109",
+                "descricao_resumida": "Captar Agrobusiness - Luís Eduardo Magalhães, BA",
+                "descricao_completa": "Se você domina IA Generativa, automação, dados e integração de sistemas, essa oportunidade pode ser sua!\n💡 Você será responsável por:\n• Desenvolver automações, integrações e scripts em Python\n• Conectar sistemas por meio de APIs\n• Extrair e estruturar dados do SAP e bancos relacionais\n• Criar dashboards e soluções em Power BI\n• Desenvolver aplicações práticas utilizando IA Generativa\n• Construir assistentes internos, fluxos automatizados e bases de conhecimento\n• Criar POCs e testar novas tecnologias do mercado\n• Documentar e garantir o uso seguro e responsável das soluções\n🎯 Buscamos alguém curioso, mão na massa e com visão de negócio, que acompanhe as novas tecnologias e saiba transformar tecnologia em produtividade, inteligência e resultado.\n🔹 O que buscamos:\nSólida lógica de programação e vivência com stacks modernas (Node.js, Next.js, TypeScript ou similares) e SQL\n APIs REST/JSON\n Banco de dados relacionais e consultas complexas\n Power BI e Excel Avançado\n Experiência com dados e processos do SAP B1 (HANA)\n n8n, Make e/ou Power Automate\n Postman e Git\n Engenharia de Prompts\nAPIs de LLMs: ChatGPT, Gemini, Claude e Copilot\n Conhecimento em RAG e construção de assistentes internos será um diferencial\n🎓 Formação desejada\nGraduação completa em:\nCiência da Computação\nEngenharia de Software\nSistemas de Informação\nEngenharia da Computação\nAnálise e Desenvolvimento de Sistema\nPós-graduação/MBA em Inteligência Artificial, Ciência de Dados, Analytics, Automação ou áreas correlatas será um diferencial.",
+                "tipo": "job",
+                "escopo": "nacional",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 50,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "JavaScript",
+                            "Python",
+                            "REST APIs",
+                            "SQL",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    }
+                }
+            },
+            {
+                "job_id": "4407639826",
+                "titulo": "Python Engineer (RAG & Agents)",
+                "empresa": "Avenue Code",
+                "localizacao": "Brasil",
+                "data_postagem": "Há 6 dias",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/python-engineer-rag-agents-at-avenue-code-4407639826",
+                "descricao_resumida": "Avenue Code - Brasil",
+                "descricao_completa": "About The Opportunity\nWe are looking for an enthusiastic Python Developer with a keen interest in Generative AI (GenAI), Retrieval-Augmented Generation (RAG), and related AI/ML technologies. This is an exciting opportunity for a passionate developer to work on cutting-edge AI-driven applications and contribute to the development of intelligent systems and Agentic workflows.\nResponsibilities\nDevelop & Maintain Python-based applications leveraging GenAI, RAG, Agentic Workflow and LLM (Large Language Models) technologies.\nImplement and Optimize retrieval pipelines using vector databases and other indexing techniques.\nIntegrate APIs & Models such as OpenAI, LLamaParse, and LangChain into AI-powered applications.\nEnhance AI Workflows by integrating retrieval and knowledge augmentation techniques to improve response accuracy and relevance.\nCollaborate with other AI engineers, Product Manager, and software developers to deploy AI-powered solutions in real-world applications.\nWrite efficient, scalable, and maintainable code following best software engineering practices.\nDebug and Optimize AI/ML applications to ensure efficiency, accuracy, and robustness.\nStay Updated with the latest advancements in GenAI, NLP, RAG, and Python-based AI frameworks.\nRequired Qualifications\nProficiency in Python and experience with frameworks like FastAPI, Flask, or Django.\nKnowledge of GenAI models (GPT, LLaMA, etc.) and their applications.\nFamiliarity with retrieval mechanisms such as FAISS, or dense vector embeddings.\nBasic understanding of machine learning and deep learning concepts.\nHands-on experience with APIs and libraries like OpenAI, LangChain and Hugging Face Transformers.\nExperience with SQL databases\nGood problem-solving and debugging skills.\nStrong communication and teamwork abilities.\nPython, Gen AI, indexing experience, prompt management, Python, and Google ADK.\nNice To Have Skills\nExperience with Docker, Kubernetes, or cloud platforms (AWS, Azure).\nFamiliarity with prompt engineering.",
+                "tipo": "job",
+                "escopo": "nacional",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Azure",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "Flask",
+                            "LangChain",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "Flask",
+                            "LangChain",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4459362215",
+                "titulo": "Analista de desenvolvimento",
+                "empresa": "The Coffee",
+                "localizacao": "Curitiba, PR",
+                "data_postagem": "Há 2 dias",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/analista-de-desenvolvimento-at-the-coffee-4459362215",
+                "descricao_resumida": "The Coffee - Curitiba, PR",
+                "descricao_completa": "Resumo da posição\nO(a) Desenvolvedor(a) Júnior atuará no desenvolvimento, manutenção e evolução dos sistemas e ferramentas digitais da The Coffee, apoiando o time de tecnologia na entrega de soluções que melhorem a operação das lojas, os processos internos e a experiência dos usuários. Buscamos uma pessoa com boa base técnica, vontade de aprender e capacidade de trabalhar em equipe.\nPrincipais responsabilidades\nDesenvolver funcionalidades simples e de média complexidade em sistemas e aplicações internas.\nRealizar manutenção corretiva e evolutiva em aplicações existentes.\nParticipar de revisões de código e seguir os padrões de desenvolvimento do time.\nApoiar na integração entre sistemas e APIs.\nIdentificar e corrigir bugs.\nColaborar com Product Owner, designers e demais desenvolvedores na implementação das soluções.\nDocumentar funcionalidades e alterações realizadas.\nAcompanhar o processo de testes e implantação das entregas.\nRequisitos\nConhecimento em lógica de programação.\nExperiência acadêmica, projetos pessoais, estágio ou experiência profissional com desenvolvimento de software.\nConhecimento básico em pelo menos uma linguagem de programação (JavaScript, TypeScript, Python, Java ou similar).\nConhecimento básico de HTML, CSS e Git.\nCapacidade de aprender rapidamente e receber feedbacks.\nDiferenciais\nConhecimento em React, Node.js ou tecnologias web modernas.\nNoções de banco de dados SQL.\nExperiência com APIs REST.\nParticipação em projetos próprios, freelas ou open source.",
+                "tipo": "job",
+                "escopo": "nacional",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 50,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "HTML/CSS",
+                            "JavaScript",
+                            "Python",
+                            "REST APIs",
+                            "React.js",
+                            "SQL",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 7
+                    }
+                }
+            }
+        ],
+        "posts": []
+    },
+    "internacional": {
+        "jobs": [
+            {
+                "job_id": "post_3356537518",
+                "tipo": "post",
+                "escopo": "internacional",
+                "titulo": "#hiring #fullstackdeveloper #reactjs #django #python # ...",
+                "empresa": "LinkedIn Post",
+                "localizacao": "Remoto / LATAM / Global",
+                "data_postagem": "Recente",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://www.linkedin.com/posts/vaishnavi-sistla_hiring-fullstackdeveloper-reactjs-activity-7476128903150034944-3SPx",
+                "descricao_resumida": "🚀 Hiring Alert | Full Stack Developer (React + Django) 🚀 📍 Location: Remote 💼 Experience: 3–4 Years 🔹 Role Overview 🔹 Key Responsibilities Design, develop, and enhance new ...",
+                "descricao_completa": "🚀 Hiring Alert | Full Stack Developer (React + Django) 🚀 📍 Location: Remote 💼 Experience: 3–4 Years 🔹 Role Overview 🔹 Key Responsibilities Design, develop, and enhance new ...",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 45,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 2
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "post_2646039101",
+                "tipo": "post",
+                "escopo": "internacional",
+                "titulo": "#fullstackdeveloper #pythondeveloper #fastapi #reactjs # ...",
+                "empresa": "LinkedIn Post",
+                "localizacao": "Remoto / LATAM / Global",
+                "data_postagem": "Recente",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://www.linkedin.com/posts/globhuntconsultancyindia_fullstackdeveloper-pythondeveloper-fastapi-activity-7496887697823768576-gR97",
+                "descricao_resumida": "🚀 Hiring Alert | Software Engineer – Full Stack (Python + JavaScript) [100% Remote] 🚀 We are actively hiring a hands-on Full Stack Developer (Python/FastAPI & React.js) for a 100% remote ...",
+                "descricao_completa": "🚀 Hiring Alert | Software Engineer – Full Stack (Python + JavaScript) [100% Remote] 🚀 We are actively hiring a hands-on Full Stack Developer (Python/FastAPI & React.js) for a 100% remote ...",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 45,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 2
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "JavaScript",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    }
+                }
+            },
+            {
+                "job_id": "post_2056094903",
+                "tipo": "post",
+                "escopo": "internacional",
+                "titulo": "#reactnative #expo #python #fastapi #postgresql #azure # ...",
+                "empresa": "LinkedIn Post",
+                "localizacao": "Remoto / LATAM / Global",
+                "data_postagem": "Recente",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://vn.linkedin.com/posts/sarah-le-574a11169_reactnative-expo-python-activity-7469976225042624512-RaZ5",
+                "descricao_resumida": "🚀 [REMOTE | FINTECH | NEW ZEALAND] Tìm 2 Senior Full-Stack Mobile Developer Bạn đang muốn: Remote 100%, full-time Làm việc trực tiếp với client nước ngoài Level up kinh nghiệm Fintech & AI thực chiến Tech stack: React / Expo · Python · FastAPI · PostgreSQL · Azure Bonus nếu bạn có: Kinh nghiệm Fintech / quản lý tài sản đầu tư Đã từng dùng ...",
+                "descricao_completa": "🚀 [REMOTE | FINTECH | NEW ZEALAND] Tìm 2 Senior Full-Stack Mobile Developer Bạn đang muốn: Remote 100%, full-time Làm việc trực tiếp với client nước ngoài Level up kinh nghiệm Fintech & AI thực chiến Tech stack: React / Expo · Python · FastAPI · PostgreSQL · Azure Bonus nếu bạn có: Kinh nghiệm Fintech / quản lý tài sản đầu tư Đã từng dùng ...",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Azure",
+                            "FastAPI",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "PostgreSQL",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    }
+                }
+            },
+            {
+                "job_id": "post_1839629358",
+                "tipo": "post",
+                "escopo": "internacional",
+                "titulo": "Fullstack Python - React | Datta | Brenda Lizeth Barbosa Alfonso",
+                "empresa": "LinkedIn Post",
+                "localizacao": "Remoto / LATAM / Global",
+                "data_postagem": "Recente",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://es.linkedin.com/posts/brenda-lizeth-barbosa_fullstack-python-react-datta-activity-7498747077145956354-eK0T",
+                "descricao_resumida": "🚀 Fullstack Developer | Python + React Estamos buscando un/a Fullstack Developer para unirse a un equipo internacional con base en México. 🌎 100% remoto desde LATAM 💼 3+ años de experiencia 🇺🇸 Inglés C1 ⚙️ Stack: Python, FastAPI, React 19, .NET 8, PostgreSQL, Azure, Docker y Kubernetes. 🎯 Responsabilidades -Desarrollar aplicaciones web con Python/FastAPI y React ...",
+                "descricao_completa": "🚀 Fullstack Developer | Python + React Estamos buscando un/a Fullstack Developer para unirse a un equipo internacional con base en México. 🌎 100% remoto desde LATAM 💼 3+ años de experiencia 🇺🇸 Inglés C1 ⚙️ Stack: Python, FastAPI, React 19, .NET 8, PostgreSQL, Azure, Docker y Kubernetes. 🎯 Responsabilidades -Desarrollar aplicaciones web con Python/FastAPI y React ...",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Azure",
+                            "Docker",
+                            "FastAPI",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 90,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Docker",
+                            "FastAPI",
+                            "PostgreSQL",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    }
+                }
+            },
+            {
+                "job_id": "post_1729782917",
+                "tipo": "post",
+                "escopo": "internacional",
+                "titulo": "#hiring #techjobs #fullstackdeveloper #pythondeveloper # ...",
+                "empresa": "LinkedIn Post",
+                "localizacao": "Remoto / LATAM / Global",
+                "data_postagem": "Recente",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://es.linkedin.com/posts/carol-perez-03_hiring-techjobs-fullstackdeveloper-activity-7498533987796156416-NkSQ",
+                "descricao_resumida": "🚀 En Ready estamos buscando un Fullstack Developer | Python + React | 100% remoto LATAM + Inglés Avanzado 🔹 Requisitos * Experiencia de +3 años como Fullstack Developer. * Experiencia sólida en desarrollo de APIs y servicios backend con Python y FastAPI * Experiencia en desarrollo de aplicaciones frontend con React 19 * Experiencia con C# / .NET 8 y conocimientos de ASP .NET Core ...",
+                "descricao_completa": "🚀 En Ready estamos buscando un Fullstack Developer | Python + React | 100% remoto LATAM + Inglés Avanzado 🔹 Requisitos * Experiencia de +3 años como Fullstack Developer. * Experiencia sólida en desarrollo de APIs y servicios backend con Python y FastAPI * Experiencia en desarrollo de aplicaciones frontend con React 19 * Experiencia con C# / .NET 8 y conocimientos de ASP .NET Core ...",
+                "match_curriculo": {
+                    "backend": {
+                        "score_porcentagem": 45,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 2
+                    },
+                    "fullstack": {
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            }
+        ],
+        "posts": []
+    }
 }

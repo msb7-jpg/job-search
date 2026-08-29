@@ -9,3 +9,5 @@ wheels/
 # Virtual environments
 .venv
 venv
+.env
+gen-lang-client-0665969287-070ed30d9437.json
