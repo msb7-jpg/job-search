@@ -34,7 +34,7 @@ def enriquecer_jobs_em_lote(jobs: list[JobItem], max_workers: int = 10, apenas_r
     logger.info(f"[JOBS-DETAIL] Iniciando Aggressive Fetch para {len(jobs)} vagas (threads={max_workers})...")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         jobs_enriquecidos = list(executor.map(
-            lambda j: enriquecer_job_com_descricao(j, apenas_remoto, senioridade_filtro),
+            lambda job: enriquecer_job_com_descricao(job, apenas_remoto, senioridade_filtro),
             jobs
         ))
     logger.info(f"[JOBS-DETAIL] Aggressive Fetch concluído para {len(jobs_enriquecidos)} vagas.")

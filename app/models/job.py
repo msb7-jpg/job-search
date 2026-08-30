@@ -18,3 +18,4 @@ class JobItem(BaseModel):
     descricao_resumida: str = ""
     descricao_completa: str = ""
     match_curriculo: ResumeMatch | None = None
+
