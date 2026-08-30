@@ -1,5 +1,8 @@
 import json
 import re
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent / "data"
 
 SKILLS_BACKEND = {
     "python": "Python",
@@ -122,14 +125,31 @@ def calcular_match(vaga: dict, skills_dict: dict, foco: str) -> dict:
         "total_habilidades_encontradas": len(habilidades_lista)
     }
 
-def gerar_relatorio_markdown(dados: dict, caminho_relatorio: str = "relatorio_matches.md"):
+
+def normalizar_tipo(item_tipo: str | None) -> str:
+    tipo = (item_tipo or "jobs").strip().lower()
+    if tipo in {"job", "jobs"}:
+        return "jobs"
+    if tipo in {"post", "posts"}:
+        return "post"
+    return "jobs"
+
+
+def deve_incluir_item(item: dict, match_backend: dict, match_fullstack: dict) -> bool:
+    tipo = normalizar_tipo(item.get("tipo"))
+    if tipo == "post":
+        return True
+    return match_backend["score_porcentagem"] >= 60 or match_fullstack["score_porcentagem"] >= 60
+
+
+def gerar_relatorio_markdown(dados: dict, caminho_relatorio: Path = "relatorio_matches.md"):
     """
     Gera um relatório formatado em Markdown categorizado por Escopo (Nacional/Internacional)
     e Tipo (Jobs/Posts), aplicando o threshold de 60% de match.
     """
     lines = [
-        "# 📊 Relatório de Match de Vagas e Posts (Threshold >= 60%)\n",
-        "Este relatório apresenta as melhores oportunidades agrupadas por escopo e tipo, avaliadas contra os currículos **Backend** e **Full-Stack**.\n",
+        "# 📊 Relatório de Match de Vagas e Posts\n",
+        "Este relatório separa vagas normais e posts: as vagas formais usam o threshold de 60%, enquanto os posts são exibidos completos.\n",
         "---\n"
     ]
 
@@ -137,12 +157,18 @@ def gerar_relatorio_markdown(dados: dict, caminho_relatorio: str = "relatorio_ma
         lines.append(f"# {nome_escopo}\n")
         escopo_data = dados.get(escopo, {})
 
-        for tipo, nome_tipo in [("jobs", "📌 Vagas Formais (Jobs)"), ("posts", "💬 Posts do LinkedIn")]:
+        for tipo, nome_tipo in [("jobs", "📌 Vagas Formais (Jobs)"), ("post", "💬 Posts do LinkedIn")]:
             lista = escopo_data.get(tipo, [])
-            lines.append(f"## {nome_tipo} (Total com Match ≥ 60%: {len(lista)})\n")
+            if tipo == "jobs":
+                lines.append(f"## {nome_tipo} (Total com Match ≥ 60%: {len(lista)})\n")
+            else:
+                lines.append(f"## {nome_tipo} (Total exibido: {len(lista)})\n")
 
             if not lista:
-                lines.append("_Nenhuma oportunidade encontrada nesta categoria com match mínimo de 60%._\n")
+                if tipo == "jobs":
+                    lines.append("_Nenhuma vaga formal encontrada com match mínimo de 60%._\n")
+                else:
+                    lines.append("_Nenhum post encontrado nesta categoria._\n")
                 continue
 
             for i, v in enumerate(lista, 1):
@@ -156,7 +182,7 @@ def gerar_relatorio_markdown(dados: dict, caminho_relatorio: str = "relatorio_ma
                 if m_fs["score_porcentagem"] >= 60:
                     perfis_comp.append(f"Full-Stack: {m_fs['score_porcentagem']}% ({m_fs['nivel']})")
 
-                comp_str = " | ".join(perfis_comp)
+                comp_str = " | ".join(perfis_comp) if perfis_comp else "Sem match mínimo para este currículo"
                 skills_be = ", ".join(m_be["habilidades_compativeis"]) if m_be["habilidades_compativeis"] else "Python"
                 skills_fs = ", ".join(m_fs["habilidades_compativeis"]) if m_fs["habilidades_compativeis"] else "Python"
 
@@ -174,7 +200,7 @@ def gerar_relatorio_markdown(dados: dict, caminho_relatorio: str = "relatorio_ma
 
     print(f"📄 Relatório formatado salvo com sucesso em '{caminho_relatorio}'!")
 
-def processar_vagas_com_curriculo(caminho_json: str = "vagas_linkedin.json"):
+def processar_vagas_com_curriculo(caminho_json: Path = DATA_DIR / "vagas_linkedin.json"):
     """
     Realiza o pós-processamento calculando o match e filtrando por threshold (60%),
     organizando no formato de categorias nacional/internacional e jobs/posts.
@@ -192,14 +218,14 @@ def processar_vagas_com_curriculo(caminho_json: str = "vagas_linkedin.json"):
         vagas_brutas = data["vagas"]
     else:
         for esc in ["nacional", "internacional"]:
-            for tp in ["jobs", "posts"]:
+            for tp in ["jobs", "post"]:
                 vagas_brutas.extend(data.get(esc, {}).get(tp, []))
 
     print(f"\nIniciando Pós-Processamento: Calculando Match para {len(vagas_brutas)} itens...")
 
     resultado_estruturado = {
-        "nacional": {"jobs": [], "posts": []},
-        "internacional": {"jobs": [], "posts": []}
+        "nacional": {"jobs": [], "post": []},
+        "internacional": {"jobs": [], "post": []}
     }
 
     total_aprovados = 0
@@ -213,16 +239,14 @@ def processar_vagas_com_curriculo(caminho_json: str = "vagas_linkedin.json"):
             "fullstack": match_fs
         }
 
-        # Aplicar Threshold de 60% (em pelo menos um dos perfis de currículo)
-        if match_be["score_porcentagem"] >= 60 or match_fs["score_porcentagem"] >= 60:
-            escopo = item.get("escopo", "nacional")
-            tipo = item.get("tipo", "jobs")
+        tipo = normalizar_tipo(item.get("tipo"))
+        item["tipo"] = tipo
 
-            if escopo not in resultado_estruturado:
-                escopo = "nacional"
-            if tipo not in ["jobs", "posts"]:
-                tipo = "jobs"
+        escopo = item.get("escopo", "nacional")
+        if escopo not in resultado_estruturado:
+            escopo = "nacional"
 
+        if deve_incluir_item(item, match_be, match_fs):
             resultado_estruturado[escopo][tipo].append(item)
             total_aprovados += 1
 
@@ -234,13 +258,13 @@ def processar_vagas_com_curriculo(caminho_json: str = "vagas_linkedin.json"):
     }
 
     # 1. Salva no JSON principal
-    with open(caminho_json, "w", encoding="utf-8") as f:
+    with open(DATA_DIR / "vagas_processadas.json", "w", encoding="utf-8") as f:
         json.dump(dados_finais, f, ensure_ascii=False, indent=4)
 
-    print(f"💾 JSON atualizado com threshold ≥ 60% ({total_aprovados} aprovados) em '{caminho_json}'.")
+    print(f"💾 JSON atualizado com {total_aprovados} itens incluídos (jobs com threshold ≥ 60% + todos os posts) em '{DATA_DIR / "vagas_pos_processadas.json"}'.")
 
     # 2. Salva o Relatório Markdown dedicado
-    gerar_relatorio_markdown(dados_finais, "relatorio_matches.md")
+    gerar_relatorio_markdown(dados_finais, DATA_DIR / "relatorio_matches.md")
 
 if __name__ == "__main__":
     processar_vagas_com_curriculo()

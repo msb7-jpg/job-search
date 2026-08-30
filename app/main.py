@@ -1,13 +1,22 @@
 import json
 import re
+import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
-
 from pos_processamento import processar_vagas_com_curriculo
 from posts_fetcher import buscar_posts_linkedin
+
+from app.queries import Gringas, Nacionais
+
+# Direcionamento do diretório de dados
+DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -15,15 +24,65 @@ HEADERS = {
 }
 
 # Configurações de Filtro
-# Recência: r86400 (24h), r604800 (7 dias), r2592000 (30 dias)
 FILTRO_TEMPO = "r604800"
-
-# Modelo de Trabalho: True para filtrar APENAS vagas 100% remotas
 APENAS_REMOTO = True
-
-# Senioridade: "JUNIOR", "PLENO", "SENIOR", "TODAS"
-# f_E no LinkedIn: 1=Estágio, 2=Júnior/Entry level, 3=Associate, 4=Pleno/Sênior
 SENIORIDADE_FILTRO = "JUNIOR"
+
+
+# ==========================================
+# 1. MECANISMO DE BACKOFF EXPONENCIAL
+# ==========================================
+def requisicao_com_backoff(url: str, headers: dict | None = None, max_retries: int = 3, timeout: int = 10) -> requests.Response | None:
+    """
+    Executa chamadas HTTP com backoff exponencial para lidar com limites de taxa (429/503).
+    """
+    headers = headers or HEADERS
+    delay = 1.0  # Começa com 1 segundo
+
+    for tentativa in range(max_retries):
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout)
+            if response.status_code == 200:
+                return response
+            if response.status_code in [429, 502, 503, 504]:
+                print(f"⚠️ Status {response.status_code} em {url[:40]}... Aguardando {delay:.1f}s (Tentativa {tentativa+1}/{max_retries})")
+                time.sleep(delay)
+                delay *= 2  # Backoff exponencial (1s, 2s, 4s...)
+            else:
+                break
+        except requests.RequestException:
+            time.sleep(delay)
+            delay *= 2
+
+    return None
+
+
+# ==========================================
+# 2. FILTRAGEM PRÉVIA (SEM FAZER FETCH DUPLO)
+# ==========================================
+def pre_filtrar_item(item: dict) -> bool:
+    """
+    Descarta rapidamente itens com base no título e localização
+    antes de gastar requisições buscando o conteúdo completo.
+    """
+    titulo = item.get("titulo", "").lower()
+    loc = item.get("localizacao", "").lower()
+    texto_basico = f"{titulo} {loc}"
+
+    # Descarte de Senioridade incompatível se o filtro for JUNIOR
+    if SENIORIDADE_FILTRO == "JUNIOR":
+        palavras_bloqueadas_senioridade = ["senior", "sênior", "sr.", "lead", "principal", "architect", "arqueto", "especialista", "iii"]
+        if any(p in titulo for p in palavras_bloqueadas_senioridade):
+            return False
+
+    # Descarte de Modalidade se for APENAS_REMOTO
+    if APENAS_REMOTO:
+        palavras_bloqueadas_presencial = ["presencial", "onsite", "100% presencial", "híbrido", "hibrido", "hybrid"]
+        if any(p in texto_basico for p in palavras_bloqueadas_presencial):
+            return False
+
+    return True
+
 
 def identificar_senioridade(titulo: str, descricao: str) -> str:
     """
@@ -49,6 +108,7 @@ def identificar_senioridade(titulo: str, descricao: str) -> str:
         return "Pleno"
 
     return "Júnior" if SENIORIDADE_FILTRO == "JUNIOR" else "Não Especificado"
+
 
 def identificar_modelo_trabalho(titulo: str, localizacao: str, descricao: str) -> str:
     """
@@ -79,6 +139,7 @@ def identificar_modelo_trabalho(titulo: str, localizacao: str, descricao: str) -
 
     return "Remoto" if APENAS_REMOTO else "Não Especificado"
 
+
 def obter_descricao_completa(job_id: str) -> str:
     """
     Busca o conteúdo completo da página da vaga (Aggressive Fetch).
@@ -87,8 +148,8 @@ def obter_descricao_completa(job_id: str) -> str:
         return ""
     url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
     try:
-        response = requests.get(url, headers=HEADERS, timeout=7)
-        if response.status_code == 200:
+        response = requisicao_com_backoff(url, headers=HEADERS, max_retries=3, timeout=10)
+        if response and response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             desc_elem = soup.find("div", class_="show-more-less-html__markup") or soup.find("section", class_="description")
             if desc_elem:
@@ -96,6 +157,7 @@ def obter_descricao_completa(job_id: str) -> str:
     except Exception:
         pass
     return ""
+
 
 def buscar_vagas_linkedin_guest(
     keywords: str,
@@ -120,8 +182,8 @@ def buscar_vagas_linkedin_guest(
             f"&f_TPR={filtro_tempo}{filtro_remoto_param}{filtro_senioridade_param}&start={start}"
         )
         try:
-            response = requests.get(url, headers=HEADERS, timeout=10)
-            if response.status_code != 200:
+            response = requisicao_com_backoff(url, headers=HEADERS, max_retries=3, timeout=10)
+            if not response or response.status_code != 200:
                 break
 
             soup = BeautifulSoup(response.text, "html.parser")
@@ -161,63 +223,68 @@ def buscar_vagas_linkedin_guest(
         except Exception as e:
             print(f"Erro ao buscar '{keywords}' em '{location}': {e}")
             break
+
+    print(f"🔹 Busca concluída para '{keywords}' em '{location}': {len(vagas)} vagas encontradas.")
     return vagas
 
 
-
 def buscar_vagas_completas():
-    # 1. Queries de Posts segundo how_to_query.md
-    query_posts_br_be = 'site:linkedin.com/posts/ vaga Python FastAPI Django remoto'
-    query_posts_br_fs = 'site:linkedin.com/posts/ vaga Python React Vue remoto'
+    # 1. Executando Posts com as Queries Validadas
+    print("🔎 1/2. Buscando Posts do LinkedIn via SearXNG (Nacional e Internacional)...")
 
-    query_posts_gringa_be = 'site:linkedin.com/posts/ hiring Python FastAPI Django Remote LATAM'
-    query_posts_gringa_fs = 'site:linkedin.com/posts/ hiring Python React Vue Remote LATAM'
+    posts_nacionais = []
+    for query in (Nacionais.POSTS_BE, Nacionais.POSTS_FS):
+        posts_nacionais.extend(buscar_posts_linkedin(query, escopo="nacional"))
 
-    print("🔎 1/2. Buscando Posts do LinkedIn (Nacional e Internacional)...")
-    posts_nacionais = buscar_posts_linkedin(query_posts_br_be, escopo="nacional") + buscar_posts_linkedin(query_posts_br_fs, escopo="nacional")
-    posts_internacionais = buscar_posts_linkedin(query_posts_gringa_be, escopo="internacional") + buscar_posts_linkedin(query_posts_gringa_fs, escopo="internacional")
+    posts_internacionais = []
+    for query in (Gringas.POSTS_BE, Gringas.POSTS_FS):
+        posts_internacionais.extend(buscar_posts_linkedin(query, escopo="internacional"))
 
     # Deduplicar posts por URL
-    posts_nacionais_unique = list({p["link"]: p for p in posts_nacionais}.values())
-    posts_internacionais_unique = list({p["link"]: p for p in posts_internacionais}.values())
+    posts_nacionais_unique = list({post["link"]: post for post in posts_nacionais}.values())
+    posts_internacionais_unique = list({post["link"]: post for post in posts_internacionais}.values())
 
     # 2. Queries de Vagas Formais (Jobs API)
+    # As queries de jobs validadas devem ser usadas na busca do LinkedIn Guest.
     termos_jobs_br = [
         ("Python FastAPI Django PostgreSQL", "Brazil"),
         ("Python Vue React PostgreSQL", "Brazil"),
         ("Desenvolvedor Python Junior", "Brazil")
     ]
     termos_jobs_gringa = [
-        ("Python FastAPI Django PostgreSQL", "Remote"),
-        ("Python Vue React PostgreSQL", "Remote"),
-        ("Python LATAM", "Remote")
+        (Gringas.JOBS_BE, "Remote"),
+        (Gringas.JOBS_FS, "Remote")
     ]
 
     print("🔎 2/2. Buscando Vagas Formais (Jobs) no LinkedIn Guest API...")
     jobs_nacionais_brutos = []
-    for kw, loc in termos_jobs_br:
-        jobs_nacionais_brutos.extend(buscar_vagas_linkedin_guest(kw, loc, FILTRO_TEMPO, APENAS_REMOTO, SENIORIDADE_FILTRO))
+    for keyword, location in termos_jobs_br:
+        jobs_nacionais_brutos.extend(buscar_vagas_linkedin_guest(keyword, location, FILTRO_TEMPO, APENAS_REMOTO, SENIORIDADE_FILTRO))
 
     jobs_internacionais_brutos = []
-    for kw, loc in termos_jobs_gringa:
-        jobs_internacionais_brutos.extend(buscar_vagas_linkedin_guest(kw, loc, FILTRO_TEMPO, APENAS_REMOTO, SENIORIDADE_FILTRO))
+    for keyword, location in termos_jobs_gringa:
+        jobs_internacionais_brutos.extend(buscar_vagas_linkedin_guest(keyword, location, FILTRO_TEMPO, APENAS_REMOTO, SENIORIDADE_FILTRO))
 
     # Deduplicar jobs
-    jobs_nac_dict = {j["link"]: j for j in jobs_nacionais_brutos}
-    jobs_int_dict = {j["link"]: j for j in jobs_internacionais_brutos}
+    jobs_nac_dict = {job["link"]: job for job in jobs_nacionais_brutos}
+    jobs_int_dict = {job["link"]: job for job in jobs_internacionais_brutos}
 
-    for j in jobs_nac_dict.values():
-        j["tipo"] = "job"
-        j["escopo"] = "nacional"
+    for job in jobs_nac_dict.values():
+        job["tipo"] = "job"
+        job["escopo"] = "nacional"
 
-    for j in jobs_int_dict.values():
-        j["tipo"] = "job"
-        j["escopo"] = "internacional"
+    for job in jobs_int_dict.values():
+        job["tipo"] = "job"
+        job["escopo"] = "internacional"
 
     jobs_nacionais = list(jobs_nac_dict.values())
     jobs_internacionais = list(jobs_int_dict.values())
 
-    print(f"\nObtidas {len(jobs_nacionais) + len(jobs_internacionais)} vagas formais brutas. Iniciando Aggressive Fetch (descrições)...")
+    todas_vagas_formais = jobs_nacionais + jobs_internacionais
+    vagas_filtradas = [v for v in todas_vagas_formais if pre_filtrar_item(v)]
+
+    print(f"\nObtidas {len(todas_vagas_formais)} vagas formais brutas. Filtradas {len(todas_vagas_formais) - len(vagas_filtradas)} por título/localização.")
+    print(f"Restam {len(vagas_filtradas)} vagas formais para Aggressive Fetch.")
 
     def buscar_conteudo(vaga):
         if vaga.get("job_id") and not vaga.get("job_id").startswith("post_"):
@@ -227,18 +294,17 @@ def buscar_vagas_completas():
             vaga["senioridade"] = identificar_senioridade(vaga["titulo"], desc)
         return vaga
 
-    todas_vagas_formais = jobs_nacionais + jobs_internacionais
     with ThreadPoolExecutor(max_workers=10) as executor:
-        todas_vagas_formais = list(executor.map(buscar_conteudo, todas_vagas_formais))
+        vagas_processadas = list(executor.map(buscar_conteudo, vagas_filtradas))
 
-    # Re-filtrar modalidade/senioridade
+    # Re-filtrar modalidade/senioridade pós-fetch
     if APENAS_REMOTO:
-        todas_vagas_formais = [v for v in todas_vagas_formais if v["modelo_trabalho"] == "Remoto"]
+        vagas_processadas = [v for v in vagas_processadas if v["modelo_trabalho"] == "Remoto"]
     if SENIORIDADE_FILTRO == "JUNIOR":
-        todas_vagas_formais = [v for v in todas_vagas_formais if v["senioridade"] in ["Júnior", "Estágio", "Não Especificado"]]
+        vagas_processadas = [v for v in vagas_processadas if v["senioridade"] in ["Júnior", "Estágio", "Não Especificado"]]
 
-    jobs_nac_filtrados = [v for v in todas_vagas_formais if v["escopo"] == "nacional"]
-    jobs_int_filtrados = [v for v in todas_vagas_formais if v["escopo"] == "internacional"]
+    jobs_nac_filtrados = [v for v in vagas_processadas if v["escopo"] == "nacional"]
+    jobs_int_filtrados = [v for v in vagas_processadas if v["escopo"] == "internacional"]
 
     # Montar lista consolidada para o pós-processamento
     todos_itens = jobs_nac_filtrados + jobs_int_filtrados + posts_nacionais_unique + posts_internacionais_unique
@@ -252,12 +318,12 @@ def buscar_vagas_completas():
         "vagas": todos_itens
     }
 
-    nome_arquivo = "vagas_linkedin.json"
-    with open(nome_arquivo, "w", encoding="utf-8") as f:
+    arquivo_saida = DATA_DIR / "vagas_linkedin.json"
+    with open(arquivo_saida, "w", encoding="utf-8") as f:
         json.dump(dados_finais, f, ensure_ascii=False, indent=4)
 
-    print(f"\nSucesso! {len(todos_itens)} itens salvos temporariamente em '{nome_arquivo}'. Iniciando pós-processamento com Threshold de 60%...")
-    processar_vagas_com_curriculo(nome_arquivo)
+    print(f"\nSucesso! {len(todos_itens)} itens salvos temporariamente em '{arquivo_saida}'. Iniciando pós-processamento...")
+    processar_vagas_com_curriculo(str(arquivo_saida))
 
 def main():
     print(f"Iniciando Pipeline de Busca (Recência: {FILTRO_TEMPO} | Remoto: {APENAS_REMOTO} | Senioridade: {SENIORIDADE_FILTRO})...")
@@ -265,4 +331,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
