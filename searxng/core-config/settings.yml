@@ -2,7 +2,7 @@ use_default_settings: true
 
 server:
   secret_key: "aJrMHfAzngoFbAYCmp2YGBpKPypxp1y6"
-  bind_address: "[::]"
+  bind_address: "0.0.0.0"
   image_proxy: true
   limiter: false
   public_instance: false

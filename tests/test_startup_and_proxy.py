@@ -5,6 +5,7 @@ import requests
 
 from app.posts.fetcher import gerar_variantes_query_posts
 from app.posts.searxng_client import garantir_searxng_ativo
+from app.shared.http.client import requisicao_com_rotacao
 from app.shared.http.proxy_rotator import ProxyRotator
 
 
@@ -34,6 +35,16 @@ class ProxyValidationTests(unittest.TestCase):
         self.assertTrue(any("linkedin.com/posts" in variant for variant in variants))
         self.assertTrue(any("hiring" in variant.lower() for variant in variants))
         self.assertTrue(any("python" in variant.lower() for variant in variants))
+
+    @patch("app.shared.http.client.time.sleep", return_value=None)
+    @patch("app.shared.http.client.requests.get")
+    def test_requisicao_com_rotacao_does_not_retry_heavily_on_blocked_response(self, mock_get, mock_sleep):
+        mock_get.return_value = MagicMock(status_code=403)
+
+        result = requisicao_com_rotacao("https://example.com", max_retries=4, timeout=8)
+
+        self.assertIsNone(result)
+        self.assertEqual(mock_sleep.call_count, 0)
 
 
 @patch("app.posts.searxng_client.time.sleep", return_value=None)

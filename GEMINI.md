@@ -39,7 +39,7 @@ app/
 ├── shared/                       # 🛠️ SHARED INFRASTRUCTURE
 │   └── http/
 │       ├── proxy_rotator.py      # Async proxy scraper, validator & rotator
-│       └── client.py             # Resilient HTTP request wrapper with retries
+│       └── client.py             # Resilient HTTP request wrapper with bounded retries and fast exits on 401/403/429
 │
 ├── matchers/                     # 🎯 RESUME MATCHING ENGINE
 │   ├── skills_definitions.py     # Skill dictionaries for Backend & Fullstack profiles
@@ -99,6 +99,12 @@ app/
 - **Explicit Variable Naming**:
   - Proibido o uso de variáveis abreviadas, crípticas ou de letra única (ex: `for i, v in enumerate(...)` ou `m_be = ...`).
   - Use sempre nomes descritivos e legíveis no contexto do domínio (ex: `for index, job in enumerate(...)`, `backend_match = job.match_curriculo.backend if job.match_curriculo else None`).
+- **HTTP Resilience Policy**:
+  - O cliente HTTP compartilhado deve usar retries limitados e backoff controlado para evitar delays artificiais em respostas bloqueadas.
+  - Casos de status 401/403/429 devem encerrar rapidamente a série de tentativas em vez de repetir esperas inúteis.
+  - A validação de proxy não deve transformar respostas legítimas em falhas de rede nem aumentar o tempo total do job principal.
+- **SearXNG Local**:
+  - O serviço deve escutar explicitamente em `0.0.0.0` para que a porta publicada pelo Docker seja acessível pelo cliente Python em IPv4.
 - **Post-Change Validation Directive**:
   - **Sempre** após realizar modificações no código, deve-se executar `uv run ruff check` (e/ou `uv run ruff check --fix`) para validar e corrigir quaisquer pendências de lint/formatação.
 

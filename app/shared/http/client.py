@@ -10,7 +10,7 @@ def requisicao_com_rotacao(
     url: str,
     headers: dict[str, str] | None = None,
     params: dict[str, str] | None = None,
-    max_retries: int = 8,
+    max_retries: int = 5,
     timeout: int = 8
 ) -> requests.Response | None:
     headers = headers or DEFAULT_HEADERS
@@ -30,18 +30,21 @@ def requisicao_com_rotacao(
                 timeout=timeout,
             )
 
-            if response.status_code == 200 and (proxy is None or rotator._proxy_response_looks_valid(response)):
+            if response.status_code == 200:
                 return response
 
             last_error = f"Status {response.status_code}"
-            logger.debug(f"[HTTP] Resposta inválida/bloqueio ({last_error}). Alternando rota...")
+            logger.debug(f"[HTTP] Resposta bloqueada/código {response.status_code}. Alternando rota...")
+
+            if response.status_code in {401, 403, 429}:
+                break
 
         except requests.RequestException as exc:
             last_error = str(exc)
             logger.debug(f"[HTTP] Erro de rede ({exc.__class__.__name__}). Alternando rota...")
 
         if tentativa < max_retries:
-            time.sleep(0.4 * tentativa)
+            time.sleep(min(0.25 * tentativa, 1.0))
 
     logger.warning(f"[HTTP] Falha após {max_retries} tentativas para {url}. Último erro: {last_error}")
     return None

@@ -7,6 +7,37 @@ from app.models.post import PostItem
 from app.shared.http.proxy_rotator import DEFAULT_HEADERS
 
 
+def gerar_variantes_query_posts(query: str, max_variantes: int = 4) -> list[str]:
+    base = (query or "").strip()
+    if not base:
+        return []
+
+    variantes: list[str] = []
+    primeira = base if base.startswith("site:") else f"site:linkedin.com/posts/ {base}".strip()
+    variantes.append(primeira)
+
+    lowered = base.lower()
+    if "hiring" in lowered:
+        variantes.append(f"{base} AND \"hiring\"")
+    if "python" in lowered:
+        variantes.append(f"{base} AND \"Python\"")
+    if "remote" not in lowered:
+        variantes.append(f"{base} AND \"remote\"")
+
+    variantes_unicas: list[str] = []
+    visto: set[str] = set()
+    for variante in variantes:
+        chave = variante.strip()
+        if not chave or chave in visto:
+            continue
+        visto.add(chave)
+        variantes_unicas.append(chave)
+        if len(variantes_unicas) >= max_variantes:
+            break
+
+    return variantes_unicas
+
+
 def _converter_resultados_em_posts(
     resultados: list[dict], scope: ScopeEnum, max_resultados: int
 ) -> list[PostItem]:
