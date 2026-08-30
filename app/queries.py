@@ -1,4 +1,6 @@
 
+
+
 class Gringas:
     POSTS_FS = (
         'site:linkedin.com/posts/ "hiring" and ("vue" or "react") and "python" and "remote" '

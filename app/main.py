@@ -1,15 +1,14 @@
 import json
 import re
-import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-import requests
 from bs4 import BeautifulSoup
 from pos_processamento import processar_vagas_com_curriculo
 from posts_fetcher import buscar_posts_linkedin
 
+from app.fetcher import requisicao_com_rotacao, rotator
 from app.queries import Gringas, Nacionais
 
 # Direcionamento do diretório de dados
@@ -18,10 +17,6 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
-}
 
 # Configurações de Filtro
 FILTRO_TEMPO = "r604800"
@@ -29,32 +24,6 @@ APENAS_REMOTO = True
 SENIORIDADE_FILTRO = "JUNIOR"
 
 
-# ==========================================
-# 1. MECANISMO DE BACKOFF EXPONENCIAL
-# ==========================================
-def requisicao_com_backoff(url: str, headers: dict | None = None, max_retries: int = 3, timeout: int = 10) -> requests.Response | None:
-    """
-    Executa chamadas HTTP com backoff exponencial para lidar com limites de taxa (429/503).
-    """
-    headers = headers or HEADERS
-    delay = 1.0  # Começa com 1 segundo
-
-    for tentativa in range(max_retries):
-        try:
-            response = requests.get(url, headers=headers, timeout=timeout)
-            if response.status_code == 200:
-                return response
-            if response.status_code in [429, 502, 503, 504]:
-                print(f"⚠️ Status {response.status_code} em {url[:40]}... Aguardando {delay:.1f}s (Tentativa {tentativa+1}/{max_retries})")
-                time.sleep(delay)
-                delay *= 2  # Backoff exponencial (1s, 2s, 4s...)
-            else:
-                break
-        except requests.RequestException:
-            time.sleep(delay)
-            delay *= 2
-
-    return None
 
 
 # ==========================================
@@ -148,7 +117,7 @@ def obter_descricao_completa(job_id: str) -> str:
         return ""
     url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
     try:
-        response = requisicao_com_backoff(url, headers=HEADERS, max_retries=3, timeout=10)
+        response = requisicao_com_rotacao(url)
         if response and response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             desc_elem = soup.find("div", class_="show-more-less-html__markup") or soup.find("section", class_="description")
@@ -182,7 +151,7 @@ def buscar_vagas_linkedin_guest(
             f"&f_TPR={filtro_tempo}{filtro_remoto_param}{filtro_senioridade_param}&start={start}"
         )
         try:
-            response = requisicao_com_backoff(url, headers=HEADERS, max_retries=3, timeout=10)
+            response = requisicao_com_rotacao(url)
             if not response or response.status_code != 200:
                 break
 
@@ -327,6 +296,8 @@ def buscar_vagas_completas():
 
 def main():
     print(f"Iniciando Pipeline de Busca (Recência: {FILTRO_TEMPO} | Remoto: {APENAS_REMOTO} | Senioridade: {SENIORIDADE_FILTRO})...")
+    rotator.inicializar_pool(max_concurrency=200)
+
     buscar_vagas_completas()
 
 if __name__ == "__main__":

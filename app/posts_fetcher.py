@@ -1,29 +1,47 @@
+import json
 import time
+from pathlib import Path
 from typing import Literal
 
 import requests
 
-SEARXNG_URL = "http://localhost:8080/search"
+from app.queries import Gringas, Nacionais
 
-def buscar_posts_linkedin(query: str, escopo: Literal["nacional", "internacional"], max_resultados: int = 15) -> list[dict]:
+SEARXNG_URL = "http://localhost:8080/search"
+DATA_DIR = Path(__file__).parent / "data"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+}
+
+
+def buscar_posts_linkedin(
+    query: str, escopo: Literal["nacional", "internacional"], max_resultados: int = 15
+) -> list[dict]:
     """
     Busca posts do LinkedIn via instância local do SearXNG (formato JSON).
     """
-    posts = []
-    vistos = set()
+    posts: list[dict] = []
+    vistos: set[str] = set()
 
     params = {
         "q": query,
         "format": "json",
-        "time_range": "week",  # Equivalente ao timelimit="w"
-        "language": "pt-BR"
+        "time_range": "week",
+        "language": "pt-BR" if escopo == "nacional" else "en",
     }
 
     try:
-        response = requests.get(SEARXNG_URL, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
+        # Como o SearXNG é localhost, não enviamos via proxy rotativo externo
+        # O próprio SearXNG se encarrega de contornar bloqueios dos motores
+        response = requests.get(SEARXNG_URL, params=params, headers=HEADERS, timeout=10)
 
+        if not response or response.status_code != 200:
+            print(f"⚠️ SearXNG retornou status inválido ({response.status_code if response else 'Sem Resposta'}).")
+            return posts
+
+        data = response.json()
         resultados = data.get("results", [])
 
         for res in resultados:
@@ -40,7 +58,7 @@ def buscar_posts_linkedin(query: str, escopo: Literal["nacional", "internacional
                 snippet = res.get("content", "")
 
                 posts.append({
-                    "job_id": f"post_{hash(clean_href) & 0xffffffff}",
+                    "job_id": f"post_{hash(clean_href) & 0xFFFFFFFF}",
                     "tipo": "post",
                     "escopo": escopo,
                     "titulo": titulo,
@@ -52,7 +70,7 @@ def buscar_posts_linkedin(query: str, escopo: Literal["nacional", "internacional
                     "link": clean_href,
                     "descricao_resumida": snippet,
                     "descricao_completa": snippet,
-                    "raw": res
+                    "raw": res,
                 })
 
                 if len(posts) >= max_resultados:
@@ -63,24 +81,25 @@ def buscar_posts_linkedin(query: str, escopo: Literal["nacional", "internacional
     except Exception as e:
         print(f"⚠️ Exceção ao buscar posts no SearXNG para query ({query[:30]}...): {e}")
 
-    print(f"🔹 Busca concluída para query ({query}...): {len(posts)} posts encontrados.")
+    print(f"🔹 Busca concluída para query ({query[:40]}...): {len(posts)} posts encontrados.")
     return posts
 
 
 if __name__ == "__main__":
-    # Teste rápido da função
-    POSTS_QUERY = (
-    'site:linkedin.com/posts/ "hiring" and ("vue" or "react") and "python" and "remote" '
-    '-pleno -pl -senior -sr -ssr -staff -lead -principal -architect -staff '
-    '-lead -c2c -"us based" -hybrid -site -"us only" -"no visa" '
-    '-"citizens only" -"security clearance" -"on-site" -"local only" '
-    '-"must be located"'
-)
+    posts_queries = (
+        (Gringas.POSTS_FS, "internacional"),
+        (Gringas.POSTS_BE, "internacional"),
+        (Nacionais.POSTS_FS, "nacional"),
+        (Nacionais.POSTS_BE, "nacional"),
+    )
+    resultados: list[dict] = []
 
-    resultados = buscar_posts_linkedin(POSTS_QUERY, "internacional", max_resultados=5)
-    for post in resultados:
-        print(post)
+    for query, escopo in posts_queries:
+        print(f"🔎 Buscando posts com query ({escopo}): {query[:50]}...")
+        resultados.extend(buscar_posts_linkedin(query, escopo=escopo, max_resultados=30))
 
-    with open("test_posts.json", "w", encoding="utf-8") as f:
-        import json
+    print(f"\nTotal de posts encontrados: {len(resultados)}")
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    with open(DATA_DIR / "test_posts.json", "w", encoding="utf-8") as f:
         json.dump(resultados, f, ensure_ascii=False, indent=4)
