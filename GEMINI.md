@@ -44,8 +44,9 @@ app/
 │
 ├── shared/                       # 🛠️ SHARED INFRASTRUCTURE
 │   └── http/
-│       ├── proxy_rotator.py      # Async proxy scraper, validator & rotator
-│       └── client.py             # Resilient HTTP request wrapper with bounded retries, fast exits, and direct mode
+│       ├── proxy_sources.py      # Multi-source proxy aggregator (Geonode API, GitHub TheSpeedX/monosans, Spys.one, FreeProxyList, ProxyScrape)
+│       ├── proxy_rotator.py      # Dynamic Proxy Pool & Rotator supporting ACTIVE_POOL, PRE_FLIGHT, and ADAPTIVE_FAILOVER strategies
+│       └── client.py             # Resilient HTTP request wrapper with dynamic failover, proxy eviction, and direct mode fallback
 │
 ├── matchers/                     # 🎯 RESUME MATCHING ENGINE
 │   ├── skills_definitions.py     # Backward-compatible skill re-exports

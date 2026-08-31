@@ -1,59 +1,1974 @@
 {
     "filtro_threshold_minimo": 60,
-    "total_aprovados": 1,
+    "total_aprovados": 26,
     "nacional": {
-        "jobs": [],
-        "post": []
-    },
-    "internacional": {
-        "jobs": [],
-        "post": [
+        "jobs": [
             {
-                "job_id": "post_3529394538",
-                "tipo": "post",
-                "escopo": "internacional",
-                "titulo": "Mehween .'s Post - LinkedIn",
-                "empresa": "LinkedIn Post",
-                "localizacao": "Remoto / LATAM / Global",
-                "data_postagem": "Recente",
+                "job_id": "4339362342",
+                "tipo": "jobs",
+                "escopo": "nacional",
+                "titulo": "Junior Software Engineer with Accounting Experience (Brazil)",
+                "empresa": "Sezzle",
+                "localizacao": "Brasil",
+                "data_postagem": "Há 10 horas",
                 "senioridade": "Júnior",
                 "modelo_trabalho": "Remoto",
-                "link": "https://www.linkedin.com/posts/mehween-358053428_opentowork-softwareengineering-softwaredeveloper-activity-7499920967620775937-GLUb",
-                "descricao_resumida": "há 5 horas · ... hiring manager, developer, or someone who knows about opportunities for Junior Software Engineer, Software Developer, Game Developer, Data Analyst, Business ...",
-                "descricao_completa": "há 5 horas · ... hiring manager, developer, or someone who knows about opportunities for Junior Software Engineer, Software Developer, Game Developer, Data Analyst, Business ...",
+                "link": "https://br.linkedin.com/jobs/view/junior-software-engineer-with-accounting-experience-brazil-at-sezzle-4339362342",
+                "descricao_resumida": "Sezzle - Brasil",
+                "descricao_completa": "The salary range for this role is $1,500 - $4,000 per month (Gross in USD) \nAbout Sezzle:\nWith a mission to financially empower the next generation, Sezzle is revolutionizing the shopping experience beyond payments, blending cutting-edge tech with seamless, interest-free installment plans that make shopping smarter and more accessible. We’re not just transforming payments; we’re redefining how people discover, interact with, and purchase the things they love while driving real impact on merchant sales through increased conversions and higher order values. As we continue to shape the future of fintech and retail, we’re building an innovative, dynamic team passionate about creating more than just a transaction but a truly unique shopping journey. If you’re excited about pushing boundaries in tech and delivering a game-changing experience for consumers and merchants alike, come join us at Sezzle and help create the future of shopping!\nAbout the Role:\nWe are seeking a talented and motivated \nJunior Software Engineer with a unique blend of \naccounting experience \n who is best in class with a high IQ plus a high EQ. This role presents an exciting opportunity to thrive in a dynamic, fast-paced environment within a rapidly growing team, with abundant prospects for career advancement. \nThis role is tailored for professionals who started their careers in accounting but pivoted to engineering and now want to leverage their domain expertise to solve technical challenges in fintech.\n This role presents an exciting opportunity to thrive in a dynamic, fast-paced environment within a rapidly growing team, with abundant prospects for career advancement. The Junior Software Engineer will assist us with the design, development, and installation of software solutions. Your duties will include development, writing code, and documenting functionality. You should be able to build high-quality, innovative and fully performing software in compliance with coding standards and technical design.\nInterview Process\nWe believe transparency is important at Sezzle. Regularly providing feedback while setting expectations is part of our culture starting with the interview process. Advancement through each step is not guaranteed.\nApplication submitted (you are here)\nWonderlic test (30-40 min)\nCoding assessment (:1.5 hours)\nInterview with recruiters (30 min)\nInterview with engineers (1 hour)\nInterview with engineering leadership (30-45 min)\nOffer!\nSezzle Technical Stack:\nGolang backend, React / React Native front-end\nGrafana / Loki / Prometheus metrics\nKubernetes\nAWS\nAmazon Aurora (MySQL) RDS\nGitlab CI/CD deployments\nUnit, Integration, and end-to-end testing\nWhat You'll Do:\nCollaborate with cross-functional teams to enhance and maintain software solutions for financial processes.\nBe an integral part of the software development lifecycle.\nWork as an integrated team member developing new features.\nLeverage accounting background to identify gaps and improve automation and reconciliation workflows.\nEvaluate and deploy software tools, processes, and metrics.\nProvide support and consulting on software systems usage.\nEnsure compliance with project plans and industry standards.\nWhat We Look For:\nPrior experience as an accountant or financial analyst.\nSolid understanding of financial operations such as reconciliation, reporting, and compliance.\nProficient in at least one programming language (e.g., Python, Java, Go) and familiar with database systems like MySQL or PostgreSQL.\nExperience with backend API development.\nExperience with relational database storage and retrieval.\nFamiliarity with software engineering tools, software development methodology, and release processes.\nDemonstrated experience working with Claude or equivalent large language model tools is required; candidates must be comfortable leveraging AI to enhance productivity, research, and communication.\nBachelor’s degree in Accounting, Computer Science, or a related field.\nSezzle’s Technology Stack:\nLanguages: Golang, Typescript, Python\nFrontend: Typescript - React and React Native\nBackend: Golang\nDatabase: MySQL, Postgres, Elasticsearch\nDevOps & Cloud: AWS, Kubernetes\nVersion Control: Git\nCI/CD: Gitlab\nTesting: Developer-driven, focus on automated unit, integration, and end-to-end tests\nSezzle is focused on using open source, and we build what we can before buying!\nAbout You:\nYou have relentlessly high standards - many people may think your standards are unreasonably high. You are continually raising the bar and driving those around you to deliver great results. You make sure that defects do not get sent down the line and that problems are fixed so they stay fixed.\nYou’re not bound by convention - your success—and much of the fun—lies in developing new ways to do things\nYou need action - speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk-taking.\nYou earn trust - you listen attentively, speak candidly, and treat others respectfully.\nYou have backbone; disagree, then commit - you can respectfully challenge decisions when you disagree, even when doing so is uncomfortable or exhausting. You have conviction and are tenacious. You do not compromise for the sake of social cohesion. Once a decision is determined, you commit wholly.\nYou deliver results - you focus on the key inputs and deliver them with the right quality and in a timely fashion. Despite setbacks, you rise to the occasion and never settle.\nWhat Makes Working at Sezzle Awesome:\nAt Sezzle, we are more than just brilliant engineers, passionate data enthusiasts, out-of-the-box thinkers, and determined innovators. We believe in surrounding ourselves with only the best and the brightest individuals. Our culture is not defined by a certain set of perks designed to give the illusion of the traditional startup culture, but rather, it is the visible example living in every employee that we hire.\n#Full-time",
                 "match_curriculo": {
                     "perfis": {
                         "backend": {
                             "nome_perfil": "backend",
-                            "score_porcentagem": 0,
-                            "nivel": "Baixo",
-                            "habilidades_compativeis": [],
-                            "total_habilidades_encontradas": 0
+                            "score_porcentagem": 65,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Git",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 7
                         },
                         "fullstack": {
                             "nome_perfil": "fullstack",
-                            "score_porcentagem": 0,
-                            "nivel": "Baixo",
-                            "habilidades_compativeis": [],
-                            "total_habilidades_encontradas": 0
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "React.js",
+                                "TypeScript"
+                            ],
+                            "total_habilidades_encontradas": 8
                         }
                     },
                     "backend": {
                         "nome_perfil": "backend",
-                        "score_porcentagem": 0,
-                        "nivel": "Baixo",
-                        "habilidades_compativeis": [],
-                        "total_habilidades_encontradas": 0
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Git",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 7
                     },
                     "fullstack": {
                         "nome_perfil": "fullstack",
-                        "score_porcentagem": 0,
-                        "nivel": "Baixo",
-                        "habilidades_compativeis": [],
-                        "total_habilidades_encontradas": 0
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "React.js",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4460039364",
+                "tipo": "jobs",
+                "escopo": "nacional",
+                "titulo": "Desenvolvedor Python / Pesquisa + Desenvolvimento - Trabalho Remoto",
+                "empresa": "BairesDev",
+                "localizacao": "Brasília, DF",
+                "data_postagem": "Há 5 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/desenvolvedor-python-pesquisa-%2B-desenvolvimento-trabalho-remoto-at-bairesdev-4460039364",
+                "descricao_resumida": "BairesDev - Brasília, DF",
+                "descricao_completa": "Há mais de 15 anos, a BairesDev® é líder em projetos tecnológicos. Entregamos soluções inovadoras para gigantes como Google e Rolls-Royce e as startups mais inovadoras do Vale do Silício.\nTemos uma equipe diversa de mais de 4.000 profissionais formada pelo Top 1% dos talentos de tecnologia do mundo, trabalhando remotamente em cargos de impacto global.\nAo se candidatar para este cargo, você está dando o primeiro passo em um processo que vai além do comum. Nosso objetivo é alinhar suas paixões, habilidades, e expectativas às nossas vagas, colocando você no caminho para desenvolver uma carreira de sucesso excepcional.\nDesenvolvedor Python / Pesquisa + Desenvolvimento na BairesDev\nEstamos à procura de excelentes desenvolvedores Python para se juntarem à equipe de pesquisa e desenvolvimento (P&D) da BairesDev.\nNossa equipe de P&D é uma parte essencial de nossas soluções de tecnologia que geram milhões em receita todos os anos, por isso contratamos apenas os melhores dos melhores.\nDentro da equipe, você encontrará muitos desafios diferentes: análise de dados, aprendizado de máquina, desktop e desenvolvimentos web são alguns dos mais relevantes no momento, mas para impulsionar a inovação, você notará que novidades estão surgindo todos os dias!\nA área de P&D é sem dúvida a área mais interessante e desafiante de toda a empresa, e embora a BairesDev seja formada por pessoas realmente talentosas em geral, aqui você encontrará profissionais com larga experiência e também com níveis intelectuais e criativos muito acima da média.\nQueremos que as pessoas aproveitem a viagem. Você está pronto?\nO que você vai fazer:\n- Criar sistemas e ferramentas de automação para configurar, monitorar e orquestrar a infraestrutura de dados e pipelines.\n- Criar serviços de integração de dados para ajudar a integrar novos clientes o mais rápido possível.\n- Manter a confiabilidade, o desempenho e o suporte contínuos da infraestrutura de dados, fornecendo soluções baseadas nas necessidades dos aplicativos e no crescimento previsto.\nEsperamos que você tenha:\n- 4+ anos de experiência prática em desenvolvimento Python e Django.\n- Desejável experiência em desenvolvimento com programação orientada a objetos.\n- 3 anos de desenvolvimento utilizando outras linguagens de programação.\n- Bons conhecimentos com XML e bases de dados relacionais (Oracle/MS SQL/MySQL).\n- Forte experiência profissional trabalhando com grandes estruturas de dados (incluindo XML) e algoritmos.\n- Nível avançado de inglês.\nComo tornamos seu trabalho (e sua vida) mais fácil:\n- Modalidade 100% remota - trabalhe de qualquer lugar.\n- Excelente remuneração em USD ou na sua moeda local, como preferir.\n- Hardware para você trabalhar de casa.\n- Horários flexíveis - faça seu próprio horário.\n- Licença parental remunerada, férias, e feriados nacionais.\n- Ambiente de trabalho inovador e multicultural.\n- Colabore e aprenda com o Top 1% global dos talentos de cada área.\n- Ambiente de apoio com mentoria, promoções, desenvolvimento de habilidades, e diversas oportunidades de crescimento.\nJunte-se a uma equipe global onde seus talentos excepcionais podem se destacar!",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "MySQL",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "MySQL",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "MySQL",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "MySQL",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    }
+                }
+            },
+            {
+                "job_id": "4460025351",
+                "tipo": "jobs",
+                "escopo": "nacional",
+                "titulo": "Engenheiro de Software Tr. (Dados)",
+                "empresa": "PagBank",
+                "localizacao": "São Paulo, SP",
+                "data_postagem": "Há 8 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/engenheiro-de-software-tr-dados-at-pagbank-4460025351",
+                "descricao_resumida": "PagBank - São Paulo, SP",
+                "descricao_completa": "Descrição da vaga\nQuando você pensa em carreira, o que vem à sua mente? Propósito? Colaboração? Ser protagonista para fazer a diferença? No PagBank temos tudo isso e muito mais. 💛\nEstamos em busca de pessoas que vistam a camisa com orgulho. Gente com vontade de facilitar a vida financeira das pessoas e impulsionar negócios!\nTá a fim de uma carreira que rende mais? \nConfira essa oportunidade e #VemProPags!\nResponsabilidades e atribuições\n Desenvolvimento e sustentação de plataforma para a gestão da governança de dados da organização.\n Participar da análise e definição de implementação de novas tecnologias.\n Participar na definição e implementação da arquitetura dos serviços mantidos pela equipe.\n Atuar em equipes de desenvolvimento que utilizam métodos ágeis.\n Avaliar novas tecnologias e frameworks de mercado para melhoria contínua de produtos e processos, realizando provas de conceito.\n Manter e desenvolver funcionalidades da plataforma de dados especificamente em produto para a gestão de metadados da organização.\n Construção de serviços, microsserviços e produtos que atendam às necessidades dos times de dados da organização, tanto do ponto de vista da governança dos dados quanto da engenharia dos dados.\n Construção de mecanismos que garantam a gestão, descoberta e sensibilização das mais diferentes fontes de dados disponíveis nos times de engenharia da organização.\nRequisitos e qualificações\n Ensino Superior completo em Ciência da Computação, Engenharias, Sistemas de Informação ou áreas correlatas.\n Experiência com controle de versionamento com Git.\n Experiência com linguagens de desenvolvimento Java e Python.\n Experiência com desenvolvimento utilizando ambiente AWS(S3 + Glue + Redshift) e/ou OCI (AI DP).\n Experiência com análise e desenvolvimento de sistemas, definições de arquitetura e orientação a objetos.\n Experiência com containerização de aplicações como Docker e Kubernetes.\n Experiência com soluções de observabilidade como New Relic, Grafana e Splunk.\n Experiência com Linux, Shell Script, YAML e Terraform.\n Conhecimento em arquitetura de microsserviços.\nInformações adicionais\n Conhecimento em design patterns e paradigmas de programação.\n Conhecimento em técnicas de Clean Code.\n Conhecimento no uso de MongoDB, MySQL ou qualquer outra tecnologia de banco.\n Conhecimento em JavaScript, React, CSS e HTML.\n Conhecimento em arquitetura de microsserviços.\n Conhecimento em ferramentas de mensageria como Kafka.\n Experiência com configuração e customização de ambientes com integração contínua e delivery contínuo utilizando o Jenkins.\n Conhecimento em elaboração de testes unitários e funcionais.\n Conhecimento em bancos de dados relacionais e não relacionais.\n Vivência com métodos ágeis de desenvolvimento: XP (principalmente com práticas de pair programming e TDD), Scrum e Kanban ou variações Lean.\n Experiência com implementação de padrões de governança de dados em ambientes operacionais e analíticos de dados serão diferenciais.\n Experiência com produtos de governança de dados do setor como Apache Atlas será um diferencial.\n Experiência com tecnologias de Big-Data - por exemplo, Hadoop, Spark, DataLakes, Data Warehouses é um diferencial.\nOlá, somos o PagBank!\nTalvez você nos conheça por maquininhas ou comerciais que ficam na memória, mas somos muito mais!\nTodos os dias desenvolvemos produtos e soluções inspiradas pelo nosso propósito: facilitar a vida financeira das pessoas e negócios.\nTrabalhamos para transformar a forma como as pessoas lidam com dinheiro abrindo novas possibilidades para alcançarem seus sonhos. \nComo fazemos tudo isso? \n💛 \nCom gente \nSomos um time que joga junto! Aqui valorizamos todas as diversidades, seja de raça/etnia, gênero, idade, origem, pessoa com deficiência, orientação afetivo-sexual, constituição familiar e estética.\n💛 \nCom tecnologia \nO espírito disruptivo e inovador está no nosso DNA: somos parte do Grupo UOL, empresa 100% brasileira, foi pioneira na internet e transforma a vida das pessoas desde 1996.\n💛 \nCom uma só cultura\nTemos uma cultura forte e única, capaz de nos levar além, para continuarmos crescendo e perpetuando o nosso negócio.\nSomos um dos maiores bancos digitais do país e uma das fintechs mais rentáveis do segmento e certificados como um Excelente Lugar para Trabalhar pela Great Place to Work.\nPara vivenciar tudo isso, você terá um pacote completo de benefícios que fazem toda a diferença:\nVale-alimentação e/ou refeição.\nPlano de saúde e odontológico.\nSeguro de vida.\nParceria com TotalPass e ZenKlub.\nLicença maternidade e paternidade estendidas.\nAuxílio-creche.\nDescontos de até 50% em pós-graduação e MBA de grandes instituições, como FIA, FAAP e PUCRS.\nE tem mais:\nNo dress code: o importante é você usar o que te faz bem.\n#TáDeParabéns: Day off no aniversário.\nBaby Gift: presente para recém-nascidos.\nTá a fim de uma carreira que rende mais? \nVem pro nosso time imbatível!\n#VemProPags.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Docker",
+                                "Git",
+                                "Jenkins",
+                                "Linux",
+                                "Microservices",
+                                "MySQL",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Docker",
+                                "HTML/CSS",
+                                "JavaScript",
+                                "Jenkins",
+                                "MySQL",
+                                "Python",
+                                "React.js"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Docker",
+                            "Git",
+                            "Jenkins",
+                            "Linux",
+                            "Microservices",
+                            "MySQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Docker",
+                            "HTML/CSS",
+                            "JavaScript",
+                            "Jenkins",
+                            "MySQL",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 8
                     }
                 }
             }
-        ]
+        ],
+        "post": []
+    },
+    "internacional": {
+        "jobs": [
+            {
+                "job_id": "4317334899",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "Inetum",
+                "localizacao": "Porto, Porto, Portugal",
+                "data_postagem": "Há 9 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://pt.linkedin.com/jobs/view/python-developer-at-inetum-4317334899",
+                "descricao_resumida": "Inetum - Porto, Porto, Portugal",
+                "descricao_completa": "Company Description\nInetum is a European leader in digital services. Inetum’s team of 28,000 consultants and specialists strive every day to make a digital impact for businesses, public sector entities and society. Inetum’s solutions aim at contributing to its clients’ performance and innovation as well as the common good.\nPresent in 19 countries with a dense network of sites, Inetum partners with major software publishers to meet the challenges of digital transformation with proximity and flexibility.\nDriven by its ambition for growth and scale, Inetum generated sales of 2.5 billion euros in 2023.\nJob Description\nThe Developer's mission is to contribute to the functional and application related consistency of the IT solution and ensure the service continuity and continuous development. The Developer must perform activities within the framework of projects and/or application maintenance and development, seeking it’s continuous development and assuring it’s compliance with Quality and Security guidelines and best practices.\nMain Tasks\nCode and test software components and parts assigned to them for the technical domains under their responsibility in compliance with development and security norms and standards.\nHelp in the design, model and implementation of the product’s solution, as necessary, with the objective of optimize the quality of the code and its future maintainability.\nParticipate in the delivery of the product components in the different environments, in close collaboration with other teams whenever necessary.\nAct as a reference in the function and capitalize on the gathered experience to share knowledge, train and coach others.\nQualifications\nTechnical Skills:\nPython Programming\nFlask / Fast API\nSQL\nJavaScript\nAngular \nLanguage Skills\nEnglish \nSoft Skills\nTeam Work\nCommunication\nOrganization",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 50,
+                            "nivel": "Médio",
+                            "habilidades_compativeis": [
+                                "Flask",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 65,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Flask",
+                                "JavaScript",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 50,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Flask",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Flask",
+                            "JavaScript",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    }
+                }
+            },
+            {
+                "job_id": "4339362342",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Junior Software Engineer with Accounting Experience (Brazil)",
+                "empresa": "Sezzle",
+                "localizacao": "Brasil",
+                "data_postagem": "Há 10 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/junior-software-engineer-with-accounting-experience-brazil-at-sezzle-4339362342",
+                "descricao_resumida": "Sezzle - Brasil",
+                "descricao_completa": "The salary range for this role is $1,500 - $4,000 per month (Gross in USD) \nAbout Sezzle:\nWith a mission to financially empower the next generation, Sezzle is revolutionizing the shopping experience beyond payments, blending cutting-edge tech with seamless, interest-free installment plans that make shopping smarter and more accessible. We’re not just transforming payments; we’re redefining how people discover, interact with, and purchase the things they love while driving real impact on merchant sales through increased conversions and higher order values. As we continue to shape the future of fintech and retail, we’re building an innovative, dynamic team passionate about creating more than just a transaction but a truly unique shopping journey. If you’re excited about pushing boundaries in tech and delivering a game-changing experience for consumers and merchants alike, come join us at Sezzle and help create the future of shopping!\nAbout the Role:\nWe are seeking a talented and motivated \nJunior Software Engineer with a unique blend of \naccounting experience \n who is best in class with a high IQ plus a high EQ. This role presents an exciting opportunity to thrive in a dynamic, fast-paced environment within a rapidly growing team, with abundant prospects for career advancement. \nThis role is tailored for professionals who started their careers in accounting but pivoted to engineering and now want to leverage their domain expertise to solve technical challenges in fintech.\n This role presents an exciting opportunity to thrive in a dynamic, fast-paced environment within a rapidly growing team, with abundant prospects for career advancement. The Junior Software Engineer will assist us with the design, development, and installation of software solutions. Your duties will include development, writing code, and documenting functionality. You should be able to build high-quality, innovative and fully performing software in compliance with coding standards and technical design.\nInterview Process\nWe believe transparency is important at Sezzle. Regularly providing feedback while setting expectations is part of our culture starting with the interview process. Advancement through each step is not guaranteed.\nApplication submitted (you are here)\nWonderlic test (30-40 min)\nCoding assessment (:1.5 hours)\nInterview with recruiters (30 min)\nInterview with engineers (1 hour)\nInterview with engineering leadership (30-45 min)\nOffer!\nSezzle Technical Stack:\nGolang backend, React / React Native front-end\nGrafana / Loki / Prometheus metrics\nKubernetes\nAWS\nAmazon Aurora (MySQL) RDS\nGitlab CI/CD deployments\nUnit, Integration, and end-to-end testing\nWhat You'll Do:\nCollaborate with cross-functional teams to enhance and maintain software solutions for financial processes.\nBe an integral part of the software development lifecycle.\nWork as an integrated team member developing new features.\nLeverage accounting background to identify gaps and improve automation and reconciliation workflows.\nEvaluate and deploy software tools, processes, and metrics.\nProvide support and consulting on software systems usage.\nEnsure compliance with project plans and industry standards.\nWhat We Look For:\nPrior experience as an accountant or financial analyst.\nSolid understanding of financial operations such as reconciliation, reporting, and compliance.\nProficient in at least one programming language (e.g., Python, Java, Go) and familiar with database systems like MySQL or PostgreSQL.\nExperience with backend API development.\nExperience with relational database storage and retrieval.\nFamiliarity with software engineering tools, software development methodology, and release processes.\nDemonstrated experience working with Claude or equivalent large language model tools is required; candidates must be comfortable leveraging AI to enhance productivity, research, and communication.\nBachelor’s degree in Accounting, Computer Science, or a related field.\nSezzle’s Technology Stack:\nLanguages: Golang, Typescript, Python\nFrontend: Typescript - React and React Native\nBackend: Golang\nDatabase: MySQL, Postgres, Elasticsearch\nDevOps & Cloud: AWS, Kubernetes\nVersion Control: Git\nCI/CD: Gitlab\nTesting: Developer-driven, focus on automated unit, integration, and end-to-end tests\nSezzle is focused on using open source, and we build what we can before buying!\nAbout You:\nYou have relentlessly high standards - many people may think your standards are unreasonably high. You are continually raising the bar and driving those around you to deliver great results. You make sure that defects do not get sent down the line and that problems are fixed so they stay fixed.\nYou’re not bound by convention - your success—and much of the fun—lies in developing new ways to do things\nYou need action - speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk-taking.\nYou earn trust - you listen attentively, speak candidly, and treat others respectfully.\nYou have backbone; disagree, then commit - you can respectfully challenge decisions when you disagree, even when doing so is uncomfortable or exhausting. You have conviction and are tenacious. You do not compromise for the sake of social cohesion. Once a decision is determined, you commit wholly.\nYou deliver results - you focus on the key inputs and deliver them with the right quality and in a timely fashion. Despite setbacks, you rise to the occasion and never settle.\nWhat Makes Working at Sezzle Awesome:\nAt Sezzle, we are more than just brilliant engineers, passionate data enthusiasts, out-of-the-box thinkers, and determined innovators. We believe in surrounding ourselves with only the best and the brightest individuals. Our culture is not defined by a certain set of perks designed to give the illusion of the traditional startup culture, but rather, it is the visible example living in every employee that we hire.\n#Full-time",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 65,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Git",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 7
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "React.js",
+                                "TypeScript"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Git",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 7
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "React.js",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4452593062",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Software Engineer",
+                "empresa": "Freeday",
+                "localizacao": "Randstad",
+                "data_postagem": "Há 6 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://nl.linkedin.com/jobs/view/software-engineer-at-freeday-4452593062",
+                "descricao_resumida": "Freeday - Randstad",
+                "descricao_completa": "At Freeday, we build digital employees that automate repetitive work so people can focus on what really matters. Our AI platform helps companies streamline processes, connect systems and bring intelligent automation to life.\nNow we’re looking for a Software Engineer who wants to build the product behind those digital employees. Someone who enjoys solving real client problems, understands the product behind the code and knows how to turn messy ideas into clear, shippable work.\nWhat you’ll do\nAs a Software Engineer, you’ll join our Digital Employee Management Platform squad. This is the part of Freeday that helps clients configure, coach and manage their digital employees. Think giving digital employees experiences, giving insight into their performance, tracking automatically where the gaps are, but also making setup easy and intuitive.\nYou bring product sense, client empathy and engineering ownership. You understand what clients are trying to achieve, translate that into practical technical solutions and help decide what we should build, configure or leave for later. Some might call you a product engineer.\nThis is not a role where tickets are handed to you fully written out. You’ll be involved earlier in the process. You’ll ask questions, shape ideas, write things down clearly and then help ship the solution.\nYour days might look like this:\nTurning client and implementation team input into scoped engineering work\nWorking with our conversational experts and turning their work and insights into a useful feature in our digital employee management platform.\nWriting a \nbet\n and convincing our Head of Product that we need it now. \nBuilding backend features, integrations and platform improvements\nWorking mainly with Python and Django, while touching other parts of the stack when needed\nWriting clear technical designs, ADRs or product notes that others can understand\nJoining discussions with product, design, implementation and engineering\nHelping ship client-specific projects without turning everything into custom work\nKeeping the product practical, scalable and useful in the real world\nWhy Freeday\nWe are a Rotterdam based tech scale-up with big ambitions and a team that loves building things that matter. We prefer working together at the office because the best ideas often start at the coffee machine or in front of a whiteboard.\nYou’ll join a curious group of people who like solving real problems and learning every day how to get better at it. No big egos. No corporate nonsense. Just people who want to build meaningful products together.\nWhat you’ll get from us\nA role with real influence where you can see the direct impact of your work\nA team full of smart and driven people\nA solid salary, pension plan, laptop and travel allowance\nAn office five minutes from Rotterdam Central\nSpace to grow, experiment and make mistakes because that is how you learn\nRegular drinks, fun team moments and plenty of laughs along the way\nWho you are\nYou are a software engineer who cares about more than just the code. You want to understand why something is being built, who it helps and whether it actually solves the problem.\nYou like working on product questions, but you still enjoy engineering. You can take a vague problem, ask the right questions and turn it into something clear enough to build. You are pragmatic by default. You do not overcomplicate things when a simple solution gets us moving.\nYou probably recognize yourself in this:\nYou have around 3 to 5 years of professional engineering experience\nYou are strong in backend development, ideally with Python\nExperience with Django or Django REST Framework is useful, but not a must\nYou have worked on product features, not only technical tickets\nYou can explain previous work in terms of the problem, the user and the trade-offs\nYou write clearly and can document technical choices in a way others understand\nYou are comfortable working with ambiguity and the associated freedom.\nYou like talking to people outside engineering to understand what is really needed\nComfortable using tools like Cursor, Claude Code or similar agentic coding tools\nYou speak English fluently\nYou are based in the Netherlands and can work from our office regularly\nNice to have\nExperience with AI, LLMs, agents, prompts or evals\nExperience with GCP, Postgres, Grafana or basic ops\nExperience in a SaaS or scale-up environment\nExperience with conversational AI, chatbots or voice agents\nDutch communication skills are a plus, but not required\nThis role is probably not for you if\nYou prefer to only work on deep backend, platform or infra problems\nYou need fully written Jira tasks before you can get started\nYou want to specialize deeply in one technical layer\nYou prefer research over shipping real product improvements (backed by research if needed)\nInterested?\nCheck out \nwww.freeday.ai\n or send us a message. We would love to hear from you.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "GCP",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "GCP",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "GCP",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "GCP",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    }
+                }
+            },
+            {
+                "job_id": "4461088513",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Backend Developer Python",
+                "empresa": "Mynameis",
+                "localizacao": "Chiasso, Tessino, Suíça",
+                "data_postagem": "Há 9 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://ch.linkedin.com/jobs/view/backend-developer-python-at-mynameis-4461088513",
+                "descricao_resumida": "Mynameis - Chiasso, Tessino, Suíça",
+                "descricao_completa": "Backend Developer Python \nSede di lavoro\n: Chiasso, Canton Ticino\nSmart Working\n: 2 giorni a settimana\nSiamo una boutique di headhunting specializzata nella ricerca e selezione di profili Middle e Senior Management.\nPer conto di un nostro cliente, importante realtà internazionale operante settore dei servizi digitali, con sede a \nChiasso\n, siamo alla ricerca di un \nBackend Developer Python\n da inserire nel team IT, all'interno di un contesto dinamico, innovativo e orientato alla crescita professionale.\nResponsabilità: \nGuidare la progettazione, lo sviluppo e l'implementazione end-to-end delle componenti server-side, garantendo elevati standard di qualità, performance e sicurezza.\nSviluppare soluzioni backend robuste, ad alta disponibilità e bassa latenza, principalmente in \nPython\n.\nProgettare e implementare \nAPI RESTful\n, assicurando un'integrazione fluida con applicazioni front-end e servizi di terze parti.\nEffettuare \ncode review\n, promuovendo le best practice di sviluppo e supportando la crescita tecnica dei colleghi più junior.\nProgettare, implementare e ottimizzare schemi di database a supporto dei processi aziendali.\nGestire e analizzare grandi volumi di dati, costruendo strutture dati efficienti e performanti.\nOttimizzare le applicazioni lato server per garantire massime performance, scalabilità e affidabilità.\nIdentificare, analizzare e risolvere problematiche tecniche durante tutto il ciclo di vita dell'applicazione.\nCollaborare a stretto contatto con i team Front-end per garantire una corretta integrazione e un flusso dati efficiente tra client e server.\nProgettare e implementare architetture event-driven scalabili e sistemi di message streaming (es. Kafka) per supportare l'elaborazione asincrona dei dati.\nRequisiti mandatori: \nLaurea triennale o magistrale in Informatica, Ingegneria Informatica, Information Technology o formazione equivalente maturata sul campo.\nAlmeno \n3 anni di esperienza\n in ruoli analoghi di sviluppo \nBackend\n.\nSolida esperienza di programmazione backend con approfondita conoscenza di \nPython\n e framework come \nDjango\n.\nOttima conoscenza delle \nAPI RESTful\n e capacità di sviluppare e integrare servizi backend.\nEsperienza con tecnologie database; preferenziale la conoscenza di \nMongoDB\nFamiliarità con pratiche \nDevOps\n e ambienti \nCloud\n.\nEsperienza con sistemi di versionamento (\nGit\n) e package manager.\nConoscenza delle metodologie \nAgile\n e dei principi di architettura applicativa.\nEsperienza nella progettazione e implementazione di architetture event-driven e nell'utilizzo di message broker come \nApache Kafka\n e \nRabbitMQ\n.\nEccellenti capacità di problem solving, comunicazione e collaborazione, con attitudine a lavorare sia in autonomia che in team.\nOttima conoscenza della lingua \ninglese e dell'italiano\nCostituiscono titolo preferenziale: \nConoscenza di \nHTML, CSS e JavaScript\n e familiarità con framework front-end moderni, preferibilmente \nVue.js\nEsperienza nello sviluppo di interfacce \nresponsive\n e attenzione ai principi di \nUser Experience (UX)\nFamiliarità con metodologie \nTest-Driven Development (TDD)\n e framework di testing quali \nJest, Mocha e Jasmine\nConoscenza dei processi e degli strumenti di \nCI/CD\nInteresse ed esperienza nell'utilizzo di strumenti di \nAI Coding\n all'interno del ciclo di sviluppo, con attenzione alla qualità del codice, ai processi di revisione e alle best practice di validazione\nCosa offrono\n:\nContratto svizzero\nRange fisso: 60.000 - 70.000 CHF\nMBO 10%\nPiattaforma di Corporate Benefits\nAssicurazione sanitaria privata\n2 gg di smart working\nBudget annuale dedicato alla formazione professionale\nLe ricerche sono volte a candidati di entrambi i sessi, legge 903/77.\nAutorizzazione Ministero del Lavoro n 1120 - SG del 26/11/2004.\nSi invita a prendere visione della nostra informativa sul trattamento dei dati personali all'indirizzo \nwww.injob.com\n e a comunicare solo i dati necessari alla selezione, evitando di inserire \"dati particolari\" (quali dati che rivelino l'origine razziale o etnica, le convinzioni religiose o filosofiche, le opinioni politiche, l'adesione ad associazioni sindacali, dati genetici, dati relativi alla salute o alla vita sessuale o all'orientamento sessuale) ad eccezione di quelli che potrebbero essere richiesti dall'annuncio e/o ritenuti importanti per un'adeguata valutazione della candidatura. Il trattamento di questi eventuali dati particolari sarà subordinato al consenso dell'interessato.\nha il menu contestuale",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Git",
+                                "Python",
+                                "REST APIs",
+                                "RabbitMQ"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "HTML/CSS",
+                                "JavaScript",
+                                "Jest",
+                                "Python",
+                                "REST APIs",
+                                "RabbitMQ",
+                                "Vue.js"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "RabbitMQ"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "HTML/CSS",
+                            "JavaScript",
+                            "Jest",
+                            "Python",
+                            "REST APIs",
+                            "RabbitMQ",
+                            "Vue.js"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4459780924",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Backend Developer @ smaXtec animal care GmbH",
+                "empresa": "DEVjobs",
+                "localizacao": "Graz, Estíria, Áustria",
+                "data_postagem": "Há 13 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://at.linkedin.com/jobs/view/backend-developer-%40-smaxtec-animal-care-gmbh-at-devjobs-4459780924",
+                "descricao_resumida": "DEVjobs - Graz, Estíria, Áustria",
+                "descricao_completa": "Backend Developer @ smaXtec animal care GmbH\n💾 \nJob Technologies\nGit\nFlask\nPython\nRedis\nSQL\nSQLAlchemy\nKubernetes\nGraphQL\nDocker\nRESTful API\nCelery\n👥 \nYour role in the team\nDesign and develop Rest-APIs for smaXtec's frontend applications.\nWork closely with frontend developers to align API design with UI/UX needs.\nBuild and maintain integrations with dairy industry partners to enable seamless data exchange and create interfaces to control barn automation systems.\nCreate and maintain internal tools to improve workflows across departments.\nMaintain clear and comprehensive API documentation for both internal and external use.\n🌟 \nOur expectations of you\nQualifications\nStrong skills in Python, Flask or similar, SQLAlchemy, Celery, RESTful APIs, SQL, Git.\nFamiliarity with Kubernetes (Google Cloud), Docker, Redis, GraphQL is a plus.\nSelf-driven with a passion for implementing your ideas and solving problems from model to application.\nEducation\nCompleted technical education (HTL, Telematics, Computer Science, or related fields) and at least 3 years of experience in backend/cloud development.\n💡 \nTopics that you deal with on the job\nIoT\nCloud Computing\nAI\n📍 \nJob Locations\nStandort Graz\n Sandgasse 36/2 8010 Graz Austria\n💰 \nSalary\n42.000 to 60.000€ gross per year\n🏢 \nThis is your employer\nsmaXtec animal care GmbH\n📍 Graz, Ainring, Pfäffikon, Derbyshire Dales, Tauranga, Madison, Limerick\nsmaXtec is a high-tech company based in Graz, Austria that develops and sells unique monitoring systems for the animal world. With its innovative cattle management tool, smaXtec leads the market worldwide and plans to continue its success story on an international scale.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Celery",
+                                "Docker",
+                                "Flask",
+                                "Git",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 65,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Celery",
+                                "Docker",
+                                "Flask",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 7
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Celery",
+                            "Docker",
+                            "Flask",
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Celery",
+                            "Docker",
+                            "Flask",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 7
+                    }
+                }
+            },
+            {
+                "job_id": "4461046660",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "Scalian",
+                "localizacao": "Espanha",
+                "data_postagem": "Há 16 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://es.linkedin.com/jobs/view/python-developer-at-scalian-4461046660",
+                "descricao_resumida": "Scalian - Espanha",
+                "descricao_completa": "¡Ampliamos nuestro equipo! 🔎\n¿Buscas un nuevo reto donde desarrollar tu carrera y aprender nuevas tecnologías? \nEntonces sigue leyendo porque esto te puede interesar.\nScalian es una empresa de más de 6.000 personas con una dimensión internacional, con oficinas en Europa y América del Norte. Estamos especializados en dar servicios a diferentes clientes enfocados en Data, Cloud e Inteligencia Artificial.\nEn \nScalian\n seguimos creciendo y buscamos incorporar un/a \nPython Backend Developer\n con experiencia en \nAWS\n para participar en un proyecto internacional enfocado al desarrollo de una plataforma \nmarketplace\n de última generación.\nFunciones:\nDiseñar y desarrollar servicios backend utilizando \nPython\n.\nConstruir y mantener \nAPIs REST\n, procesos asíncronos y servicios de integración.\nDesarrollar funcionalidades relacionadas con catálogo, pedidos, inventario, precios y promociones.\nIntegrar sistemas internos y externos mediante APIs, colas de mensajería y eventos.\nTrabajar con bases de datos relacionales y mecanismos de caché.\nDesplegar y operar aplicaciones en entornos \nAWS\n.\nImplementar soluciones de logging, monitorización y soporte operativo.\nColaborar con equipos multidisciplinares siguiendo buenas prácticas de desarrollo y metodologías ágiles.\nRequisitos:\nExperiencia sólida como \nBackend Developer con Python\n.\nConocimientos en \nDjango, Flask o FastAPI\n.\nExperiencia desarrollando \nAPIs REST\n e integraciones entre servicios.\nBases de datos \nMySQL\n o \nPostgreSQL\n.\nExperiencia en AWS con servicios como: AWS Lambda, ECS, API Gateway, SQS / SNS / EventBridge, CloudWatch.\nExperiencia con \nDocker\n, \nGit\n y pipelines \nCI/CD\n.\nNivel alto de inglés\n (trabajo en entorno internacional).\nDisponibilidad para hacer mas o menos 2h de solape con San Diego (USA). El horario de la posición sería entre las 10:30h-19:30h aproximadamente, con flexibilidad.\n¿Qué tendrás con nosotros?\n🚀 \nFormar parte de un equipo de alto nivel bajo tecnologías punteras en el mercado.\n⛱ 25 días laborables de vacaciones\n💻\nModalidad Teletrabajo \n📝 Contrato\n indefinido\n📚 Formación continua, certificaciones, meetups y planes de desarrollo profesional personalizados para que podamos seguir creciendo juntos. Contamos con acceso a plataformas internas con contenido abierto para que lo disfrutes cuando tú quieras y a tu ritmo.\n🕐 Jornada completa con horario flexible para facilitar la conciliación entre vida familiar y profesional.\n🎉 Afterworks en las oficinas\n🎂 La tarde del cumpleaños libre\n🏋️ Descuentos en gimnasios\n💲Programas de retribución flexible: seguro médico, tarjeta restaurante, abono de transporte, cheques para escuelas infantiles.\n🌏 Como parte del grupo Scalian, abrimos nuestras fronteras y crecemos internacionalmente.\n♻️ En el grupo apostamos por iniciativas sostenibles.\n¡Despega en tu carrera con Scalian Spain!✈",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "Docker",
+                                "FastAPI",
+                                "Flask",
+                                "Git",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 10
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "Docker",
+                                "FastAPI",
+                                "Flask",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "Flask",
+                            "Git",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 10
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "Flask",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    }
+                }
+            },
+            {
+                "job_id": "4461226349",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Sviluppatore Python",
+                "empresa": "turing",
+                "localizacao": "Roma e Região",
+                "data_postagem": "Há 7 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://it.linkedin.com/jobs/view/sviluppatore-python-at-turing-4461226349",
+                "descricao_resumida": "turing - Roma e Região",
+                "descricao_completa": "Informazioni sull'offerta di lavoro\nTuring S.R.L, azienda di consulenza informatica con sede a Roma, è alla ricerca di un \nPython Developer\n.\nChi siamo:\nI principali ambiti del nostro lavoro sono la consulenza informatica, lo sviluppo software e la formazione. Svolgiamo queste attività avendo massima cura per ogni collaboratore per il suo percorso di formazione permanente (corsi, certificazioni, seminari), per un corretto rapporto tra vita privata e lavoro, per un percorso di crescita in azienda stimolante.\nCosa cerchiamo\nUn/a \nPython Developer\n con:\nLaurea in Informatica, Ingegneria Informatica o campo correlato, o esperienza equivalente.\nAlmeno 2 anni di esperienza nello sviluppo con Python.\nEsperienza con almeno un framework tra Django o Flask.\nConoscenza di database relazionali (es. PostgreSQL, MySQL) e non relazionali (es. MongoDB).\nFamiliarità con strumenti di versioning come Git.\nEsperienza in ambienti Agile/Scrum.\nCosa offriamo\nFormazione tecnica e certificazioni, integrate in un percorso professionale personalizzato.\nEventi di team building.\nConvenzioni aziendali.\nSede di lavoro: Smart working\nRAL: 25.000/35.000 € in base all'esperienza\nL'annuncio è rivolto anche a professionisti in possesso di P.IVA.\nAi sensi della vigente normativa, l'offerta di lavoro si intende estesa a entrambi i sessi (L. 903/77).",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "Git",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "Git",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    }
+                }
+            },
+            {
+                "job_id": "4460073386",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Web Developer",
+                "empresa": "Sakan.com",
+                "localizacao": "Kuwait, Al Asimah, Kuwait",
+                "data_postagem": "Há 2 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://kw.linkedin.com/jobs/view/web-developer-at-sakan-com-4460073386",
+                "descricao_resumida": "Sakan.com - Kuwait, Al Asimah, Kuwait",
+                "descricao_completa": "About the Role\nWe are looking for a forward-thinking Django Developer with 3–4 years of experience who actively uses AI coding tools to accelerate development. You will build scalable web applications and APIs while leveraging tools like GitHub Copilot, Antigravity, and the latest AI assistants to write better code, debug faster, and automate repetitive tasks. If you stay up-to-date with AI developments and use them to ship features quickly, this role is for you.\nKey Responsibilities\nDesign, develop, and deploy production-grade Django + DRF applications.\nBuild RESTful APIs and integrate third-party services.\nUse AI tools (Copilot, Antigravity, ChatGPT/Claude for coding) to:\nGenerate boilerplate code, serializers, and views.\nWrite and optimize database queries.\nCreate unit tests and documentation.\nRefactor legacy code and debug errors.\nStay current with AI-assisted development workflows and share best practices with the team.\nOptimize application performance (caching, async tasks, query optimization).\nCollaborate with frontend developers (React/Vue/HTMX) using AI to quickly generate API integration code.\nParticipate in code reviews, sprint planning, and technical documentation.\nRequired Skills & Qualifications\nMust-Have (Django + Python):\n3–4 years of professional experience with Python and Django (v3.x or 4.x).\nStrong grasp of Django ORM, DRF (serializers, viewsets, auth), and class-based views.\nProficiency in SQL (PostgreSQL preferred).\nExperience with Celery + Redis for async tasks.\nGit, Linux command line, and basic deployment knowledge.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 100,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Celery",
+                                "Django",
+                                "Git",
+                                "Linux",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Celery",
+                                "Django",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "React.js",
+                                "Redis",
+                                "SQL",
+                                "Vue.js"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 100,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Celery",
+                            "Django",
+                            "Git",
+                            "Linux",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Celery",
+                            "Django",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "React.js",
+                            "Redis",
+                            "SQL",
+                            "Vue.js"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    }
+                }
+            },
+            {
+                "job_id": "4460055542",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Mid Level Python Developer , Colombia",
+                "empresa": "TechJobsData",
+                "localizacao": "Colômbia",
+                "data_postagem": "Há 4 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://co.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-techjobsdata-4460055542",
+                "descricao_resumida": "TechJobsData - Colômbia",
+                "descricao_completa": "At CI&T, we help large enterprises transform the potential of AI into real business impact with AI Deployment, AI-native execution, and tech-integrated business solutions. With 30 years of experience in technological transformation, we accelerate innovation with expertise in Agentic SDLC, Application modernization, Data & AI, Martech and Business strategy. We are 8,000 CI&Ters across more than 25 countries, collaborating to build solutions with real impact. AI is already part of how we work, evolve, and innovate every day. Must Have: - Python coding, including creating web applications (FastAPI, pydantic, SQLAlchemy) and creating custom libraries.\nExperience with SQL.\nExperienced with Azure, proficient with KQL for mining Azure Log Analytics.\nEffective communication skills to document and share technical information clearly.\nUnderstanding of software development best practices, including version control and testing. Nice to have:\nUnderstanding a bit of data science and model training\nCollaboration is our superpower, diversity unites us, and excellence is our standard.\nWe value diverse identities and life experiences, fostering a diverse, inclusive, and safe work environment. We encourage applications from diverse and underrepresented groups to our job positions.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Azure",
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Azure",
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4461249076",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "【在宅勤務も可／神戸】バックエンドエンジニア｜0→1新規開発／Python・TypeScript",
+                "empresa": "doda (デューダ)",
+                "localizacao": "Hyogo, Japão",
+                "data_postagem": "Há 5 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://jp.linkedin.com/jobs/view/%E3%80%90%E5%9C%A8%E5%AE%85%E5%8B%A4%E5%8B%99%E3%82%82%E5%8F%AF%EF%BC%8F%E7%A5%9E%E6%88%B8%E3%80%91%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%EF%BD%9C0%E2%86%921%E6%96%B0%E8%A6%8F%E9%96%8B%E7%99%BA%EF%BC%8Fpython%E3%83%BBtypescript-at-doda-%E3%83%87%E3%83%A5%E3%83%BC%E3%83%80-4461249076",
+                "descricao_resumida": "doda (デューダ) - Hyogo, Japão",
+                "descricao_completa": "【企業名】\n株式会社神戸デジタル・ラボ\n【職種名】\n【在宅勤務も可／神戸】バックエンドエンジニア｜0→1新規開発／Python・TypeScript\n【仕事内容(概要)】\n【在宅勤務も可／神戸】バックエンドエンジニア｜0→1新規開発／Python・TypeScript\n【具体的な仕事内容】\n■0→1の新規開発に企画段階から携わるバックエンドエンジニア\nKDLはプライム案件を主軸に、AI活用・セキュリティ・自社開発サービスなど幅広く展開するIT企業です。\n本ポジションはお客様と共に0→1の新サービス／アプリを開発するチームのバックエンド開発。\n当社企画チームとタッグを組み、お客様との共創でプロジェクトが進行します。\n企画立案／PoC開発／β版リリース／検証／製品化まで一連の流れを経験でき、幅広い成長が可能です。\n■プロジェクト例\n・繊維リサイクル推進の自治体連携サービス\n・微生物研究のDX化プロジェクト\n・建設現場の安全文化を支援するピアボーナスアプリ\n・健康改善促進アプリ\n・AIを用いた野菜収穫予想アプリ（データ駆動型農業）\n・大手製造業向けマルチテナントSaaS\n■求人のポイント\n・多種多様な新規開発案件／企画段階から参画\n・1次請け案件がほとんど\n・フルリモート可（国内）／フレックス制度あり\n・アジャイル（2週間スプリント）／BizDevOps実践\n・技術選定はメンバー主導で新技術を積極活用\n■技術スタック（全経験は不問）\n・言語：TypeScript（React／Next.js）／Python（FastAPI、Django）／C#\n・基盤：Docker／AWS／Azure／IaC（CDK、CloudFormation）\n・データ：MySQL／PostgreSQL／Elasticsearch／DynamoDB\n・CI/CD：GitHub Actions／Azure DevOps\n■スキルアップ環境\n週次勉強会や社員主催コンペ（DX-1グランプリ、生成AI活用ゲーム）を開催。チーム全員で技術習得時間を確保する風土。AI有料プランも社内規定の範囲で活用可能。\n■得られるスキルイメージ\n様々な業界・案件の新規開発／PoCに、最新の技術スタックを使ってアプローチできる環境です。決まった正解がない領域だからこそ、自らアイデアを出し技術選定から実装まで試行錯誤しながらベストプラクティスを追求する力が身につきます。\n■企業魅力：\n企業口コミサイト「Openwork」にて兵庫県下全業界中4位／関西SIer4位にランクイン。社員や退職者からのリアルな声でも評価される安心な環境です。\n【対象となる方(概要)】\n学歴不問\n【対象となる方(詳細)】\n＜応募資格/応募条件＞\n■必須条件：\nWeb系システム開発プロジェクトにおいて、以下のご経験を1年以上お持ちの方\n・Python (FastAPI, Django, SQLAlchemy)もしくはTypeScriptを用いたバックエンド開発のご経験\n・クラウド関連技術（特にAWS）を用いたシステム開発経験\n■歓迎条件：\n・スクラムなどアジャイル開発手法のご経験\n・特定業界に対する深い業務知識\n・アーキテクチャ決定やプロジェクト全体の技術デザインの経験\n・クラウドサービスを利用したインフラ構築の経験\n【勤務地】\n＜勤務地詳細＞\n本社\n住所：兵庫県神戸市中央区京町72 新クレセントビル\n受動喫煙対策：屋内全面禁煙\n【アクセス】\n＜勤務地補足＞\n各線三ノ宮駅徒歩7分\n＜転勤＞\n無\n＜在宅勤務・リモートワーク＞\n相談可（在宅）\n＜オンライン面接＞\n可\n【住所設定】\n本社／兵庫県神戸市中央区京町72　[最寄り駅]三宮・花時計前駅\n【勤務時間】\n＜労働時間区分＞\nフレックスタイム制\nコアタイム：10:00～15:00\nフレキシブルタイム：7:00～10:00、15:00～22:00\n休憩時間：60分\n時間外労働有無：有\n＜標準的な勤務時間帯＞\n9:00～17:45\n＜時短勤務＞\n相談可\n【就業時間補足】\n＜その他就業時間補足＞\n※プライベートな予定に合わせて調整したり、自身の裁量で労働時間をコントロールできます。\n【雇用形態】\n正社員\n【期間】\n＜雇用形態補足＞\n期間の定め：無\n＜試用期間＞\n3ヶ月\n試用期間中の条件に変更はありません。\n【給与】\n＜予定年収＞\n550万円～1,000万円\n＜賃金形態＞\n月給制\n＜賃金内訳＞\n月額（基本給）：330,000円～600,000円\n＜月給＞\n330,000円～600,000円\n＜昇給有無＞\n有\n＜残業手当＞\n有\n＜給与補足＞\n※年収は選考を通して変動する可能性があります。\n■昇降給：年1回\n■賞与：年2回（6月、12月）\n賃金はあくまでも目安の金額であり、選考を通じて上下する可能性があります。\n月給(月額)は固定手当を含めた表記です。\n【待遇・福利厚生　各種制度】\n通勤手当、健康保険、厚生年金保険、雇用保険、労災保険、厚生年金基金\n＜各手当・制度補足＞\n通勤手当：全額支給、上限なし\n社会保険：社会保険完備\n厚生年金基金：補足事項なし\n＜定年＞\n65歳\n＜副業＞\n可\n＜育休取得実績＞\n有（育休後復帰率100%）\n＜教育制度・資格補助補足＞\n■資格取得奨励金制度\n■図書購入支援（金額条件なし・電子書籍可）\n■研修・講義・受講費用負担制度\n※社員による自主的な勉強会が開催される風土があり、スキルアップに活かすことが可能です。\n＜その他補足＞\n■副業制度（諸条件あり／社内でも数名利用実績あり）\n■時短勤務制度\n■1時間単位有給制度\n■ハイパーメディカル加入（労務災害に関わりなく、病気入院やがんの通院治療の場合に、その費用を補償）\n■表彰制度（半期に1度）\n■勤続表彰制度（5年単位で表彰、副賞あり）\n■従業員持株会制度\n■各種団体保険（生命保険、がん保険）\n■コミュニケーション促進活動（スポーツ系クラブの活動費や社員同士での飲食費の一部を補助）\n■デジポ制度（ピアボーナス制度）\n【休日・休暇 その他】\n完全週休2日制（休日は土日祝日）\n年間有給休暇10日～20日（下限日数は、入社直後の付与日数となります）\n年間休日日数129日\n年次有給休暇（入社当日から付与）、リフレッシュ休暇（年間で任意の3日間）、年末年始休暇、慶弔休暇、勤続休暇など\n【事業概要】\n神戸デジタル・ラボ、略して「KDL」はその名の通り兵庫県神戸市に本社を置き、30年以上続くIT企業です。\n阪神・淡路大震災を機に設立し、震災からの復興を通じてITが社会基盤として必要不可欠なものになる光景を目の当たりにしてきました。\n世の中の変化を敏感に察知し、システム開発だけでなく、情報セキュリティ/AI活用など、あらゆる手段を使って社会に散在する課題の解決に挑戦しております。\nテクノロジーだけでなく、これまでに培ってきた豊富なノウハウと柔軟な発想力で課題を解決する「アイデア」。\nこの両軸を武器に、より一層これからのデジタル社会の発展に貢献していきます。\nこれまで手掛けたプロジェクトには例えば下記のようなものがあります。\n●建設現場の事故発生を減少させるためのコミュニケーション活性化アプリ\n●野菜の収穫時期をAIを用いて予測することで若手の農業従事者の業務効率を高めるプロジェクト\n●水族館のカワウソの生態研究を画像認識AIを使って推進\n「お客様の期待に応えるためには何が必要か」という観点と、社員の「これやってみたい」という感覚を大切に事業を拡げてきました。\nボトムアップな環境で社員が自由度高く挑戦する事によって、企業とメンバーが共に成長していけると考えています。\n入社後チャレンジしたいことがあれば是非発信していただきたいです。\n【その他社風について】\n●社員が自主的に様々な種類の勉強会やコンペを開催し多くのエンジニアが積極的に参加するなど、スキルを高めあう風土があります。\n　（例：社内DXを推進するためのハッカソン大会、脆弱性の潜むシステムを堅牢化するセキュリティコンペなど）\n●自由度高く様々なことにチャレンジできる環境です。\n　 社員の興味からスタートしたプロジェクトや事業が複数あるなど自由度高く挑戦することが出来ます。\n（業務に直接関連無い趣味的な取組がビジネスになった事例も）\n●社員の成長をサポートする気風があります。\n　例えば「教育強化費」という制度では、申請が通れば学習のために会社費用で10万円超の講習を受けることが可能です。\n　また業務に関する学習用の書籍購入は金額に上限無く購入可能です。（電子書籍可能）\n【郵便番号】\n6500034\n【所在地】\n兵庫県神戸市中央区京町72\n【ビル名等】\n新クレセントビル\n【設立年 補足】\n1995年10月\n【従業員数】\n182名\n【市場】\n非上場\n【資本金】\n50百万円\n【売上高】\n2,063百万円\n【平均年齢】\n39歳\n【HPリンク先】\nhttps://www.kdl.co.jp/",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 75,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Azure",
+                                "Django",
+                                "Docker",
+                                "FastAPI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 90,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "Docker",
+                                "FastAPI",
+                                "JavaScript",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "React.js",
+                                "TypeScript"
+                            ],
+                            "total_habilidades_encontradas": 10
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Azure",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 90,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Docker",
+                            "FastAPI",
+                            "JavaScript",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "React.js",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 10
+                    }
+                }
+            },
+            {
+                "job_id": "4460041681",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Backend Developer",
+                "empresa": "TechJobsData",
+                "localizacao": "Bangalore, Carnataca, Índia",
+                "data_postagem": "Há 4 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://in.linkedin.com/jobs/view/python-backend-developer-at-techjobsdata-4460041681",
+                "descricao_resumida": "TechJobsData - Bangalore, Carnataca, Índia",
+                "descricao_completa": "Position : Python Backend Developer Experience : Minimum 3- 5 years Employment Type: Full-Time Location : Bangalore Department : Software Development Salary Range: 3–4 years of experience: ₹30,000 – ₹40,000 per month 4–5 years of experience: ₹40,000 – ₹50,000 per month\nCandidates who can join on or before 15th September are encouraged to apply. Please review the salary range before applying. Job Summary We are looking for a skilled Python Backend Developer with a minimum of 3 years of experience in developing, maintaining, and enhancing scalable backend applications using Python and Django. The candidate should have strong knowledge of REST API development, databases, authentication, debugging, and backend performance optimization. Key Responsibilities Develop, maintain, and enhance backend applications using Python and Django. Design and develop REST APIs using Django REST Framework or Django Ninja. Implement CRUD operations, business logic, validations, authentication, and authorization. Design and maintain databases using PostgreSQL and MySQL. Write efficient SQL queries and optimize database performance. Work with Django ORM, relationships, migrations, transactions, and database constraints. Integrate third-party APIs and external services. Implement JWT/token-based authentication, role-based access control, and API permissions. Debug and resolve backend, API, database, and production issues. Implement proper exception handling, logging, and error management. Optimize API performance using query optimization, indexing, caching, and efficient database operations. Use Git/GitHub/GitLab for version control, branching, merging, and code reviews. Collaborate with frontend developers, QA engineers, and other backend developers to deliver reliable and maintainable applications. Required Skills Minimum 3 years of professional experience in Python backend development. Strong proficiency in Python and Django. Good knowledge of Django ORM. Experience with REST API / Django REST Framework / Django Ninja. Strong knowledge of PostgreSQL and MySQL. Good understanding of SQL and SQL query optimization. Experience with JWT and authentication/authorization. Knowledge of API security and permissions. Experience with Git, GitHub, or GitLab. Strong debugging and problem-solving skills. Understanding of backend performance optimization and database indexing. ﻿Preferred Qualifications Experience integrating third-party APIs. Knowledge of caching mechanisms such as Redis. Understanding of deployment and production environments. Experience working in Agile/Scrum development teams. Good communication and collaboration skills. Core Technical Skills Python | Django | Django ORM | Django REST Framework | Django Ninja | REST APIs | PostgreSQL | MySQL | SQL | JWT | Authentication | Authorization | Git | API Optimization | Database Optimization",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Git",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Git",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4460036882",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "TechJobsData",
+                "localizacao": "Nova York, Estados Unidos",
+                "data_postagem": "Há 4 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://www.linkedin.com/jobs/view/python-developer-at-techjobsdata-4460036882",
+                "descricao_resumida": "TechJobsData - Nova York, Estados Unidos",
+                "descricao_completa": "Project Description We are seeking a motivated entry-level Python Developer to join our remote team. In this role, you will assist in developing and maintaining Python applications, collaborate with senior engineers on various projects, and contribute to code quality and best practices. This is an excellent opportunity for recent graduates or self-taught programmers who are eager to learn and grow in a supportive environment. We value curiosity, attention to detail, and a passion for coding. Full Description We are looking for a passionate and detail-oriented Python Developer to join our dynamic engineering team. In this entry-level remote role, you will have the opportunity to work on diverse projects, learn from experienced developers, and build a strong foundation in software development. Responsibilities Write clean, maintainable, and efficient Python code. Assist in the design and implementation of scalable software solutions. Collaborate with cross-functional teams to define, design, and ship new features. Participate in code reviews to ensure code quality and share knowledge. Debug and resolve software defects and performance issues. Stay up-to-date with emerging trends and technologies in Python development. Contribute to documentation and technical specifications. Support the team in various development tasks and projects. Qualifications Bachelor's degree in Computer Science or a related field, or equivalent practical experience. Basic understanding of Python syntax and core libraries. Familiarity with web frameworks such as Django or Flask. Knowledge of relational databases and SQL. Understanding of version control systems, particularly Git. Strong problem-solving skills and attention to detail. Excellent communication and teamwork abilities. Ability to work independently in a remote environment. Preferred Skills Experience with RESTful APIs. Familiarity with cloud platforms (AWS, GCP, or Azure). Basic knowledge of front-end technologies (HTML, CSS, JavaScript). Exposure to testing frameworks like PyTest. About Hiredbuddy Hiredbuddy is an innovative tech company dedicated to connecting talent with opportunities. We foster a culture of learning and growth, and we value curiosity and initiative. Join us to accelerate your career in a supportive and collaborative environment. We are an equal opportunity employer and welcome applications from all qualified individuals. Our team is spread across the globe, and we embrace remote work as a core part of our culture. We provide the tools and mentorship necessary for you to succeed, and we encourage continuous learning through hackathons, tech talks, and internal workshops. If you are eager to make an impact and grow as a developer, we would love to hear from you. Requirements Bachelor's degree in Computer Science or related field, or equivalent practical experience Proficiency in Python programming language Familiarity with web frameworks like Django or Flask Understanding of SQL and relational databases Experience with Git and version control Strong analytical and problem-solving skills Excellent written and verbal communication Ability to work effectively in a remote team setting Benefits Competitive salary and performance-based bonuses Paid time off and holidays Professional development budget for courses and conferences Collaborative and inclusive company culture",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Azure",
+                                "Django",
+                                "Flask",
+                                "GCP",
+                                "Git",
+                                "Pytest",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 100,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "Flask",
+                                "GCP",
+                                "HTML/CSS",
+                                "JavaScript",
+                                "Pytest",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Azure",
+                            "Django",
+                            "Flask",
+                            "GCP",
+                            "Git",
+                            "Pytest",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 100,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Flask",
+                            "GCP",
+                            "HTML/CSS",
+                            "JavaScript",
+                            "Pytest",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    }
+                }
+            },
+            {
+                "job_id": "4461060255",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Mid Level Python  Developer , Colombia",
+                "empresa": "CI&T",
+                "localizacao": "Torreón e Região",
+                "data_postagem": "Há 18 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://mx.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461060255",
+                "descricao_resumida": "CI&T - Torreón e Região",
+                "descricao_completa": "At CI&T, we help large enterprises transform the potential of AI into real business impact with AI Deployment, AI-native execution, and tech-integrated business solutions.\nWith 30 years of experience in technological transformation, we accelerate innovation with expertise in Agentic SDLC, Application modernization, Data & AI, Martech and Business strategy.\nWe are 8,000 CI&Ters across more than 25 countries, collaborating to build solutions with real impact. AI is already part of how we work, evolve, and innovate every day.\nMust Have:\n- Python coding, including creating web applications (FastAPI, pydantic, SQLAlchemy) and creating custom libraries.\n· Experience with SQL.\n· Experienced with Azure, proficient with KQL for mining Azure Log Analytics.\n· Effective communication skills to document and share technical information clearly.\n· Understanding of software development best practices, including version control and testing.\nNice to have:\n· Understanding a bit of data science and model training\n \nCollaboration is our superpower, diversity unites us, and excellence is our standard. \nWe value diverse identities and life experiences, fostering a diverse, inclusive, and safe work environment. We encourage applications from diverse and underrepresented groups to our job positions.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Azure",
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Azure",
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4461206623",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "Weekday AI (YC W21)",
+                "localizacao": "Bangalore, Carnataca, Índia",
+                "data_postagem": "Há 9 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://in.linkedin.com/jobs/view/python-developer-at-weekday-ai-yc-w21-4461206623",
+                "descricao_resumida": "Weekday AI (YC W21) - Bangalore, Carnataca, Índia",
+                "descricao_completa": "𝗧𝗵𝗶𝘀 𝗿𝗼𝗹𝗲 𝗶𝘀 𝗳𝗼𝗿 𝗼𝗻𝗲 𝗼𝗳 𝘁𝗵𝗲 𝗪𝗲𝗲𝗸𝗱𝗮𝘆'𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝘀\n𝗦𝗮𝗹𝗮𝗿𝘆 𝗿𝗮𝗻𝗴𝗲: 𝗥𝘀 𝟳𝟬𝟬𝟬𝟬𝟬 - 𝗥𝘀 𝟭𝟱𝟬𝟬𝟬𝟬𝟬 (𝗶𝗲 𝗜𝗡𝗥 𝟳-𝟭𝟱 𝗟𝗣𝗔)\nExperience: 2+ yrs\nLocation: Bengaluru, Karnataka, India\nJob Type: Full-time\nWe are looking for a skilled \nPython Developer\n with hands-on experience in \nGolang and Kubernetes\n to build, enhance, and maintain scalable cloud-native applications and backend services. The ideal candidate will have strong Python development expertise, practical knowledge of Go, and experience working with containerized applications and Kubernetes environments.\nThis role is suited for an engineer who enjoys solving technical problems, working across application and infrastructure layers, and building reliable, maintainable, and scalable software solutions.\nRequirements\nKey Responsibilities\nDevelop, enhance, and maintain backend applications and services using Python\nBuild microservices, utilities, and cloud-native components using Golang\nDesign, develop, and integrate RESTful APIs and distributed services\nDeploy, manage, monitor, and troubleshoot applications running on Kubernetes\nWork with Docker and containerization technologies to build and deploy applications\nDiagnose and resolve application, container, networking, and deployment-related issues\nContribute to improving application scalability, reliability, availability, and performance\nCollaborate with DevOps and engineering teams on cloud-native deployments and operational improvements\nWrite clean, maintainable, efficient, and well-tested code\nParticipate in code reviews, debugging, testing, and continuous improvement initiatives\nFollow Git, CI/CD, and modern software development practices\nSupport applications running in Linux/Unix-based environments\nWhat Makes You a Great Fit\n2+ years of professional software development experience, preferably in backend or cloud-native application development\nStrong hands-on experience with Python and backend development\nGood working knowledge of Golang (Go) and experience developing services or utilities\nPractical experience with Kubernetes and containerized application environments\nStrong understanding of Docker and container deployment practices\nExperience developing and consuming REST APIs and working with microservices\nGood understanding of distributed systems and cloud-native application concepts\nComfortable working in Linux/Unix environments\nFamiliarity with Git, CI/CD pipelines, and DevOps practices\nStrong troubleshooting, debugging, analytical, and problem-solving skills\nAbility to write scalable, reliable, and maintainable code\nGood communication and collaboration skills with the ability to work effectively with engineering and DevOps teams\nA proactive mindset with a willingness to learn new technologies and take ownership of technical challenges",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 65,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Docker",
+                                "Git",
+                                "Linux",
+                                "Microservices",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 50,
+                            "nivel": "Médio",
+                            "habilidades_compativeis": [
+                                "Docker",
+                                "Python",
+                                "REST APIs"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 65,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Docker",
+                            "Git",
+                            "Linux",
+                            "Microservices",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 50,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Docker",
+                            "Python",
+                            "REST APIs"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4461042756",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Backend Developer",
+                "empresa": "Kavintech Corporation",
+                "localizacao": "Bangalore, Carnataca, Índia",
+                "data_postagem": "Há 11 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://in.linkedin.com/jobs/view/python-backend-developer-at-kavintech-corporation-4461042756",
+                "descricao_resumida": "Kavintech Corporation - Bangalore, Carnataca, Índia",
+                "descricao_completa": "Position\n: Python Backend Developer\nExperience\n: Minimum 3- 5 years\nEmployment \nType: Full-Time\nLocation\n: Bangalore\nDepartment\n: Software Development\nSalary Range:\n3–4 years of experience: ₹30,000 – ₹40,000 per month\n4–5 years of experience: ₹40,000 – ₹50,000 per month \nCandidates who can join on or before 15th September are encouraged to apply.\nPlease review the salary range before applying.\nJob Summary\nWe are looking for a skilled Python Backend Developer with a minimum of 3 years of experience in developing, maintaining, and enhancing scalable backend applications using Python and Django. The candidate should have strong knowledge of REST API development, databases, authentication, debugging, and backend performance optimization.\nKey Responsibilities\nDevelop, maintain, and enhance backend applications using Python and Django.\nDesign and develop REST APIs using Django REST Framework or Django Ninja.\nImplement CRUD operations, business logic, validations, authentication, and authorization.\nDesign and maintain databases using PostgreSQL and MySQL.\nWrite efficient SQL queries and optimize database performance.\nWork with Django ORM, relationships, migrations, transactions, and database constraints.\nIntegrate third-party APIs and external services.\nImplement JWT/token-based authentication, role-based access control, and API permissions.\nDebug and resolve backend, API, database, and production issues.\nImplement proper exception handling, logging, and error management.\nOptimize API performance using query optimization, indexing, caching, and efficient database operations.\nUse Git/GitHub/GitLab for version control, branching, merging, and code reviews.\nCollaborate with frontend developers, QA engineers, and other backend developers to deliver reliable and maintainable applications.\nRequired Skills\nMinimum 3 years of professional experience in Python backend development.\nStrong proficiency in Python and Django.\nGood knowledge of Django ORM.\nExperience with REST API / Django REST Framework / Django Ninja.\nStrong knowledge of PostgreSQL and MySQL.\nGood understanding of SQL and SQL query optimization.\nExperience with JWT and authentication/authorization.\nKnowledge of API security and permissions.\nExperience with Git, GitHub, or GitLab.\nStrong debugging and problem-solving skills.\nUnderstanding of backend performance optimization and database indexing.\n﻿Preferred Qualifications\nExperience integrating third-party APIs.\nKnowledge of caching mechanisms such as Redis.\nUnderstanding of deployment and production environments.\nExperience working in Agile/Scrum development teams.\nGood communication and collaboration skills.\nCore Technical Skills\nPython | Django | Django ORM | Django REST Framework | Django Ninja | REST APIs | PostgreSQL | MySQL | SQL | JWT | Authentication | Authorization | Git | API Optimization | Database Optimization",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Git",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "GitLab CI",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Git",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "GitLab CI",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4461054294",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Mid Level Python  Developer , Colombia",
+                "empresa": "CI&T",
+                "localizacao": "Colômbia",
+                "data_postagem": "Há 18 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://co.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461054294",
+                "descricao_resumida": "CI&T - Colômbia",
+                "descricao_completa": "At CI&T, we help large enterprises transform the potential of AI into real business impact with AI Deployment, AI-native execution, and tech-integrated business solutions.\nWith 30 years of experience in technological transformation, we accelerate innovation with expertise in Agentic SDLC, Application modernization, Data & AI, Martech and Business strategy.\nWe are 8,000 CI&Ters across more than 25 countries, collaborating to build solutions with real impact. AI is already part of how we work, evolve, and innovate every day.\nMust Have:\n- Python coding, including creating web applications (FastAPI, pydantic, SQLAlchemy) and creating custom libraries.\n· Experience with SQL.\n· Experienced with Azure, proficient with KQL for mining Azure Log Analytics.\n· Effective communication skills to document and share technical information clearly.\n· Understanding of software development best practices, including version control and testing.\nNice to have:\n· Understanding a bit of data science and model training\n \nCollaboration is our superpower, diversity unites us, and excellence is our standard. \nWe value diverse identities and life experiences, fostering a diverse, inclusive, and safe work environment. We encourage applications from diverse and underrepresented groups to our job positions.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Azure",
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "FastAPI",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Azure",
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "FastAPI",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4460057086",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "HiredBuddy",
+                "localizacao": "Berlim, Alemanha",
+                "data_postagem": "Há 6 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://de.linkedin.com/jobs/view/python-developer-at-hiredbuddy-4460057086",
+                "descricao_resumida": "HiredBuddy - Berlim, Alemanha",
+                "descricao_completa": "Project Description\nWe are seeking a motivated entry-level Python Developer to join our remote team. In this role, you will assist in developing and maintaining Python applications, collaborate with senior engineers on various projects, and contribute to code quality and best practices. This is an excellent opportunity for recent graduates or self-taught programmers who are eager to learn and grow in a supportive environment. We value curiosity, attention to detail, and a passion for coding.\nFull Description\nWe are looking for a passionate and detail-oriented Python Developer to join our dynamic engineering team. In this entry-level remote role, you will have the opportunity to work on diverse projects, learn from experienced developers, and build a strong foundation in software development.\nResponsibilities\nWrite clean, maintainable, and efficient Python code.\nAssist in the design and implementation of scalable software solutions.\nCollaborate with cross-functional teams to define, design, and ship new features.\nParticipate in code reviews to ensure code quality and share knowledge.\nDebug and resolve software defects and performance issues.\nStay up-to-date with emerging trends and technologies in Python development.\nContribute to documentation and technical specifications.\nSupport the team in various development tasks and projects.\nQualifications\nBachelor's degree in Computer Science or a related field, or equivalent practical experience.\nBasic understanding of Python syntax and core libraries.\nFamiliarity with web frameworks such as Django or Flask.\nKnowledge of relational databases and SQL.\nUnderstanding of version control systems, particularly Git.\nStrong problem-solving skills and attention to detail.\nExcellent communication and teamwork abilities.\nAbility to work independently in a remote environment.\nPreferred Skills\nExperience with RESTful APIs.\nFamiliarity with cloud platforms (AWS, GCP, or Azure).\nBasic knowledge of front-end technologies (HTML, CSS, JavaScript).\nExposure to testing frameworks like PyTest.\nAbout Hiredbuddy\nHiredbuddy is an innovative tech company dedicated to connecting talent with opportunities. We foster a culture of learning and growth, and we value curiosity and initiative. Join us to accelerate your career in a supportive and collaborative environment.\nWe are an equal opportunity employer and welcome applications from all qualified individuals. Our team is spread across the globe, and we embrace remote work as a core part of our culture. We provide the tools and mentorship necessary for you to succeed, and we encourage continuous learning through hackathons, tech talks, and internal workshops. If you are eager to make an impact and grow as a developer, we would love to hear from you.\nRequirements\nBachelor's degree in Computer Science or related field, or equivalent practical experience\nProficiency in Python programming language\nFamiliarity with web frameworks like Django or Flask\nUnderstanding of SQL and relational databases\nExperience with Git and version control\nStrong analytical and problem-solving skills\nExcellent written and verbal communication\nAbility to work effectively in a remote team setting\nBenefits\nCompetitive salary and performance-based bonuses\nPaid time off and holidays\nProfessional development budget for courses and conferences\nCollaborative and inclusive company culture",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Azure",
+                                "Django",
+                                "Flask",
+                                "GCP",
+                                "Git",
+                                "Pytest",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 100,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "Flask",
+                                "GCP",
+                                "HTML/CSS",
+                                "JavaScript",
+                                "Pytest",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 9
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Azure",
+                            "Django",
+                            "Flask",
+                            "GCP",
+                            "Git",
+                            "Pytest",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 100,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "Flask",
+                            "GCP",
+                            "HTML/CSS",
+                            "JavaScript",
+                            "Pytest",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 9
+                    }
+                }
+            },
+            {
+                "job_id": "4459216710",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Engenheiro de software",
+                "empresa": "Dexian",
+                "localizacao": "Brasil",
+                "data_postagem": "Há 8 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/engenheiro-de-software-at-dexian-4459216710",
+                "descricao_resumida": "Dexian - Brasil",
+                "descricao_completa": "Who We Are\nDEXIAN is a global American consulting company focused on technology talent solutions to support and strengthen our clients’ IT teams. We are present in 10 countries, with 45 offices worldwide. For more than 25 years, DEXIAN® has been serving global clients across multiple industries, with the mission of attracting and retaining the world’s top talent.\nToday, we are proudly recognized as one of the largest staffing augmentation companies in the United States by Staffing Industry Analysts (SIA). We are also a Minority-Owned Company, and we take pride in our strong commitment to diversity.\nIn Brazil, we have been operating since 2007 and have successfully partnered with more than 50 clients from different sectors of the economy.\nWhat to Expect From Us\nAt DEXIAN, every movement is guided by five core values: collaboration, respect, fairness, commitment, and ingenuity. These are not just concepts — they define how we work, build partnerships, and support our teams every day.\nIf you share these values, this is the right place for you to grow your career.\nDEXIAN Brazil strongly encourages diversity, and all opportunities are open to people with disabilities and rehabilitated professionals.\nAbout the Client\nThis position will support one of our clients, a global company focused in manufacturer of construction equipment.\nKey Responsibilities\nDevelop and maintain backend applications and RESTful APIs using Java 21 and Spring Boot\nDevelop microservices and streaming data pipelines using Kafka and/or AWS Kinesis\nWrite complex SQL queries and work with Snowflake and stored procedures\nWrite and maintain automated unit, functional, and regression tests using JUnit\nTroubleshoot defects, perform root cause analysis, and ensure production-ready code\nWork with AWS services including Kinesis, Lambda, S3, ECS/Fargate, CloudWatch, and CloudFormation\nDevelop deployment scripts and contribute to CI/CD and DevSecOps processes\nCollaborate with development, QA, DevOps, and business teams in an Agile environment\nRequired Qualifications\nAdvanced English is primordial, you'll work with an international team.\n5+ years of Java development experience\nStrong Java fundamentals and Spring Boot experience\nExperience with Maven and JUnit\n3+ years of SQL experience, including complex queries and stored procedures\nExperience with stream processing, Kafka or Kinesis, message ordering, and partitioning\n3+ years of AWS experience\n3+ years of experience writing automated tests\nStrong communication and defect resolution skills\nExperience writing clean, maintainable, and production-ready code\nNice to Haves:\nPython experience\nCI/CD and deployment scripting experience\nCloudFormation / Infrastructure as Code experience\nCucumber experience\nSnowflake experience\nIAM / DevSecOps experience\nGitHub Copilot or other AI-assisted development experience\nOnde você vai trabalhar?\nRegime 100% Home Office.\nTempo de Projeto:\nTempo indeterminado.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Microservices",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 4
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 55,
+                            "nivel": "Médio",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Python",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Microservices",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 4
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 55,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Python",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4461246457",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Desenvolvedor .NET",
+                "empresa": "4DF Connect",
+                "localizacao": "Brasil",
+                "data_postagem": "Há 5 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://br.linkedin.com/jobs/view/desenvolvedor-net-at-4df-connect-4461246457",
+                "descricao_resumida": "4DF Connect - Brasil",
+                "descricao_completa": "Sobre a vaga\nBuscamos um Desenvolvedor .NET para atuar no desenvolvimento e na evolução de APIs e serviços, além de rotinas em banco de dados e integrações em nuvem.\nA pessoa será responsável por construir soluções robustas em .NET/C#, sustentar rotinas Oracle e apoiar deploys e integrações na AWS. Também participará de code reviews, testes automatizados e práticas de CI/CD.\nResponsabilidades principais\nDesenvolver e evoluir APIs e serviços em .NET/C# com ASP.NET Core, incluindo contratos REST, versionamento e padrões de integração.\nCriar, otimizar e sustentar rotinas em Oracle com SQL e PL/SQL, fazendo ajustes de performance e apoiando análises de dados.\nApoiar deploys e integrações em AWS, utilizando Lambda com Node.js ou Python e serviços como API Gateway, S3 e CloudWatch.\nImplementar e sustentar integrações assíncronas e mensageria com SQS, além de apoiar componentes como Redis e Kafka quando aplicável.\nRealizar manutenção e/ou migração de código legado em VB.NET ou VB6 quando necessário.\nParticipar de code reviews, implementar testes automatizados e seguir práticas de CI/CD com Git.\nProduzir e manter documentação técnica para suporte à evolução e operação da solução.\nO que buscamos\nExperiência sólida com desenvolvimento backend em .NET/C#, domínio de Oracle e familiaridade com serviços AWS. Valorizamos perfis que consigam atuar em diferentes camadas da solução, desde o código até a infraestrutura e o banco de dados.\nDiferenciais\nConhecimento em mensageria com SQS, Kafka ou Redis.\nExperiência com Lambda em Node.js ou Python.\nAtuação com VB.NET ou VB6.\nFamiliaridade com testes automatizados e pipelines de CI/CD.",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Git",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 80,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "JavaScript",
+                                "Python",
+                                "REST APIs",
+                                "Redis",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 80,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "JavaScript",
+                            "Python",
+                            "REST APIs",
+                            "Redis",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    }
+                }
+            },
+            {
+                "job_id": "4460038128",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Backend Python Developer",
+                "empresa": "Emonics LLC",
+                "localizacao": "Condado de Monroe, Nova York, Estados Unidos",
+                "data_postagem": "Há 6 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://www.linkedin.com/jobs/view/backend-python-developer-at-emonics-llc-4460038128",
+                "descricao_resumida": "Emonics LLC - Condado de Monroe, Nova York, Estados Unidos",
+                "descricao_completa": "Python Developer — Entry Level Job Description\nWe are looking for a Python Developer to develop backend services and automation scripts. The candidate should be familiar with Python frameworks and REST APIs.\nResponsibilities\nDevelop Python applications\nBuild APIs and backend services\nWork with databases\nTroubleshoot application issues\nRequirements\nStrong knowledge of Python\nFamiliarity with Django or Flask\nUnderstanding of SQL databases\nKnowledge of Git and REST APIs",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "Git",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 70,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "Git",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 70,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    }
+                }
+            },
+            {
+                "job_id": "4437654349",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Desarrollador/a Full Stack",
+                "empresa": "ALTEN",
+                "localizacao": "Sevilha, Andaluzia, Espanha",
+                "data_postagem": "Há 13 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://es.linkedin.com/jobs/view/desarrollador-a-full-stack-at-alten-4437654349",
+                "descricao_resumida": "ALTEN - Sevilha, Andaluzia, Espanha",
+                "descricao_completa": "Desarrolla tus competencias como Desarrollador/a Full-Stack para un proyecto de gran impacto del sector aeronáutico.\nEn ALTEN tenemos claro que el éxito de nuestros proyectos se debe a las personas que forman nuestro equipo. Por eso, si tienes al menos 1-2 años de experiencia como desarrollador full stack, nos comprometemos a impulsar tu talento, satisfacer tus expectativas laborales y hacerte sentir como en casa. ¿Quieres construir hoy el mundo de mañana? ¡Sigue leyendo!\n¿Cuáles serían tus funciones?\nTus principales funciones serían participar en la digitalización de proyectos para optimizar y automatizar procesos dentro del perímetro de fabricaciones.\n¿Qué buscamos?\nFormación: Ingeniería informática o similar.\nAl menos 2 años de experiencia.\nExperiencia con REACT y DJANGO.\nExperiencia con Python.\nConocimiento en Inteligencia Artificial.\n¿Qué podemos ofrecerte?\nIncorporación a una empresa multinacional competitiva en continuo crecimiento.\nIntegración en un equipo de profesionales altamente cualificado, con un buen clima laboral, innovador y dinámico.\nFormación especializada y desarrollo profesional continuo.\nBeneficios Sociales y Plan de Compensación Flexible.\nRetribución competitiva.\n¿Quiénes somos?\nSomos un equipo. Formamos parte de ALTEN, una multinacional europea especializada en proporcionar servicios de consultoría, tecnología de la información y servicios de ingeniería a las principales compañías del mercado español.\nSi te gustan las cifras, te diremos que en España tenemos una facturación de 337 millones de euros, 10 sedes y un equipo formado por 5.500 personas.\nAdemás, en ALTEN nos enorgullecemos de ofrecer igualdad de oportunidades con independencia de género, edad, diversidad de capacidades o país de origen. Nuestro compromiso está con el talento y con las personas que lo tienen.\nSi crees que eres talento, ¡apúntate!",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 45,
+                            "nivel": "Médio",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 2
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Python",
+                                "React.js"
+                            ],
+                            "total_habilidades_encontradas": 3
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 45,
+                        "nivel": "Médio",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 2
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Python",
+                            "React.js"
+                        ],
+                        "total_habilidades_encontradas": 3
+                    }
+                }
+            },
+            {
+                "job_id": "4459245142",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Python Developer",
+                "empresa": "Matlen Silver",
+                "localizacao": "Jersey City, Nova Jersey, Estados Unidos",
+                "data_postagem": "Há 4 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://www.linkedin.com/jobs/view/python-developer-at-matlen-silver-4459245142",
+                "descricao_resumida": "Matlen Silver - Jersey City, Nova Jersey, Estados Unidos",
+                "descricao_completa": "Job Title: Fullstack Python Developer & Backend Python Developer\n \nDuration: 18 Month W2 COntract \n \nLocation: Jersey City | New York City \n \nRequired Pay Scale: $60-$68/hour \n  \nBackend Python Developer\nJob Description:\nSeeking a Backend Python Developer with strong experience in Python, Object-Oriented Programming (OOP), and backend application development. Experience with trading systems is highly desirable. The role involves building and supporting scalable applications that support trading and investment operations within capital markets.\nKey Skills:\nPython\nObject-Oriented Programming (OOP)\nQuartz (Preferred)\nSecDB or Athena are OK alternatives\nBackend Application Development\nCapital Markets, Equities, and Fixed Income Domain Knowledge\nFull Stack Python Developer with React\nJob Description:\nSeeking a Full Stack Python Developer with expertise in Python, React, JavaScript, TypeScript, and web frameworks such as Flask or Django. The ideal candidate will develop and maintain enterprise-grade applications across front-end and back-end layers while working with complex financial systems and databases.\nKey Skills:\nPython\nReact\nJavaScript, TypeScript\nFlask or Django\nOracle, MySQL, PostgreSQL\nFull Stack Application Development\nCapital Markets, Equities, and Fixed Income Domain Knowledge\n  \n \nAbout Matlen Silver\n \nExperience Matters. Let your experience be driven by our experience. For more than 40 years, Matlen Silver has delivered solutions for complex talent and technology needs to Fortune 500 companies and industry leaders. Led by hard work, honesty, and a trusted team of experts, we can say that Matlen Silver technology has created a solutions experience and legacy of success that is the difference in the way the world works.\n  \n \nMatlen Silver is an Equal Opportunity Employer and considers all applicants for all positions without regard to race, color, religion, gender, national origin, age, sexual orientation, veteran status, the presence of a non-job-related medical condition or disability, or any other legally protected status.\n \nIf you are a person with a disability needing assistance with the application or at any point in the hiring process, please contact us at email and/or phone at: info@matlensilver.com // 908-393-8600\n \nAt The Matlen Silver Group, Inc., W2 employees are eligible for the following benefits:\nHealth, vision, and dental insurance (single and family coverage)\n401(k) plan (employee contributions only)",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 60,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python"
+                            ],
+                            "total_habilidades_encontradas": 5
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 75,
+                            "nivel": "Alto",
+                            "habilidades_compativeis": [
+                                "Django",
+                                "Flask",
+                                "JavaScript",
+                                "MySQL",
+                                "PostgreSQL",
+                                "Python",
+                                "React.js",
+                                "TypeScript"
+                            ],
+                            "total_habilidades_encontradas": 8
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 60,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python"
+                        ],
+                        "total_habilidades_encontradas": 5
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 75,
+                        "nivel": "Alto",
+                        "habilidades_compativeis": [
+                            "Django",
+                            "Flask",
+                            "JavaScript",
+                            "MySQL",
+                            "PostgreSQL",
+                            "Python",
+                            "React.js",
+                            "TypeScript"
+                        ],
+                        "total_habilidades_encontradas": 8
+                    }
+                }
+            },
+            {
+                "job_id": "4460051257",
+                "tipo": "jobs",
+                "escopo": "internacional",
+                "titulo": "Quantitative Developer - Python",
+                "empresa": "Millennium",
+                "localizacao": "Bangalore, Carnataca, Índia",
+                "data_postagem": "Há 5 horas",
+                "senioridade": "Júnior",
+                "modelo_trabalho": "Remoto",
+                "link": "https://in.linkedin.com/jobs/view/quantitative-developer-python-at-millennium-4460051257",
+                "descricao_resumida": "Millennium - Bangalore, Carnataca, Índia",
+                "descricao_completa": "About Millennium\nMillennium is a global, diversified alternative investment firm, founded in 1989. Defined by evolution, innovation and focus, Millennium’s mission is to deliver results for our investors.\nOur people are empowered with both independence and support: the autonomy to pursue ideas with conviction and the backing of a global network committed to collaboration, disciplined risk management and continuous learning. With opportunities to deepen expertise and accelerate development, talent at Millennium is equipped to adapt, evolve and build lasting impact over time. Discover how transformative growth accelerates impact.\nMeet the Team\nEnterprise Risk Technology sits within Millennium’s Information Technology organization, which is core to the health and growth of the firm. The team supports a flexible, scalable technology environment and advanced proprietary systems that help power next-generation analytical capabilities across the business. Working closely with global partners, the team focuses on building and enhancing technology that supports risk analytics and data-driven decision-making across asset classes.\nWhat You'll Do\n Partner with quants, risk managers, and technologists across New York, London, and Singapore to build and enhance multi-asset analytics, stress testing, and VaR capabilities for Millennium’s in-house risk platform\n Develop Python-based microservices using frameworks such as FastAPI or Django to deliver scalable, reliable solutions\n Analyze and transform large datasets using pandas, polars, and related data libraries to support business and risk objectives\n Build, deploy, and maintain cloud-based applications and services in AWS\n Contribute to robust development workflows using Git and appropriate database technologies\n Support the delivery of data-driven tools and applications for stakeholders across the risk technology ecosystem\nWhat You Bring\n Strong analytical and problem-solving skills, with the ability to work through complex technical and business challenges\n Hands-on experience with Python and data analysis libraries such as pandas and polars\n Experience designing or working with REST APIs and cloud-based services\n Strong relational database and SQL development experience\n Solid Unix/Linux command-line skills\n Familiarity with AWS services such as EC2, S3, Aurora, and Redshift is a plus\n Exposure to identity and access management concepts and tools such as Kerberos, OAuth 2.0, and LDAP is a plus\n Broad understanding of financial services instruments, along with a Bachelor’s degree in Computer Science & Engineering from a Tier 1 college",
+                "match_curriculo": {
+                    "perfis": {
+                        "backend": {
+                            "nome_perfil": "backend",
+                            "score_porcentagem": 100,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "FastAPI",
+                                "Git",
+                                "Linux",
+                                "Microservices",
+                                "Pandas",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 10
+                        },
+                        "fullstack": {
+                            "nome_perfil": "fullstack",
+                            "score_porcentagem": 85,
+                            "nivel": "Excelente",
+                            "habilidades_compativeis": [
+                                "AWS",
+                                "Django",
+                                "FastAPI",
+                                "Python",
+                                "REST APIs",
+                                "SQL"
+                            ],
+                            "total_habilidades_encontradas": 6
+                        }
+                    },
+                    "backend": {
+                        "nome_perfil": "backend",
+                        "score_porcentagem": 100,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "FastAPI",
+                            "Git",
+                            "Linux",
+                            "Microservices",
+                            "Pandas",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 10
+                    },
+                    "fullstack": {
+                        "nome_perfil": "fullstack",
+                        "score_porcentagem": 85,
+                        "nivel": "Excelente",
+                        "habilidades_compativeis": [
+                            "AWS",
+                            "Django",
+                            "FastAPI",
+                            "Python",
+                            "REST APIs",
+                            "SQL"
+                        ],
+                        "total_habilidades_encontradas": 6
+                    }
+                }
+            }
+        ],
+        "post": []
     }
 }

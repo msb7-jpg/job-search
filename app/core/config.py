@@ -2,12 +2,14 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field
 
-from app.models.enums import TimeFilterEnum
+from app.models.enums import ProxyStrategyEnum, TimeFilterEnum
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 APP_DIR = PROJECT_ROOT / "app"
 DATA_DIR = APP_DIR / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
 class Settings(BaseModel):
     # Diretórios
     project_root: Path = PROJECT_ROOT
@@ -23,6 +25,8 @@ class Settings(BaseModel):
     # Flags de Comportamento e Otimização
     usar_proxy: bool = True
     enriquecer_detalhes: bool = True
+    estrategia_proxy: ProxyStrategyEnum = ProxyStrategyEnum.ADAPTIVE_FAILOVER
+    proxy_health_check_interval: int = 45
 
     # Concorrência e HTTP
     max_workers_jobs: int = 10

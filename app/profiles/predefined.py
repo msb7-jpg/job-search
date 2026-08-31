@@ -82,6 +82,8 @@ PROFILE_BACKEND = Profile(
     queries_jobs_nacionais=[
         ("Python FastAPI Django PostgreSQL", "Brazil"),
         ("Desenvolvedor Python Junior", "Brazil"),
+        ("Python FastAPI Django PostgreSQL", "Brazil"),
+
     ],
     queries_jobs_internacionais=[
         (

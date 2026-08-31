@@ -1,5 +1,3 @@
-from profile import Profile
-
 from app.core.config import Settings, settings as default_settings
 from app.core.logging import logger
 from app.exporters.json_exporter import salvar_dados_brutos_json, salvar_dados_processados_json
@@ -10,6 +8,7 @@ from app.models.job import JobItem
 from app.models.post import PostItem
 from app.models.report import ProcessedDataOutput, ScopeContainer
 from app.posts.facade import PostsPipelineFacade
+from app.profiles.base import Profile
 from app.profiles.predefined import DEFAULT_PROFILES
 from app.shared.http.proxy_rotator import rotator
 
@@ -35,7 +34,10 @@ class JobSearchMasterFacade:
     def inicializar_infraestrutura(self) -> None:
         if self.settings.usar_proxy:
             logger.info("⚙️ Inicializando infraestrutura e pool de proxies...")
-            rotator.inicializar_pool(max_concurrency=self.settings.max_concurrency_proxies)
+            rotator.inicializar_pool(
+                max_concurrency=self.settings.max_concurrency_proxies,
+                strategy=self.settings.estrategia_proxy,
+            )
         else:
             logger.info("⚡ Execução em modo direto ativada (sem proxy).")
 

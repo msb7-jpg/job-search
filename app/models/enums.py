@@ -29,6 +29,13 @@ class MatchLevelEnum(StrEnum):
     BAIXO = "Baixo"
 
 
+class ProxyStrategyEnum(StrEnum):
+    ADAPTIVE_FAILOVER = "adaptive_failover"
+    PRE_FLIGHT = "pre_flight"
+    BACKGROUND_POOL = "background_pool"
+
+
+
 class TimeFilterEnum(StrEnum):
     ULTIMAS_24H = "24h"
     ULTIMA_SEMANA = "semana"

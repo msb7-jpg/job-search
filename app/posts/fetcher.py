@@ -82,7 +82,7 @@ def buscar_posts_linkedin(
     settings: Settings | None = None,
 ) -> list[PostItem]:
     cfg = settings or default_settings
-    region = "br-pt" if scope == ScopeEnum.NACIONAL else "wt-wt"
+    region = "br-pt" if scope == ScopeEnum.NACIONAL else "us-en"
     timelimit = cfg.filtro_tempo.ddgs_timelimit
 
     logger.debug(f"[POSTS-FETCHER] Executando busca de posts ({scope}) via DDGS para: {query[:45]}...")
@@ -95,14 +95,19 @@ def buscar_posts_linkedin(
             timelimit=timelimit,
             max_results=max_resultados,
         )
-    except ddgs.exceptions.TimeoutException as e:
-        logger.warning(f"[POSTS-FETCHER] Timeout ao buscar posts para: '{query[:40]}...'. Erro: {e}")
+    except ddgs.exceptions.TimeoutException as error:
+        logger.warning(f"[POSTS-FETCHER] Timeout ao buscar posts para: '{query[:40]}...'. Erro: {error}")
+        return []
+    except ddgs.exceptions.DDGSException as error:
+        logger.info(f"[POSTS-FETCHER] Nenhum post retornado ou limitação no DDGS para: '{query[:40]}...'. Info: {error}")
+        return []
+    except Exception as error:
+        logger.warning(f"[POSTS-FETCHER] Erro inesperado ao buscar posts para: '{query[:40]}...'. Erro: {error}")
         return []
 
     if posts := _converter_resultados_em_posts(resultados_brutos, scope, max_resultados):
         logger.info(f"[POSTS-FETCHER] Encontrados {len(posts)} posts para query: '{query[:35]}...'")
         return posts
-
 
     logger.info(f"[POSTS-FETCHER] Nenhum post retornado para: '{query[:40]}...'")
     return []
