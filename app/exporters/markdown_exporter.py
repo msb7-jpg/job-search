@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from app.core.logging import logger
+from app.models.match import ResumeMatch
 from app.models.report import ProcessedDataOutput
 
 
@@ -12,36 +13,57 @@ def _formatar_item_markdown(
     localizacao: str,
     data_postagem: str,
     link: str,
-    match_curriculo: object | None,
+    match_curriculo: ResumeMatch | None,
 ) -> list[str]:
-    backend_match = match_curriculo.backend if match_curriculo else None
-    fullstack_match = match_curriculo.fullstack if match_curriculo else None
-    score_backend = backend_match.score_porcentagem if backend_match else 0
-    score_fullstack = fullstack_match.score_porcentagem if fullstack_match else 0
-    melhor_score = max(score_backend, score_fullstack)
+    scores = (
+        [match.score_porcentagem for match in match_curriculo.perfis.values()]
+        if match_curriculo and match_curriculo.perfis
+        else []
+    )
+    melhor_score = max(scores) if scores else 0
 
     perfis_compativeis: list[str] = []
-    if backend_match and score_backend >= 60:
-        perfis_compativeis.append(f"Backend: {score_backend}% ({backend_match.nivel.value})")
-    if fullstack_match and score_fullstack >= 60:
-        perfis_compativeis.append(f"Full-Stack: {score_fullstack}% ({fullstack_match.nivel.value})")
+    skills_linhas: list[str] = []
 
-    compatibilidade_str = " | ".join(perfis_compativeis) if perfis_compativeis else "Sem match mínimo para este currículo"
-    skills_backend = ", ".join(backend_match.habilidades_compativeis) if (backend_match and backend_match.habilidades_compativeis) else "Python"
-    skills_fullstack = (
-        ", ".join(fullstack_match.habilidades_compativeis)
-        if (fullstack_match and fullstack_match.habilidades_compativeis)
-        else "Python"
+    if match_curriculo and match_curriculo.perfis:
+        for profile_name, profile_match in match_curriculo.perfis.items():
+            nome_exibicao = profile_name.capitalize()
+            if profile_match.score_porcentagem >= 60:
+                perfis_compativeis.append(
+                    f"{nome_exibicao}: {profile_match.score_porcentagem}% ({profile_match.nivel.value})"
+                )
+            skills_str = (
+                ", ".join(profile_match.habilidades_compativeis)
+                if profile_match.habilidades_compativeis
+                else "N/A"
+            )
+            skills_linhas.append(f"- **Skills {nome_exibicao}**: `{skills_str}`")
+    elif match_curriculo:
+        backend_match = match_curriculo.backend
+        fullstack_match = match_curriculo.fullstack
+        if backend_match and backend_match.score_porcentagem >= 60:
+            perfis_compativeis.append(
+                f"Backend: {backend_match.score_porcentagem}% ({backend_match.nivel.value})"
+            )
+        if fullstack_match and fullstack_match.score_porcentagem >= 60:
+            perfis_compativeis.append(
+                f"Full-Stack: {fullstack_match.score_porcentagem}% ({fullstack_match.nivel.value})"
+            )
+
+    compatibilidade_str = (
+        " | ".join(perfis_compativeis)
+        if perfis_compativeis
+        else "Sem match mínimo para este currículo"
     )
 
-    return [
+    linhas = [
         f"### {indice}. {titulo} - **Match Máximo: {melhor_score}%**",
         f"- **Compatibilidade**: {compatibilidade_str}",
         f"- **Empresa/Autor**: {empresa} | **Local**: {localizacao} | **Postagem**: {data_postagem}",
-        f"- **Skills Backend**: `{skills_backend}`",
-        f"- **Skills Full-Stack**: `{skills_fullstack}`",
-        f"- 🔗 [Ver no LinkedIn]({link})\n",
     ]
+    linhas.extend(skills_linhas)
+    linhas.append(f"- 🔗 [Ver no LinkedIn]({link})\n")
+    return linhas
 
 
 def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path) -> None:
@@ -60,9 +82,13 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
         linhas_relatorio.append(f"# {nome_escopo}\n")
 
         # 1. Vagas Formais
-        linhas_relatorio.append(f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: {len(container.jobs)})\n")
+        linhas_relatorio.append(
+            f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: {len(container.jobs)})\n"
+        )
         if not container.jobs:
-            linhas_relatorio.append("_Nenhuma vaga formal encontrada com match mínimo de 60%._\n")
+            linhas_relatorio.append(
+                "_Nenhuma vaga formal encontrada com match mínimo de 60%._\n"
+            )
         else:
             for indice_vaga, job_item in enumerate(container.jobs, 1):
                 linhas_relatorio.extend(
@@ -79,7 +105,9 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
                 )
 
         # 2. Posts
-        linhas_relatorio.append(f"## 💬 Posts do LinkedIn (Total exibido: {len(container.post)})\n")
+        linhas_relatorio.append(
+            f"## 💬 Posts do LinkedIn (Total exibido: {len(container.post)})\n"
+        )
         if not container.post:
             linhas_relatorio.append("_Nenhum post encontrado nesta categoria._\n")
         else:
@@ -103,5 +131,6 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
     with open(caminho_relatorio, "w", encoding="utf-8") as arquivo:
         arquivo.write("\n".join(linhas_relatorio))
 
-    logger.info(f"📄 Relatório formatado em Markdown gerado com sucesso em '{caminho_relatorio}'.")
-
+    logger.info(
+        f"📄 Relatório formatado em Markdown gerado com sucesso em '{caminho_relatorio}'."
+    )

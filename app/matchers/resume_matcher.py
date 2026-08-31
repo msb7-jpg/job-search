@@ -1,11 +1,11 @@
 import re
-from typing import Literal
 
-from app.matchers.skills_definitions import SKILLS_BACKEND, SKILLS_FULLSTACK
 from app.models.enums import MatchLevelEnum
 from app.models.job import JobItem
 from app.models.match import ProfileMatch, ResumeMatch
 from app.models.post import PostItem
+from app.profiles.base import Profile
+from app.profiles.predefined import DEFAULT_PROFILES
 
 
 def calcular_nivel_match(score: int) -> MatchLevelEnum:
@@ -17,55 +17,62 @@ def calcular_nivel_match(score: int) -> MatchLevelEnum:
         return MatchLevelEnum.MEDIO
     return MatchLevelEnum.BAIXO
 
-def calcular_perfil_match(texto: str, skills_dict: dict[str, str], foco: Literal["backend", "fullstack"]) -> ProfileMatch:
+
+def calcular_perfil_match(texto: str, perfil: Profile) -> ProfileMatch:
     texto_lower = texto.lower()
     habilidades_encontradas: set[str] = set()
 
-    for kw, skill_name in skills_dict.items():
-        pattern = r"\b" + re.escape(kw) + r"\b"
-        if re.search(pattern, texto_lower):
-            habilidades_encontradas.add(skill_name)
+    for keyword, nome_habilidade in perfil.skills_map.items():
+        padrao_regex = r"\b" + re.escape(keyword) + r"\b"
+        if re.search(padrao_regex, texto_lower):
+            habilidades_encontradas.add(nome_habilidade)
 
     habilidades_lista = sorted(habilidades_encontradas)
-    pontos = 0
+    pontos_acumulados = 0
 
-    if "Python" in habilidades_encontradas:
-        pontos += 25
-    if "Django" in habilidades_encontradas or "FastAPI" in habilidades_encontradas:
-        pontos += 20
-    if "PostgreSQL" in habilidades_encontradas or "MySQL" in habilidades_encontradas or "SQL" in habilidades_encontradas:
-        pontos += 15
-    if "Docker" in habilidades_encontradas or "AWS" in habilidades_encontradas or "GCP" in habilidades_encontradas or "Linux" in habilidades_encontradas:
-        pontos += 15
-    if "REST APIs" in habilidades_encontradas or "Pytest" in habilidades_encontradas or "Git" in habilidades_encontradas:
-        pontos += 10
+    for regra in perfil.regras_pontuacao:
+        if regra.requer_todos:
+            if all(habilidade in habilidades_encontradas for habilidade in regra.skills):
+                pontos_acumulados += regra.pontos
+        elif any(habilidade in habilidades_encontradas for habilidade in regra.skills):
+            pontos_acumulados += regra.pontos
 
-    if (foco == "fullstack" and (
-        "Vue.js" in habilidades_encontradas or
-        "React.js" in habilidades_encontradas or
-        "TypeScript" in habilidades_encontradas or
-        "JavaScript" in habilidades_encontradas
-    )) or (
-        foco == "backend" and (
-            "Redis" in habilidades_encontradas or
-            "RabbitMQ" in habilidades_encontradas or
-            "Celery" in habilidades_encontradas or
-            "Microservices" in habilidades_encontradas
-        )
-    ):
-        pontos += 15
+    tem_habilidade_primaria = (
+        perfil.primary_skill in habilidades_encontradas
+        if perfil.primary_skill is not None
+        else True
+    )
 
-    score_final = min(100, max(15, pontos)) if "Python" in habilidades_encontradas else min(50, pontos)
+    score_calculado = (
+        min(100, max(15, pontos_acumulados))
+        if tem_habilidade_primaria
+        else min(50, pontos_acumulados)
+    )
 
     return ProfileMatch(
-        score_porcentagem=score_final,
-        nivel=calcular_nivel_match(score_final),
+        nome_perfil=perfil.name,
+        score_porcentagem=score_calculado,
+        nivel=calcular_nivel_match(score_calculado),
         habilidades_compativeis=habilidades_lista,
         total_habilidades_encontradas=len(habilidades_lista),
     )
 
-def avaliar_compatibilidade(item: JobItem | PostItem) -> ResumeMatch:
-    texto = f"{item.titulo} {item.descricao_completa or item.descricao_resumida}"
-    match_be = calcular_perfil_match(texto, SKILLS_BACKEND, foco="backend")
-    match_fs = calcular_perfil_match(texto, SKILLS_FULLSTACK, foco="fullstack")
-    return ResumeMatch(backend=match_be, fullstack=match_fs)
+
+def avaliar_compatibilidade(
+    item: JobItem | PostItem, perfis: list[Profile] | None = None
+) -> ResumeMatch:
+    perfis_avaliacao = perfis if perfis is not None else DEFAULT_PROFILES
+    texto_analise = f"{item.titulo} {item.descricao_completa or item.descricao_resumida}"
+
+    resultado_perfis: dict[str, ProfileMatch] = {}
+    for perfil in perfis_avaliacao:
+        resultado_perfis[perfil.name] = calcular_perfil_match(texto_analise, perfil)
+
+    backend_match = resultado_perfis.get("backend")
+    fullstack_match = resultado_perfis.get("fullstack")
+
+    return ResumeMatch(
+        perfis=resultado_perfis,
+        backend=backend_match,
+        fullstack=fullstack_match,
+    )

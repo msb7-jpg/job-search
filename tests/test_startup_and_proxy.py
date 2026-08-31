@@ -1,10 +1,8 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-import requests
-
-from app.posts.fetcher import gerar_variantes_query_posts
-from app.posts.searxng_client import garantir_searxng_ativo
+from app.models.enums import ScopeEnum
+from app.posts.fetcher import buscar_posts_linkedin, gerar_variantes_query_posts
 from app.shared.http.client import requisicao_com_rotacao
 from app.shared.http.proxy_rotator import ProxyRotator
 
@@ -47,19 +45,33 @@ class ProxyValidationTests(unittest.TestCase):
         self.assertEqual(mock_sleep.call_count, 0)
 
 
-@patch("app.posts.searxng_client.time.sleep", return_value=None)
-@patch("app.posts.searxng_client.subprocess.run")
-@patch("app.posts.searxng_client.requests.get")
-class SearxngStartupTests(unittest.TestCase):
-    def test_garantir_searxng_ativo_starts_container_if_unavailable(self, mock_get, mock_subprocess, _mock_sleep):
-        mock_get.side_effect = [
-            requests.exceptions.RequestException("down"),
-            MagicMock(status_code=200, json=lambda: {"results": []}),
+class DDGSPostSearchTests(unittest.TestCase):
+    @patch("app.posts.fetcher.DDGS")
+    def test_buscar_posts_linkedin_converts_ddgs_results(self, mock_ddgs_cls):
+        mock_instance = MagicMock()
+        mock_instance.text.return_value = [
+            {
+                "title": "Vaga Python Junior",
+                "href": "https://www.linkedin.com/posts/empresa_vaga-python-activity-12345",
+                "body": "Estamos contratando desenvolvedor Python Junior remoto.",
+            },
+            {
+                "title": "Ignored Link",
+                "href": "https://www.google.com/search?q=test",
+                "body": "Not a linkedin post",
+            },
         ]
-        mock_subprocess.return_value = MagicMock(returncode=0)
+        mock_ddgs_cls.return_value = mock_instance
 
-        self.assertTrue(garantir_searxng_ativo())
-        mock_subprocess.assert_called_once()
+        posts = buscar_posts_linkedin(
+            query="site:linkedin.com/posts/ python junior",
+            scope=ScopeEnum.NACIONAL,
+            max_resultados=5,
+        )
+
+        self.assertEqual(len(posts), 1)
+        self.assertEqual(posts[0].titulo, "Vaga Python Junior")
+        self.assertIn("linkedin.com/posts", posts[0].link)
 
 
 if __name__ == "__main__":

@@ -145,4 +145,10 @@ class ProxyRotator:
             return {"http": p_str, "https": p_str}
         return None
 
+    def obter_proxima_string_proxy(self) -> str | None:
+        if self._proxy_cycle:
+            return next(self._proxy_cycle)
+        return None
+
+
 rotator = ProxyRotator()

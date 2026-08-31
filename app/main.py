@@ -6,7 +6,7 @@ from app.facades.job_search_facade import JobSearchMasterFacade
 def main() -> None:
     settings = Settings()
     logger.info(
-        f"Iniciando Job Search Automation (Recência: {settings.filtro_tempo} | "
+        f"Iniciando Job Search Automation (Recência: {settings.filtro_tempo.descricao} [{settings.filtro_tempo.value}] | "
         f"Remoto: {settings.apenas_remoto} | Senioridade: {settings.senioridade_filtro})"
     )
 
