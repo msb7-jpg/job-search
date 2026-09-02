@@ -15,3 +15,26 @@ class ResumeMatch(BaseModel):
     perfis: dict[str, ProfileMatch] = Field(default_factory=dict)
     backend: ProfileMatch | None = None
     fullstack: ProfileMatch | None = None
+
+    @property
+    def score_maximo(self) -> int:
+        if self.perfis:
+            return max((perfil.score_porcentagem for perfil in self.perfis.values()), default=0)
+        scores = []
+        if self.backend:
+            scores.append(self.backend.score_porcentagem)
+        if self.fullstack:
+            scores.append(self.fullstack.score_porcentagem)
+        return max(scores, default=0)
+
+    @property
+    def total_skills_maximo(self) -> int:
+        if self.perfis:
+            return max((len(perfil.habilidades_compativeis) for perfil in self.perfis.values()), default=0)
+        contagens = []
+        if self.backend:
+            contagens.append(len(self.backend.habilidades_compativeis))
+        if self.fullstack:
+            contagens.append(len(self.fullstack.habilidades_compativeis))
+        return max(contagens, default=0)
+

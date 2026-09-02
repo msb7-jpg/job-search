@@ -72,7 +72,7 @@ app/
 - **Package Manager**: `uv`
 - **Networking & Search**: `requests`, `httpx`, `googlesearch-python`
 - **HTML Parsing**: `beautifulsoup4`
-- **Concurrency**: `asyncio` (proxy validation) + `ThreadPoolExecutor` (detail fetch)
+- **Concurrency & Progress**: `asyncio` (proxy validation), `ThreadPoolExecutor` (detail fetch), `tqdm` (interactive query and detail fetching progress bars)
 
 ---
 
@@ -124,6 +124,10 @@ app/
 - **Profile-Driven Configuration**:
   - Configurações de palavras-chave, habilidades, regras de pontuação de currículo e queries de busca ficam encapsuladas em instâncias de [`Profile`](app/profiles/base.py).
   - É possível instanciar novos perfis sob demanda e passá-los para as pipelines sem alterar a lógica interna das etapas.
+- **Interactive Progress Bars & Structured Feedback**:
+  - Uso de `tqdm` em tempo real para monitorar o progresso de queries restantes durante a busca inicial e de descrições pendentes durante o `Aggressive Fetching` concorrente com `ThreadPoolExecutor` (`as_completed`), preservando os logs estruturados e a ordem original das vagas.
+- **Detailed Filter & Discard Reporting**:
+  - Contabilização explícita e logs detalhados de vagas descartadas no pré-filtro inicial (por senioridade incompatível e por modelo de trabalho presencial/híbrido) e no pós-filtro rigoroso após classificação detalhada.
 - **Fast Execution & Direct Mode**:
   - O sistema opera por padrão com `usar_proxy = False` e `enriquecer_detalhes = False` em execuções diretas/rápidas, evitando latência de raspagem de proxies ou chamadas profundas para cada ID de vaga quando não requisitado.
 - **Explicit Variable Naming**:
@@ -135,8 +139,12 @@ app/
   - **Recarga Automática Sob Demanda**: caso todos os proxies saudáveis se esgotem durante a execução, o pool recarrega novas fontes e valida um novo lote automaticamente.
 - **Standby & Modularidade de Posts**:
   - A busca de posts via Google Search pode ser ligada ou colocada em standby a qualquer momento através da flag `buscar_posts: bool = False` em `Settings`.
+- **Match-Based Descending Ordering & Motivational Icons**:
+  - Tanto o pós-processamento estruturado em JSON (`vagas_processadas.json`) quanto o relatório gerado em Markdown (`relatorio_matches.md`) ordenam automaticamente todas as oportunidades em cada grupo (Nacional e Internacional, para Jobs e Posts) da maior compatibilidade para a menor (com desempate por total de skills encontradas).
+  - O relatório Markdown inclui ícones/emojis motivacionais por nível de match (🔥 para 90-100%, 🚀 para 80-89%, ⚡ para 70-79%, 🎯 para 60-69%, 💡 para 40-59% e ⚪ para <40%) no título das vagas e em cada perfil compatível para destacar e incentivar a priorização de candidaturas.
 - **Post-Change Validation Directive**:
   - **Sempre** após realizar modificações no código, deve-se executar `uv run ruff check` (e/ou `uv run ruff check --fix`) para validar e corrigir quaisquer pendências de lint/formatação.
+
 
 ---
 

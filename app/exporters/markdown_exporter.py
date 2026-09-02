@@ -5,6 +5,31 @@ from app.models.match import ResumeMatch
 from app.models.report import ProcessedDataOutput
 
 
+def obter_icone_match(score: int) -> str:
+    """Retorna um emoji motivacional com base na pontuação de compatibilidade do currículo."""
+    if score >= 90:
+        return "🔥"  # Match Perfeito / Top Match (90-100%)
+    if score >= 80:
+        return "🚀"  # Match Excelente (80-89%)
+    if score >= 70:
+        return "⚡"  # Match Alto (70-79%)
+    if score >= 60:
+        return "🎯"  # Match Qualificado (60-69%)
+    if score >= 40:
+        return "💡"  # Match Médio (40-59%)
+    return "⚪"      # Match Baixo (<40%)
+
+
+def _obter_chave_ordenacao(item: object) -> tuple[int, int]:
+    match_curriculo = getattr(item, "match_curriculo", None)
+    if not match_curriculo:
+        return (0, 0)
+    return (
+        match_curriculo.score_maximo,
+        match_curriculo.total_skills_maximo,
+    )
+
+
 def _formatar_item_markdown(
     indice: int,
     item: object,
@@ -15,12 +40,8 @@ def _formatar_item_markdown(
     link: str,
     match_curriculo: ResumeMatch | None,
 ) -> list[str]:
-    scores = (
-        [match.score_porcentagem for match in match_curriculo.perfis.values()]
-        if match_curriculo and match_curriculo.perfis
-        else []
-    )
-    melhor_score = max(scores) if scores else 0
+    melhor_score = match_curriculo.score_maximo if match_curriculo else 0
+    icone_maximo = obter_icone_match(melhor_score)
 
     perfis_compativeis: list[str] = []
     skills_linhas: list[str] = []
@@ -28,9 +49,10 @@ def _formatar_item_markdown(
     if match_curriculo and match_curriculo.perfis:
         for profile_name, profile_match in match_curriculo.perfis.items():
             nome_exibicao = profile_name.capitalize()
+            icone_perfil = obter_icone_match(profile_match.score_porcentagem)
             if profile_match.score_porcentagem >= 60:
                 perfis_compativeis.append(
-                    f"{nome_exibicao}: {profile_match.score_porcentagem}% ({profile_match.nivel.value})"
+                    f"{icone_perfil} {nome_exibicao}: {profile_match.score_porcentagem}% ({profile_match.nivel.value})"
                 )
             skills_str = (
                 ", ".join(profile_match.habilidades_compativeis)
@@ -42,12 +64,14 @@ def _formatar_item_markdown(
         backend_match = match_curriculo.backend
         fullstack_match = match_curriculo.fullstack
         if backend_match and backend_match.score_porcentagem >= 60:
+            icone_backend = obter_icone_match(backend_match.score_porcentagem)
             perfis_compativeis.append(
-                f"Backend: {backend_match.score_porcentagem}% ({backend_match.nivel.value})"
+                f"{icone_backend} Backend: {backend_match.score_porcentagem}% ({backend_match.nivel.value})"
             )
         if fullstack_match and fullstack_match.score_porcentagem >= 60:
+            icone_fs = obter_icone_match(fullstack_match.score_porcentagem)
             perfis_compativeis.append(
-                f"Full-Stack: {fullstack_match.score_porcentagem}% ({fullstack_match.nivel.value})"
+                f"{icone_fs} Full-Stack: {fullstack_match.score_porcentagem}% ({fullstack_match.nivel.value})"
             )
 
     compatibilidade_str = (
@@ -57,7 +81,7 @@ def _formatar_item_markdown(
     )
 
     linhas = [
-        f"### {indice}. {titulo} - **Match Máximo: {melhor_score}%**",
+        f"### {indice}. {icone_maximo} {titulo} - **Match Máximo: {melhor_score}%**",
         f"- **Compatibilidade**: {compatibilidade_str}",
         f"- **Empresa/Autor**: {empresa} | **Local**: {localizacao} | **Postagem**: {data_postagem}",
     ]
@@ -69,7 +93,14 @@ def _formatar_item_markdown(
 def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path) -> None:
     linhas_relatorio = [
         "# 📊 Relatório de Match de Vagas e Posts\n",
-        "Este relatório separa vagas normais e posts: as vagas formais usam o threshold de 60%, enquanto os posts são exibidos completos.\n",
+        "Este relatório separa oportunidades nacionais e internacionais ordenadas com o maior match primeiro para você focar nas melhores vagas!\n",
+        "> **Legenda Motivacional de Match:**\n"
+        "> - 🔥 **90% - 100%**: Match Perfeito / Altíssima Aderência (Prioridade Máxima)\n"
+        "> - 🚀 **80% - 89%**: Match Excelente (Forte alinhamento técnico)\n"
+        "> - ⚡ **70% - 79%**: Match Alto (Boa aderência às tecnologias principais)\n"
+        "> - 🎯 **60% - 69%**: Match Qualificado (Atinge requisitos mínimos do perfil)\n"
+        "> - 💡 **40% - 59%**: Match Médio\n"
+        "> - ⚪ **< 40%**: Match Baixo\n",
         "---\n",
     ]
 
@@ -81,16 +112,17 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
     for _, nome_escopo, container in secoes:
         linhas_relatorio.append(f"# {nome_escopo}\n")
 
-        # 1. Vagas Formais
+        # 1. Vagas Formais (Ordenadas pelo maior match primeiro)
+        jobs_ordenados = sorted(container.jobs, key=_obter_chave_ordenacao, reverse=True)
         linhas_relatorio.append(
-            f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: {len(container.jobs)})\n"
+            f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ {dados.filtro_threshold_minimo}%: {len(jobs_ordenados)})\n"
         )
-        if not container.jobs:
+        if not jobs_ordenados:
             linhas_relatorio.append(
-                "_Nenhuma vaga formal encontrada com match mínimo de 60%._\n"
+                f"_Nenhuma vaga formal encontrada com match mínimo de {dados.filtro_threshold_minimo}%._\n"
             )
         else:
-            for indice_vaga, job_item in enumerate(container.jobs, 1):
+            for indice_vaga, job_item in enumerate(jobs_ordenados, 1):
                 linhas_relatorio.extend(
                     _formatar_item_markdown(
                         indice=indice_vaga,
@@ -104,14 +136,15 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
                     )
                 )
 
-        # 2. Posts
+        # 2. Posts (Ordenados pelo maior match primeiro)
+        posts_ordenados = sorted(container.post, key=_obter_chave_ordenacao, reverse=True)
         linhas_relatorio.append(
-            f"## 💬 Posts do LinkedIn (Total exibido: {len(container.post)})\n"
+            f"## 💬 Posts do LinkedIn (Total exibido: {len(posts_ordenados)})\n"
         )
-        if not container.post:
+        if not posts_ordenados:
             linhas_relatorio.append("_Nenhum post encontrado nesta categoria._\n")
         else:
-            for indice_post, post_item in enumerate(container.post, 1):
+            for indice_post, post_item in enumerate(posts_ordenados, 1):
                 linhas_relatorio.extend(
                     _formatar_item_markdown(
                         indice=indice_post,
@@ -134,3 +167,4 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
     logger.info(
         f"📄 Relatório formatado em Markdown gerado com sucesso em '{caminho_relatorio}'."
     )
+

@@ -117,6 +117,20 @@ class JobSearchMasterFacade:
             post_item.match_curriculo = avaliar_compatibilidade(post_item, perfis=self.profiles)
             posts_int_processados.append(post_item)
 
+        # Ordenar cada categoria por maior match primeiro (com desempate por total de skills encontradas)
+        def extrair_chave_match(item: JobItem | PostItem) -> tuple[int, int]:
+            if not item.match_curriculo:
+                return (0, 0)
+            return (
+                item.match_curriculo.score_maximo,
+                item.match_curriculo.total_skills_maximo,
+            )
+
+        jobs_nac_aprovados.sort(key=extrair_chave_match, reverse=True)
+        jobs_int_aprovados.sort(key=extrair_chave_match, reverse=True)
+        posts_nac_processados.sort(key=extrair_chave_match, reverse=True)
+        posts_int_processados.sort(key=extrair_chave_match, reverse=True)
+
         total_aprovados = (
             len(jobs_nac_aprovados)
             + len(jobs_int_aprovados)
@@ -130,6 +144,7 @@ class JobSearchMasterFacade:
             nacional=ScopeContainer(jobs=jobs_nac_aprovados, post=posts_nac_processados),
             internacional=ScopeContainer(jobs=jobs_int_aprovados, post=posts_int_processados),
         )
+
 
     def exportar_resultados(self, output: ProcessedDataOutput) -> None:
         logger.info("📊 [FASE 3/3] Exportando relatórios JSON e Markdown...")

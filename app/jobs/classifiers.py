@@ -39,20 +39,40 @@ BLOQUEADOS_PRESENCIAL = [
 ]
 
 
+def avaliar_pre_filtro_job_bruto(
+    titulo: str,
+    localizacao: str,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+) -> tuple[bool, str | None]:
+    titulo_minusculo = titulo.lower()
+    localizacao_minusculo = localizacao.lower()
+    texto_basico = f"{titulo_minusculo} {localizacao_minusculo}"
+
+    if senioridade_filtro == "JUNIOR" and any(
+        palavra_bloqueada in titulo_minusculo for palavra_bloqueada in BLOQUEADOS_SENIORIDADE_JUNIOR
+    ):
+        return False, "senioridade_incompativel"
+
+    if apenas_remoto and any(palavra_bloqueada in texto_basico for palavra_bloqueada in BLOQUEADOS_PRESENCIAL):
+        return False, "modelo_presencial"
+
+    return True, None
+
+
 def pre_filtrar_job_bruto(
     titulo: str,
     localizacao: str,
     apenas_remoto: bool,
     senioridade_filtro: str,
 ) -> bool:
-    t_lower = titulo.lower()
-    loc_lower = localizacao.lower()
-    texto_basico = f"{t_lower} {loc_lower}"
-
-    if senioridade_filtro == "JUNIOR" and any(p in t_lower for p in BLOQUEADOS_SENIORIDADE_JUNIOR):
-        return False
-
-    return not (apenas_remoto and any(p in texto_basico for p in BLOQUEADOS_PRESENCIAL))
+    aprovado, _motivo = avaliar_pre_filtro_job_bruto(
+        titulo=titulo,
+        localizacao=localizacao,
+        apenas_remoto=apenas_remoto,
+        senioridade_filtro=senioridade_filtro,
+    )
+    return aprovado
 
 
 def pre_filtrar_post_bruto(
@@ -63,10 +83,13 @@ def pre_filtrar_post_bruto(
     senioridade_filtro: str,
 ) -> bool:
     texto = f"{titulo} {descricao} {localizacao}".lower()
-    t_lower = titulo.lower()
+    titulo_minusculo = titulo.lower()
 
     if senioridade_filtro == "JUNIOR":
-        if any(p in t_lower for p in ["senior", "sênior", "sr", "sr.", "ssr", "pleno", "pl", "lead", "principal", "architect", "staff"]):
+        if any(
+            palavra_bloqueada in titulo_minusculo
+            for palavra_bloqueada in ["senior", "sênior", "sr", "sr.", "ssr", "pleno", "pl", "lead", "principal", "architect", "staff"]
+        ):
             return False
 
         termos_exclusao = ["security clearance", "citizens only", "us only", "us based", "c2c only"]
@@ -82,23 +105,34 @@ def pre_filtrar_post_bruto(
 
 
 def classificar_senioridade(titulo: str, descricao: str, padrao_junior: bool) -> SeniorityEnum:
-    t_lower = titulo.lower()
-    d_lower = descricao.lower()
+    titulo_minusculo = titulo.lower()
+    descricao_minusculo = descricao.lower()
 
-    if any(k in t_lower for k in ["estágio", "estagio", "intern", "trainee"]):
+    if any(palavra_chave in titulo_minusculo for palavra_chave in ["estágio", "estagio", "intern", "trainee"]):
         return SeniorityEnum.ESTAGIO
-    if any(k in t_lower for k in ["júnior", "junior", "jr", "entry level", "jr.", "nivel 1", "nível 1", "desenvolvedor 1"]):
+    if any(
+        palavra_chave in titulo_minusculo
+        for palavra_chave in ["júnior", "junior", "jr", "entry level", "jr.", "nivel 1", "nível 1", "desenvolvedor 1"]
+    ):
         return SeniorityEnum.JUNIOR
-    if any(k in t_lower for k in ["sênior", "senior", "sr", "sr.", "lead", "tech lead", "staff", "principal", "especialista", "iii"]):
+    if any(
+        palavra_chave in titulo_minusculo
+        for palavra_chave in ["sênior", "senior", "sr", "sr.", "lead", "tech lead", "staff", "principal", "especialista", "iii"]
+    ):
         return SeniorityEnum.SENIOR
-    if any(k in t_lower for k in ["pleno", "pl", "pl.", "ii"]):
+    if any(palavra_chave in titulo_minusculo for palavra_chave in ["pleno", "pl", "pl.", "ii"]):
         return SeniorityEnum.PLENO
 
-    if any(k in d_lower for k in ["júnior", "junior", "jr.", "entry-level", "entry level", "sem experiência previa"]):
+    if any(
+        palavra_chave in descricao_minusculo
+        for palavra_chave in ["júnior", "junior", "jr.", "entry-level", "entry level", "sem experiência previa"]
+    ):
         return SeniorityEnum.JUNIOR
-    if any(k in d_lower for k in ["sênior", "senior", "sr.", "tech lead", "arqueto", "architect"]):
+    if any(
+        palavra_chave in descricao_minusculo for palavra_chave in ["sênior", "senior", "sr.", "tech lead", "arqueto", "architect"]
+    ):
         return SeniorityEnum.SENIOR
-    if any(k in d_lower for k in ["pleno", "pl."]):
+    if any(palavra_chave in descricao_minusculo for palavra_chave in ["pleno", "pl."]):
         return SeniorityEnum.PLENO
 
     return SeniorityEnum.JUNIOR if padrao_junior else SeniorityEnum.NAO_ESPECIFICADO
@@ -108,23 +142,42 @@ def classificar_modelo_trabalho(titulo: str, localizacao: str, descricao: str, p
     texto = f"{titulo} {localizacao} {descricao}".lower()
 
     termos_hibrido = [
-        "híbrido", "hibrido", "hybrid", "híbrida", "hibrida",
-        "modelo híbrido", "modelo hibrido", "trabalho híbrido", "trabalho hibrido",
-        "híbrido em", "hibrido em", "presencial/remoto", "remoto/presencial"
+        "híbrido",
+        "hibrido",
+        "hybrid",
+        "híbrida",
+        "hibrida",
+        "modelo híbrido",
+        "modelo hibrido",
+        "trabalho híbrido",
+        "trabalho hibrido",
+        "híbrido em",
+        "hibrido em",
+        "presencial/remoto",
+        "remoto/presencial",
     ]
     termos_presencial = [
-        "presencial", "on-site", "onsite", "escritório", "escritorio",
-        "100% presencial", "modelo presencial", "trabalho presencial", "vaga presencial",
-        "atuação presencial", "atuacao presencial", "alocação presencial"
+        "presencial",
+        "on-site",
+        "onsite",
+        "escritório",
+        "escritorio",
+        "100% presencial",
+        "modelo presencial",
+        "trabalho presencial",
+        "vaga presencial",
+        "atuação presencial",
+        "atuacao presencial",
+        "alocação presencial",
     ]
 
-    if any(k in texto for k in termos_hibrido):
+    if any(palavra_chave in texto for palavra_chave in termos_hibrido):
         return WorkModelEnum.HIBRIDO
-    if any(k in texto for k in termos_presencial):
+    if any(palavra_chave in texto for palavra_chave in termos_presencial):
         return WorkModelEnum.PRESENCIAL
 
     termos_remoto = ["remoto", "remote", "home office", "home-office", "teletrabalho", "work from home", "100% remoto"]
-    if any(k in texto for k in termos_remoto):
+    if any(palavra_chave in texto for palavra_chave in termos_remoto):
         return WorkModelEnum.REMOTO
 
     return WorkModelEnum.REMOTO if padrao_remoto else WorkModelEnum.NAO_ESPECIFICADO

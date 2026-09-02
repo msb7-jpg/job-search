@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 from app.core.config import Settings
 from app.core.logging import logger
 from app.models.enums import ScopeEnum
@@ -36,38 +38,42 @@ class PostsPipelineFacade:
         return queries_ordenadas
 
     def run(self) -> tuple[list[PostItem], list[PostItem]]:
-        logger.info(
-            f"💬 [POSTS-PIPELINE] Iniciando extração de posts do LinkedIn via Google Search para "
-            f"{len(self.profiles)} perfis ({', '.join(p.name for p in self.profiles)}) "
-            f"[Filtro: {self.settings.filtro_tempo.descricao} ({self.settings.filtro_tempo.value})]..."
-        )
-
         queries_nacionais = self._obter_queries_nacionais()
         queries_internacionais = self._obter_queries_internacionais()
+        total_queries = len(queries_nacionais) + len(queries_internacionais)
 
-        # 1. Posts Nacionais
+        logger.info(
+            f"💬 [POSTS-PIPELINE] Iniciando extração de posts do LinkedIn via Google Search para "
+            f"{len(self.profiles)} perfis ({', '.join(perfil.name for perfil in self.profiles)}) | "
+            f"Total de {total_queries} queries [Filtro: {self.settings.filtro_tempo.descricao} ({self.settings.filtro_tempo.value})]..."
+        )
+
         posts_nac: list[PostItem] = []
-        for query in queries_nacionais:
-            encontrados = buscar_posts_linkedin(
-                query,
-                scope=ScopeEnum.NACIONAL,
-                settings=self.settings,
-            )
-            logger.info(f"💬 [POSTS-SEARCH] Query: '{query[:45]}...' (Brasil) -> {len(encontrados)} posts encontrados")
-            posts_nac.extend(encontrados)
-
-        # 2. Posts Internacionais
         posts_int: list[PostItem] = []
-        for query in queries_internacionais:
-            encontrados = buscar_posts_linkedin(
-                query,
-                scope=ScopeEnum.INTERNACIONAL,
-                settings=self.settings,
-            )
-            logger.info(f"💬 [POSTS-SEARCH] Query: '{query[:45]}...' (Gringa) -> {len(encontrados)} posts encontrados")
-            posts_int.extend(encontrados)
 
-        # 3. Deduplicação por Link
+        # 1. Execução de Queries com Barra de Progresso
+        with tqdm(total=total_queries, desc="💬 [POSTS] Buscando Queries LinkedIn", unit="query") as barra_progresso:
+            for query in queries_nacionais:
+                encontrados = buscar_posts_linkedin(
+                    query,
+                    scope=ScopeEnum.NACIONAL,
+                    settings=self.settings,
+                )
+                logger.info(f"💬 [POSTS-SEARCH] Query: '{query[:45]}...' (Brasil) -> {len(encontrados)} posts encontrados")
+                posts_nac.extend(encontrados)
+                barra_progresso.update(1)
+
+            for query in queries_internacionais:
+                encontrados = buscar_posts_linkedin(
+                    query,
+                    scope=ScopeEnum.INTERNACIONAL,
+                    settings=self.settings,
+                )
+                logger.info(f"💬 [POSTS-SEARCH] Query: '{query[:45]}...' (Gringa) -> {len(encontrados)} posts encontrados")
+                posts_int.extend(encontrados)
+                barra_progresso.update(1)
+
+        # 2. Deduplicação por Link
         posts_nac_unique = list({post.link: post for post in posts_nac}.values())
         posts_int_unique = list({post.link: post for post in posts_int}.values())
 

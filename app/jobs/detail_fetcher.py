@@ -1,6 +1,7 @@
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 from app.core.logging import logger
 from app.jobs.classifiers import classificar_modelo_trabalho, classificar_senioridade
@@ -99,20 +100,34 @@ def enriquecer_jobs_em_lote(
     timeout: int,
     max_retries: int,
 ) -> list[JobItem]:
+    if not jobs:
+        logger.info("[JOBS-DETAIL] Nenhuma vaga para executar Aggressive Fetch.")
+        return []
+
     logger.info(f"[JOBS-DETAIL] Iniciando Aggressive Fetch para {len(jobs)} vagas (threads={max_workers})...")
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        jobs_enriquecidos = list(
-            executor.map(
-                lambda job: enriquecer_job_com_descricao(
-                    job,
-                    apenas_remoto=apenas_remoto,
-                    senioridade_filtro=senioridade_filtro,
-                    usar_proxy=usar_proxy,
-                    timeout=timeout,
-                    max_retries=max_retries,
-                ),
-                jobs,
-            )
-        )
-    logger.info(f"[JOBS-DETAIL] Aggressive Fetch concluído para {len(jobs_enriquecidos)} vagas.")
-    return jobs_enriquecidos
+    jobs_enriquecidos: list[JobItem | None] = [None] * len(jobs)
+
+    with (
+        ThreadPoolExecutor(max_workers=max_workers) as executor,
+        tqdm(total=len(jobs), desc="⚡ [JOBS] Aggressive Fetching", unit="vaga") as barra_progresso,
+    ):
+        mapa_futuros = {
+            executor.submit(
+                enriquecer_job_com_descricao,
+                job,
+                apenas_remoto=apenas_remoto,
+                senioridade_filtro=senioridade_filtro,
+                usar_proxy=usar_proxy,
+                timeout=timeout,
+                max_retries=max_retries,
+            ): indice
+            for indice, job in enumerate(jobs)
+        }
+        for futuro in as_completed(mapa_futuros):
+            indice = mapa_futuros[futuro]
+            jobs_enriquecidos[indice] = futuro.result()
+            barra_progresso.update(1)
+
+    resultado_final = [job for job in jobs_enriquecidos if job is not None]
+    logger.info(f"[JOBS-DETAIL] Aggressive Fetch concluído para {len(resultado_final)} vagas.")
+    return resultado_final
