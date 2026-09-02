@@ -16,15 +16,14 @@ from app.shared.http.proxy_rotator import rotator
 class JobSearchMasterFacade:
     def __init__(
         self,
-        settings: Settings | None = None,
-        profiles: list[Profile] | None = None,
+        settings: Settings = default_settings,
+        profiles: list[Profile] = DEFAULT_PROFILES,
     ) -> None:
-        self.settings = settings or default_settings
-        self.profiles = profiles if profiles is not None else DEFAULT_PROFILES
+        self.settings = settings
+        self.profiles = profiles
         self.jobs_facade = JobsPipelineFacade(
             settings=self.settings,
             profiles=self.profiles,
-            enriquecer_detalhes=self.settings.enriquecer_detalhes,
         )
         self.posts_facade = PostsPipelineFacade(
             settings=self.settings,
@@ -44,13 +43,17 @@ class JobSearchMasterFacade:
     def executar_extracao(
         self,
     ) -> tuple[list[JobItem], list[JobItem], list[PostItem], list[PostItem]]:
-        logger.info("🚀 [FASE 1/3] Executando extração concorrente de Vagas e Posts...")
+        logger.info("🚀 [FASE 1/3] Executando extração de oportunidades...")
 
         # Coleta de Jobs
-        jobs_nac, jobs_int = self.jobs_facade.run(profiles=self.profiles)
+        jobs_nac, jobs_int = self.jobs_facade.run()
 
-        # Coleta de Posts
-        posts_nac, posts_int = self.posts_facade.run(profiles=self.profiles)
+        # Coleta de Posts (Condicional / Standby)
+        if self.settings.buscar_posts:
+            posts_nac, posts_int = self.posts_facade.run()
+        else:
+            logger.info("💬 [POSTS-PIPELINE] Extração de posts do LinkedIn em standby (buscar_posts=False).")
+            posts_nac, posts_int = [], []
 
         # Exportação Bruta
         todos_itens_brutos = [j.model_dump() for j in jobs_nac + jobs_int] + [
@@ -74,16 +77,14 @@ class JobSearchMasterFacade:
         jobs_int: list[JobItem],
         posts_nac: list[PostItem],
         posts_int: list[PostItem],
-        profiles: list[Profile] | None = None,
     ) -> ProcessedDataOutput:
-        perfis_avaliacao = profiles if profiles is not None else self.profiles
         logger.info("🎯 [FASE 2/3] Executando avaliação de compatibilidade de currículo (Matcher)...")
         threshold = self.settings.threshold_minimo_match
 
         # Processar Jobs Nacionais
         jobs_nac_aprovados: list[JobItem] = []
         for job_item in jobs_nac:
-            job_item.match_curriculo = avaliar_compatibilidade(job_item, perfis=perfis_avaliacao)
+            job_item.match_curriculo = avaliar_compatibilidade(job_item, perfis=self.profiles)
             scores = (
                 [match.score_porcentagem for match in job_item.match_curriculo.perfis.values()]
                 if job_item.match_curriculo and job_item.match_curriculo.perfis
@@ -95,7 +96,7 @@ class JobSearchMasterFacade:
         # Processar Jobs Internacionais
         jobs_int_aprovados: list[JobItem] = []
         for job_item in jobs_int:
-            job_item.match_curriculo = avaliar_compatibilidade(job_item, perfis=perfis_avaliacao)
+            job_item.match_curriculo = avaliar_compatibilidade(job_item, perfis=self.profiles)
             scores = (
                 [match.score_porcentagem for match in job_item.match_curriculo.perfis.values()]
                 if job_item.match_curriculo and job_item.match_curriculo.perfis
@@ -107,13 +108,13 @@ class JobSearchMasterFacade:
         # Processar Posts Nacionais (Posts são todos mantidos)
         posts_nac_processados: list[PostItem] = []
         for post_item in posts_nac:
-            post_item.match_curriculo = avaliar_compatibilidade(post_item, perfis=perfis_avaliacao)
+            post_item.match_curriculo = avaliar_compatibilidade(post_item, perfis=self.profiles)
             posts_nac_processados.append(post_item)
 
         # Processar Posts Internacionais
         posts_int_processados: list[PostItem] = []
         for post_item in posts_int:
-            post_item.match_curriculo = avaliar_compatibilidade(post_item, perfis=perfis_avaliacao)
+            post_item.match_curriculo = avaliar_compatibilidade(post_item, perfis=self.profiles)
             posts_int_processados.append(post_item)
 
         total_aprovados = (
@@ -139,7 +140,7 @@ class JobSearchMasterFacade:
         self.inicializar_infraestrutura()
         jobs_nac, jobs_int, posts_nac, posts_int = self.executar_extracao()
         output = self.executar_pos_processamento(
-            jobs_nac, jobs_int, posts_nac, posts_int, profiles=self.profiles
+            jobs_nac, jobs_int, posts_nac, posts_int
         )
         self.exportar_resultados(output)
         logger.info(f"✨ Pipeline finalizado com {output.total_aprovados} oportunidades qualificadas!")

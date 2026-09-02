@@ -25,13 +25,13 @@ class Settings(BaseModel):
     # Flags de Comportamento e Otimização
     usar_proxy: bool = True
     enriquecer_detalhes: bool = True
-    estrategia_proxy: ProxyStrategyEnum = ProxyStrategyEnum.ADAPTIVE_FAILOVER
-    proxy_health_check_interval: int = 45
+    buscar_posts: bool = False
+    estrategia_proxy: ProxyStrategyEnum = ProxyStrategyEnum.BATCH_ACTIVE_POOL
 
     # Concorrência e HTTP
-    max_workers_jobs: int = 10
-    max_concurrency_proxies: int = 200
-    http_timeout: int = 20
+    max_workers_jobs: int = 25
+    max_concurrency_proxies: int = 250
+    http_timeout: int = 15
     http_max_retries: int = 5
 
     # Arquivos de Saída

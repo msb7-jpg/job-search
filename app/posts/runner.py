@@ -5,23 +5,23 @@ from app.models.post import PostItem
 from app.posts.facade import PostsPipelineFacade
 from app.profiles.base import Profile
 from app.profiles.predefined import DEFAULT_PROFILES
+from app.shared.http.proxy_rotator import rotator
 
 
 def executar_busca_posts_direta(
-    profiles: list[Profile] | None = None,
-    filtro_tempo: TimeFilterEnum | str = TimeFilterEnum.ULTIMA_SEMANA,
+    settings: Settings | None = None,
+    profiles: list[Profile] = DEFAULT_PROFILES,
 ) -> tuple[list[PostItem], list[PostItem]]:
-    perfis = profiles if profiles is not None else DEFAULT_PROFILES
-    config = Settings(filtro_tempo=filtro_tempo)
+    config = settings or Settings(filtro_tempo=TimeFilterEnum.ULTIMA_SEMANA)
 
     logger.info("=" * 80)
-    logger.info("💬 INICIANDO BUSCA DIRETA DE POSTS DO LINKEDIN (DDGS)")
+    logger.info("💬 INICIANDO BUSCA DIRETA DE POSTS DO LINKEDIN (Google Search)")
     logger.info(f"⚙️ Config: Recência={config.filtro_tempo.descricao} [{config.filtro_tempo.value}]")
-    logger.info(f"👤 Perfis Ativos: {[perfil.display_name for perfil in perfis]}")
+    logger.info(f"👤 Perfis Ativos: {[perfil.display_name for perfil in profiles]}")
     logger.info("=" * 80)
 
-    facade = PostsPipelineFacade(settings=config, profiles=perfis)
-    posts_nacionais, posts_internacionais = facade.run(profiles=perfis)
+    facade = PostsPipelineFacade(settings=config, profiles=profiles)
+    posts_nacionais, posts_internacionais = facade.run()
 
     total_encontrado = len(posts_nacionais) + len(posts_internacionais)
     logger.info("=" * 80)
@@ -45,4 +45,5 @@ def executar_busca_posts_direta(
 
 
 if __name__ == "__main__":
+    rotator.inicializar_pool()
     executar_busca_posts_direta()

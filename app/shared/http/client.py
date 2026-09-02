@@ -1,4 +1,3 @@
-import time
 import urllib.parse
 
 import requests
@@ -15,30 +14,49 @@ def _is_local_url(url: str) -> bool:
 
 def requisicao_com_rotacao(
     url: str,
+    usar_proxy: bool,
+    timeout: int,
+    max_retries: int,
     headers: dict[str, str] | None = None,
     params: dict[str, str] | None = None,
-    max_retries: int = 5,
-    timeout: int = 8,
-    usar_proxy: bool = False,
 ) -> requests.Response | None:
     cabecalhos = headers or DEFAULT_HEADERS
     ultimo_erro: str | None = None
     eh_local = _is_local_url(url)
 
-    tentativas_limite = max_retries
-    tentativa = 0
+    # Modo direto (sem proxy): requisição direta simples sem loop excessivo de retries
+    if not usar_proxy or eh_local:
+        try:
+            logger.debug(f"[HTTP] Direto (Sem Proxy) -> {url}")
+            response = requests.get(
+                url,
+                headers=cabecalhos,
+                params=params,
+                timeout=timeout,
+            )
+        except requests.RequestException as excecao:
+            logger.debug(f"[HTTP] Erro em requisição direta para {url}: {excecao}")
+            return None
+        else:
+            if response.status_code == 200:
+                return response
+            logger.debug(f"[HTTP] Resposta direta com status {response.status_code} para {url}")
+            return None
 
-    while tentativa < tentativas_limite:
-        tentativa += 1
-        proxy_dict = (
-            rotator.obter_proximo_proxy()
-            if (usar_proxy and not eh_local and rotator.total_valid > 0)
-            else None
-        )
-        proxy_url = proxy_dict.get("http") if proxy_dict else None
-        proxy_descricao = proxy_url or "Direto (Sem Proxy)"
+    # Modo com Proxy: Rotaciona IP a cada tentativa (zero retry com o mesmo IP)
+    limite_rotacoes = max_retries
+    rotacao_atual = 0
 
-        logger.debug(f"[HTTP] Tentativa {tentativa}/{tentativas_limite} via {proxy_descricao} -> {url}")
+    while rotacao_atual < limite_rotacoes:
+        rotacao_atual += 1
+        proxy_dict = rotator.obter_proximo_proxy()
+        if not proxy_dict:
+            logger.warning("[HTTP] Nenhum proxy disponível no pool para realizar a requisição.")
+            break
+
+        proxy_url = proxy_dict.get("http", "")
+        logger.debug(f"[HTTP] Tentativa {rotacao_atual}/{limite_rotacoes} via {proxy_url} -> {url}")
+
         try:
             response = requests.get(
                 url,
@@ -52,27 +70,17 @@ def requisicao_com_rotacao(
                 return response
 
             ultimo_erro = f"Status {response.status_code}"
-            logger.debug(f"[HTTP] Resposta com status {response.status_code} para {url}")
+            logger.debug(f"[HTTP] Status {response.status_code} via {proxy_url} para {url}")
 
-            # Se o proxy tomou 401/403/429, descarta esse proxy e roda o próximo se houver
-            if proxy_url and response.status_code in {401, 403, 429}:
-                rotator.remover_proxy_invalido(proxy_url)
-                if rotator.total_valid > 0 and tentativa >= tentativas_limite:
-                    tentativas_limite += 1  # Permite continuar enquanto houver proxies saudáveis
-            elif not proxy_url and response.status_code in {401, 403, 429}:
-                break
+            # Se o proxy tomou 429, 401, 403 ou 5xx, descarta ele imediatamente
+            if response.status_code in {401, 403, 429, 500, 502, 503, 504}:
+                rotator.remover_proxy_invalido(proxy_url, motivo=f"Status {response.status_code}")
 
         except requests.RequestException as excecao:
             ultimo_erro = str(excecao)
-            logger.debug(f"[HTTP] Erro de rede ({excecao.__class__.__name__}) para {url} via {proxy_descricao}")
-            # Descarta proxy quebrado imediatamente
-            if proxy_url:
-                rotator.remover_proxy_invalido(proxy_url)
-                if rotator.total_valid > 0 and tentativa >= tentativas_limite:
-                    tentativas_limite += 1
+            logger.debug(f"[HTTP] Erro de rede ({excecao.__class__.__name__}) via {proxy_url} para {url}")
+            # Descarta proxy com erro de timeout ou conexão
+            rotator.remover_proxy_invalido(proxy_url, motivo=excecao.__class__.__name__)
 
-        if tentativa < tentativas_limite:
-            time.sleep(min(0.2 * tentativa, 0.6))
-
-    logger.warning(f"[HTTP] Falha após {tentativa} tentativas para {url}. Último erro: {ultimo_erro}")
+    logger.warning(f"[HTTP] Falha após {rotacao_atual} rotações de IP para {url}. Último erro: {ultimo_erro}")
     return None

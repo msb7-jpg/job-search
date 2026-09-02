@@ -38,7 +38,7 @@ app/
 │
 ├── posts/                        # 💬 POSTS DOMAIN (LinkedIn Feed Posts)
 │   ├── queries.py                # Boolean queries for post discovery
-│   ├── fetcher.py                # DDGS post scraper, snippet parser & deduplication
+│   ├── fetcher.py                # Google Search (googlesearch-python) post scraper, proxy rotator & deduplication
 │   ├── runner.py                 # Standalone direct posts search runner (fast mode / query logging)
 │   └── facade.py                 # PostsPipelineFacade (accepts custom profiles & direct execution)
 │
@@ -70,7 +70,7 @@ app/
 - **Language**: Python (>= 3.14)
 - **Data Validation**: `pydantic` (v2)
 - **Package Manager**: `uv`
-- **Networking & Search**: `requests`, `httpx`, `ddgs`
+- **Networking & Search**: `requests`, `httpx`, `googlesearch-python`
 - **HTML Parsing**: `beautifulsoup4`
 - **Concurrency**: `asyncio` (proxy validation) + `ThreadPoolExecutor` (detail fetch)
 
@@ -117,6 +117,10 @@ app/
 
 ## Code Quality & Best Practices
 
+- **Single Source of Truth (SSOT) & Zero Redundant Defaults Principle**:
+  - `Settings` é a única fonte da verdade para parâmetros globais e operacionais de execução (concorrência, timeouts, flags de proxy, enriquecimento, recência e filtros).
+  - Instâncias de `Profile` são a única fonte da verdade para regras de pontuação de currículo, keywords e listas de queries de busca.
+  - **Proibição de Defaults Redundantes em Cascata**: Métodos e funções internas (fetchers, classificadores, evaluators) não devem declarar valores padrão opcionais redundantes ou divergentes (ex.: `apenas_remoto: bool = True`, `usar_proxy: bool = False`, `max_workers = 10`) que mascarem o `Settings` ou o chamador. Parâmetros operacionais devem ser obrigatórios e passados explicitamente a partir do contexto de execução.
 - **Profile-Driven Configuration**:
   - Configurações de palavras-chave, habilidades, regras de pontuação de currículo e queries de busca ficam encapsuladas em instâncias de [`Profile`](app/profiles/base.py).
   - É possível instanciar novos perfis sob demanda e passá-los para as pipelines sem alterar a lógica interna das etapas.
@@ -125,11 +129,12 @@ app/
 - **Explicit Variable Naming**:
   - Proibido o uso de variáveis abreviadas, crípticas ou de letra única (ex: `for i, v in enumerate(...)` ou `m_be = ...`).
   - Use sempre nomes descritivos e legíveis no contexto do domínio (ex: `for index, job in enumerate(...)`, `backend_match = job.match_curriculo.backend if job.match_curriculo else None`).
-- **HTTP Resilience Policy**:
-  - O cliente HTTP compartilhado deve usar retries limitados e backoff controlado para evitar delays artificiais em respostas bloqueadas.
-  - Casos de status 401/403/429 devem encerrar rapidamente a série de tentativas em vez de repetir esperas inúteis.
-- **DuckDuckGo Search (DDGS)**:
-  - A busca de publicações de feed do LinkedIn é efetuada nativamente via `ddgs`, eliminando containers Docker locais e provendo suporte direto à passagem de proxies ou fallback transparente.
+- **HTTP Resilience & Proxy Policy**:
+  - Pool de proxies gerenciado por validação assíncrona inicial em lote (`asyncio` + `httpbin.org/ip`) com rotação circular Round-Robin (FIFO).
+  - **Zero retry no mesmo IP**: falhas de conexão ou status `401`/`403`/`429`/`5xx` causam a evicção imediata do proxy da lista ativa (`remover_proxy_invalido(proxy, motivo)`) logando o total de IPs saudáveis restantes no pool e passando imediatamente para o próximo IP.
+  - **Recarga Automática Sob Demanda**: caso todos os proxies saudáveis se esgotem durante a execução, o pool recarrega novas fontes e valida um novo lote automaticamente.
+- **Standby & Modularidade de Posts**:
+  - A busca de posts via Google Search pode ser ligada ou colocada em standby a qualquer momento através da flag `buscar_posts: bool = False` em `Settings`.
 - **Post-Change Validation Directive**:
   - **Sempre** após realizar modificações no código, deve-se executar `uv run ruff check` (e/ou `uv run ruff check --fix`) para validar e corrigir quaisquer pendências de lint/formatação.
 

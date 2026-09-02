@@ -100,29 +100,17 @@ PROFILE_BACKEND = Profile(
         ) # Busca Avançada
     ],
     queries_posts_nacionais=[
-        'site:linkedin.com/posts/ "vaga" AND "Python" AND ("Back" OR "Backend") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect',# Busca Principal - Vaga
-
-        'site:linkedin.com/posts/ "oportunidade" AND "Python" AND ("Back" OR "Backend") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca Alternativa - Oportunidade
-
-
-        'site:linkedin.com/posts/ "vaga" AND "Python" AND "Django" AND ("Back" OR "Backend") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca com Django
-
-        'site:linkedin.com/posts/ ("contrata" OR "contratando") AND "Python" AND ("Back" OR "Backend") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca - Contratando
-
+        'site:linkedin.com/posts/ ("vaga" OR "oportunidade") "Python" ("Back" OR "Backend") ("remoto" OR "remota")',
+        'site:linkedin.com/posts/ ("contrata" OR "contratando") "Python" ("Back" OR "Backend")',
+        'site:linkedin.com/posts/ "vaga" "Python" "Django" ("remoto" OR "remota")',
+        'site:linkedin.com/posts/ "vaga" "Python" "FastAPI" ("remoto" OR "remota")',
     ],
     queries_posts_internacionais=[
-        'site:linkedin.com/posts/ ("hiring" OR "job opening" OR "we are hiring") (Python OR Django OR FastAPI) (Junior OR "Entry Level" OR Jr) (Remote OR LATAM OR Brazil) -senior -sr -lead -principal', # Busca Principal - Hiring
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "LATAM" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca LATAM Específica
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "Django" AND "remote" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca com Django,
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND ("Back" OR "Backend") AND "LATAM" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca LATAM Específica
-
-        'site:linkedin.com/posts/ "Python" AND "vaga" AND ("Back" OR "Backend") AND "Internacional" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca Internacional - Vaga
-
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "Django" AND ("Back" OR "Backend") AND "remote" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca Internacional - Oportunidade
+        'site:linkedin.com/posts/ ("hiring" OR "job opening" OR "we are hiring") (Python OR Django OR FastAPI) (Junior OR "Entry Level" OR Jr) (Remote OR LATAM OR Brazil)',
+        'site:linkedin.com/posts/ "hiring" "Python" "LATAM"',
+        'site:linkedin.com/posts/ "hiring" "Python" "Django" "remote"',
+        'site:linkedin.com/posts/ "hiring" "Python" ("Back" OR "Backend") "remote"',
+        'site:linkedin.com/posts/ "Python" "vaga" ("Back" OR "Backend") "Internacional"',
     ],
 )
 
@@ -147,38 +135,27 @@ PROFILE_FULLSTACK = Profile(
         (
             '"python" and ("react" or "vue") ("full" or "fullstack")  and not ("pleno" or "pl" or "senior" or "sr" or "ssr" or "staff" or "lead" or "principal" or "architect")',
             "Remote",
-        ), # Busca Principal
+        ),  # Busca Principal
         (
             '"Python" AND "Vue" "Django" ("Full" OR "Fullstack")  AND NOT ("Pleno" OR "PL" OR "Senior" OR "Sr" OR "SSR" OR "Staff" OR "Lead" OR "Principal" OR "Architect")',
             "Remote",
-        ), # Busca com Django
+        ),  # Busca com Django
         (
             '"Python" AND "Vue" "Django" "Flask" ("Full" OR "Fullstack")  AND NOT ("Pleno" OR "PL" OR "Senior" OR "Sr" OR "SSR" OR "Staff" OR "Lead" OR "Principal" OR "Architect")',
             "Remote",
-        ) # Busca avançada
+        ),  # Busca avançada
     ],
     queries_posts_nacionais=[
-        'site:linkedin.com/posts/ "vaga" AND "Python" AND "Vue" AND ("Full" OR "Fullstack") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca Principal - Vaga
-
-        'site:linkedin.com/posts/ "oportunidade" AND "Python" AND "Vue" AND ("Full" OR "Fullstack") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca Alternativa - Oportunidade
-
-        'site:linkedin.com/posts/ "vaga" AND "Python" AND "Vue" AND "Django" AND ("Full" OR "Fullstack") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca com Django
-
-        'site:linkedin.com/posts/ ("contrata" OR "contratando") AND "Python" AND "Vue" AND ("Full" OR "Fullstack") AND ("remoto" OR "remota") -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect', # Busca - Contratando
-
+        'site:linkedin.com/posts/ ("vaga" OR "oportunidade") "Python" "Vue" ("remoto" OR "remota")',
+        'site:linkedin.com/posts/ ("oportunidade" OR "vaga") "Python" ("Vue" OR "React") ("Full" OR "Fullstack")',
+        'site:linkedin.com/posts/ ("contrata" OR "contratando") "Python" "Vue"',
+        'site:linkedin.com/posts/ "vaga" "Python" "Vue" "Django"',
     ],
     queries_posts_internacionais=[
-        'site:linkedin.com/posts/ ("hiring" OR "job opening" OR "we are hiring") (Python) (Vue OR React OR TypeScript) (Junior OR "Entry Level" OR Jr) (Remote OR LATAM OR Brazil) -senior -sr -lead -principal', # Busca Principal - Hiring
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "Vue" AND "LATAM" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca LATAM Específica
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "Vue" AND "Django" AND "remote" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca com Django,
-
-        'site:linkedin.com/posts/ "Python" AND "Vue" AND "vaga" AND ("Full" OR "Fullstack") AND "Internacional" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca LATAM Específica
-
-        'site:linkedin.com/posts/ "Python" AND "Vue" AND "vaga" AND ("Full" OR "Fullstack") AND "Internacional" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca Internacional - Vaga
-
-        'site:linkedin.com/posts/ "hiring" AND "Python" AND "Vue" AND "Django" AND ("Full" OR "Fullstack") AND "remote" -Pleno -PL -Senior -Sr -SSR -Staff -Lead -Principal -Architect -Staff -Lead -C2C -"US Based" -Hybrid -Site -"US Only" -"No Visa" -"Citizens Only" -"Security Clearance" -"On-site" -"Local Only" -"Must be located"', # Busca Internacional com Django
+        'site:linkedin.com/posts/ ("hiring" OR "job opening" OR "we are hiring") (Python) (Vue OR React OR TypeScript) (Junior OR "Entry Level" OR Jr) (Remote OR LATAM OR Brazil)',
+        'site:linkedin.com/posts/ "hiring" "Python" "Vue" "LATAM"',
+        'site:linkedin.com/posts/ "hiring" "Python" "Vue" "Django" "remote"',
+        'site:linkedin.com/posts/ "hiring" "Python" ("Vue" OR "React") ("Full" OR "Fullstack") "remote"',
     ],
 )
 

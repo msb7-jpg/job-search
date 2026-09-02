@@ -6,28 +6,77 @@ Este relatório separa vagas normais e posts: as vagas formais usam o threshold 
 
 # 🇧🇷 Oportunidades Nacionais (Brasil)
 
-## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: 3)
+## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: 10)
 
-### 1. Junior Software Engineer with Accounting Experience (Brazil) - **Match Máximo: 80%**
-- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 80% (Excelente)
-- **Empresa/Autor**: Sezzle | **Local**: Brasil | **Postagem**: Há 10 horas
-- **Skills Backend**: `AWS, Git, GitLab CI, MySQL, PostgreSQL, Python, REST APIs`
-- **Skills Fullstack**: `AWS, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, React.js, TypeScript`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/junior-software-engineer-with-accounting-experience-brazil-at-sezzle-4339362342)
+### 1. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: Recife, PE | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461534502)
 
-### 2. Desenvolvedor Python / Pesquisa + Desenvolvimento - Trabalho Remoto - **Match Máximo: 60%**
-- **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 60% (Alto)
-- **Empresa/Autor**: BairesDev | **Local**: Brasília, DF | **Postagem**: Há 5 horas
-- **Skills Backend**: `Django, MySQL, Python, SQL`
-- **Skills Fullstack**: `Django, MySQL, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/desenvolvedor-python-pesquisa-%2B-desenvolvimento-trabalho-remoto-at-bairesdev-4460039364)
+### 2. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: Goiânia, GO | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461538420)
 
-### 3. Engenheiro de Software Tr. (Dados) - **Match Máximo: 80%**
-- **Compatibilidade**: Backend: 80% (Excelente) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: PagBank | **Local**: São Paulo, SP | **Postagem**: Há 8 horas
-- **Skills Backend**: `AWS, Docker, Git, Jenkins, Linux, Microservices, MySQL, Python`
-- **Skills Fullstack**: `AWS, Docker, HTML/CSS, JavaScript, Jenkins, MySQL, Python, React.js`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-software-tr-dados-at-pagbank-4460025351)
+### 3. Fullstack Python + React Engineer - Remote Work - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 65% (Alto)
+- **Empresa/Autor**: BairesDev | **Local**: Brasil | **Postagem**: Há 7 horas
+- **Skills Backend**: `AWS, LangChain, Microservices, Python, REST APIs`
+- **Skills Fullstack**: `AWS, JavaScript, LangChain, Python, REST APIs, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4460295948)
+
+### 4. Software Engineer, RCM (Brazil) - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: Commure | **Local**: Rio de Janeiro, RJ | **Postagem**: Há 13 horas
+- **Skills Backend**: `Docker, Flask, GCP, PostgreSQL, Python`
+- **Skills Fullstack**: `Docker, Flask, GCP, JavaScript, PostgreSQL, Python, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/software-engineer-rcm-brazil-at-commure-4443004590)
+
+### 5. Full Stack Developer ID84745 - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: AgileEngine | **Local**: Rio de Janeiro e Região | **Postagem**: Há 3 horas
+- **Skills Backend**: `FastAPI, Python, REST APIs`
+- **Skills Fullstack**: `FastAPI, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/full-stack-developer-id84745-at-agileengine-4462037339)
+
+### 6. DESENVOLVEDOR FULL STACK - **Match Máximo: 70%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Mampei Funada | **Local**: Presidente Prudente, SP | **Postagem**: Há 6 horas
+- **Skills Backend**: `Docker, Git, MySQL, PostgreSQL, Python`
+- **Skills Fullstack**: `Docker, JavaScript, MySQL, PostgreSQL, Python, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-at-mampei-funada-4461781726)
+
+### 7. Fullstack Python + React Engineer - Remote Work - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 65% (Alto)
+- **Empresa/Autor**: BairesDev | **Local**: Rio de Janeiro, Brasil | **Postagem**: Há 4 horas
+- **Skills Backend**: `AWS, LangChain, Microservices, Python, REST APIs`
+- **Skills Fullstack**: `AWS, JavaScript, LangChain, Python, REST APIs, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4460621822)
+
+### 8. Fullstack Python + React Engineer - Remote Work - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 65% (Alto)
+- **Empresa/Autor**: BairesDev | **Local**: Minas Gerais, Brasil | **Postagem**: Há 4 horas
+- **Skills Backend**: `AWS, LangChain, Microservices, Python, REST APIs`
+- **Skills Fullstack**: `AWS, JavaScript, LangChain, Python, REST APIs, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4460632519)
+
+### 9. Full Stack Developer ID84745 - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: AgileEngine | **Local**: Sorocaba, SP | **Postagem**: Há 3 horas
+- **Skills Backend**: `FastAPI, Python, REST APIs`
+- **Skills Fullstack**: `FastAPI, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/full-stack-developer-id84745-at-agileengine-4462034459)
+
+### 10. Full Stack Developer ID84745 - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: AgileEngine | **Local**: Recife, PE | **Postagem**: Há 3 horas
+- **Skills Backend**: `FastAPI, Python, REST APIs`
+- **Skills Fullstack**: `FastAPI, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/full-stack-developer-id84745-at-agileengine-4462035416)
 
 ## 💬 Posts do LinkedIn (Total exibido: 0)
 
@@ -37,168 +86,196 @@ _Nenhum post encontrado nesta categoria._
 
 # 🌐 Oportunidades Internacionais (Gringa)
 
-## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: 23)
+## 📌 Vagas Formais (Jobs) (Total com Match ≥ 60%: 27)
 
-### 1. Python Developer - **Match Máximo: 65%**
-- **Compatibilidade**: Fullstack: 65% (Alto)
-- **Empresa/Autor**: Inetum | **Local**: Porto, Porto, Portugal | **Postagem**: Há 9 horas
-- **Skills Backend**: `Flask, Python, REST APIs, SQL`
-- **Skills Fullstack**: `Flask, JavaScript, Python, REST APIs, SQL`
-- 🔗 [Ver no LinkedIn](https://pt.linkedin.com/jobs/view/python-developer-at-inetum-4317334899)
-
-### 2. Junior Software Engineer with Accounting Experience (Brazil) - **Match Máximo: 80%**
-- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 80% (Excelente)
-- **Empresa/Autor**: Sezzle | **Local**: Brasil | **Postagem**: Há 10 horas
-- **Skills Backend**: `AWS, Git, GitLab CI, MySQL, PostgreSQL, Python, REST APIs`
-- **Skills Fullstack**: `AWS, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, React.js, TypeScript`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/junior-software-engineer-with-accounting-experience-brazil-at-sezzle-4339362342)
-
-### 3. Software Engineer - **Match Máximo: 85%**
-- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: Freeday | **Local**: Randstad | **Postagem**: Há 6 horas
-- **Skills Backend**: `Django, GCP, PostgreSQL, Python, REST APIs`
-- **Skills Fullstack**: `Django, GCP, Python, REST APIs`
-- 🔗 [Ver no LinkedIn](https://nl.linkedin.com/jobs/view/software-engineer-at-freeday-4452593062)
-
-### 4. Backend Developer Python - **Match Máximo: 70%**
-- **Compatibilidade**: Backend: 70% (Alto) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: Mynameis | **Local**: Chiasso, Tessino, Suíça | **Postagem**: Há 9 horas
-- **Skills Backend**: `Django, Git, Python, REST APIs, RabbitMQ`
-- **Skills Fullstack**: `Django, HTML/CSS, JavaScript, Jest, Python, REST APIs, RabbitMQ, Vue.js`
-- 🔗 [Ver no LinkedIn](https://ch.linkedin.com/jobs/view/backend-developer-python-at-mynameis-4461088513)
-
-### 5. Backend Developer @ smaXtec animal care GmbH - **Match Máximo: 80%**
-- **Compatibilidade**: Backend: 80% (Excelente) | Fullstack: 65% (Alto)
-- **Empresa/Autor**: DEVjobs | **Local**: Graz, Estíria, Áustria | **Postagem**: Há 13 horas
-- **Skills Backend**: `Celery, Docker, Flask, Git, Python, REST APIs, Redis, SQL`
-- **Skills Fullstack**: `Celery, Docker, Flask, Python, REST APIs, Redis, SQL`
-- 🔗 [Ver no LinkedIn](https://at.linkedin.com/jobs/view/backend-developer-%40-smaxtec-animal-care-gmbh-at-devjobs-4459780924)
-
-### 6. Python Developer - **Match Máximo: 85%**
-- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 85% (Excelente)
-- **Empresa/Autor**: Scalian | **Local**: Espanha | **Postagem**: Há 16 horas
-- **Skills Backend**: `AWS, Django, Docker, FastAPI, Flask, Git, MySQL, PostgreSQL, Python, REST APIs`
-- **Skills Fullstack**: `AWS, Django, Docker, FastAPI, Flask, MySQL, PostgreSQL, Python, REST APIs`
-- 🔗 [Ver no LinkedIn](https://es.linkedin.com/jobs/view/python-developer-at-scalian-4461046660)
-
-### 7. Sviluppatore Python - **Match Máximo: 70%**
-- **Compatibilidade**: Backend: 70% (Alto) | Fullstack: 60% (Alto)
-- **Empresa/Autor**: turing | **Local**: Roma e Região | **Postagem**: Há 7 horas
-- **Skills Backend**: `Django, Flask, Git, MySQL, PostgreSQL, Python`
-- **Skills Fullstack**: `Django, Flask, MySQL, PostgreSQL, Python`
-- 🔗 [Ver no LinkedIn](https://it.linkedin.com/jobs/view/sviluppatore-python-at-turing-4461226349)
-
-### 8. Web Developer - **Match Máximo: 100%**
-- **Compatibilidade**: Backend: 100% (Excelente) | Fullstack: 85% (Excelente)
-- **Empresa/Autor**: Sakan.com | **Local**: Kuwait, Al Asimah, Kuwait | **Postagem**: Há 2 horas
-- **Skills Backend**: `Celery, Django, Git, Linux, PostgreSQL, Python, REST APIs, Redis, SQL`
-- **Skills Fullstack**: `Celery, Django, PostgreSQL, Python, REST APIs, React.js, Redis, SQL, Vue.js`
-- 🔗 [Ver no LinkedIn](https://kw.linkedin.com/jobs/view/web-developer-at-sakan-com-4460073386)
-
-### 9. Mid Level Python Developer , Colombia - **Match Máximo: 60%**
-- **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 60% (Alto)
-- **Empresa/Autor**: TechJobsData | **Local**: Colômbia | **Postagem**: Há 4 horas
-- **Skills Backend**: `Azure, FastAPI, Python, SQL`
-- **Skills Fullstack**: `FastAPI, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://co.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-techjobsdata-4460055542)
-
-### 10. 【在宅勤務も可／神戸】バックエンドエンジニア｜0→1新規開発／Python・TypeScript - **Match Máximo: 90%**
-- **Compatibilidade**: Backend: 75% (Alto) | Fullstack: 90% (Excelente)
-- **Empresa/Autor**: doda (デューダ) | **Local**: Hyogo, Japão | **Postagem**: Há 5 horas
-- **Skills Backend**: `AWS, Azure, Django, Docker, FastAPI, MySQL, PostgreSQL, Python`
-- **Skills Fullstack**: `AWS, Django, Docker, FastAPI, JavaScript, MySQL, PostgreSQL, Python, React.js, TypeScript`
-- 🔗 [Ver no LinkedIn](https://jp.linkedin.com/jobs/view/%E3%80%90%E5%9C%A8%E5%AE%85%E5%8B%A4%E5%8B%99%E3%82%82%E5%8F%AF%EF%BC%8F%E7%A5%9E%E6%88%B8%E3%80%91%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%EF%BD%9C0%E2%86%921%E6%96%B0%E8%A6%8F%E9%96%8B%E7%99%BA%EF%BC%8Fpython%E3%83%BBtypescript-at-doda-%E3%83%87%E3%83%A5%E3%83%BC%E3%83%80-4461249076)
-
-### 11. Python Backend Developer - **Match Máximo: 85%**
-- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: TechJobsData | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 4 horas
-- **Skills Backend**: `Django, Git, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, Redis, SQL`
-- **Skills Fullstack**: `Django, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, Redis, SQL`
-- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/python-backend-developer-at-techjobsdata-4460041681)
-
-### 12. Python Developer - **Match Máximo: 100%**
-- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 100% (Excelente)
-- **Empresa/Autor**: TechJobsData | **Local**: Nova York, Estados Unidos | **Postagem**: Há 4 horas
-- **Skills Backend**: `AWS, Azure, Django, Flask, GCP, Git, Pytest, Python, SQL`
-- **Skills Fullstack**: `AWS, Django, Flask, GCP, HTML/CSS, JavaScript, Pytest, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://www.linkedin.com/jobs/view/python-developer-at-techjobsdata-4460036882)
-
-### 13. Mid Level Python  Developer , Colombia - **Match Máximo: 60%**
+### 1. Mid Level Python  Developer , Colombia - **Match Máximo: 60%**
 - **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 60% (Alto)
 - **Empresa/Autor**: CI&T | **Local**: Torreón e Região | **Postagem**: Há 18 horas
 - **Skills Backend**: `Azure, FastAPI, Python, SQL`
 - **Skills Fullstack**: `FastAPI, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://mx.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461060255)
+- 🔗 [Ver no LinkedIn](https://mx.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461555283)
 
-### 14. Python Developer - **Match Máximo: 65%**
-- **Compatibilidade**: Backend: 65% (Alto)
-- **Empresa/Autor**: Weekday AI (YC W21) | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 9 horas
-- **Skills Backend**: `Docker, Git, Linux, Microservices, Python, REST APIs`
-- **Skills Fullstack**: `Docker, Python, REST APIs`
-- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/python-developer-at-weekday-ai-yc-w21-4461206623)
-
-### 15. Python Backend Developer - **Match Máximo: 85%**
+### 2. Engenheiro de Backend - **Match Máximo: 85%**
 - **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: Kavintech Corporation | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 11 horas
-- **Skills Backend**: `Django, Git, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, Redis, SQL`
-- **Skills Fullstack**: `Django, GitLab CI, MySQL, PostgreSQL, Python, REST APIs, Redis, SQL`
-- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/python-backend-developer-at-kavintech-corporation-4461042756)
+- **Empresa/Autor**: Jobbol | **Local**: Fortaleza, CE | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461543304)
 
-### 16. Mid Level Python  Developer , Colombia - **Match Máximo: 60%**
+### 3. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: Curitiba, PR | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461535480)
+
+### 4. Sviluppatore Python - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 85% (Excelente)
+- **Empresa/Autor**: VLC2 s.r.l. | **Local**: Milão e Região | **Postagem**: Há 8 horas
+- **Skills Backend**: `Django, Docker, FastAPI, Flask, Git, Linux, Python, REST APIs, SQL`
+- **Skills Fullstack**: `Django, Docker, FastAPI, Flask, Python, REST APIs, SQL`
+- 🔗 [Ver no LinkedIn](https://it.linkedin.com/jobs/view/sviluppatore-python-at-vlc2-s-r-l-4461766519)
+
+### 5. Mid Level Python  Developer , Colombia - **Match Máximo: 60%**
 - **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 60% (Alto)
 - **Empresa/Autor**: CI&T | **Local**: Colômbia | **Postagem**: Há 18 horas
 - **Skills Backend**: `Azure, FastAPI, Python, SQL`
 - **Skills Fullstack**: `FastAPI, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://co.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461054294)
+- 🔗 [Ver no LinkedIn](https://co.linkedin.com/jobs/view/mid-level-python-developer-colombia-at-ci-t-4461549962)
 
-### 17. Python Developer - **Match Máximo: 100%**
-- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 100% (Excelente)
-- **Empresa/Autor**: HiredBuddy | **Local**: Berlim, Alemanha | **Postagem**: Há 6 horas
-- **Skills Backend**: `AWS, Azure, Django, Flask, GCP, Git, Pytest, Python, SQL`
-- **Skills Fullstack**: `AWS, Django, Flask, GCP, HTML/CSS, JavaScript, Pytest, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://de.linkedin.com/jobs/view/python-developer-at-hiredbuddy-4460057086)
+### 6. Software Engineer - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 85% (Excelente)
+- **Empresa/Autor**: Experis UK | **Local**: Newcastle upon Tyne, Inglaterra, Reino Unido | **Postagem**: Há 13 horas
+- **Skills Backend**: `AWS, Azure, Django, PostgreSQL, Pytest, Python, SQL`
+- **Skills Fullstack**: `AWS, Django, PostgreSQL, Pytest, Python, SQL`
+- 🔗 [Ver no LinkedIn](https://uk.linkedin.com/jobs/view/software-engineer-at-experis-uk-4460242689)
 
-### 18. Engenheiro de software - **Match Máximo: 70%**
-- **Compatibilidade**: Backend: 70% (Alto)
-- **Empresa/Autor**: Dexian | **Local**: Brasil | **Postagem**: Há 8 horas
-- **Skills Backend**: `AWS, Microservices, Python, SQL`
-- **Skills Fullstack**: `AWS, Python, SQL`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-software-at-dexian-4459216710)
+### 7. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: São Paulo, SP | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461544273)
 
-### 19. Desenvolvedor .NET - **Match Máximo: 80%**
-- **Compatibilidade**: Backend: 80% (Excelente) | Fullstack: 80% (Excelente)
-- **Empresa/Autor**: 4DF Connect | **Local**: Brasil | **Postagem**: Há 5 horas
-- **Skills Backend**: `AWS, Git, Python, REST APIs, Redis, SQL`
-- **Skills Fullstack**: `AWS, JavaScript, Python, REST APIs, Redis, SQL`
-- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/desenvolvedor-net-at-4df-connect-4461246457)
+### 8. DESENVOLVEDOR FULL STACK - **Match Máximo: 70%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Mampei Funada | **Local**: Presidente Prudente, SP | **Postagem**: Há 6 horas
+- **Skills Backend**: `Docker, Git, MySQL, PostgreSQL, Python`
+- **Skills Fullstack**: `Docker, JavaScript, MySQL, PostgreSQL, Python, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/desenvolvedor-full-stack-at-mampei-funada-4461781726)
 
-### 20. Backend Python Developer - **Match Máximo: 70%**
+### 9. Python Developer(银行/英文） - **Match Máximo: 75%**
+- **Compatibilidade**: Backend: 75% (Alto) | Fullstack: 60% (Alto)
+- **Empresa/Autor**: 恩士迅信息科技(上海)有限公司 | **Local**: Guangzhou, Cantão, China | **Postagem**: Há 20 horas
+- **Skills Backend**: `AWS, Azure, Docker, FastAPI, GCP, Jenkins, Microservices, Python`
+- **Skills Fullstack**: `AWS, Docker, FastAPI, GCP, Jenkins, Python`
+- 🔗 [Ver no LinkedIn](https://cn.linkedin.com/jobs/view/python-developer-%E9%93%B6%E8%A1%8C-%E8%8B%B1%E6%96%87%EF%BC%89-at-%E6%81%A9%E5%A3%AB%E8%BF%85%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80-%E4%B8%8A%E6%B5%B7-%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4459263706)
+
+### 10. Python Backend Developer - **Match Máximo: 70%**
 - **Compatibilidade**: Backend: 70% (Alto) | Fullstack: 70% (Alto)
-- **Empresa/Autor**: Emonics LLC | **Local**: Condado de Monroe, Nova York, Estados Unidos | **Postagem**: Há 6 horas
-- **Skills Backend**: `Django, Flask, Git, Python, REST APIs, SQL`
-- **Skills Fullstack**: `Django, Flask, Python, REST APIs, SQL`
-- 🔗 [Ver no LinkedIn](https://www.linkedin.com/jobs/view/backend-python-developer-at-emonics-llc-4460038128)
+- **Empresa/Autor**: Haystack | **Local**: Nova York, Nova York, Estados Unidos | **Postagem**: Há 10 horas
+- **Skills Backend**: `Azure, FastAPI, PostgreSQL, Python, REST APIs, SQL`
+- **Skills Fullstack**: `FastAPI, PostgreSQL, Python, REST APIs, SQL`
+- 🔗 [Ver no LinkedIn](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253)
 
-### 21. Desarrollador/a Full Stack - **Match Máximo: 60%**
-- **Compatibilidade**: Fullstack: 60% (Alto)
-- **Empresa/Autor**: ALTEN | **Local**: Sevilha, Andaluzia, Espanha | **Postagem**: Há 13 horas
-- **Skills Backend**: `Django, Python`
-- **Skills Fullstack**: `Django, Python, React.js`
-- 🔗 [Ver no LinkedIn](https://es.linkedin.com/jobs/view/desarrollador-a-full-stack-at-alten-4437654349)
+### 11. Back-End Developer - **Match Máximo: 100%**
+- **Compatibilidade**: Backend: 100% (Excelente) | Fullstack: 100% (Excelente)
+- **Empresa/Autor**: Dreem Health | Sunrise | **Local**: Bélgica | **Postagem**: Há 8 horas
+- **Skills Backend**: `Celery, Django, Docker, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `Celery, Django, Docker, JavaScript, PostgreSQL, Python, REST APIs, TypeScript`
+- 🔗 [Ver no LinkedIn](https://be.linkedin.com/jobs/view/back-end-developer-at-dreem-health-sunrise-4461768211)
 
-### 22. Python Developer - **Match Máximo: 75%**
-- **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 75% (Alto)
-- **Empresa/Autor**: Matlen Silver | **Local**: Jersey City, Nova Jersey, Estados Unidos | **Postagem**: Há 4 horas
-- **Skills Backend**: `Django, Flask, MySQL, PostgreSQL, Python`
-- **Skills Fullstack**: `Django, Flask, JavaScript, MySQL, PostgreSQL, Python, React.js, TypeScript`
-- 🔗 [Ver no LinkedIn](https://www.linkedin.com/jobs/view/python-developer-at-matlen-silver-4459245142)
+### 12. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: Salvador, BA | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461541362)
 
-### 23. Quantitative Developer - Python - **Match Máximo: 100%**
-- **Compatibilidade**: Backend: 100% (Excelente) | Fullstack: 85% (Excelente)
-- **Empresa/Autor**: Millennium | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 5 horas
-- **Skills Backend**: `AWS, Django, FastAPI, Git, Linux, Microservices, Pandas, Python, REST APIs, SQL`
-- **Skills Fullstack**: `AWS, Django, FastAPI, Python, REST APIs, SQL`
-- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/quantitative-developer-python-at-millennium-4460051257)
+### 13. Backend Python Developer (f/m/d) @ A1 Competence Delivery Center - **Match Máximo: 75%**
+- **Compatibilidade**: Backend: 70% (Alto) | Fullstack: 75% (Alto)
+- **Empresa/Autor**: A1 Bulgaria | **Local**: Sofia, Sofia City, Bulgária | **Postagem**: Há 7 horas
+- **Skills Backend**: `Azure, FastAPI, Git, Python, SQL`
+- **Skills Fullstack**: `FastAPI, Python, React.js, SQL`
+- 🔗 [Ver no LinkedIn](https://bg.linkedin.com/jobs/view/backend-python-developer-f-m-d-%40-a1-competence-delivery-center-at-a1-bulgaria-4461759815)
+
+### 14. Engenheiro de Backend - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: Jobbol | **Local**: Recife, PE | **Postagem**: Há 21 horas
+- **Skills Backend**: `AWS, FastAPI, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `AWS, FastAPI, Python, REST APIs`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/engenheiro-de-backend-at-jobbol-4461534502)
+
+### 15. Full Stack Developer ID84745 - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: AgileEngine | **Local**: Florianópolis, SC | **Postagem**: Há 3 horas
+- **Skills Backend**: `FastAPI, Python, REST APIs`
+- **Skills Fullstack**: `FastAPI, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/full-stack-developer-id84745-at-agileengine-4462028595)
+
+### 16. Full Stack Developer ID84745 - **Match Máximo: 70%**
+- **Compatibilidade**: Fullstack: 70% (Alto)
+- **Empresa/Autor**: AgileEngine | **Local**: São Paulo, SP | **Postagem**: Há 3 horas
+- **Skills Backend**: `FastAPI, Python, REST APIs`
+- **Skills Fullstack**: `FastAPI, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/full-stack-developer-id84745-at-agileengine-4462026613)
+
+### 17. Fullstack Python + React Engineer - Remote Work - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 65% (Alto)
+- **Empresa/Autor**: BairesDev | **Local**: São Paulo, Brasil | **Postagem**: Há 4 horas
+- **Skills Backend**: `AWS, LangChain, Microservices, Python, REST APIs`
+- **Skills Fullstack**: `AWS, JavaScript, LangChain, Python, REST APIs, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4460619878)
+
+### 18. Fullstack Python + React Engineer - Remote Work - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto) | Fullstack: 65% (Alto)
+- **Empresa/Autor**: BairesDev | **Local**: Minas Gerais, Brasil | **Postagem**: Há 4 horas
+- **Skills Backend**: `AWS, LangChain, Microservices, Python, REST APIs`
+- **Skills Fullstack**: `AWS, JavaScript, LangChain, Python, REST APIs, React.js, TypeScript`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/fullstack-python-%2B-react-engineer-remote-work-at-bairesdev-4460632519)
+
+### 19. IA Engineer (Projeto Internacional) - **Match Máximo: 65%**
+- **Compatibilidade**: Backend: 65% (Alto)
+- **Empresa/Autor**: T-Systems do Brasil | **Local**: Brasil | **Postagem**: Há 9 horas
+- **Skills Backend**: `Git, LangChain, Linux, Python, SQL`
+- **Skills Fullstack**: `LangChain, Python, SQL`
+- 🔗 [Ver no LinkedIn](https://br.linkedin.com/jobs/view/ia-engineer-projeto-internacional-at-t-systems-do-brasil-4460293272)
+
+### 20. Mid - Level Python Developer - **Match Máximo: 65%**
+- **Compatibilidade**: Fullstack: 65% (Alto)
+- **Empresa/Autor**: EUROPEAN DYNAMICS | **Local**: Atenas, Attica, Grécia | **Postagem**: Há 14 horas
+- **Skills Backend**: `AWS, Azure, Docker, Flask, Pandas, Python, REST APIs`
+- **Skills Fullstack**: `AWS, Docker, Flask, Python, REST APIs, React.js`
+- 🔗 [Ver no LinkedIn](https://gr.linkedin.com/jobs/view/mid-level-python-developer-at-european-dynamics-4461583714)
+
+### 21. Full Stack Developer (Python/React) - **Match Máximo: 100%**
+- **Compatibilidade**: Backend: 100% (Excelente) | Fullstack: 100% (Excelente)
+- **Empresa/Autor**: Synergy Way | **Local**: Lviv, Região de Lviv, Ucrânia | **Postagem**: Há 10 horas
+- **Skills Backend**: `Azure, Celery, Django, Docker, Git, LangChain, PostgreSQL, Python, REST APIs, Redis`
+- **Skills Fullstack**: `Celery, Django, Docker, JavaScript, LangChain, PostgreSQL, Python, REST APIs, React.js, Redis, TypeScript`
+- 🔗 [Ver no LinkedIn](https://ua.linkedin.com/jobs/view/full-stack-developer-python-react-at-synergy-way-4459518719)
+
+### 22. Custom Software Engineer - **Match Máximo: 60%**
+- **Compatibilidade**: Backend: 60% (Alto) | Fullstack: 60% (Alto)
+- **Empresa/Autor**: Accenture in India | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 7 horas
+- **Skills Backend**: `Django, Flask, Python, SQL`
+- **Skills Fullstack**: `Django, Flask, Python, SQL`
+- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4448337170)
+
+### 23. Software Engineer - Python, GenAI - **Match Máximo: 70%**
+- **Compatibilidade**: Backend: 70% (Alto)
+- **Empresa/Autor**: Blue Yonder | **Local**: Bangalore, Carnataca, Índia | **Postagem**: Há 6 horas
+- **Skills Backend**: `AWS, Azure, Microservices, Python, SQL`
+- **Skills Fullstack**: `AWS, Python, SQL`
+- 🔗 [Ver no LinkedIn](https://in.linkedin.com/jobs/view/software-engineer-python-genai-at-blue-yonder-4461784616)
+
+### 24. Full Stack Developer:in (m/w/d) - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 85% (Excelente)
+- **Empresa/Autor**: DIS AG | **Local**: Viena, Viena, Áustria | **Postagem**: Há 14 horas
+- **Skills Backend**: `Celery, Django, MySQL, PostgreSQL, Python, REST APIs`
+- **Skills Fullstack**: `Celery, Django, HTML/CSS, JavaScript, MySQL, PostgreSQL, Python, REST APIs, Vue.js`
+- 🔗 [Ver no LinkedIn](https://at.linkedin.com/jobs/view/full-stack-developer-in-m-w-d-at-dis-ag-4461594895)
+
+### 25. Full-Stack Developer (m/w/d) - **Match Máximo: 80%**
+- **Compatibilidade**: Backend: 80% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: YPOG | **Local**: Colônia, Renânia do Norte-Vestfália, Alemanha | **Postagem**: Há 4 horas
+- **Skills Backend**: `Azure, Docker, Git, GitLab CI, Microservices, PostgreSQL, Python`
+- **Skills Fullstack**: `Docker, GitLab CI, JavaScript, PostgreSQL, Python, React.js, TypeScript, Vue.js`
+- 🔗 [Ver no LinkedIn](https://de.linkedin.com/jobs/view/full-stack-developer-m-w-d-at-ypog-4462009797)
+
+### 26. Python Developer - **Match Máximo: 85%**
+- **Compatibilidade**: Backend: 85% (Excelente) | Fullstack: 85% (Excelente)
+- **Empresa/Autor**: RK Infotech LLC | **Local**: Flórida, Estados Unidos | **Postagem**: Há 5 horas
+- **Skills Backend**: `AWS, Azure, Django, FastAPI, Flask, Git, Linux, MySQL, PostgreSQL, Python, REST APIs, SQL`
+- **Skills Fullstack**: `AWS, Django, FastAPI, Flask, HTML/CSS, MySQL, PostgreSQL, Python, REST APIs, SQL`
+- 🔗 [Ver no LinkedIn](https://www.linkedin.com/jobs/view/python-developer-at-rk-infotech-llc-4460629413)
+
+### 27. Full-Stack Developer (m/w/d) - **Match Máximo: 80%**
+- **Compatibilidade**: Backend: 80% (Excelente) | Fullstack: 70% (Alto)
+- **Empresa/Autor**: YPOG | **Local**: Munique, Baviera, Alemanha | **Postagem**: Há 4 horas
+- **Skills Backend**: `Azure, Docker, Git, GitLab CI, Microservices, PostgreSQL, Python`
+- **Skills Fullstack**: `Docker, GitLab CI, JavaScript, PostgreSQL, Python, React.js, TypeScript, Vue.js`
+- 🔗 [Ver no LinkedIn](https://de.linkedin.com/jobs/view/full-stack-developer-m-w-d-at-ypog-4462002981)
 
 ## 💬 Posts do LinkedIn (Total exibido: 0)
 

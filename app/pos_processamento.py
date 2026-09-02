@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from app.core.config import settings
+from app.core.config import Settings, settings as default_settings
 from app.core.logging import logger
 from app.facades.job_search_facade import JobSearchMasterFacade
 from app.models.job import JobItem
@@ -12,11 +12,11 @@ from app.profiles.predefined import DEFAULT_PROFILES
 
 def processar_vagas_com_curriculo(
     caminho_json: str | Path | None = None,
-    profiles: list[Profile] | None = None,
+    settings: Settings = default_settings,
+    profiles: list[Profile] = DEFAULT_PROFILES,
 ) -> None:
     logger.info("Executando pós-processamento standalone...")
     target_path = Path(caminho_json) if caminho_json else settings.output_raw_json
-    perfis = profiles if profiles is not None else DEFAULT_PROFILES
 
     if not target_path.exists():
         logger.error(f"Arquivo '{target_path}' não encontrado.")
@@ -44,9 +44,9 @@ def processar_vagas_com_curriculo(
             else:
                 jobs_int.append(job_obj)
 
-    facade = JobSearchMasterFacade(settings=settings, profiles=perfis)
+    facade = JobSearchMasterFacade(settings=settings, profiles=profiles)
     output = facade.executar_pos_processamento(
-        jobs_nac, jobs_int, posts_nac, posts_int, profiles=perfis
+        jobs_nac, jobs_int, posts_nac, posts_int
     )
     facade.exportar_resultados(output)
 

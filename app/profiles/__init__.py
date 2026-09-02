@@ -8,9 +8,8 @@ from app.profiles.predefined import (
 )
 
 
-def obter_perfil_por_nome(nome: str, perfis: list[Profile] | None = None) -> Profile | None:
-    lista_perfis = perfis if perfis is not None else DEFAULT_PROFILES
-    for perfil in lista_perfis:
+def obter_perfil_por_nome(nome: str, perfis: list[Profile]) -> Profile | None:
+    for perfil in perfis:
         if perfil.name.lower() == nome.lower():
             return perfil
     return None

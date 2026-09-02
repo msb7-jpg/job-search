@@ -8,12 +8,22 @@ from app.models.job import JobItem
 from app.shared.http.client import requisicao_com_rotacao
 
 
-def obter_descricao_completa(job_id: str, usar_proxy: bool = False) -> str:
+def obter_descricao_completa(
+    job_id: str,
+    usar_proxy: bool,
+    timeout: int,
+    max_retries: int,
+) -> str:
     if not job_id or job_id.startswith("job_"):
         return ""
     url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
     try:
-        response = requisicao_com_rotacao(url, usar_proxy=usar_proxy)
+        response = requisicao_com_rotacao(
+            url,
+            usar_proxy=usar_proxy,
+            timeout=timeout,
+            max_retries=max_retries,
+        )
         if response and response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             desc_elem = soup.find("div", class_="show-more-less-html__markup") or soup.find(
@@ -28,11 +38,18 @@ def obter_descricao_completa(job_id: str, usar_proxy: bool = False) -> str:
 
 def enriquecer_job_com_descricao(
     job: JobItem,
-    apenas_remoto: bool = True,
-    senioridade_filtro: str = "JUNIOR",
-    usar_proxy: bool = False,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+    usar_proxy: bool,
+    timeout: int,
+    max_retries: int,
 ) -> JobItem:
-    descricao = obter_descricao_completa(job.job_id, usar_proxy=usar_proxy)
+    descricao = obter_descricao_completa(
+        job.job_id,
+        usar_proxy=usar_proxy,
+        timeout=timeout,
+        max_retries=max_retries,
+    )
     job.descricao_completa = descricao
     job.modelo_trabalho = classificar_modelo_trabalho(
         job.titulo, job.localizacao, descricao, padrao_remoto=apenas_remoto
@@ -44,7 +61,9 @@ def enriquecer_job_com_descricao(
 
 
 def classificar_job_rapido(
-    job: JobItem, apenas_remoto: bool = True, senioridade_filtro: str = "JUNIOR"
+    job: JobItem,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
 ) -> JobItem:
     job.modelo_trabalho = classificar_modelo_trabalho(
         job.titulo, job.localizacao, "", padrao_remoto=apenas_remoto
@@ -57,8 +76,8 @@ def classificar_job_rapido(
 
 def classificar_jobs_rapido_em_lote(
     jobs: list[JobItem],
-    apenas_remoto: bool = True,
-    senioridade_filtro: str = "JUNIOR",
+    apenas_remoto: bool,
+    senioridade_filtro: str,
 ) -> list[JobItem]:
     logger.info(f"[JOBS-DETAIL] Classificação rápida sem fetch profundo para {len(jobs)} vagas.")
     return [
@@ -73,10 +92,12 @@ def classificar_jobs_rapido_em_lote(
 
 def enriquecer_jobs_em_lote(
     jobs: list[JobItem],
-    max_workers: int = 10,
-    apenas_remoto: bool = True,
-    senioridade_filtro: str = "JUNIOR",
-    usar_proxy: bool = False,
+    max_workers: int,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+    usar_proxy: bool,
+    timeout: int,
+    max_retries: int,
 ) -> list[JobItem]:
     logger.info(f"[JOBS-DETAIL] Iniciando Aggressive Fetch para {len(jobs)} vagas (threads={max_workers})...")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -87,6 +108,8 @@ def enriquecer_jobs_em_lote(
                     apenas_remoto=apenas_remoto,
                     senioridade_filtro=senioridade_filtro,
                     usar_proxy=usar_proxy,
+                    timeout=timeout,
+                    max_retries=max_retries,
                 ),
                 jobs,
             )

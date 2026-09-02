@@ -1,4 +1,4 @@
-from app.core.config import Settings, settings as default_settings
+from app.core.config import Settings
 from app.core.logging import logger
 from app.jobs.classifiers import pre_filtrar_job_bruto
 from app.jobs.detail_fetcher import classificar_jobs_rapido_em_lote, enriquecer_jobs_em_lote
@@ -6,56 +6,46 @@ from app.jobs.fetcher import buscar_vagas_linkedin_guest
 from app.models.enums import ScopeEnum, SeniorityEnum, WorkModelEnum
 from app.models.job import JobItem
 from app.profiles.base import Profile
-from app.profiles.predefined import DEFAULT_PROFILES
 
 
 class JobsPipelineFacade:
     def __init__(
         self,
-        settings: Settings | None = None,
-        profiles: list[Profile] | None = None,
-        usar_proxy: bool | None = None,
-        enriquecer_detalhes: bool | None = None,
+        settings: Settings,
+        profiles: list[Profile],
     ) -> None:
-        self.settings = settings or default_settings
-        self.profiles = profiles if profiles is not None else DEFAULT_PROFILES
-        self.usar_proxy = usar_proxy if usar_proxy is not None else self.settings.usar_proxy
-        self.enriquecer_detalhes = (
-            enriquecer_detalhes
-            if enriquecer_detalhes is not None
-            else self.settings.enriquecer_detalhes
-        )
+        self.settings = settings
+        self.profiles = profiles
 
-    def _obter_queries_nacionais(self, perfis: list[Profile]) -> list[tuple[str, str]]:
+    def _obter_queries_nacionais(self) -> list[tuple[str, str]]:
         queries_vistas: set[tuple[str, str]] = set()
         queries_ordenadas: list[tuple[str, str]] = []
-        for perfil in perfis:
+        for perfil in self.profiles:
             for query_tupla in perfil.queries_jobs_nacionais:
                 if query_tupla not in queries_vistas:
                     queries_vistas.add(query_tupla)
                     queries_ordenadas.append(query_tupla)
         return queries_ordenadas
 
-    def _obter_queries_internacionais(self, perfis: list[Profile]) -> list[tuple[str, str]]:
+    def _obter_queries_internacionais(self) -> list[tuple[str, str]]:
         queries_vistas: set[tuple[str, str]] = set()
         queries_ordenadas: list[tuple[str, str]] = []
-        for perfil in perfis:
+        for perfil in self.profiles:
             for query_tupla in perfil.queries_jobs_internacionais:
                 if query_tupla not in queries_vistas:
                     queries_vistas.add(query_tupla)
                     queries_ordenadas.append(query_tupla)
         return queries_ordenadas
 
-    def run(self, profiles: list[Profile] | None = None) -> tuple[list[JobItem], list[JobItem]]:
-        perfis_execucao = profiles if profiles is not None else self.profiles
+    def run(self) -> tuple[list[JobItem], list[JobItem]]:
         logger.info(
             f"💼 [JOBS-PIPELINE] Iniciando extração de vagas formais para "
-            f"{len(perfis_execucao)} perfis ({', '.join(p.name for p in perfis_execucao)}) "
+            f"{len(self.profiles)} perfis ({', '.join(p.name for p in self.profiles)}) "
             f"[Filtro: {self.settings.filtro_tempo.descricao} ({self.settings.filtro_tempo.value})]..."
         )
 
-        queries_nacionais = self._obter_queries_nacionais(perfis_execucao)
-        queries_internacionais = self._obter_queries_internacionais(perfis_execucao)
+        queries_nacionais = self._obter_queries_nacionais()
+        queries_internacionais = self._obter_queries_internacionais()
 
         # 1. Busca Nacionais
         jobs_nacionais_brutos: list[JobItem] = []
@@ -67,7 +57,9 @@ class JobsPipelineFacade:
                 filtro_tempo=self.settings.filtro_tempo,
                 apenas_remoto=self.settings.apenas_remoto,
                 senioridade_filtro=self.settings.senioridade_filtro,
-                usar_proxy=self.usar_proxy,
+                usar_proxy=self.settings.usar_proxy,
+                timeout=self.settings.http_timeout,
+                max_retries=self.settings.http_max_retries,
             )
             logger.info(
                 f"💼 [JOBS-SEARCH] Query: '{keyword}' em '{location}' (Brasil) -> {len(encontradas)} vagas encontradas"
@@ -84,7 +76,9 @@ class JobsPipelineFacade:
                 filtro_tempo=self.settings.filtro_tempo,
                 apenas_remoto=self.settings.apenas_remoto,
                 senioridade_filtro=self.settings.senioridade_filtro,
-                usar_proxy=self.usar_proxy,
+                usar_proxy=self.settings.usar_proxy,
+                timeout=self.settings.http_timeout,
+                max_retries=self.settings.http_max_retries,
             )
             logger.info(
                 f"💼 [JOBS-SEARCH] Query: '{keyword}' em '{location}' (Gringa) -> {len(encontradas)} vagas encontradas"
@@ -119,13 +113,15 @@ class JobsPipelineFacade:
         )
 
         # 5. Classificação (Enriquecimento agressivo ou classificação rápida)
-        if self.enriquecer_detalhes:
+        if self.settings.enriquecer_detalhes:
             jobs_processados = enriquecer_jobs_em_lote(
                 jobs_pre_filtrados,
                 max_workers=self.settings.max_workers_jobs,
                 apenas_remoto=self.settings.apenas_remoto,
                 senioridade_filtro=self.settings.senioridade_filtro,
-                usar_proxy=self.usar_proxy,
+                usar_proxy=self.settings.usar_proxy,
+                timeout=self.settings.http_timeout,
+                max_retries=self.settings.http_max_retries,
             )
         else:
             jobs_processados = classificar_jobs_rapido_em_lote(

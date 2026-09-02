@@ -30,9 +30,8 @@ class MatchLevelEnum(StrEnum):
 
 
 class ProxyStrategyEnum(StrEnum):
-    ADAPTIVE_FAILOVER = "adaptive_failover"
-    PRE_FLIGHT = "pre_flight"
-    BACKGROUND_POOL = "background_pool"
+    BATCH_ACTIVE_POOL = "batch_active_pool"
+    ADAPTIVE_FAILOVER = "batch_active_pool"
 
 
 
@@ -53,14 +52,14 @@ class TimeFilterEnum(StrEnum):
         return mapping.get(self, "r604800")
 
     @property
-    def ddgs_timelimit(self) -> str | None:
+    def google_tbs(self) -> str | None:
         mapping = {
-            TimeFilterEnum.ULTIMAS_24H: "d",
-            TimeFilterEnum.ULTIMA_SEMANA: "w",
-            TimeFilterEnum.ULTIMO_MES: "m",
+            TimeFilterEnum.ULTIMAS_24H: "qdr:d",
+            TimeFilterEnum.ULTIMA_SEMANA: "qdr:w",
+            TimeFilterEnum.ULTIMO_MES: "qdr:m",
             TimeFilterEnum.QUALQUER_DATA: None,
         }
-        return mapping.get(self, "w")
+        return mapping.get(self, "qdr:w")
 
     @property
     def descricao(self) -> str:

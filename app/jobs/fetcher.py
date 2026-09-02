@@ -13,11 +13,13 @@ def buscar_vagas_linkedin_guest(
     keywords: str,
     location: str,
     scope: ScopeEnum,
-    filtro_tempo: TimeFilterEnum = TimeFilterEnum.ULTIMA_SEMANA,
-    apenas_remoto: bool = True,
-    senioridade_filtro: str = "JUNIOR",
+    filtro_tempo: TimeFilterEnum,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+    usar_proxy: bool,
+    timeout: int,
+    max_retries: int,
     max_paginas: int = 3,
-    usar_proxy: bool = False,
 ) -> list[JobItem]:
     vagas: list[JobItem] = []
     filtro_remoto_param = "&f_WT=2" if apenas_remoto else ""
@@ -34,7 +36,12 @@ def buscar_vagas_linkedin_guest(
             f"{tpr_param}{filtro_remoto_param}{filtro_senioridade_param}&start={start}"
         )
         try:
-            response = requisicao_com_rotacao(url, usar_proxy=usar_proxy)
+            response = requisicao_com_rotacao(
+                url,
+                usar_proxy=usar_proxy,
+                timeout=timeout,
+                max_retries=max_retries,
+            )
             if not response or response.status_code != 200:
                 break
 

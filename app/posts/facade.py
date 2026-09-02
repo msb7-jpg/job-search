@@ -1,51 +1,49 @@
-from app.core.config import Settings, settings as default_settings
+from app.core.config import Settings
 from app.core.logging import logger
 from app.models.enums import ScopeEnum
 from app.models.post import PostItem
 from app.posts.fetcher import buscar_posts_linkedin
 from app.profiles.base import Profile
-from app.profiles.predefined import DEFAULT_PROFILES
 
 
 class PostsPipelineFacade:
     def __init__(
         self,
-        settings: Settings | None = None,
-        profiles: list[Profile] | None = None,
+        settings: Settings,
+        profiles: list[Profile],
     ) -> None:
-        self.settings = settings or default_settings
-        self.profiles = profiles if profiles is not None else DEFAULT_PROFILES
+        self.settings = settings
+        self.profiles = profiles
 
-    def _obter_queries_nacionais(self, perfis: list[Profile]) -> list[str]:
+    def _obter_queries_nacionais(self) -> list[str]:
         queries_vistas: set[str] = set()
         queries_ordenadas: list[str] = []
-        for perfil in perfis:
+        for perfil in self.profiles:
             for query in perfil.queries_posts_nacionais:
                 if query not in queries_vistas:
                     queries_vistas.add(query)
                     queries_ordenadas.append(query)
         return queries_ordenadas
 
-    def _obter_queries_internacionais(self, perfis: list[Profile]) -> list[str]:
+    def _obter_queries_internacionais(self) -> list[str]:
         queries_vistas: set[str] = set()
         queries_ordenadas: list[str] = []
-        for perfil in perfis:
+        for perfil in self.profiles:
             for query in perfil.queries_posts_internacionais:
                 if query not in queries_vistas:
                     queries_vistas.add(query)
                     queries_ordenadas.append(query)
         return queries_ordenadas
 
-    def run(self, profiles: list[Profile] | None = None) -> tuple[list[PostItem], list[PostItem]]:
-        perfis_execucao = profiles if profiles is not None else self.profiles
+    def run(self) -> tuple[list[PostItem], list[PostItem]]:
         logger.info(
-            f"💬 [POSTS-PIPELINE] Iniciando extração de posts do LinkedIn via DDGS para "
-            f"{len(perfis_execucao)} perfis ({', '.join(p.name for p in perfis_execucao)}) "
+            f"💬 [POSTS-PIPELINE] Iniciando extração de posts do LinkedIn via Google Search para "
+            f"{len(self.profiles)} perfis ({', '.join(p.name for p in self.profiles)}) "
             f"[Filtro: {self.settings.filtro_tempo.descricao} ({self.settings.filtro_tempo.value})]..."
         )
 
-        queries_nacionais = self._obter_queries_nacionais(perfis_execucao)
-        queries_internacionais = self._obter_queries_internacionais(perfis_execucao)
+        queries_nacionais = self._obter_queries_nacionais()
+        queries_internacionais = self._obter_queries_internacionais()
 
         # 1. Posts Nacionais
         posts_nac: list[PostItem] = []

@@ -1,24 +1,87 @@
 from app.models.enums import SeniorityEnum, WorkModelEnum
 
+BLOQUEADOS_SENIORIDADE_JUNIOR = [
+    "senior",
+    "sênior",
+    "sr",
+    "sr.",
+    "ssr",
+    "pleno",
+    "pl",
+    "pl.",
+    "staff",
+    "lead",
+    "tech lead",
+    "principal",
+    "architect",
+    "arquiteto",
+    "arqueto",
+    "especialista",
+    "iii",
+    "c2c",
+    "us based",
+    "us only",
+    "no visa",
+    "citizens only",
+    "security clearance",
+]
 
-def pre_filtrar_job_bruto(titulo: str, localizacao: str, apenas_remoto: bool = True, senioridade_filtro: str = "JUNIOR") -> bool:
+BLOQUEADOS_PRESENCIAL = [
+    "presencial",
+    "100% presencial",
+    "onsite",
+    "on-site",
+    "híbrido",
+    "hibrido",
+    "hybrid",
+    "local only",
+    "must be located",
+]
+
+
+def pre_filtrar_job_bruto(
+    titulo: str,
+    localizacao: str,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+) -> bool:
     t_lower = titulo.lower()
     loc_lower = localizacao.lower()
     texto_basico = f"{t_lower} {loc_lower}"
 
+    if senioridade_filtro == "JUNIOR" and any(p in t_lower for p in BLOQUEADOS_SENIORIDADE_JUNIOR):
+        return False
+
+    return not (apenas_remoto and any(p in texto_basico for p in BLOQUEADOS_PRESENCIAL))
+
+
+def pre_filtrar_post_bruto(
+    titulo: str,
+    descricao: str,
+    localizacao: str,
+    apenas_remoto: bool,
+    senioridade_filtro: str,
+) -> bool:
+    texto = f"{titulo} {descricao} {localizacao}".lower()
+    t_lower = titulo.lower()
+
     if senioridade_filtro == "JUNIOR":
-        bloqueados_senioridade = ["senior", "sênior", "sr.", "lead", "principal", "architect", "arqueto", "especialista", "iii"]
-        if any(p in t_lower for p in bloqueados_senioridade):
+        if any(p in t_lower for p in ["senior", "sênior", "sr", "sr.", "ssr", "pleno", "pl", "lead", "principal", "architect", "staff"]):
+            return False
+
+        termos_exclusao = ["security clearance", "citizens only", "us only", "us based", "c2c only"]
+        if any(termo in texto for termo in termos_exclusao):
             return False
 
     if apenas_remoto:
-        bloqueados_presencial = ["presencial", "onsite", "100% presencial", "híbrido", "hibrido", "hybrid"]
-        if any(p in texto_basico for p in bloqueados_presencial):
+        termos_presencial_estrito = ["100% presencial", "presencial apenas", "local only", "must be located in", "on-site only"]
+        if any(termo in texto for termo in termos_presencial_estrito):
             return False
 
     return True
 
-def classificar_senioridade(titulo: str, descricao: str, padrao_junior: bool = True) -> SeniorityEnum:
+
+def classificar_senioridade(titulo: str, descricao: str, padrao_junior: bool) -> SeniorityEnum:
     t_lower = titulo.lower()
     d_lower = descricao.lower()
 
@@ -40,7 +103,8 @@ def classificar_senioridade(titulo: str, descricao: str, padrao_junior: bool = T
 
     return SeniorityEnum.JUNIOR if padrao_junior else SeniorityEnum.NAO_ESPECIFICADO
 
-def classificar_modelo_trabalho(titulo: str, localizacao: str, descricao: str, padrao_remoto: bool = True) -> WorkModelEnum:
+
+def classificar_modelo_trabalho(titulo: str, localizacao: str, descricao: str, padrao_remoto: bool) -> WorkModelEnum:
     texto = f"{titulo} {localizacao} {descricao}".lower()
 
     termos_hibrido = [

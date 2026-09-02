@@ -5,7 +5,6 @@ from app.models.job import JobItem
 from app.models.match import ProfileMatch, ResumeMatch
 from app.models.post import PostItem
 from app.profiles.base import Profile
-from app.profiles.predefined import DEFAULT_PROFILES
 
 
 def calcular_nivel_match(score: int) -> MatchLevelEnum:
@@ -59,13 +58,13 @@ def calcular_perfil_match(texto: str, perfil: Profile) -> ProfileMatch:
 
 
 def avaliar_compatibilidade(
-    item: JobItem | PostItem, perfis: list[Profile] | None = None
+    item: JobItem | PostItem,
+    perfis: list[Profile],
 ) -> ResumeMatch:
-    perfis_avaliacao = perfis if perfis is not None else DEFAULT_PROFILES
     texto_analise = f"{item.titulo} {item.descricao_completa or item.descricao_resumida}"
 
     resultado_perfis: dict[str, ProfileMatch] = {}
-    for perfil in perfis_avaliacao:
+    for perfil in perfis:
         resultado_perfis[perfil.name] = calcular_perfil_match(texto_analise, perfil)
 
     backend_match = resultado_perfis.get("backend")
