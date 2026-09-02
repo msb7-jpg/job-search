@@ -19,7 +19,7 @@ def buscar_vagas_linkedin_guest(
     usar_proxy: bool,
     timeout: int,
     max_retries: int,
-    max_paginas: int = 3,
+    max_paginas: int = 10,
 ) -> list[JobItem]:
     vagas: list[JobItem] = []
     filtro_remoto_param = "&f_WT=2" if apenas_remoto else ""
@@ -29,7 +29,7 @@ def buscar_vagas_linkedin_guest(
     logger.debug(f"[JOBS-FETCHER] Buscando '{keywords}' em '{location}' (Escopo: {scope.value})...")
 
     for pagina in range(max_paginas):
-        start = pagina * 25
+        start = pagina * 10
         url = (
             f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
             f"?keywords={urllib.parse.quote(keywords)}&location={urllib.parse.quote(location)}"

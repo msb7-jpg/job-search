@@ -119,6 +119,8 @@ app/
 
 - **Single Source of Truth (SSOT) & Zero Redundant Defaults Principle**:
   - `Settings` é a única fonte da verdade para parâmetros globais e operacionais de execução (concorrência, timeouts, flags de proxy, enriquecimento, recência e filtros).
+  - **Filtros de Recência Separados**: Para evitar redundâncias e maximizar a captação, configuramos filtros de recência independentes: `filtro_tempo_vagas` (padrão: 24 horas para vagas formais) e `filtro_tempo_posts` (padrão: última semana para publicações/posts no LinkedIn).
+  - **Paginadora de Jobs Otimizada**: O offset de paginação da API Guest do LinkedIn avança de 10 em 10 itens (`start = pagina * 10`), garantindo que nenhuma vaga seja omitida. O limite máximo de páginas é configurável globalmente pelo parâmetro `max_paginas_jobs` (padrão: 10) na classe de `Settings`, permitindo ampliar o volume de extração em até 100+ vagas por query.
   - Instâncias de `Profile` são a única fonte da verdade para regras de pontuação de currículo, keywords e listas de queries de busca.
   - **Proibição de Defaults Redundantes em Cascata**: Métodos e funções internas (fetchers, classificadores, evaluators) não devem declarar valores padrão opcionais redundantes ou divergentes (ex.: `apenas_remoto: bool = True`, `usar_proxy: bool = False`, `max_workers = 10`) que mascarem o `Settings` ou o chamador. Parâmetros operacionais devem ser obrigatórios e passados explicitamente a partir do contexto de execução.
 - **Profile-Driven Configuration**:

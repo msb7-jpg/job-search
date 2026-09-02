@@ -21,6 +21,7 @@ class Settings(BaseModel):
     apenas_remoto: bool = True
     senioridade_filtro: str = "JUNIOR"
     threshold_minimo_match: int = 60
+    max_paginas_jobs: int = 10
 
     # Flags de Comportamento e Otimização
     usar_proxy: bool = True

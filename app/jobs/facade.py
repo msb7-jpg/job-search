@@ -58,6 +58,7 @@ class JobsPipelineFacade:
                 usar_proxy=self.settings.usar_proxy,
                 timeout=self.settings.http_timeout,
                 max_retries=self.settings.http_max_retries,
+                max_paginas=self.settings.max_paginas_jobs,
             )
             logger.info(
                 f"💼 [JOBS-SEARCH] Query: '{keyword}' em '{location}' ({rotulo_escopo}) -> {len(encontradas)} vagas encontradas"
