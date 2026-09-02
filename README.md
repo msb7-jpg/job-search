@@ -23,42 +23,17 @@ The pipeline features an automated resume matching engine tailored for **Backend
 
 ## 🏗️ Architecture & Workflow
 
-```
-                           +-------------------------------+
-                           |      LinkedIn Guest API       |
-                           +---------------+---------------+
-                                           |
-                                           v
-+------------------------+  Search Query   +-------------------------------+
-|  Search Configuration  |---------------> |   `seeMoreJobPostings/search`  |
-|  (Keywords, Recency,   |                 +---------------+---------------+
-|  Seniority, Location)  |                                 | Extract Job IDs
-+------------------------+                                 v
-                                           +-------------------------------+
-                                           | Aggressive Parallel Fetcher   |
-                                           |  ThreadPoolExecutor (N=10)    |
-                                           |     `jobPosting/{job_id}`     |
-                                           +---------------+---------------+
-                                                           |
-                                                           v
-                                           +-------------------------------+
-                                           |   Strict Filter & Validator   |
-                                           | (Workplace Type & Seniority)  |
-                                           +---------------+---------------+
-                                                           |
-                                                           v
-+------------------------+                 +-------------------------------+
-|  Resume Source Files   |---------------> | Resume Match Score Engine     |
-| (Backend & Full-Stack) |                 | (Skill Extraction & Ranking)  |
-+------------------------+                 +---------------+---------------+
-                                                           |
-                                           +---------------+---------------+
-                                           |                               |
-                                           v                               v
-                            +------------------------------+ +------------------------------+
-                            |     `vagas_linkedin.json`    | |    `relatorio_matches.md`    |
-                            |      (Structured JSON)       | |     (Markdown Summary)       |
-                            +------------------------------+ +------------------------------+
+```mermaid
+graph TD
+    A["LinkedIn Guest API"] --> B["seeMoreJobPostings/search"]
+    C["Search Configuration<br/>Keywords, Recency,<br/>Seniority, Location"] -->|Search Query| B
+    B --> D["Extract Job IDs"]
+    D --> E["Aggressive Parallel Fetcher<br/>ThreadPoolExecutor N=10<br/>jobPosting/job_id"]
+    E --> F["Strict Filter & Validator<br/>Workplace Type & Seniority"]
+    F --> G["Resume Match Score Engine<br/>Skill Extraction & Ranking"]
+    H["Resume Source Files<br/>Backend & Full-Stack"] --> G
+    G --> I["vagas_linkedin.json<br/>Structured JSON"]
+    G --> J["relatorio_matches.md<br/>Markdown Summary"]
 ```
 
 ---
