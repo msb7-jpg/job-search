@@ -209,24 +209,24 @@ All runtime settings are centralized in `app/core/config.py` via the `Settings` 
 # core/config.py example configuration
 class Settings(BaseSettings):
     # Search & Filtering
-    filtro_tempo: TimeFilterEnum = "r604800"              # r86400 (24h), r604800 (7d), r2592000 (30d)
-    apenas_remoto: bool = True                            # Filter for 100% remote only
-    senioridade_filtro: SeniorityEnum = "JUNIOR"          # "JUNIOR", "PLENO", "SENIOR", "TODAS"
-    
+    filtro_tempo: TimeFilterEnum = "r604800"  # r86400 (24h), r604800 (7d), r2592000 (30d)
+    apenas_remoto: bool = True  # Filter for 100% remote only
+    senioridade_filtro: SeniorityEnum = "JUNIOR"  # "JUNIOR", "PLENO", "SENIOR", "TODAS"
+
     # HTTP & Proxy Configuration
-    usar_proxy: bool = False                              # Enable HTTP proxy rotation
-    estrategia_proxy: str = "ROUND_ROBIN"                 # Proxy rotation strategy
-    max_concurrency_proxies: int = 5                      # Concurrent proxy validation
-    max_workers: int = 10                                 # ThreadPoolExecutor workers for detail fetching
-    
+    usar_proxy: bool = False  # Enable HTTP proxy rotation
+    estrategia_proxy: str = "ROUND_ROBIN"  # Proxy rotation strategy
+    max_concurrency_proxies: int = 5  # Concurrent proxy validation
+    max_workers: int = 10  # ThreadPoolExecutor workers for detail fetching
+
     # Posts & Post-Processing
-    buscar_posts: bool = False                            # Enable/disable LinkedIn Posts discovery
-    enriquecer_detalhes: bool = False                     # Fetch full job details during extraction
-    
+    buscar_posts: bool = False  # Enable/disable LinkedIn Posts discovery
+    enriquecer_detalhes: bool = False  # Fetch full job details during extraction
+
     # Output
-    output_raw_json: str = "data/vagas_linkedin.json"     # Raw extraction output
+    output_raw_json: str = "data/vagas_linkedin.json"  # Raw extraction output
     output_processed_json: str = "data/vagas_processadas.json"  # Processed output
-    output_markdown: str = "app/data/relatorio_matches.md"      # Markdown report output
+    output_markdown: str = "app/data/relatorio_matches.md"  # Markdown report output
 ```
 
 ### Running the Complete Pipeline
@@ -446,7 +446,7 @@ custom_profile = Profile(
     regras_pontuacao=[
         ScoringRule(palavra_chave="Python", peso=1.5, bonus_contexto=0.3),
         ScoringRule(palavra_chave="TensorFlow", peso=2.0, bonus_contexto=0.5),
-    ]
+    ],
 )
 
 facade = JobSearchMasterFacade(profiles=[custom_profile])
