@@ -11,8 +11,8 @@ def executar_busca_jobs_direta(
     profiles: list[Profile] = DEFAULT_PROFILES,
 ) -> tuple[list[JobItem], list[JobItem]]:
     config = settings or Settings(
-        usar_proxy=False,
-        enriquecer_detalhes=False,
+        usar_proxy=True,
+        enriquecer_detalhes=True,
     )
 
     logger.info("=" * 80)
@@ -37,6 +37,10 @@ def executar_busca_jobs_direta(
     logger.info(f"Total Geral: {total_encontrado} vagas")
     logger.info(f"  🇧🇷 Nacionais (Brasil): {len(jobs_nacionais)}")
     logger.info(f"  🌐 Internacionais (Gringa): {len(jobs_internacionais)}")
+    if total_encontrado == 0:
+        logger.error("❌ ALERTA CRÍTICO: 0 vagas retornadas! O canal de busca/proxies não conseguiu extrair resultados.")
+    else:
+        logger.info(f"✅ Validação positiva: {total_encontrado} vagas capturadas com sucesso.")
     logger.info("=" * 80)
 
     if jobs_nacionais:

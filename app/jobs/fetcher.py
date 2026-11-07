@@ -50,6 +50,7 @@ def buscar_vagas_linkedin_guest(
             if not items:
                 break
 
+            vagas_na_pagina = 0
             for item_li in items:
                 title_tag = item_li.find("h3", class_="base-search-card__title")
                 company_tag = item_li.find("h4", class_="base-search-card__subtitle")
@@ -60,12 +61,11 @@ def buscar_vagas_linkedin_guest(
                 )
 
                 if title_tag and link_tag:
+                    vagas_na_pagina += 1
                     link = link_tag["href"].split("?")[0]
                     titulo = title_tag.get_text().strip()
                     empresa = company_tag.get_text().strip() if company_tag else "N/A"
-                    localizacao_txt = (
-                        location_tag.get_text().strip() if location_tag else location
-                    )
+                    localizacao_txt = location_tag.get_text().strip() if location_tag else location
                     data_postagem = date_tag.get_text().strip() if date_tag else "Recente"
 
                     match_id = re.search(r"-(\d+)(?:\?|$)", link)
@@ -80,21 +80,18 @@ def buscar_vagas_linkedin_guest(
                             empresa=empresa,
                             localizacao=localizacao_txt,
                             data_postagem=data_postagem,
-                            senioridade=(
-                                SeniorityEnum.JUNIOR
-                                if senioridade_filtro == "JUNIOR"
-                                else SeniorityEnum.NAO_ESPECIFICADO
-                            ),
-                            modelo_trabalho=(
-                                WorkModelEnum.REMOTO
-                                if apenas_remoto
-                                else WorkModelEnum.NAO_ESPECIFICADO
-                            ),
+                            senioridade=(SeniorityEnum.JUNIOR if senioridade_filtro == "JUNIOR" else SeniorityEnum.NAO_ESPECIFICADO),
+                            modelo_trabalho=(WorkModelEnum.REMOTO if apenas_remoto else WorkModelEnum.NAO_ESPECIFICADO),
                             link=link,
                             descricao_resumida=f"{empresa} - {localizacao_txt}",
                             descricao_completa="",
                         )
                     )
+
+            # A Guest API do LinkedIn entrega blocos de até 10 vagas por página.
+            # Se vieram menos de 10 cards válidos, atingimos o fim dos resultados para esta query.
+            if vagas_na_pagina < 10:
+                break
         except Exception as excecao:
             logger.warning(f"[JOBS-FETCHER] Erro ao buscar '{keywords}' em '{location}': {excecao}")
             break

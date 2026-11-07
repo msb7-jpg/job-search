@@ -1,3 +1,4 @@
+import time
 import urllib.parse
 
 import requests
@@ -163,7 +164,12 @@ def _normalizar_item_resultado(item: SearchResult | dict | str) -> dict[str, str
 def _tratar_erro_google_search(erro: Exception, proxy_str: str | None, status_code: int | None = None) -> bool:
     if proxy_str:
         motivo = f"Google HTTP {status_code}" if status_code else erro.__class__.__name__
-        rotator.remover_proxy_invalido(proxy_str, motivo=motivo)
+        rotator.report_failure(
+            proxy_str,
+            status_code=status_code,
+            motivo=motivo,
+            is_critical_timeout=True,
+        )
         return False
     return status_code in {401, 403, 429}
 
@@ -259,6 +265,7 @@ def buscar_posts_linkedin(
 
         logger.debug(f"[POSTS-FETCHER] Tentativa {tentativa}/{max_tentativas} via {proxy_desc} para: '{clean_query[:40]}...'")
 
+        inicio_busca = time.perf_counter()
         try:
             # 1. Tentativa via motor direto de extração DOM com headers de navegador e tbs
             resultados_brutos = _executar_busca_direta_google(
@@ -279,6 +286,8 @@ def buscar_posts_linkedin(
                     max_resultados=max_resultados,
                     timeout=cfg.http_timeout,
                 )
+            if proxy_str:
+                rotator.report_success(proxy_str, time.perf_counter() - inicio_busca)
             break
 
         except requests.exceptions.HTTPError as erro:

@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from tqdm import tqdm
 
 from app.core.config import Settings
@@ -8,6 +10,7 @@ from app.jobs.fetcher import buscar_vagas_linkedin_guest
 from app.models.enums import ScopeEnum, SeniorityEnum, WorkModelEnum
 from app.models.job import JobItem
 from app.profiles.base import Profile
+from app.shared.http.proxy_rotator import rotator
 
 
 class JobsPipelineFacade:
@@ -45,10 +48,15 @@ class JobsPipelineFacade:
         scope: ScopeEnum,
         barra_progresso: tqdm,
     ) -> list[JobItem]:
+        if not queries:
+            return []
+
         rotulo_escopo = "Brasil" if scope == ScopeEnum.NACIONAL else "Gringa"
-        jobs_coletados: list[JobItem] = []
-        for keyword, location in queries:
-            encontradas = buscar_vagas_linkedin_guest(
+        resultados_por_indice: list[list[JobItem]] = [[] for _ in queries]
+        workers_queries = min(8, max(2, len(queries)))
+
+        def _executar_query(keyword: str, location: str) -> list[JobItem]:
+            return buscar_vagas_linkedin_guest(
                 keywords=keyword,
                 location=location,
                 scope=scope,
@@ -60,11 +68,29 @@ class JobsPipelineFacade:
                 max_retries=self.settings.http_max_retries,
                 max_paginas=self.settings.max_paginas_jobs,
             )
-            logger.info(
-                f"💼 [JOBS-SEARCH] Query: '{keyword}' em '{location}' ({rotulo_escopo}) -> {len(encontradas)} vagas encontradas"
-            )
-            jobs_coletados.extend(encontradas)
-            barra_progresso.update(1)
+
+        with ThreadPoolExecutor(max_workers=workers_queries) as executor:
+            futuro_para_meta = {
+                executor.submit(_executar_query, keyword, location): (indice, keyword, location)
+                for indice, (keyword, location) in enumerate(queries)
+            }
+            for futuro in as_completed(futuro_para_meta):
+                indice, keyword, location = futuro_para_meta[futuro]
+                try:
+                    encontradas = futuro.result()
+                except Exception as erro:
+                    logger.warning(f"💼 [JOBS-SEARCH] Erro na query '{keyword}' ({location}): {erro}")
+                    encontradas = []
+
+                resultados_por_indice[indice] = encontradas
+                logger.info(
+                    f"💼 [JOBS-SEARCH] Query: '{keyword}' em '{location}' ({rotulo_escopo}) -> {len(encontradas)} vagas encontradas"
+                )
+                barra_progresso.update(1)
+
+        jobs_coletados: list[JobItem] = []
+        for lista in resultados_por_indice:
+            jobs_coletados.extend(lista)
         return jobs_coletados
 
     def _executar_pre_filtro(
@@ -85,6 +111,8 @@ class JobsPipelineFacade:
                 localizacao=job.localizacao,
                 apenas_remoto=self.settings.apenas_remoto,
                 senioridade_filtro=self.settings.senioridade_filtro,
+                empresa=job.empresa,
+                descricao=job.descricao_completa or job.descricao_resumida,
             )
             if aprovado:
                 jobs_pre_filtrados.append(job)
@@ -113,9 +141,7 @@ class JobsPipelineFacade:
     ) -> tuple[list[JobItem], list[JobItem]]:
         total_antes_pos_filtro = len(jobs_processados)
         if self.settings.apenas_remoto:
-            jobs_processados = [
-                job for job in jobs_processados if job.modelo_trabalho == WorkModelEnum.REMOTO
-            ]
+            jobs_processados = [job for job in jobs_processados if job.modelo_trabalho == WorkModelEnum.REMOTO]
         descartados_pos_remoto = total_antes_pos_filtro - len(jobs_processados)
 
         total_antes_pos_senioridade = len(jobs_processados)
@@ -149,6 +175,12 @@ class JobsPipelineFacade:
         return nac_finais, int_finais
 
     def run(self) -> tuple[list[JobItem], list[JobItem]]:
+        if self.settings.usar_proxy:
+            rotator.inicializar_pool(
+                max_concurrency=self.settings.max_concurrency_proxies,
+                strategy=self.settings.estrategia_proxy,
+            )
+
         queries_nacionais = self._obter_queries_nacionais()
         queries_internacionais = self._obter_queries_internacionais()
         total_queries = len(queries_nacionais) + len(queries_internacionais)

@@ -17,4 +17,3 @@ class Gringas:
         (JOBS_BE, "Remote"),
         (JOBS_FS, "Remote"),
     ]
-

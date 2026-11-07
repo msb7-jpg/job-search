@@ -27,8 +27,11 @@ def obter_descricao_completa(
         )
         if response and response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
-            desc_elem = soup.find("div", class_="show-more-less-html__markup") or soup.find(
-                "section", class_="description"
+            desc_elem = (
+                soup.find("div", class_="show-more-less-html__markup")
+                or soup.find("div", class_="description__text")
+                or soup.find("section", class_="description")
+                or soup.find("div", class_="decorated-job-posting__details")
             )
             if desc_elem:
                 return desc_elem.get_text(separator="\n").strip()
@@ -52,12 +55,8 @@ def enriquecer_job_com_descricao(
         max_retries=max_retries,
     )
     job.descricao_completa = descricao
-    job.modelo_trabalho = classificar_modelo_trabalho(
-        job.titulo, job.localizacao, descricao, padrao_remoto=apenas_remoto
-    )
-    job.senioridade = classificar_senioridade(
-        job.titulo, descricao, padrao_junior=(senioridade_filtro == "JUNIOR")
-    )
+    job.modelo_trabalho = classificar_modelo_trabalho(job.titulo, job.localizacao, descricao, padrao_remoto=apenas_remoto)
+    job.senioridade = classificar_senioridade(job.titulo, descricao, padrao_junior=(senioridade_filtro == "JUNIOR"))
     return job
 
 
@@ -66,12 +65,8 @@ def classificar_job_rapido(
     apenas_remoto: bool,
     senioridade_filtro: str,
 ) -> JobItem:
-    job.modelo_trabalho = classificar_modelo_trabalho(
-        job.titulo, job.localizacao, "", padrao_remoto=apenas_remoto
-    )
-    job.senioridade = classificar_senioridade(
-        job.titulo, "", padrao_junior=(senioridade_filtro == "JUNIOR")
-    )
+    job.modelo_trabalho = classificar_modelo_trabalho(job.titulo, job.localizacao, "", padrao_remoto=apenas_remoto)
+    job.senioridade = classificar_senioridade(job.titulo, "", padrao_junior=(senioridade_filtro == "JUNIOR"))
     return job
 
 
