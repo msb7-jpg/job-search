@@ -43,6 +43,14 @@ class Profile(BaseModel):
         default_factory=list,
         description="Lista de queries booleanas para busca de posts internacionais via SearXNG.",
     )
+    queries_ats: list[str] = Field(
+        default_factory=list,
+        description="Lista de termos de busca de vagas na API da Gupy.",
+    )
+    termos_cargo_inhire: list[str] = Field(
+        default_factory=list,
+        description="Palavras-chave de título de vaga para filtrar vagas nos tenants da InHire.",
+    )
     metadados: dict[str, Any] = Field(
         default_factory=dict,
         description="Metadados extras opcionais do perfil.",

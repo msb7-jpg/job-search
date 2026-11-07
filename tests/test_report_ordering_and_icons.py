@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from app.core.config import Settings
 from app.exporters.markdown_exporter import gerar_relatorio_markdown, obter_icone_match
 from app.facades.job_search_facade import JobSearchMasterFacade
 from app.models.enums import MatchLevelEnum, ScopeEnum
@@ -116,7 +117,7 @@ class TestReportOrderingAndIcons(unittest.TestCase):
             self.assertTrue(pos_alta < pos_media < pos_baixa)
 
     def test_job_search_facade_post_processing_ordering(self):
-        facade = JobSearchMasterFacade()
+        facade = JobSearchMasterFacade(settings=Settings(usar_filtro_llm=False, apenas_remoto=False))
         job1 = JobItem(
             job_id="1",
             titulo="Vaga 1",
@@ -141,7 +142,6 @@ class TestReportOrderingAndIcons(unittest.TestCase):
         score_primeiro = resultado.nacional.jobs[0].match_curriculo.score_maximo
         score_segundo = resultado.nacional.jobs[1].match_curriculo.score_maximo
         self.assertGreaterEqual(score_primeiro, score_segundo)
-
 
 
 if __name__ == "__main__":

@@ -5,9 +5,17 @@ class ScopeEnum(StrEnum):
     NACIONAL = "nacional"
     INTERNACIONAL = "internacional"
 
+
+class PlatformEnum(StrEnum):
+    LINKEDIN = "LinkedIn"
+    GUPY = "Gupy"
+    INHIRE = "InHire"
+
+
 class ItemTypeEnum(StrEnum):
     JOB = "jobs"
     POST = "post"
+
 
 class SeniorityEnum(StrEnum):
     ESTAGIO = "Estágio"
@@ -16,11 +24,13 @@ class SeniorityEnum(StrEnum):
     SENIOR = "Sênior"
     NAO_ESPECIFICADO = "Não Especificado"
 
+
 class WorkModelEnum(StrEnum):
     REMOTO = "Remoto"
     PRESENCIAL = "Presencial"
     HIBRIDO = "Híbrido"
     NAO_ESPECIFICADO = "Não Especificado"
+
 
 class MatchLevelEnum(StrEnum):
     EXCELENTE = "Excelente"
@@ -32,7 +42,7 @@ class MatchLevelEnum(StrEnum):
 class ProxyStrategyEnum(StrEnum):
     BATCH_ACTIVE_POOL = "batch_active_pool"
     ADAPTIVE_FAILOVER = "batch_active_pool"
-
+    REACTIVE_CIRCUIT_BREAKER = "reactive_circuit_breaker"
 
 
 class TimeFilterEnum(StrEnum):
@@ -60,6 +70,16 @@ class TimeFilterEnum(StrEnum):
             TimeFilterEnum.QUALQUER_DATA: None,
         }
         return mapping.get(self, "qdr:w")
+
+    @property
+    def dias_maximos(self) -> int | None:
+        mapping = {
+            TimeFilterEnum.ULTIMAS_24H: 1,
+            TimeFilterEnum.ULTIMA_SEMANA: 7,
+            TimeFilterEnum.ULTIMO_MES: 30,
+            TimeFilterEnum.QUALQUER_DATA: None,
+        }
+        return mapping.get(self)
 
     @property
     def descricao(self) -> str:

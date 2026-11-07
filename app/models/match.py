@@ -11,10 +11,23 @@ class ProfileMatch(BaseModel):
     total_habilidades_encontradas: int = 0
 
 
+class LlmEvaluation(BaseModel):
+    aprovado: bool = Field(
+        default=True,
+        description="True apenas se for Júnior (<=2 anos XP), 100% Remota viável do Brasil e compatível com a stack.",
+    )
+    score_llm: int = Field(default=0, ge=0, le=100)
+    nivel_detectado: str = Field(default="Não Identificado")
+    anos_experiencia_exigidos: int | None = Field(default=None)
+    remoto_viavel_brasil: bool = Field(default=True)
+    justificativa: str = Field(default="")
+
+
 class ResumeMatch(BaseModel):
     perfis: dict[str, ProfileMatch] = Field(default_factory=dict)
     backend: ProfileMatch | None = None
     fullstack: ProfileMatch | None = None
+    avaliacao_llm: LlmEvaluation | None = None
 
     @property
     def score_maximo(self) -> int:
@@ -37,4 +50,3 @@ class ResumeMatch(BaseModel):
         if self.fullstack:
             contagens.append(len(self.fullstack.habilidades_compativeis))
         return max(contagens, default=0)
-
