@@ -19,4 +19,5 @@ def setup_logger(name: str = "job_search", level: int = logging.INFO) -> logging
     logger.propagate = False
     return logger
 
+
 logger = setup_logger()

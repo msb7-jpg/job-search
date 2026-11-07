@@ -11,3 +11,8 @@ wheels/
 venv
 .env
 gen-lang-client-0665969287-070ed30d9437.json
+
+# Caches and runtime binaries
+app/data/proxy_tier_a.json
+app/data/*.pdf
+

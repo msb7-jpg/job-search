@@ -13,5 +13,6 @@ def main() -> None:
     facade = JobSearchMasterFacade(settings=settings)
     facade.run()
 
+
 if __name__ == "__main__":
     main()

@@ -1,8 +1,9 @@
+from datetime import datetime
 from pathlib import Path
 
 from app.core.logging import logger
 from app.models.match import ResumeMatch
-from app.models.report import ProcessedDataOutput
+from app.models.report import AtsReportOutput, ProcessedDataOutput
 
 
 def obter_icone_match(score: int) -> str:
@@ -17,7 +18,7 @@ def obter_icone_match(score: int) -> str:
         return "🎯"  # Match Qualificado (60-69%)
     if score >= 40:
         return "💡"  # Match Médio (40-59%)
-    return "⚪"      # Match Baixo (<40%)
+    return "⚪"  # Match Baixo (<40%)
 
 
 def _obter_chave_ordenacao(item: object) -> tuple[int, int]:
@@ -42,6 +43,7 @@ def _formatar_item_markdown(
 ) -> list[str]:
     melhor_score = match_curriculo.score_maximo if match_curriculo else 0
     icone_maximo = obter_icone_match(melhor_score)
+    plataforma = str(getattr(item, "plataforma", "LinkedIn"))
 
     perfis_compativeis: list[str] = []
     skills_linhas: list[str] = []
@@ -54,45 +56,41 @@ def _formatar_item_markdown(
                 perfis_compativeis.append(
                     f"{icone_perfil} {nome_exibicao}: {profile_match.score_porcentagem}% ({profile_match.nivel.value})"
                 )
-            skills_str = (
-                ", ".join(profile_match.habilidades_compativeis)
-                if profile_match.habilidades_compativeis
-                else "N/A"
-            )
+            skills_str = ", ".join(profile_match.habilidades_compativeis) if profile_match.habilidades_compativeis else "N/A"
             skills_linhas.append(f"- **Skills {nome_exibicao}**: `{skills_str}`")
     elif match_curriculo:
         backend_match = match_curriculo.backend
         fullstack_match = match_curriculo.fullstack
         if backend_match and backend_match.score_porcentagem >= 60:
             icone_backend = obter_icone_match(backend_match.score_porcentagem)
-            perfis_compativeis.append(
-                f"{icone_backend} Backend: {backend_match.score_porcentagem}% ({backend_match.nivel.value})"
-            )
+            perfis_compativeis.append(f"{icone_backend} Backend: {backend_match.score_porcentagem}% ({backend_match.nivel.value})")
         if fullstack_match and fullstack_match.score_porcentagem >= 60:
             icone_fs = obter_icone_match(fullstack_match.score_porcentagem)
-            perfis_compativeis.append(
-                f"{icone_fs} Full-Stack: {fullstack_match.score_porcentagem}% ({fullstack_match.nivel.value})"
-            )
+            perfis_compativeis.append(f"{icone_fs} Full-Stack: {fullstack_match.score_porcentagem}% ({fullstack_match.nivel.value})")
 
-    compatibilidade_str = (
-        " | ".join(perfis_compativeis)
-        if perfis_compativeis
-        else "Sem match mínimo para este currículo"
-    )
+    compatibilidade_str = " | ".join(perfis_compativeis) if perfis_compativeis else "Sem match mínimo para este currículo"
+
+    texto_link = f"Ver no {plataforma}" if plataforma else "Acessar Oportunidade"
 
     linhas = [
-        f"### {indice}. {icone_maximo} {titulo} - **Match Máximo: {melhor_score}%**",
+        f"### {indice}. {icone_maximo} [{plataforma}] {titulo} - **Match Máximo: {melhor_score}%**",
         f"- **Compatibilidade**: {compatibilidade_str}",
         f"- **Empresa/Autor**: {empresa} | **Local**: {localizacao} | **Postagem**: {data_postagem}",
     ]
     linhas.extend(skills_linhas)
-    linhas.append(f"- 🔗 [Ver no LinkedIn]({link})\n")
+    if match_curriculo and match_curriculo.avaliacao_llm and match_curriculo.avaliacao_llm.justificativa:
+        avaliacao = match_curriculo.avaliacao_llm
+        linhas.append(
+            f"- **🧠 Análise IA**: {avaliacao.justificativa} *(Nível: {avaliacao.nivel_detectado} | Score IA: {avaliacao.score_llm}%)*"
+        )
+    linhas.append(f"- 🔗 [{texto_link}]({link})\n")
     return linhas
 
 
 def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path) -> None:
+    data_hoje_formatada = datetime.now().strftime("%d/%m/%Y")
     linhas_relatorio = [
-        "# 📊 Relatório de Match de Vagas e Posts\n",
+        f"# 📊 Relatório de Match de Vagas e Posts (LinkedIn) - {data_hoje_formatada}\n",
         "Este relatório separa oportunidades nacionais e internacionais ordenadas com o maior match primeiro para você focar nas melhores vagas!\n",
         "> **Legenda Motivacional de Match:**\n"
         "> - 🔥 **90% - 100%**: Match Perfeito / Altíssima Aderência (Prioridade Máxima)\n"
@@ -114,13 +112,9 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
 
         # 1. Vagas Formais (Ordenadas pelo maior match primeiro)
         jobs_ordenados = sorted(container.jobs, key=_obter_chave_ordenacao, reverse=True)
-        linhas_relatorio.append(
-            f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ {dados.filtro_threshold_minimo}%: {len(jobs_ordenados)})\n"
-        )
+        linhas_relatorio.append(f"## 📌 Vagas Formais (Jobs) (Total com Match ≥ {dados.filtro_threshold_minimo}%: {len(jobs_ordenados)})\n")
         if not jobs_ordenados:
-            linhas_relatorio.append(
-                f"_Nenhuma vaga formal encontrada com match mínimo de {dados.filtro_threshold_minimo}%._\n"
-            )
+            linhas_relatorio.append(f"_Nenhuma vaga formal encontrada com match mínimo de {dados.filtro_threshold_minimo}%._\n")
         else:
             for indice_vaga, job_item in enumerate(jobs_ordenados, 1):
                 linhas_relatorio.extend(
@@ -138,9 +132,7 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
 
         # 2. Posts (Ordenados pelo maior match primeiro)
         posts_ordenados = sorted(container.post, key=_obter_chave_ordenacao, reverse=True)
-        linhas_relatorio.append(
-            f"## 💬 Posts do LinkedIn (Total exibido: {len(posts_ordenados)})\n"
-        )
+        linhas_relatorio.append(f"## 💬 Posts do LinkedIn (Total exibido: {len(posts_ordenados)})\n")
         if not posts_ordenados:
             linhas_relatorio.append("_Nenhum post encontrado nesta categoria._\n")
         else:
@@ -164,7 +156,95 @@ def gerar_relatorio_markdown(dados: ProcessedDataOutput, caminho_relatorio: Path
     with open(caminho_relatorio, "w", encoding="utf-8") as arquivo:
         arquivo.write("\n".join(linhas_relatorio))
 
-    logger.info(
-        f"📄 Relatório formatado em Markdown gerado com sucesso em '{caminho_relatorio}'."
-    )
+    logger.info(f"📄 Relatório LinkedIn gerado com sucesso em '{caminho_relatorio}'.")
 
+
+def gerar_relatorio_ats_markdown(dados: AtsReportOutput, caminho_relatorio: Path) -> None:
+    data_hoje_formatada = datetime.now().strftime("%d/%m/%Y")
+    linhas_relatorio = [
+        f"# 🏢 Relatório de Match ATS (Gupy & InHire) - {data_hoje_formatada}\n",
+        "Este relatório compila oportunidades 100% remotas extraídas diretamente das APIs da **Gupy** e **InHire**, "
+        "com descrições enriquecidas e ordenadas pelo maior índice de compatibilidade com o seu currículo!\n",
+        "> **Resumo Executivo da Rodada:**\n"
+        f"> - 🎯 **Match Mínimo Considerado**: {dados.filtro_threshold_minimo}%\n"
+        f"> - ✨ **Total de Vagas Qualificadas**: {dados.total_aprovados}\n"
+        f"> - 🟣 **Vagas Gupy**: {dados.total_gupy}\n"
+        f"> - 🟢 **Vagas InHire**: {dados.total_inhire}\n",
+        "> **Legenda Motivacional de Match:**\n"
+        "> - 🔥 **90% - 100%**: Match Perfeito / Altíssima Aderência (Prioridade Máxima)\n"
+        "> - 🚀 **80% - 89%**: Match Excelente (Forte alinhamento técnico)\n"
+        "> - ⚡ **70% - 79%**: Match Alto (Boa aderência às tecnologias principais)\n"
+        "> - 🎯 **60% - 69%**: Match Qualificado (Atinge requisitos mínimos do perfil)\n"
+        "> - 💡 **40% - 59%**: Match Médio\n"
+        "> - ⚪ **< 40%**: Match Baixo\n",
+        "---\n",
+    ]
+
+    # Seção 1: Ranking Geral ATS
+    linhas_relatorio.append(f"# 🔥 Ranking Geral ATS (Gupy + InHire) - {dados.total_aprovados} vagas\n")
+    if not dados.vagas:
+        linhas_relatorio.append(f"_Nenhuma vaga ATS encontrada com match mínimo de {dados.filtro_threshold_minimo}%._\n")
+    else:
+        for indice, vaga in enumerate(dados.vagas, 1):
+            linhas_relatorio.extend(
+                _formatar_item_markdown(
+                    indice=indice,
+                    item=vaga,
+                    titulo=vaga.titulo,
+                    empresa=vaga.empresa,
+                    localizacao=vaga.localizacao,
+                    data_postagem=vaga.data_postagem,
+                    link=vaga.link,
+                    match_curriculo=vaga.match_curriculo,
+                )
+            )
+
+    linhas_relatorio.append("---\n")
+
+    # Seção 2: Vagas Gupy
+    linhas_relatorio.append(f"# 🟣 Oportunidades Gupy (Total: {dados.total_gupy})\n")
+    if not dados.vagas_gupy:
+        linhas_relatorio.append("_Nenhuma vaga Gupy qualificada nesta rodada._\n")
+    else:
+        for indice, vaga in enumerate(dados.vagas_gupy, 1):
+            linhas_relatorio.extend(
+                _formatar_item_markdown(
+                    indice=indice,
+                    item=vaga,
+                    titulo=vaga.titulo,
+                    empresa=vaga.empresa,
+                    localizacao=vaga.localizacao,
+                    data_postagem=vaga.data_postagem,
+                    link=vaga.link,
+                    match_curriculo=vaga.match_curriculo,
+                )
+            )
+
+    linhas_relatorio.append("---\n")
+
+    # Seção 3: Vagas InHire
+    linhas_relatorio.append(f"# 🟢 Oportunidades InHire (Total: {dados.total_inhire})\n")
+    if not dados.vagas_inhire:
+        linhas_relatorio.append("_Nenhuma vaga InHire qualificada nesta rodada._\n")
+    else:
+        for indice, vaga in enumerate(dados.vagas_inhire, 1):
+            linhas_relatorio.extend(
+                _formatar_item_markdown(
+                    indice=indice,
+                    item=vaga,
+                    titulo=vaga.titulo,
+                    empresa=vaga.empresa,
+                    localizacao=vaga.localizacao,
+                    data_postagem=vaga.data_postagem,
+                    link=vaga.link,
+                    match_curriculo=vaga.match_curriculo,
+                )
+            )
+
+    linhas_relatorio.append("---\n")
+
+    caminho_relatorio.parent.mkdir(parents=True, exist_ok=True)
+    with open(caminho_relatorio, "w", encoding="utf-8") as arquivo:
+        arquivo.write("\n".join(linhas_relatorio))
+
+    logger.info(f"📄 Relatório ATS gerado com sucesso em '{caminho_relatorio}'.")
