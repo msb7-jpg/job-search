@@ -1,14 +1,12 @@
 from pydantic import BaseModel
 
-from app.models.enums import ItemTypeEnum, PlatformEnum, ScopeEnum, SeniorityEnum, WorkModelEnum
+from app.models.enums import SeniorityEnum, WorkModelEnum
 from app.models.match import ResumeMatch
 
 
 class JobItem(BaseModel):
     job_id: str
-    tipo: ItemTypeEnum = ItemTypeEnum.JOB
-    plataforma: PlatformEnum = PlatformEnum.LINKEDIN
-    escopo: ScopeEnum = ScopeEnum.NACIONAL
+    provider: str = "LinkedIn"
     titulo: str
     empresa: str = "N/A"
     localizacao: str = "Brazil"

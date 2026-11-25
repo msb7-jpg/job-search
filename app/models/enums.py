@@ -1,22 +1,6 @@
 from enum import StrEnum
 
 
-class ScopeEnum(StrEnum):
-    NACIONAL = "nacional"
-    INTERNACIONAL = "internacional"
-
-
-class PlatformEnum(StrEnum):
-    LINKEDIN = "LinkedIn"
-    GUPY = "Gupy"
-    INHIRE = "InHire"
-
-
-class ItemTypeEnum(StrEnum):
-    JOB = "jobs"
-    POST = "post"
-
-
 class SeniorityEnum(StrEnum):
     ESTAGIO = "Estágio"
     JUNIOR = "Júnior"

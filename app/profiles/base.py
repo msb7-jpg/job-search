@@ -13,8 +13,8 @@ class ScoringRule(BaseModel):
 
 
 class Profile(BaseModel):
-    name: str = Field(..., description="Identificador único em minúsculas (ex: 'backend', 'fullstack').")
-    display_name: str = Field(..., description="Nome de exibição amigável do perfil.")
+    name: str = Field(default="padrao", description="Identificador único do perfil.")
+    display_name: str = Field(default="Desenvolvedor Python", description="Nome de exibição amigável do perfil.")
     skills_map: dict[str, str] = Field(
         default_factory=dict,
         description="Dicionário de mapeamento de palavras-chave para o nome canônico da habilidade.",
@@ -27,29 +27,17 @@ class Profile(BaseModel):
         default_factory=list,
         description="Regras de pontuação para cálculo do score do perfil.",
     )
-    queries_jobs_nacionais: list[tuple[str, str]] = Field(
+    queries_jobs: list[str] = Field(
         default_factory=list,
-        description="Lista de tuplas (palavra-chave, localização) para busca de vagas nacionais.",
-    )
-    queries_jobs_internacionais: list[tuple[str, str]] = Field(
-        default_factory=list,
-        description="Lista de tuplas (query, localização) para busca de vagas internacionais.",
-    )
-    queries_posts_nacionais: list[str] = Field(
-        default_factory=list,
-        description="Lista de queries booleanas para busca de posts nacionais via SearXNG.",
-    )
-    queries_posts_internacionais: list[str] = Field(
-        default_factory=list,
-        description="Lista de queries booleanas para busca de posts internacionais via SearXNG.",
+        description="Lista única de queries de tecnologias para busca de vagas no LinkedIn.",
     )
     queries_ats: list[str] = Field(
         default_factory=list,
-        description="Lista de termos de busca de vagas na API da Gupy.",
+        description="Lista única de termos de busca de vagas na API da Gupy.",
     )
     termos_cargo_inhire: list[str] = Field(
         default_factory=list,
-        description="Palavras-chave de título de vaga para filtrar vagas nos tenants da InHire.",
+        description="Palavras-chave de título/stack para filtrar vagas nos tenants da InHire.",
     )
     metadados: dict[str, Any] = Field(
         default_factory=dict,

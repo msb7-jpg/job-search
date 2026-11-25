@@ -3,7 +3,6 @@ import re
 from app.models.enums import MatchLevelEnum
 from app.models.job import JobItem
 from app.models.match import ProfileMatch, ResumeMatch
-from app.models.post import PostItem
 from app.profiles.base import Profile
 
 
@@ -50,23 +49,12 @@ def calcular_perfil_match(texto: str, perfil: Profile) -> ProfileMatch:
 
 
 def avaliar_compatibilidade(
-    item: JobItem | PostItem,
-    perfis: list[Profile],
+    item: JobItem,
+    perfil: Profile,
 ) -> ResumeMatch:
     texto_analise = f"{item.titulo} {item.descricao_completa or item.descricao_resumida}"
-
-    resultado_perfis: dict[str, ProfileMatch] = {}
-    for perfil in perfis:
-        resultado_perfis[perfil.name] = calcular_perfil_match(texto_analise, perfil)
-
-    backend_match = resultado_perfis.get("backend")
-    fullstack_match = resultado_perfis.get("fullstack")
-
-    return ResumeMatch(
-        perfis=resultado_perfis,
-        backend=backend_match,
-        fullstack=fullstack_match,
-    )
+    perfil_match = calcular_perfil_match(texto_analise, perfil)
+    return ResumeMatch(perfil=perfil_match)
 
 
 TECNOLOGIAS_CONCORRENTES_MAP: dict[str, str] = {
@@ -92,7 +80,7 @@ TECNOLOGIAS_CONCORRENTES_MAP: dict[str, str] = {
 
 
 def gerar_diagnostico_descarte_keywords(
-    item: JobItem | PostItem,
+    item: JobItem,
     match_curriculo: ResumeMatch | None,
     threshold: int,
 ) -> str:
@@ -100,9 +88,8 @@ def gerar_diagnostico_descarte_keywords(
 
     # 1. Habilidades compatíveis encontradas
     habilidades_encontradas: set[str] = set()
-    if match_curriculo and match_curriculo.perfis:
-        for perfil_match in match_curriculo.perfis.values():
-            habilidades_encontradas.update(perfil_match.habilidades_compativeis)
+    if match_curriculo and match_curriculo.perfil:
+        habilidades_encontradas.update(match_curriculo.perfil.habilidades_compativeis)
 
     score_max = match_curriculo.score_maximo if match_curriculo else 0
 
@@ -111,7 +98,7 @@ def gerar_diagnostico_descarte_keywords(
     if "Python" not in habilidades_encontradas:
         faltando_essenciais.append("Python (Linguagem Principal)")
     if not any(fw in habilidades_encontradas for fw in ["Django", "FastAPI", "Flask"]):
-        faltando_essenciais.append("Framework Backend (Django/FastAPI/Flask)")
+        faltando_essenciais.append("Framework Web Python (Django/FastAPI/Flask)")
     if not any(fw in habilidades_encontradas for fw in ["Vue.js", "React.js", "TypeScript"]):
         faltando_essenciais.append("Frontend Moderno (Vue.js/React.js/TypeScript)")
 
@@ -121,7 +108,7 @@ def gerar_diagnostico_descarte_keywords(
         if re.search(padrao, texto_analise):
             concorrentes_detectadas.add(nome_tech)
 
-    partes: list[str] = [f"Compatibilidade insuficiente com o currículo (Score máximo: {score_max}% < {threshold}%)."]
+    partes: list[str] = [f"Compatibilidade insuficiente com o currículo (Score: {score_max}% < {threshold}%)."]
 
     if habilidades_encontradas:
         partes.append(f"Tecnologias compatíveis identificadas: {', '.join(sorted(habilidades_encontradas))}.")

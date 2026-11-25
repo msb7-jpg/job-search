@@ -1,6 +1,7 @@
 import contextlib
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -10,20 +11,24 @@ from app.core.config import Settings
 from app.core.logging import logger
 from app.models.job import JobItem
 from app.models.match import LlmEvaluation
+from app.tailor.models import DEFAULT_MASTER_PROFILE_PATH, load_master_profile
 
-CURRICULO_FALLBACK = """
-Candidato: Miguel Batista (Recife, PE, Brasil)
-Experiência Profissional: ~2 anos de experiência (Nível Júnior / Entry-Level).
-- Desenvolvedor Full-Stack no Projeto CIn Motorola (Abr 2025 - Presente): Python, Django, Vue 2/3 Composition API, TypeScript, GCP, Vertex AI Gemini, Docker, Pytest, Jenkins, GitLab CI.
-- Desenvolvedor de Soluções na Masterboi (Jul 2024 - Abr 2025): Python, Django, Pandas, SQL, REST APIs, Docker, Linux, GitHub Actions, Selenium.
-- Formação: Ciência da Computação na CESAR School (2023 - 2027) e Monitor Acadêmico (C, SQL, PostgreSQL, Python, Django).
-Stack Principal: Python, FastAPI, Django, Flask, Vue.js (Vue 2/3), React.js (React 19), TypeScript, JavaScript, PostgreSQL, MySQL, Redis, RabbitMQ, Celery, LangChain, LangGraph, Vertex AI, PySpark, Databricks, Docker, Linux, AWS, GCP.
-Idiomas: Português nativo, Inglês fluente (B2).
-Disponibilidade: Busca vagas de nível Júnior (até 2 anos de experiência exigidos), 100% Remotas (Brasil ou Internacional LATAM/Global acessível do Brasil) ou em Recife-PE.
-""".strip()
+CURRICULO_FALLBACK = "Software Engineer candidate profile not yet configured."
 
 
 def carregar_texto_curriculo(caminho_curriculo: Path) -> str:
+    master_profile_path = caminho_curriculo.parent / "master_profile.json"
+    if not master_profile_path.exists():
+        master_profile_path = DEFAULT_MASTER_PROFILE_PATH
+
+    if master_profile_path.exists():
+        try:
+            profile_text = load_master_profile(master_profile_path).to_llm_summary_text().strip()
+            if profile_text:
+                return profile_text
+        except Exception as erro:
+            logger.warning(f"⚠️ [LLM-JUDGE] Falha ao ler master_profile.json: {erro}")
+
     if caminho_curriculo.exists():
         try:
             texto = caminho_curriculo.read_text(encoding="utf-8").strip()
@@ -111,7 +116,7 @@ def avaliar_vaga_com_llm(
         "   - REJEITE (aprovado = false) se o foco principal obrigatório da vaga for outra tecnologia incompatível (ex: Go avançado, PHP, .NET/C#, Java exclusivo, Angular exclusivo sem Python, ou vaga não-técnica de Produto/PM/SEO).\n"
         "4. PROIBIDO TREINAMENTO/AVALIAÇÃO DE MODELOS DE IA E EMPRESAS FACTORY (ex: Micro1, Outlier, DataAnnotation, Invisible):\n"
         "   - REJEITE (aprovado = false) se a vaga for para treinar IA, avaliar prompts, RLHF, anotação de dados, human data platform, ou se a empresa for Micro1 (ou similar).\n"
-        "   - O candidato busca EXCLUSIVAMENTE vagas de engenharia de software real (backend e/ou full-stack em produto).\n\n"
+        "   - O candidato busca EXCLUSIVAMENTE vagas de engenharia de software real em produto.\n\n"
         "Responda APENAS com um objeto JSON válido neste formato exato:\n"
         "{\n"
         '  "aprovado": true ou false,\n'
@@ -125,8 +130,7 @@ def avaliar_vaga_com_llm(
 
     prompt_usuario = (
         f"Avalie a vaga abaixo:\n"
-        f"- Plataforma: {vaga.plataforma}\n"
-        f"- Escopo: {vaga.escopo}\n"
+        f"- Provedor: {vaga.provider}\n"
         f"- Título da Vaga: {vaga.titulo}\n"
         f"- Empresa: {vaga.empresa}\n"
         f"- Localização Informada: {vaga.localizacao}\n"
@@ -186,17 +190,19 @@ def avaliar_vaga_com_llm(
                     anos_experiencia_exigidos=anos_int,
                     remoto_viavel_brasil=remoto_bool,
                     justificativa=str(json_extraido.get("justificativa") or ""),
+                    status="APPROVED" if aprovado_bool else "REJECTED",
                 )
     except Exception as erro:
         logger.warning(f"⚠️ [LLM-JUDGE] Erro ao avaliar vaga '{vaga.titulo}': {erro}")
 
     return LlmEvaluation(
-        aprovado=True,
-        score_llm=70,
+        aprovado=False,
+        score_llm=0,
         nivel_detectado=vaga.senioridade.value,
         anos_experiencia_exigidos=None,
         remoto_viavel_brasil=True,
-        justificativa="Aprovada pelo filtro heurístico (fallback de resposta do LLM).",
+        justificativa="Avaliação pendente (servidor LLM indisponível ou resposta inválida).",
+        status="PENDING",
     )
 
 
@@ -204,9 +210,10 @@ def filtrar_vagas_com_llm_em_lote(
     vagas: list[JobItem],
     settings: Settings,
     rotulo_lote: str,
-) -> tuple[list[JobItem], list[JobItem]]:
+) -> tuple[list[JobItem], list[JobItem], list[JobItem]]:
+    """Avalia vagas em paralelo via LLM Judge. Retorna (aprovadas, rejeitadas, pendentes)."""
     if not vagas or not settings.usar_filtro_llm:
-        return vagas, []
+        return vagas, [], []
 
     ativo, modelo_detectado = verificar_servidor_llm_ativo(
         base_url=settings.llm_base_url,
@@ -216,27 +223,38 @@ def filtrar_vagas_com_llm_em_lote(
 
     if not ativo:
         logger.warning(
-            f"⚠️ [LLM-JUDGE] Servidor LLM inativo em {settings.llm_base_url}. Mantendo filtro heurístico para lote '{rotulo_lote}'."
+            f"⚠️ [LLM-JUDGE] Servidor LLM inativo em {settings.llm_base_url}. "
+            f"Marcando {len(vagas)} vagas de '{rotulo_lote}' como PENDING para reavaliação futura."
         )
-        return vagas, []
+        for vaga in vagas:
+            if vaga.match_curriculo:
+                vaga.match_curriculo.avaliacao_llm = LlmEvaluation(
+                    aprovado=False,
+                    score_llm=0,
+                    nivel_detectado=vaga.senioridade.value,
+                    justificativa="Servidor LLM inativo durante a execução.",
+                    status="PENDING",
+                )
+        return [], [], list(vagas)
 
     model_name = settings.llm_model_name or modelo_detectado or "gemini-3.8-flash"
     texto_curriculo = carregar_texto_curriculo(settings.caminho_curriculo_md)
     vagas_aprovadas_llm: list[JobItem] = []
     vagas_rejeitadas_llm: list[JobItem] = []
+    vagas_pendentes_llm: list[JobItem] = []
+    workers = max(1, min(settings.llm_max_workers, len(vagas)))
 
     logger.info(
-        f"🧠 [LLM-JUDGE] Avaliando {len(vagas)} vagas de '{rotulo_lote}' via {settings.llm_base_url} ({model_name}) "
-        f"contra seu currículo (Máx {settings.max_anos_experiencia} anos XP | 100% Remoto BR)..."
+        f"🧠 [LLM-JUDGE] Avaliando {len(vagas)} vagas de '{rotulo_lote}' (workers={workers}) via {settings.llm_base_url} ({model_name})..."
     )
 
-    with tqdm(
-        total=len(vagas),
-        desc=f"🧠 [LLM] Julgando {rotulo_lote}",
-        unit="vaga",
-    ) as barra_llm:
-        for vaga in vagas:
-            avaliacao = avaliar_vaga_com_llm(
+    with (
+        ThreadPoolExecutor(max_workers=workers) as executor,
+        tqdm(total=len(vagas), desc=f"🧠 [LLM] Julgando {rotulo_lote}", unit="vaga") as barra_llm,
+    ):
+        futuros = {
+            executor.submit(
+                avaliar_vaga_com_llm,
                 vaga=vaga,
                 texto_curriculo=texto_curriculo,
                 base_url=settings.llm_base_url,
@@ -244,94 +262,39 @@ def filtrar_vagas_com_llm_em_lote(
                 api_key=settings.llm_api_key,
                 max_anos_experiencia=settings.max_anos_experiencia,
                 timeout=settings.llm_timeout,
-            )
+            ): vaga
+            for vaga in vagas
+        }
+        for futuro in as_completed(futuros):
+            vaga = futuros[futuro]
+            avaliacao = futuro.result()
             if vaga.match_curriculo:
                 vaga.match_curriculo.avaliacao_llm = avaliacao
 
-            if avaliacao.aprovado:
+            if avaliacao.status == "PENDING":
+                vagas_pendentes_llm.append(vaga)
+                logger.warning(f"⏳ [LLM-PENDING] [{vaga.provider}] {vaga.titulo} ({vaga.empresa}) -> {avaliacao.justificativa}")
+            elif avaliacao.aprovado:
                 vagas_aprovadas_llm.append(vaga)
-                logger.info(f"✅ [LLM-APPROVE] [{vaga.plataforma}] {vaga.titulo} ({vaga.empresa}) -> {avaliacao.justificativa}")
+                logger.info(f"✅ [LLM-APPROVE] [{vaga.provider}] {vaga.titulo} ({vaga.empresa}) -> {avaliacao.justificativa}")
             else:
                 vaga.camada_descarte = "LLM Judge Semântico (IA)"
                 vaga.motivo_descarte = avaliacao.justificativa
                 vagas_rejeitadas_llm.append(vaga)
                 logger.info(
-                    f"❌ [LLM-REJECT] [{vaga.plataforma}] {vaga.titulo} ({vaga.empresa}) "
+                    f"❌ [LLM-REJECT] [{vaga.provider}] {vaga.titulo} ({vaga.empresa}) "
                     f"[Nível: {avaliacao.nivel_detectado}] -> {avaliacao.justificativa}"
                 )
 
             barra_llm.set_postfix(
                 aprovadas=len(vagas_aprovadas_llm),
                 rejeitadas=len(vagas_rejeitadas_llm),
+                pendentes=len(vagas_pendentes_llm),
             )
             barra_llm.update(1)
 
     logger.info(
-        f"🧠 [LLM-JUDGE] Resultado '{rotulo_lote}': {len(vagas_aprovadas_llm)} vagas 100% fiéis aprovadas | "
-        f"{len(vagas_rejeitadas_llm)} vagas descartadas pelo LLM."
+        f"🧠 [LLM-JUDGE] Resultado '{rotulo_lote}': {len(vagas_aprovadas_llm)} aprovadas | "
+        f"{len(vagas_rejeitadas_llm)} rejeitadas | {len(vagas_pendentes_llm)} pendentes."
     )
-    return vagas_aprovadas_llm, vagas_rejeitadas_llm
-
-
-def executar_teste_llm() -> None:
-    """Função standalone para testar conexão e avaliação com o endpoint configurado."""
-    cfg = Settings()
-    print("=" * 80)
-    print("🧠 TESTE DE CONEXÃO E AVALIAÇÃO COM LLM JUDGE (OPENAI-COMPATIBLE)")
-    print(f"🔗 Endpoint Base URL: {cfg.llm_base_url}")
-    print(f"🤖 Modelo Configurado: {cfg.llm_model_name}")
-    print("=" * 80)
-
-    ativo, modelo_detectado = verificar_servidor_llm_ativo(cfg.llm_base_url, cfg.llm_api_key, timeout=4)
-    if not ativo:
-        print(f"❌ Erro: O servidor em {cfg.llm_base_url} não respondeu ao endpoint /models.")
-        return
-
-    print(f"✅ Conexão bem-sucedida! Servidor ativo (Modelo detectado: {modelo_detectado}).")
-
-    # Vaga de teste realista
-    vaga_teste = JobItem(
-        job_id="test_001",
-        titulo="Desenvolvedor Python Júnior (Remoto)",
-        empresa="Tech Innovations Brasil",
-        localizacao="Remoto - Brasil",
-        link="https://linkedin.com/jobs/view/test-001",
-        descricao_completa=(
-            "Buscamos desenvolvedor Python Júnior com até 2 anos de experiência para atuar com Django, "
-            "FastAPI e PostgreSQL em regime 100% remoto para todo o Brasil. Desejável conhecimento em Vue.js ou React."
-        ),
-    )
-
-    curriculo = carregar_texto_curriculo(cfg.caminho_curriculo_md)
-    print("\n🔍 Avaliando vaga de teste:")
-    print(f"   Título: {vaga_teste.titulo}")
-    print(f"   Empresa: {vaga_teste.empresa}")
-    print(f"   Descrição: {vaga_teste.descricao_completa}")
-    print("\n⏳ Enviando requisição para o LLM Judge...")
-
-    inicio = __import__("time").perf_counter()
-    resultado = avaliar_vaga_com_llm(
-        vaga=vaga_teste,
-        texto_curriculo=curriculo,
-        base_url=cfg.llm_base_url,
-        model_name=cfg.llm_model_name,
-        api_key=cfg.llm_api_key,
-        max_anos_experiencia=cfg.max_anos_experiencia,
-        timeout=cfg.llm_timeout,
-    )
-    tempo_total = __import__("time").perf_counter() - inicio
-
-    print("=" * 80)
-    print("📊 RESULTADO DA AVALIAÇÃO:")
-    print(f"   Aprovado: {'✅ SIM' if resultado.aprovado else '❌ NÃO'}")
-    print(f"   Score LLM: {resultado.score_llm}/100")
-    print(f"   Nível Detectado: {resultado.nivel_detectado}")
-    print(f"   Anos de Experiência Exigidos: {resultado.anos_experiencia_exigidos}")
-    print(f"   Remoto Viável no Brasil: {'Sim' if resultado.remoto_viavel_brasil else 'Não'}")
-    print(f"   Justificativa: {resultado.justificativa}")
-    print(f"   Tempo de Resposta: {tempo_total:.2f}s")
-    print("=" * 80)
-
-
-if __name__ == "__main__":
-    executar_teste_llm()
+    return vagas_aprovadas_llm, vagas_rejeitadas_llm, vagas_pendentes_llm

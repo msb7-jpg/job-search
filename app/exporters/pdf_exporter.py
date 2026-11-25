@@ -5,8 +5,15 @@ from datetime import datetime
 from pathlib import Path
 
 from app.core.logging import logger
-from app.models.enums import PlatformEnum
 from app.models.job import JobItem
+
+PROVIDER_BADGE_COLORS: dict[str, tuple[str, str]] = {
+    "linkedin": ("#0a66c2", "#ffffff"),
+    "gupy": ("#7c3aed", "#ffffff"),
+    "inhire": ("#059669", "#ffffff"),
+    "ci&t": ("#dc2626", "#ffffff"),
+    "fullstack": ("#0284c7", "#ffffff"),
+}
 
 # ==============================================================================
 # SVGs Vetoriais Embutidos (Renderização 100% garantida no Chromium PDF)
@@ -125,19 +132,18 @@ def _formatar_data_hoje(data_str: str | None = None) -> str:
     return datetime.now().strftime("%d/%m/%Y")
 
 
-def _obter_cor_plataforma(plataforma: PlatformEnum | str) -> tuple[str, str]:
-    """Retorna (cor_fundo, cor_texto) para o badge da plataforma."""
-    plat_str = str(plataforma).lower()
-    if "linkedin" in plat_str:
-        return "#0a66c2", "#ffffff"
-    if "gupy" in plat_str:
-        return "#7c3aed", "#ffffff"
-    if "inhire" in plat_str:
-        return "#059669", "#ffffff"
-    return "#475569", "#ffffff"
+def _obter_cor_plataforma(provider: str) -> tuple[str, str]:
+    """Retorna (cor_fundo, cor_texto) para o badge do provedor."""
+    chave = (provider or "").strip().lower()
+    if chave in PROVIDER_BADGE_COLORS:
+        return PROVIDER_BADGE_COLORS[chave]
+    for nome_reg, cores in PROVIDER_BADGE_COLORS.items():
+        if nome_reg in chave or chave in nome_reg:
+            return cores
+    return ("#475569", "#ffffff")
 
 
-def _renderizar_html_para_pdf(conteudo_html: str, caminho_pdf: Path) -> Path:
+def render_html_to_pdf(conteudo_html: str, caminho_pdf: Path) -> Path:
     """Renderiza uma string HTML para PDF utilizando o Chromium Headless."""
     caminho_pdf.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8", delete=False) as temp_html:
@@ -174,6 +180,10 @@ def _renderizar_html_para_pdf(conteudo_html: str, caminho_pdf: Path) -> Path:
     return caminho_pdf
 
 
+def _renderizar_html_para_pdf(conteudo_html: str, caminho_pdf: Path) -> Path:
+    return render_html_to_pdf(conteudo_html, caminho_pdf)
+
+
 def gerar_relatorio_qualificadas_pdf(
     vagas: list[JobItem],
     caminho_pdf: Path,
@@ -185,13 +195,13 @@ def gerar_relatorio_qualificadas_pdf(
 
     cards_html: list[str] = []
     for indice, vaga in enumerate(vagas, 1):
-        bg_plat, text_plat = _obter_cor_plataforma(vaga.plataforma)
+        bg_plat, text_plat = _obter_cor_plataforma(vaga.provider)
         titulo_esc = html.escape(vaga.titulo)
         empresa_esc = html.escape(vaga.empresa)
         local_esc = html.escape(vaga.localizacao)
         postagem_esc = html.escape(vaga.data_postagem)
         link_esc = html.escape(vaga.link)
-        plataforma_esc = html.escape(str(vaga.plataforma))
+        plataforma_esc = html.escape(str(vaga.provider))
 
         score_heuristico = vaga.match_curriculo.score_maximo if vaga.match_curriculo else 0
         avaliacao_llm = vaga.match_curriculo.avaliacao_llm if vaga.match_curriculo else None
@@ -207,9 +217,8 @@ def gerar_relatorio_qualificadas_pdf(
 
         # Extrair habilidades
         skills: list[str] = []
-        if vaga.match_curriculo and vaga.match_curriculo.perfis:
-            for perfil in vaga.match_curriculo.perfis.values():
-                skills.extend(perfil.habilidades_compativeis)
+        if vaga.match_curriculo and vaga.match_curriculo.perfil:
+            skills.extend(vaga.match_curriculo.perfil.habilidades_compativeis)
         skills_unicas = sorted(set(skills))
         pills_html = (
             "".join(f'<span class="skill-pill">{html.escape(skill)}</span>' for skill in skills_unicas)
@@ -610,12 +619,12 @@ def gerar_relatorio_rejeitadas_pdf(
 
     itens_html: list[str] = []
     for indice, vaga in enumerate(vagas_rejeitadas, 1):
-        bg_plat, text_plat = _obter_cor_plataforma(vaga.plataforma)
+        bg_plat, text_plat = _obter_cor_plataforma(vaga.provider)
         titulo_esc = html.escape(vaga.titulo)
         empresa_esc = html.escape(vaga.empresa)
         local_esc = html.escape(vaga.localizacao)
         link_esc = html.escape(vaga.link)
-        plataforma_esc = html.escape(str(vaga.plataforma))
+        plataforma_esc = html.escape(str(vaga.provider))
         camada_esc = html.escape(vaga.camada_descarte or "Filtro Heurístico / LLM")
         motivo_esc = html.escape(vaga.motivo_descarte or "Incompatível com os requisitos de experiência ou modalidade.")
 
@@ -936,11 +945,11 @@ def gerar_relatorio_rejeitadas_markdown(
         motivo = vaga.motivo_descarte or "Incompatível com o perfil desejado."
         linhas.extend(
             [
-                f"### {indice}. [{vaga.plataforma}] {vaga.titulo} ({vaga.empresa})",
+                f"### {indice}. [{vaga.provider}] {vaga.titulo} ({vaga.empresa})",
                 f"- **Localização**: {vaga.localizacao} | **Postagem**: {vaga.data_postagem}",
                 f"- **Camada de Bloqueio**: `{camada}`",
                 f"- **Diagnóstico / Justificativa**: {motivo}",
-                f"- 🔗 [Ver vaga no {vaga.plataforma}]({vaga.link})\n",
+                f"- 🔗 [Ver vaga no {vaga.provider}]({vaga.link})\n",
             ]
         )
 
