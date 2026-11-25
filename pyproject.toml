@@ -6,12 +6,17 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "beautifulsoup4>=4.15.0",
-    "googlesearch-python>=1.3.0",
+    "fastapi>=0.115.0",
     "httpx>=0.28.1",
+    "jinja2>=3.1.0",
     "pydantic>=2.13.5",
+    "pypdf>=5.0.0",
     "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.20",
     "requests>=2.34.2",
+    "sqlalchemy>=2.0.0",
     "tqdm>=4.70.0",
+    "uvicorn>=0.34.0",
 ]
 
 [tool.ruff]
@@ -38,6 +43,7 @@ select = [
     "PL",    # Pylint (refactoring, design, and code style rules)
     "TRY",   # tryceratops (exception handling best practices)
     "FURB",  # refurb (modern Python refactoring idioms)
+    "C901",  # McCabe cyclomatic complexity
 ]
 
 ignore = [
@@ -57,5 +63,41 @@ combine-as-imports = true
 
 [dependency-groups]
 dev = [
+    "import-linter>=2.3",
+    "pyright>=1.1.400",
+    "pytest>=8.3.0",
     "ruff>=0.16.5",
 ]
+
+[tool.pyright]
+pythonVersion = "3.14"
+include = ["app", "proxy_pool", "scripts"]
+typeCheckingMode = "standard"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.importlinter]
+root_packages = ["app", "proxy_pool"]
+
+[[tool.importlinter.contracts]]
+name = "proxy_pool must stay independent of app"
+type = "forbidden"
+source_modules = ["proxy_pool"]
+forbidden_modules = ["app"]
+
+[[tool.importlinter.contracts]]
+name = "app.db must not depend on api or tailor"
+type = "forbidden"
+source_modules = ["app.db"]
+forbidden_modules = ["app.api", "app.tailor"]
+
+[[tool.importlinter.contracts]]
+name = "app.providers must not depend on api or tailor"
+type = "forbidden"
+source_modules = ["app.providers"]
+forbidden_modules = ["app.api", "app.tailor"]

@@ -6,13 +6,25 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
+# Virtual environments & secrets
 .venv
 venv
 .env
 gen-lang-client-0665969287-070ed30d9437.json
 
-# Caches and runtime binaries
+# Runtime database, caches & generated reports
+app/data/*.db
+app/data/*.db-*
 app/data/proxy_tier_a.json
 app/data/*.pdf
+app/data/relatorio_*.md
+app/data/vagas_*.json
+app/data/resumes/
+app/data/search_config.json
+app/data/master_profile.json
 
+# Frontend
+web/node_modules/
+web/dist/
+.fallow/
+web/.fallow/
