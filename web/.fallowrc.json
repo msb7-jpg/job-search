@@ -1,0 +1,16 @@
+{
+  "ignorePatterns": [
+    "src/api/openapi.d.ts",
+    "src/components/ui/**"
+  ],
+  "ignoreDependencies": [
+    "openapi-typescript",
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "health": {
+    "maxCyclomatic": 15,
+    "maxCognitive": 20,
+    "maxCrap": 100
+  }
+}

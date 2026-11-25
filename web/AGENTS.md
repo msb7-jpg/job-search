@@ -1,0 +1,12 @@
+# Frontend Rules (`web/`)
+
+- **Package Manager & Runner:** Always use **`bun`** (`bun install`, `bun run --cwd web ...`, `bunx --cwd web ...`). Never use `npm` or `npx`.
+- **Feature-Folder + Page Orchestrator Pattern:** All pages live in `src/features/<domain>/`. `*Page.tsx`, `ReviewStudioModal.tsx`, and `App.tsx` must remain pure orchestrators (`<= 120` lines) delegating hooks (`hooks/*.ts`) and UI (`components/*.tsx`, `<= 200` lines).
+- **Clean Code & Naming:** Zero single-letter variables (`id-length: min 2`). Never compare/switch on raw string literals—use named constants (`web/src/lib/constants.ts`). Extract explaining variables for non-trivial `if` conditions.
+- **TSDoc / JSDoc:** Every exported function, component, hook, type/interface, and interface property must have a valid `/** ... */` TSDoc comment (`jsdoc/require-jsdoc`, `tsdoc/syntax`).
+- **API Contract Sync:** Never hand-write backend response interfaces. Derive types from `web/src/api/openapi.d.ts` (regenerated via `make gen-api-types`) inside `web/src/types.ts`.
+- **TanStack Query v5 & Table v8:** Use `queryOptions` + Query Key Factory (`web/src/api/queries.ts`) and generic `<DataTable />` (`web/src/components/DataTable.tsx`).
+- **Idiomatic Preact Signals:** Always use `useSignal` and `useComputed` from `@preact/signals-react`. `@preact/signals-react-transform` (configured in `web/vite.config.ts`) tracks `.value` reads automatically, so `@preact/signals-react/runtime` (`useSignals()`) is banned by ESLint. Classic React hooks (`useState`, `useMemo`, `useEffect`, `useRef`, `useCallback`) are banned in components/pages by ESLint; `useEffect`/`useRef` are only permitted inside `src/**/hooks/*.ts` for genuine DOM/external lifecycle subscriptions (e.g. `EventSource`).
+- **shadcn-First UI Workflow:** Before building UI primitives, dialogs, tables, selects, or overlays, search the `shadcn` MCP registry (`search_items_in_registries`, `view_items_in_registries`, `get_item_examples_from_registries`) and install components via `bunx --cwd web shadcn@latest add <component>` into `web/src/components/ui/`. Never hand-roll primitives that exist in `shadcn/ui`.
+- **Zero-Overlap Gates:** `tsc` owns types/unused locals; `eslint` owns `id-length`, `max-lines`, `react-hooks`, `no-explicit-any`, and `boundaries`; `fallow` (`bun --cwd web run analyze`) owns `dead-code`, `dupes`, and cyclomatic/cognitive `health`.
+- **Aesthetic:** Minimalist light-green AI SaaS (`#FAFAFA` canvas, `#FFFFFF` cards, `emerald-50`/`emerald-600` accents, `Geist` + `Geist Mono`, `lucide-react` icons).

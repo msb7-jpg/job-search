@@ -1,0 +1,164 @@
+import {
+  Ban,
+  Bookmark,
+  ExternalLink,
+  FileText,
+  Layers,
+  MapPin,
+  Sparkles,
+  XCircle,
+} from 'lucide-react';
+import { FormattedDescription } from '@/components/FormattedDescription';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import type { JobDetail } from '@/types';
+
+/** Props for the right-hand Triage Inbox job detail pane. */
+interface JobDetailPaneProps {
+  /** Full job detail record, or `undefined` when nothing is selected. */
+  detail: JobDetail | undefined;
+  /** Opens the Review Studio modal for the given job ID. */
+  onTailor: (jobId: number) => void;
+  /** Marks the selected job as `SAVED`. */
+  onSave: () => void;
+  /** Marks the selected job as `IGNORED`. */
+  onIgnore: () => void;
+  /** Adds the selected job's company to the dynamic blacklist. */
+  onBlacklist: (companyName: string) => void;
+}
+
+/**
+ * Displays the selected job's metadata, cross-provider siblings, AI Judge assessment, and description.
+ */
+export function JobDetailPane({
+  detail,
+  onTailor,
+  onSave,
+  onIgnore,
+  onBlacklist,
+}: JobDetailPaneProps) {
+  if (!detail) {
+    return (
+      <Card className="flex min-h-0 flex-col overflow-hidden lg:col-span-7">
+        <div className="flex flex-1 items-center justify-center text-xs text-zinc-400">
+          Select a job to inspect details
+        </div>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="flex min-h-0 flex-col overflow-hidden lg:col-span-7">
+      <div className="border-b border-zinc-100 p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline">{detail.provider}</Badge>
+              <Badge variant="mint">{detail.work_model}</Badge>
+              <Badge variant="neutral">{detail.seniority}</Badge>
+            </div>
+            <h2 className="mt-2 text-base font-semibold tracking-tight text-zinc-950">
+              {detail.title}
+            </h2>
+            <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+              <span className="font-medium text-zinc-800">{detail.company}</span>
+              <span>•</span>
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="h-3 w-3" />
+                {detail.location}
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-1.5">
+            <Button variant="primary" size="sm" onClick={() => onTailor(detail.id)}>
+              <FileText className="h-3.5 w-3.5" />
+              Tailor (T)
+            </Button>
+            <Button variant="outline" size="sm" onClick={onSave}>
+              <Bookmark className="h-3.5 w-3.5" />
+              Save (S)
+            </Button>
+            <Button variant="ghost" size="sm" onClick={onIgnore}>
+              <XCircle className="h-3.5 w-3.5" />
+              Ignore (X)
+            </Button>
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => onBlacklist(detail.company)}
+              title="Add company to blacklist"
+            >
+              <Ban className="h-3.5 w-3.5" />
+              Blacklist
+            </Button>
+            <a
+              href={detail.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-7 items-center gap-1 rounded-md border border-zinc-200 bg-white px-2.5 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+              Open
+            </a>
+          </div>
+        </div>
+
+        {detail.siblings.length > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[11px] text-zinc-600">
+            <Layers className="h-3.5 w-3.5 text-emerald-600" />
+            <span>Also found on:</span>
+            {detail.siblings.map(sibling => (
+              <a
+                key={sibling.id}
+                href={sibling.url}
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-emerald-700 underline-offset-2 hover:underline"
+              >
+                {sibling.provider}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="flex-1 space-y-4 overflow-y-auto p-4">
+        {detail.evaluation && (
+          <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/45 p-3.5">
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
+                AI Judge Assessment
+              </span>
+              <div className="flex items-center gap-2 font-mono text-[11px]">
+                <span className="text-zinc-600">L1: {detail.evaluation.layer1_score}%</span>
+                <Badge variant="mint">LLM: {detail.evaluation.llm_score}%</Badge>
+              </div>
+            </div>
+            <p className="mt-1.5 text-xs leading-relaxed text-zinc-700">
+              {detail.evaluation.llm_reasoning}
+            </p>
+            {detail.evaluation.matched_skills.length > 0 && (
+              <div className="mt-2.5 flex flex-wrap gap-1.5">
+                {detail.evaluation.matched_skills.map(skill => (
+                  <Badge key={skill} variant="mint">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div>
+          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+            Job Description
+          </h3>
+          <FormattedDescription text={detail.description_md} />
+        </div>
+      </div>
+    </Card>
+  );
+}
