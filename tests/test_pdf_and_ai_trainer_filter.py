@@ -3,9 +3,9 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from app.exporters.pdf_exporter import gerar_relatorio_qualificadas_pdf
-from app.jobs.classifiers import avaliar_pre_filtro_job_bruto
-from app.models.enums import PlatformEnum, ScopeEnum, SeniorityEnum, WorkModelEnum
+from app.models.enums import SeniorityEnum, WorkModelEnum
 from app.models.job import JobItem
+from app.shared.classifiers import avaliar_pre_filtro_job_bruto
 
 
 class TestPdfAndAiTrainerFilter(unittest.TestCase):
@@ -73,8 +73,7 @@ class TestPdfAndAiTrainerFilter(unittest.TestCase):
                 empresa="Tech Corp",
                 localizacao="Remoto",
                 link="https://linkedin.com/jobs/view/101",
-                plataforma=PlatformEnum.LINKEDIN,
-                escopo=ScopeEnum.NACIONAL,
+                provider="LinkedIn",
                 modelo_trabalho=WorkModelEnum.REMOTO,
                 senioridade=SeniorityEnum.JUNIOR,
                 descricao_completa="Atuação com desenvolvimento de backend em Python, Django e PostgreSQL para produto interno.",

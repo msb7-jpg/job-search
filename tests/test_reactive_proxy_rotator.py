@@ -2,9 +2,9 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from app.shared.http.proxy_record import ProxyRecord
-from app.shared.http.proxy_rotator import RealtimeProxyRotator
-from app.shared.http.proxy_sources import (
+from proxy_pool.record import ProxyRecord
+from proxy_pool.rotator import RealtimeProxyRotator
+from proxy_pool.sources import (
     sanitizar_esquema_proxy,
     validar_integridade_semantica_resposta,
 )
