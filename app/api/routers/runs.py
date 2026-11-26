@@ -8,8 +8,8 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import get_db_session, get_settings
 from app.api.run_manager import run_manager
-from app.api.schemas import RunsOverviewResponse, ScrapeRunSchema, TriggerRunRequest
-from app.db import count_pending_llm_jobs, list_scrape_runs
+from app.api.schemas import RunsOverviewResponse, ScrapeRunLogsResponse, ScrapeRunSchema, TriggerRunRequest
+from app.db import count_pending_llm_jobs, get_scrape_run, list_scrape_runs
 from app.pipeline import rejudge_pending_jobs, run_pipeline
 from app.providers import ProviderRegistry
 
@@ -59,6 +59,7 @@ def api_trigger_run(payload: TriggerRunRequest) -> dict[str, str]:
             providers_filter=payload.providers,
             skip_pdf=True,
         ),
+        db_path=settings.database_path,
     )
     if run_id is None:
         raise HTTPException(status_code=409, detail="Já existe uma execução em andamento.")
@@ -75,6 +76,23 @@ def api_trigger_rejudge() -> dict[str, str]:
     if run_id is None:
         raise HTTPException(status_code=409, detail="Já existe uma execução em andamento.")
     return {"run_id": run_id, "status": "RUNNING"}
+
+
+@router.get("/{run_id}/logs", response_model=ScrapeRunLogsResponse)
+def api_get_run_logs(
+    run_id: int,
+    session: Annotated[Session, Depends(get_db_session)],
+) -> ScrapeRunLogsResponse:
+    run_row = get_scrape_run(session, run_id)
+    if run_row is None:
+        raise HTTPException(status_code=404, detail="Execução não encontrada.")
+    logs = [line for line in (run_row.logs_text or "").splitlines() if line]
+    return ScrapeRunLogsResponse(
+        id=run_row.id,
+        status=run_row.status,
+        logs=logs,
+        error_log=run_row.error_log or "",
+    )
 
 
 @router.get("/{run_id}/stream")

@@ -8,6 +8,7 @@ class SiblingJobSchema(BaseModel):
     provider: str
     title: str
     company: str
+    location: str = ""
     url: str
 
 
@@ -81,6 +82,13 @@ class TriggerRunRequest(BaseModel):
     providers: list[str] | None = None
     use_proxy: bool = True
     use_llm: bool = True
+
+
+class ScrapeRunLogsResponse(BaseModel):
+    id: int
+    status: str
+    logs: list[str]
+    error_log: str = ""
 
 
 class ScrapeRunSchema(BaseModel):

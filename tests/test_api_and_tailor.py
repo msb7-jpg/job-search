@@ -12,7 +12,7 @@ from app.api.main import create_app
 from app.api.run_manager import BackgroundRunManager
 from app.core.logging import logger as app_logger
 from app.core.user_config import UserSearchConfig, add_company_to_blacklist, load_search_config
-from app.db import init_db, save_evaluation, upsert_scraped_jobs
+from app.db import ScrapeRunRow, init_db, save_evaluation, upsert_scraped_jobs
 from app.models.enums import SeniorityEnum, WorkModelEnum
 from app.models.job import JobItem
 from app.models.match import LlmEvaluation, MatchLevelEnum, ProfileMatch, ResumeMatch
@@ -213,15 +213,34 @@ class TestApiConfigAndTailor(unittest.TestCase):
         self.assertIsNone(overflow)
 
     def test_html_to_markdown_and_null_sanitization(self) -> None:
-        raw_html = "<h3>Requirements</h3><p>Build <strong>Python</strong> APIs.</p><ul><li>FastAPI</li><li>SQLite</li></ul>"
+        raw_html = (
+            "<h5>Requisitos</h5>"
+            "<p><strong>Perfil Comportamental</strong><span>Buscamos curiosity</span></p>"
+            "<p>Build <strong>Python</strong> APIs.</p>"
+            "<ul><li><p>FastAPI</p></li><li><p>SQLite</p></li></ul>"
+        )
         formatted = html_to_markdown(raw_html)
-        self.assertIn("## Requirements", formatted)
+        self.assertIn("## Requisitos", formatted)
+        self.assertIn("**Perfil Comportamental** Buscamos curiosity", formatted)
         self.assertIn("**Python**", formatted)
-        self.assertIn("- FastAPI", formatted)
-        self.assertIn("- SQLite", formatted)
+        self.assertIn("- FastAPI\n- SQLite", formatted)
 
         sanitized = _sanitize_nulls({"phone": None, "location": "Remote", "highlights": [None, "GPA 9.0"]})
         self.assertEqual(sanitized, {"location": "Remote", "highlights": ["GPA 9.0"]})
+
+    def test_scrape_run_logs_endpoint(self) -> None:
+        with Session(self.engine) as session:
+            run_row = ScrapeRunRow(status="COMPLETED", logs_text="line one\nline two")
+            session.add(run_row)
+            session.commit()
+            run_id = run_row.id
+
+        resp = self.client.get(f"/api/runs/{run_id}/logs")
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.json()["logs"], ["line one", "line two"])
+
+        missing = self.client.get("/api/runs/99999/logs")
+        self.assertEqual(missing.status_code, 404)
 
     def test_run_manager_captures_job_search_logger(self) -> None:
         manager = BackgroundRunManager()

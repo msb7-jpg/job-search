@@ -4,8 +4,10 @@ import threading
 import uuid
 from collections.abc import Callable
 from dataclasses import dataclass, field
+from pathlib import Path
 
 from app.core.logging import logger as app_logger
+from app.db import save_latest_scrape_run_logs
 
 
 class _QueueLogHandler(logging.Handler):
@@ -51,7 +53,12 @@ class BackgroundRunManager:
         with self._lock:
             return self._active_run_id
 
-    def start_run(self, kind: str, target_fn: Callable[[], object]) -> str | None:
+    def start_run(
+        self,
+        kind: str,
+        target_fn: Callable[[], object],
+        db_path: Path | None = None,
+    ) -> str | None:
         """Inicia uma tarefa em thread separada. Retorna run_id ou None se já houver execução ativa."""
         with self._lock:
             if self._active_run_id is not None:
@@ -63,14 +70,14 @@ class BackgroundRunManager:
 
         thread = threading.Thread(
             target=self._execute,
-            args=(run_id, target_fn),
+            args=(run_id, target_fn, db_path),
             daemon=True,
             name=f"bg-{kind}-{run_id}",
         )
         thread.start()
         return run_id
 
-    def _execute(self, run_id: str, target_fn: Callable[[], object]) -> None:
+    def _execute(self, run_id: str, target_fn: Callable[[], object], db_path: Path | None) -> None:
         proxy_logger = logging.getLogger("proxy_pool")
         log_queue: queue.Queue[str | None] = queue.Queue()
         handler = _QueueLogHandler(log_queue)
@@ -112,10 +119,17 @@ class BackgroundRunManager:
             with self._lock:
                 state = self._runs[run_id]
                 state.status = final_status
+                logs_snapshot = "\n".join(state.logs)
                 for sub in state.subscribers:
                     sub.put_nowait(None)
                 if self._active_run_id == run_id:
                     self._active_run_id = None
+
+            if db_path is not None and state.kind == "scrape" and logs_snapshot:
+                try:
+                    save_latest_scrape_run_logs(db_path, logs_snapshot)
+                except Exception:
+                    app_logger.exception(f"Falha ao persistir logs do scrape ({run_id})")
 
     def subscribe(self, run_id: str) -> tuple[list[str], queue.Queue[str | None], bool] | None:
         """Retorna (logs_existentes, fila_live, ja_finalizado) ou None se run_id não existir."""

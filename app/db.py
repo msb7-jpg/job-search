@@ -18,6 +18,7 @@ from sqlalchemy import (
     func,
     or_,
     select,
+    text,
 )
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, joinedload, mapped_column, relationship
 
@@ -151,6 +152,7 @@ class ScrapeRunRow(Base):
     total_approved: Mapped[int] = mapped_column(Integer, default=0)
     total_rejected: Mapped[int] = mapped_column(Integer, default=0)
     error_log: Mapped[str] = mapped_column(Text, default="")
+    logs_text: Mapped[str] = mapped_column(Text, default="")
 
 
 def create_db_engine(db_path: Path) -> Engine:
@@ -170,6 +172,10 @@ def create_db_engine(db_path: Path) -> Engine:
 def init_db(db_path: Path) -> Engine:
     engine = create_db_engine(db_path)
     Base.metadata.create_all(engine)
+    with engine.begin() as conn:
+        cols = {row[1] for row in conn.execute(text("PRAGMA table_info(scrape_runs)"))}
+        if "logs_text" not in cols:
+            conn.execute(text("ALTER TABLE scrape_runs ADD COLUMN logs_text TEXT NOT NULL DEFAULT ''"))
     return engine
 
 
@@ -520,6 +526,21 @@ def list_scrape_runs(session: Session, limit: int = 20) -> list[ScrapeRunRow]:
     """Lista execuções recentes do pipeline ordenadas da mais nova para a mais antiga."""
     stmt = select(ScrapeRunRow).order_by(desc(ScrapeRunRow.id)).limit(limit)
     return list(session.scalars(stmt))
+
+
+def get_scrape_run(session: Session, run_id: int) -> ScrapeRunRow | None:
+    """Retorna uma execução específica pelo ID."""
+    return session.get(ScrapeRunRow, run_id)
+
+
+def save_latest_scrape_run_logs(db_path: Path, logs_text: str) -> None:
+    """Persiste o log completo da execução mais recente na tabela scrape_runs."""
+    engine = init_db(db_path)
+    with Session(engine) as session:
+        latest = session.scalar(select(ScrapeRunRow).order_by(desc(ScrapeRunRow.id)).limit(1))
+        if latest is not None:
+            latest.logs_text = logs_text
+            session.commit()
 
 
 def count_pending_llm_jobs(session: Session) -> int:

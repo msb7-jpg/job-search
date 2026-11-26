@@ -132,6 +132,7 @@ def api_get_job(job_id: int, session: Annotated[Session, Depends(get_db_session)
                 provider=sibling.provider,
                 title=sibling.title,
                 company=sibling.company,
+                location=sibling.location,
                 url=sibling.url,
             )
             for sibling in siblings

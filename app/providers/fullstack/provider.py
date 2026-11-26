@@ -75,7 +75,7 @@ def converter_item_fullstack(
     localizacao = ", ".join(partes_local) if partes_local else "Remote"
 
     descricao_inicial = f"Skills: {', '.join(skills_names)}" if skills_names else titulo
-    link = f"{FULLSTACK_PORTAL_JOB_URL}?jobId={posting_id}"
+    link = f"{FULLSTACK_PORTAL_JOB_URL}/{posting_id}"
 
     return JobItem(
         job_id=f"fullstack_{posting_id}",
