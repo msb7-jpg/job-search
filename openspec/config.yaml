@@ -1,0 +1,12 @@
+schema: spec-driven
+
+context: |
+  Local-first monolith (`job-search`): Python 3.14 + FastAPI + SQLite (WAL) + React 19 + Vite + Bun.
+  Must obey `GEMINI.md` hard bans and `docs/PATTERNS.md`:
+  - No new dependencies without explicit user approval.
+  - Fail-closed LLM evaluation (`PENDING` on failure).
+  - Deterministic `hashlib.sha256` IDs (never `hash()`).
+  - No `# type: ignore`, `# noqa`, `as any`, single-letter variables (except `_` in Python), or god files (>120 lines page orchestrators, >200 UI modules, >300 Python).
+  - `proxy_pool/` must have zero `app.*` imports.
+  - Frontend uses `bun` (never `npm`/`npx`), Preact Signals (`useSignal`/`useComputed`), TanStack Query v5 (`queryOptions`), and shadcn-first UI.
+  - Definition of Done: `make check` exits 0 (`ruff`, `check_python_hygiene.py`, `pyright`, `lint-imports`, `pytest`, `tsc`, `eslint`, `fallow`).
