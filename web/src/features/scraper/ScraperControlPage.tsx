@@ -1,6 +1,5 @@
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { sseLogsSignal } from '@/state/signals';
 import { LiveLogConsole } from './components/LiveLogConsole';
 import { RunControlsCard } from './components/RunControlsCard';
 import { ScrapeRunsTable } from './components/ScrapeRunsTable';
@@ -51,10 +50,22 @@ export function ScraperControlPage() {
           onTriggerRun={scraper.triggerRun}
           onTriggerRejudge={scraper.triggerRejudge}
         />
-        <LiveLogConsole logs={sseLogsSignal.value} isRunning={scraper.isRunning} />
+        <LiveLogConsole
+          logs={scraper.consoleLogs}
+          isRunning={scraper.isRunning}
+          historyRunId={scraper.historyRunId}
+          isHistoryLoading={scraper.isHistoryLoading}
+          onBackToLive={() => scraper.selectHistoryRun(null)}
+        />
       </div>
 
-      <ScrapeRunsTable runs={scraper.overview?.runs ?? []} />
+      <ScrapeRunsTable
+        runs={scraper.overview?.runs ?? []}
+        selectedRunId={scraper.historyRunId}
+        onSelectRun={runId =>
+          scraper.selectHistoryRun(scraper.historyRunId === runId ? null : runId)
+        }
+      />
     </div>
   );
 }

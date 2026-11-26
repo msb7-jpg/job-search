@@ -75,7 +75,7 @@ export default function App() {
             {NAV_ITEMS.map(item => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
-              const showPendingBadge = item.id === APP_TAB.SCRAPER && pendingCount > 0;
+              const showPendingBadge = item.id === 'scraper' && pendingCount > 0;
               return (
                 <button
                   key={item.id}

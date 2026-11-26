@@ -5,6 +5,7 @@ import type {
   JobListResponse,
   MasterProfile,
   RunsOverviewResponse,
+  ScrapeRunLogsResponse,
   UserSearchConfig,
 } from '@/types';
 
@@ -41,6 +42,7 @@ export const jobKeys = {
 export const runKeys = {
   all: ['runs'] as const,
   overview: () => [...runKeys.all, 'overview'] as const,
+  logs: (runId: number) => [...runKeys.all, 'logs', runId] as const,
 };
 
 /** TanStack Query key factory for dynamic search config. */
@@ -91,6 +93,13 @@ export const runQueries = {
       queryKey: runKeys.overview(),
       queryFn: () => apiFetch<RunsOverviewResponse>('/api/runs'),
       refetchInterval: 5_000,
+    }),
+  logs: (runId: number | null) =>
+    queryOptions({
+      queryKey: runKeys.logs(runId ?? 0),
+      queryFn: () => apiFetch<ScrapeRunLogsResponse>(`/api/runs/${runId}/logs`),
+      enabled: runId !== null && runId > 0,
+      staleTime: 60_000,
     }),
 };
 

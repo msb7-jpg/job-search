@@ -28,6 +28,26 @@ interface JobDetailPaneProps {
   onBlacklist: (companyName: string) => void;
 }
 
+/** Formats a deduplicated sibling link label using location when provider matches the active job. */
+function formatSiblingLabel(sibling: NonNullable<JobDetail['siblings']>[number], baseProvider: string): string {
+  const loc = sibling.location?.trim();
+  if (sibling.provider === baseProvider) {
+    return loc || sibling.provider;
+  }
+  return loc ? `${sibling.provider} (${loc})` : sibling.provider;
+}
+
+/** Deduplicates sibling postings by `(provider, location)` excluding the current job. */
+function getUniqueSiblings(detail: JobDetail) {
+  const seen = new Set<string>([`${detail.provider}::${detail.location?.trim() || ''}`]);
+  return detail.siblings.filter(sibling => {
+    const key = `${sibling.provider}::${sibling.location?.trim() || ''}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 /**
  * Displays the selected job's metadata, cross-provider siblings, AI Judge assessment, and description.
  */
@@ -72,17 +92,17 @@ export function JobDetailPane({
           </div>
 
           <div className="flex flex-wrap items-center gap-1.5">
-            <Button variant="primary" size="sm" onClick={() => onTailor(detail.id)}>
+            <Button variant="primary" size="sm" onClick={() => onTailor(detail.id)} aria-keyshortcuts="T">
               <FileText className="h-3.5 w-3.5" />
-              Tailor (T)
+              Tailor
             </Button>
-            <Button variant="outline" size="sm" onClick={onSave}>
+            <Button variant="outline" size="sm" onClick={onSave} aria-keyshortcuts="S">
               <Bookmark className="h-3.5 w-3.5" />
-              Save (S)
+              Save
             </Button>
-            <Button variant="ghost" size="sm" onClick={onIgnore}>
+            <Button variant="ghost" size="sm" onClick={onIgnore} aria-keyshortcuts="X">
               <XCircle className="h-3.5 w-3.5" />
-              Ignore (X)
+              Ignore
             </Button>
             <Button
               variant="danger"
@@ -105,23 +125,31 @@ export function JobDetailPane({
           </div>
         </div>
 
-        {detail.siblings.length > 0 && (
-          <div className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[11px] text-zinc-600">
-            <Layers className="h-3.5 w-3.5 text-emerald-600" />
-            <span>Also found on:</span>
-            {detail.siblings.map(sibling => (
-              <a
-                key={sibling.id}
-                href={sibling.url}
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-emerald-700 underline-offset-2 hover:underline"
-              >
-                {sibling.provider}
-              </a>
-            ))}
-          </div>
-        )}
+        {(() => {
+          const uniqueSiblings = getUniqueSiblings(detail);
+          if (uniqueSiblings.length === 0) return null;
+          const allSameProvider = uniqueSiblings.every(
+            sibling => sibling.provider === detail.provider
+          );
+          return (
+            <div className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[11px] text-zinc-600">
+              <Layers className="h-3.5 w-3.5 text-emerald-600" />
+              <span>{allSameProvider ? 'Other locations:' : 'Also found on:'}</span>
+              {uniqueSiblings.map(sibling => (
+                <a
+                  key={sibling.id}
+                  href={sibling.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={`${sibling.provider}${sibling.location ? ` — ${sibling.location}` : ''}`}
+                  className="font-medium text-emerald-700 underline-offset-2 hover:underline"
+                >
+                  {formatSiblingLabel(sibling, detail.provider)}
+                </a>
+              ))}
+            </div>
+          );
+        })()}
       </div>
 
       <div className="flex-1 space-y-4 overflow-y-auto p-4">

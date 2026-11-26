@@ -1,5 +1,4 @@
 import { AlertCircle, CheckCircle2, X } from 'lucide-react';
-import { TOAST_VARIANT } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import type { ToastPayload } from '@/state/signals';
 
@@ -17,7 +16,7 @@ interface ToastBannerProps {
 export function ToastBanner({ toast, onDismiss }: ToastBannerProps) {
   if (!toast) return null;
 
-  const isError = toast.variant === TOAST_VARIANT.ERROR;
+  const isError = toast.variant === 'error';
 
   return (
     <div

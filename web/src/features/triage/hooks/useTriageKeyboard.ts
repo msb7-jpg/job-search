@@ -1,5 +1,5 @@
 import { useEventListener } from '@reactuses/core';
-import { FORM_INPUT_TAGS, JOB_STATUS, KEY_NAME } from '@/lib/constants';
+import { FORM_INPUT_TAGS, JOB_STATUS, type JobStatus, KEY_NAME } from '@/lib/constants';
 import { studioJobIdSignal } from '@/state/signals';
 
 /** Parameters for the triage keyboard shortcut listener. */
@@ -11,7 +11,7 @@ interface UseTriageKeyboardParams {
   /** Callback to move selection up (`-1`) or down (`+1`). */
   onMoveSelection: (delta: number) => void;
   /** Callback to save or ignore the currently selected job. */
-  onStatusAction: (status: typeof JOB_STATUS.SAVED | typeof JOB_STATUS.IGNORED) => void;
+  onStatusAction: (status: Extract<JobStatus, 'SAVED' | 'IGNORED'>) => void;
 }
 
 /**

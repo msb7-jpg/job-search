@@ -106,6 +106,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/runs/{run_id}/logs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Api Get Run Logs */
+        get: operations["api_get_run_logs_api_runs__run_id__logs_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/runs/{run_id}/stream": {
         parameters: {
             query?: never;
@@ -620,6 +637,20 @@ export interface components {
              */
             requer_todos: boolean;
         };
+        /** ScrapeRunLogsResponse */
+        ScrapeRunLogsResponse: {
+            /** Id */
+            id: number;
+            /** Status */
+            status: string;
+            /** Logs */
+            logs: string[];
+            /**
+             * Error Log
+             * @default
+             */
+            error_log: string;
+        };
         /** ScrapeRunSchema */
         ScrapeRunSchema: {
             /** Id */
@@ -656,6 +687,11 @@ export interface components {
             title: string;
             /** Company */
             company: string;
+            /**
+             * Location
+             * @default
+             */
+            location: string;
             /** Url */
             url: string;
         };
@@ -1032,6 +1068,37 @@ export interface operations {
                     "application/json": {
                         [key: string]: string;
                     };
+                };
+            };
+        };
+    };
+    api_get_run_logs_api_runs__run_id__logs_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                run_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ScrapeRunLogsResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

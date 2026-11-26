@@ -78,6 +78,9 @@ export type JobListResponse = Omit<Required<Schemas['JobListResponse']>, 'items'
 /** Overview of scrape runs, pending LLM count, and active providers. */
 export type RunsOverviewResponse = Required<Schemas['RunsOverviewResponse']>;
 
+/** Persisted log lines for a historical scrape run. */
+export type ScrapeRunLogsResponse = Required<Schemas['ScrapeRunLogsResponse']>;
+
 /** Dynamic search, scoring, and blacklist configuration editable in Settings. */
 export type UserSearchConfig = Required<Schemas['UserSearchConfig']>;
 

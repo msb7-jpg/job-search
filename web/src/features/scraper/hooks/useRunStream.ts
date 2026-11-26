@@ -5,7 +5,8 @@ import { SSE_EVENT_TYPE } from '@/lib/constants';
 import { activeRunIdSignal, sseLogsSignal } from '@/state/signals';
 
 /**
- * Subscribes to the FastAPI SSE log stream for an active background run.
+ * Subscribes to the FastAPI SSE log stream for an active background run,
+ * replaying buffered lines on reconnect after page reloads.
  */
 export function useRunStream(activeRunId: string | null) {
   const queryClient = useQueryClient();
@@ -13,6 +14,7 @@ export function useRunStream(activeRunId: string | null) {
   useEffect(() => {
     if (!activeRunId) return;
 
+    sseLogsSignal.value = [];
     const eventSource = new EventSource(`/api/runs/${activeRunId}/stream`);
     eventSource.onmessage = event => {
       try {

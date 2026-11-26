@@ -62,7 +62,7 @@ export function TriageInboxPage() {
       { jobId: targetId, status },
       {
         onSuccess: () => {
-          showToast(status === JOB_STATUS.SAVED ? 'Saved to Tracker' : 'Job ignored');
+          showToast(status === 'SAVED' ? 'Saved to Tracker' : 'Job ignored');
           selectedJobIdSignal.value = nextJob?.id ?? null;
         },
       }

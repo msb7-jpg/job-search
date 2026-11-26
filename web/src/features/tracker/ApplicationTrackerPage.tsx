@@ -4,8 +4,8 @@ import { Kanban, Table as TableIcon } from 'lucide-react';
 import { useUpdateJobStatus } from '@/api/mutations';
 import { jobQueries } from '@/api/queries';
 import { Button } from '@/components/ui/button';
-import { JOB_STATUS, TRACKER_VIEW_MODE } from '@/lib/constants';
-import { showToast, studioJobIdSignal } from '@/state/signals';
+import { JOB_STATUS } from '@/lib/constants';
+import { showToast, studioJobIdSignal, trackerViewSignal } from '@/state/signals';
 import type { ApplicationStatus, JobSummary } from '@/types';
 import { KanbanBoard } from './components/KanbanBoard';
 import { NotesModal } from './components/NotesModal';
@@ -24,9 +24,6 @@ const TRACKED_STATUSES = [
  * Page orchestrator for tracking applications across Kanban and Table views.
  */
 export function ApplicationTrackerPage() {
-  const viewMode = useSignal<
-    typeof TRACKER_VIEW_MODE.KANBAN | typeof TRACKER_VIEW_MODE.TABLE
-  >(TRACKER_VIEW_MODE.KANBAN);
   const editingNotesJob = useSignal<JobSummary | null>(null);
 
   const query = useQuery(jobQueries.list({ status: TRACKED_STATUSES, limit: 250 }));
@@ -48,20 +45,20 @@ export function ApplicationTrackerPage() {
         </div>
         <div className="flex items-center gap-1 rounded-lg border border-zinc-200 bg-white p-0.5">
           <Button
-            variant={viewMode.value === TRACKER_VIEW_MODE.KANBAN ? 'primary' : 'ghost'}
+            variant={trackerViewSignal.value === 'kanban' ? 'primary' : 'ghost'}
             size="sm"
             onClick={() => {
-              viewMode.value = TRACKER_VIEW_MODE.KANBAN;
+              trackerViewSignal.value = 'kanban';
             }}
           >
             <Kanban className="h-3.5 w-3.5" />
             Kanban
           </Button>
           <Button
-            variant={viewMode.value === TRACKER_VIEW_MODE.TABLE ? 'primary' : 'ghost'}
+            variant={trackerViewSignal.value === 'table' ? 'primary' : 'ghost'}
             size="sm"
             onClick={() => {
-              viewMode.value = TRACKER_VIEW_MODE.TABLE;
+              trackerViewSignal.value = 'table';
             }}
           >
             <TableIcon className="h-3.5 w-3.5" />
@@ -70,7 +67,7 @@ export function ApplicationTrackerPage() {
         </div>
       </div>
 
-      {viewMode.value === TRACKER_VIEW_MODE.KANBAN ? (
+      {trackerViewSignal.value === 'kanban' ? (
         <KanbanBoard
           jobs={jobs}
           onMoveStatus={handleMoveStatus}
