@@ -25,6 +25,7 @@ app/data/master_profile.json
 
 # Frontend
 web/node_modules/
+packages/*/node_modules/
 web/dist/
 .fallow/
 web/.fallow/

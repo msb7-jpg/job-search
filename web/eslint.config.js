@@ -4,17 +4,25 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import reactHooks from 'eslint-plugin-react-hooks';
 import tsdoc from 'eslint-plugin-tsdoc';
 import tseslint from 'typescript-eslint';
+import noUntypedStringComparison from '../packages/eslint-plugin-no-untyped-string-comparison/src/index.ts';
 
 export default tseslint.config(
   { ignores: ['dist', 'src/api/openapi.d.ts'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
     plugins: {
       'react-hooks': reactHooks,
       boundaries,
       jsdoc,
       tsdoc,
+      'no-untyped-string-comparison': noUntypedStringComparison,
     },
     settings: {
       'boundaries/elements': [
@@ -68,27 +76,12 @@ export default tseslint.config(
           ],
         },
       ],
-      'no-restricted-syntax': [
+      'no-untyped-string-comparison/no-untyped-string-comparison': [
         'error',
         {
-          selector:
-            "BinaryExpression[operator=/^(===|!==|==|!=)$/][left.type!='UnaryExpression'][right.type='Literal'][right.raw=/^['\"]/][right.value!='']",
-          message: 'Avoid comparing against raw string literals. Use a named constant instead.',
-        },
-        {
-          selector:
-            "BinaryExpression[operator=/^(===|!==|==|!=)$/][right.type!='UnaryExpression'][left.type='Literal'][left.raw=/^['\"]/][left.value!='']",
-          message: 'Avoid comparing against raw string literals. Use a named constant instead.',
-        },
-        {
-          selector:
-            "BinaryExpression[operator=/^(===|!==|==|!=)$/][left.type!='UnaryExpression'][right.type='TemplateLiteral'][right.expressions.length=0]",
-          message: 'Avoid comparing against raw template literals. Use a named constant instead.',
-        },
-        {
-          selector:
-            "SwitchCase[test.type='Literal'][test.raw=/^['\"]/][test.value!='']",
-          message: 'Avoid switching on raw string literals. Use a named constant instead.',
+          disallowAny: true,
+          disallowUnknown: false,
+          allowEmptyString: true,
         },
       ],
       'boundaries/element-types': [
@@ -146,7 +139,6 @@ export default tseslint.config(
       'jsdoc/require-description': 'off',
       'tsdoc/syntax': 'off',
       'id-length': 'off',
-      'no-restricted-syntax': 'off',
       'no-restricted-imports': 'off',
     },
   }

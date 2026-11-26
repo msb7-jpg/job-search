@@ -1,0 +1,38 @@
+{
+  "name": "eslint-plugin-no-untyped-string-comparison",
+  "version": "0.1.0",
+  "description": "ESLint rule disallowing equality/switch comparisons between generic string (and optionally any/unknown) values and string literals.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "bun test"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "typescript",
+    "typescript-eslint",
+    "string-literal",
+    "type-checked"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@typescript-eslint/utils": "^8.0.0",
+    "eslint": ">=9.0.0",
+    "typescript": ">=5.0.0"
+  }
+}

@@ -34,7 +34,7 @@ build-web: ## Gera o bundle de produção do frontend em web/dist
 	bun run --cwd web build
 
 serve: build-web ## Compila o frontend e serve tudo via FastAPI na porta 8000
-	uv run uvicorn app.api.main:app --host 127.0.0.1 --port 8000
+	uv run uvicorn app.api.main:app --reload --host 127.0.0.1 --port 8000
 
 gen-api-types: ## Gera tipos TypeScript em web/src/api/openapi.d.ts a partir do FastAPI OpenAPI
 	$(PYTHON) -c "import json; from app.api.main import app; print(json.dumps(app.openapi()))" | bunx --cwd web openapi-typescript /dev/stdin -o src/api/openapi.d.ts
